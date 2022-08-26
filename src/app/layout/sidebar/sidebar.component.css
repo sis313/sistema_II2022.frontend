@@ -1,0 +1,33 @@
+.general-container{
+  background: #F6F6F4;
+  border: #F6F6F4;
+  height: 98%;
+}
+.menu-container{
+  width: 280px;
+  height: 98%;
+  background: #05284C;
+  border-radius: 40px;
+ margin: 15px 10px;
+ color: white;
+}
+a{
+  
+  margin: 15px 15px;
+}
+.title{
+  color: white;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+svg{
+  color: white;
+  display: inline-block;
+  margin-right: 1em;
+}
+.sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
