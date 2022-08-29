@@ -1,0 +1,11 @@
+mat-drawer-container {
+  height: 100%;
+  background: #F6F6F4;
+  border: #F6F6F4;
+}
+.mat-drawer-side {
+  border-right: none !important;
+}
+.mat-drawer {
+  background-color: transparent !important;
+}
