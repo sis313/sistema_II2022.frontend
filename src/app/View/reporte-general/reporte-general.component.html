@@ -78,3 +78,68 @@
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" id="principal">
+    <div id="color-fondo">
+        <form  novalidate >
+            <div class="row mt-5">
+                <div class="col-md-6 " id="datos-izquierda">
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Nombre</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Descripcion</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Descripcion" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Tipo Negocio </label>
+                        <select class="browser-default custom-select">
+                            <option>Tienda de barrio</option>
+                            <option>Tecnico de celulares</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="form-group">
+                        <img [src]="prev" class="col-auto mx-auto" alt="" >
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ubicacion </label>
+                        <div class="custom-file" style="height: 350px;">
+                            <div id="mapa-mapbox"></div>   
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-success btn-block" >
+                        <i class="fas fa-plus-circle"></i> Actualizar</button>
+                    <button class="btn btn-outline-primary btn-block" routerLink="/lista">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+  

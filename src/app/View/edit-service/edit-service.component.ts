@@ -17,6 +17,7 @@ import { TipoProducto } from 'src/app/Models/tipoProducto';
 
 import { DomSanitizer } from '@angular/platform-browser';
 import { Imagen } from 'src/app//Models/imagen';
+import { EditServiceService } from 'src/app/Service/edit-service.service';
 @Component({
   selector: 'app-edit-service',
   templateUrl: './edit-service.component.html',
@@ -54,10 +55,12 @@ export class EditServiceComponent implements OnInit {
   cantidad = null;
   medida = '';
  
-  constructor(private sanitizer:DomSanitizer,private countries:CountryService ,private hos: HospitalService,private cities:CityService, private router: Router) { }
+
+  negocios:any | undefined;
+  constructor(private sanitizer:DomSanitizer,private countries:CountryService ,private hos: HospitalService,private cities:CityService, private router: Router,private editServiceService:EditServiceService) { }
  
   ngOnInit(): void {
-    this.contries_data();
+   
     
     (mapboxgl as any).accessToken =environment.mapboxkey;
   
@@ -65,8 +68,8 @@ export class EditServiceComponent implements OnInit {
     container: 'mapa-mapbox', // container ID
     //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-50.6462411, -21.7835007], // starting position
-    zoom: 2.8 ,// starting zoom
+    center: [-50.6462411, -21.7835007],// starting position
+    zoom: 14,// starting zoom
     minZoom:2.8,
     
     });
@@ -76,6 +79,9 @@ export class EditServiceComponent implements OnInit {
 
     this.map.on('click', (e) => {
       console.log(e);
+      console.log("Imprimiendo log-lat")
+      console.log(e.lngLat);
+      console.log("Fin")
       // {
       //     lngLat: {
       //         lng: 40.203,
@@ -95,9 +101,64 @@ export class EditServiceComponent implements OnInit {
     //this.map.keyboard.disable();
     //this.map.scrollZoom.disable();
     // this.map.touchZoomRotate.disable();
+    this.contries_data();
+    this.map= new mapboxgl.Map({
+      container: 'mapa-mapbox', // container ID
+      //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [this.negocios[0].longitude,this.negocios[0].latitude], // starting position
+      zoom: 14,// starting zoom
+      minZoom:2.8,
+      
+    });
+    this.map.addControl(new mapboxgl.NavigationControl());
+    this.map.doubleClickZoom.disable();
+
+    this.map.on('click', (e) => {
+      console.log(e);
+      console.log(e.lngLat.lng);
+      console.log(e.lngLat.lat);
+      this.cambiarPosicion(e.lngLat.lng,e.lngLat.lat);
+      // {
+      //     lngLat: {
+      //         lng: 40.203,
+      //         lat: -74.451
+      //     },
+      //     originalEvent: {...},
+      //     point: {
+      //         x: 266,
+      //         y: 464
+      //     },
+      //      target: {...},
+      //      type: "click"
+      // }
+      });
   }
 
+  cambiarPosicion(longitud:any,latitud:any){
+    console.log(this.map);
+    this.negocios[0].longitude=longitud;
+    this.negocios[0].latitude=latitud;
+    this.map= new mapboxgl.Map({
+      container: 'mapa-mapbox', // container ID
+      //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [this.negocios[0].longitude,this.negocios[0].latitude],// starting position
+      zoom: 14,// starting zoom
+      minZoom:2.8,
+      
+      });
+
+      this.map.addControl(new mapboxgl.NavigationControl());
+      this.map.doubleClickZoom.disable();
   
+      this.map.on('click', (e) => {
+        console.log(e);
+        console.log(e.lngLat.lng);
+        console.log(e.lngLat.lat);
+        this.cambiarPosicion(e.lngLat.lng,e.lngLat.lat);
+      });
+  }
 
   
   marcadores(){
@@ -173,7 +234,7 @@ export class EditServiceComponent implements OnInit {
    
         this.dat.features.push(JSON.parse(JSON.stringify({
          "type":"Feature",
-         "properties":{"message":this.city[i].city,'iconSize': [25, 25],"confirmed":this.city[i].confirmed,"deaths":this.city[i].deaths,"recovered":this.city[i].recovered},
+         "properties":{"message":this.city[i].city,'iconSize': [10, 10],"confirmed":this.city[i].confirmed,"deaths":this.city[i].deaths,"recovered":this.city[i].recovered},
           "geometry":{"type":"Point", "coordinates":[this.city[i].longitude,this.city[i].latitude]}
        })))
          
@@ -199,8 +260,10 @@ export class EditServiceComponent implements OnInit {
         const height = marker.properties.iconSize[1];
         el.className = 'marker';
         el.style.backgroundImage = `url(https://www.shareicon.net/data/128x128/2016/08/18/814959_multimedia_512x512.png)`;
-        el.style.width = `${width}px`;
-        el.style.height = `${height}px`;
+        //el.style.width = `${width}px`;
+        el.style.width='10px';
+        //el.style.height = `${height}px`;
+        el.style.height='10px';
        
         
         el.style.backgroundSize = '100%';
@@ -233,7 +296,7 @@ export class EditServiceComponent implements OnInit {
 
 
   contries_data(){
-    this.countries.all().subscribe(
+    /*this.countries.all().subscribe(
       data => {
         this.country = data;
         this.country_Geojson()
@@ -242,7 +305,12 @@ export class EditServiceComponent implements OnInit {
       err => {
         console.log(err.error);
       }
-    );
+    );*/
+    this.negocios=this.editServiceService.all();
+    this.negocios=JSON.parse(this.negocios);
+    console.log(this.negocios);
+    this.country_Geojson()
+
   }
 
   country_Geojson(){
@@ -264,8 +332,8 @@ export class EditServiceComponent implements OnInit {
     
       }));
       console.log("Mostra imprimiendo countrys");
-      console.log(this.country);
-      for(let i=0;i<this.country.length;i++){
+      //console.log(this.country);
+      /*for(let i=0;i<this.negocios.length;i++){
        
         this.dat.features.push(JSON.parse(JSON.stringify({
          "type":"Feature",
@@ -273,8 +341,12 @@ export class EditServiceComponent implements OnInit {
           "geometry":{"type":"Point", "coordinates":[this.country[i].longitude,this.country[i].latitude]}
        })))
          
-       }
-    
+       }*/
+      this.dat.features.push(JSON.parse(JSON.stringify({
+        "type":"Feature",
+        "properties":{"message":this.negocios[0].name ,'iconSize': [50, 50]},
+         "geometry":{"type":"Point", "coordinates":[this.negocios[0].longitude,this.negocios[0].latitude]}
+      })))
       this.Marker_country();
   }
 

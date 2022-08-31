@@ -22,7 +22,6 @@ import { EditServiceComponent } from '../View/edit-service/edit-service.componen
       MunicipalityComponent, 
       MainComponent,
       EditServiceComponent
-      
     ],
     exports: [FooterComponent, HeaderComponent, SidebarComponent, MainComponent,  MunicipalityComponent ,CityComponent,ReporteGeneralComponent,EditServiceComponent],
     imports: [CommonModule, RouterModule,  ReactiveFormsModule, MatListModule,
