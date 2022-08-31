@@ -144,8 +144,7 @@ export class EditServiceComponent implements OnInit {
       //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [this.negocios[0].longitude,this.negocios[0].latitude],// starting position
-      zoom: 14,// starting zoom
-      minZoom:2.8,
+      zoom: 20,// starting zoom
       
       });
       this.country_Geojson()
