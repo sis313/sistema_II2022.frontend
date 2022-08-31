@@ -148,6 +148,7 @@ export class EditServiceComponent implements OnInit {
       minZoom:2.8,
       
       });
+      this.country_Geojson()
 
       this.map.addControl(new mapboxgl.NavigationControl());
       this.map.doubleClickZoom.disable();
