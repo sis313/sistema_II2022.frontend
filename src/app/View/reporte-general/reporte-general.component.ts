@@ -39,8 +39,8 @@ export class ReporteGeneralComponent implements OnInit {
   filename="";
 
  
-prev:string="";
- nombreimagen ='default.jpg';
+  prev:string="";
+  nombreimagen ='default.jpg';
   nombre :string="";
   precio: number=0;
   area :Area[] = [];
@@ -60,22 +60,40 @@ prev:string="";
     
     (mapboxgl as any).accessToken =environment.mapboxkey;
   
-  this.map= new mapboxgl.Map({
-  container: 'mapa-mapbox', // container ID
-  style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
-  center: [-50.6462411, -21.7835007], // starting position
-  zoom: 2.8 ,// starting zoom
-  minZoom:2.8,
-  
-  });
-  
-  this.map.addControl(new mapboxgl.NavigationControl());
- // this.map.boxZoom.disable();
-  this.map.doubleClickZoom.disable();
- // this.map.dragPan.disable();
-  //this.map.keyboard.disable();
-  //this.map.scrollZoom.disable();
-// this.map.touchZoomRotate.disable();
+    this.map= new mapboxgl.Map({
+    container: 'mapa-mapbox', // container ID
+    //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-50.6462411, -21.7835007], // starting position
+    zoom: 2.8 ,// starting zoom
+    minZoom:2.8,
+    
+    });
+    
+    this.map.addControl(new mapboxgl.NavigationControl());
+    this.map.doubleClickZoom.disable();
+
+    this.map.on('click', (e) => {
+      console.log(e);
+      // {
+      //     lngLat: {
+      //         lng: 40.203,
+      //         lat: -74.451
+      //     },
+      //     originalEvent: {...},
+      //     point: {
+      //         x: 266,
+      //         y: 464
+      //     },
+      //      target: {...},
+      //      type: "click"
+      // }
+      });
+    // this.map.boxZoom.disable();
+    // this.map.dragPan.disable();
+    //this.map.keyboard.disable();
+    //this.map.scrollZoom.disable();
+    // this.map.touchZoomRotate.disable();
   }
 
   
@@ -244,18 +262,19 @@ prev:string="";
     ]
     
       }));
-
+      console.log("Mostra imprimiendo countrys");
+      console.log(this.country);
       for(let i=0;i<this.country.length;i++){
        
         this.dat.features.push(JSON.parse(JSON.stringify({
          "type":"Feature",
-         "properties":{"message":this.country[i].locationName ,'iconSize': [35, 35]},
+         "properties":{"message":this.country[i].locationName ,'iconSize': [50, 50]},
           "geometry":{"type":"Point", "coordinates":[this.country[i].longitude,this.country[i].latitude]}
        })))
          
        }
     
-  this.Marker_country();
+      this.Marker_country();
   }
 
   Marker_country(){
