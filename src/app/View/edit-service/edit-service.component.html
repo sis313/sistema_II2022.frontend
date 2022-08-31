@@ -3,7 +3,7 @@
 
 <div class="container" id="principal">
     <div id="color-fondo">
-        <form  novalidate >
+        <div  novalidate >
             <div class="row mt-5">
                 <div class="col-md-6 " id="datos-izquierda">
                     
@@ -37,13 +37,13 @@
                             <div id="mapa-mapbox"></div>   
                         </div>
                     </div>
-                    <button class="btn btn-outline-success btn-block" >
+                    <button class="btn btn-success btn-block" (click)="actualizar()">
                         <i class="fas fa-plus-circle"></i> Actualizar</button>
-                    <button class="btn btn-outline-primary btn-block" routerLink="/lista">
+                    <button class="btn btn-primary btn-block" routerLink="/lista">
                         <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
   

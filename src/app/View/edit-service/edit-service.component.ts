@@ -159,7 +159,10 @@ export class EditServiceComponent implements OnInit {
         this.cambiarPosicion(e.lngLat.lng,e.lngLat.lat);
       });
   }
-
+  actualizar(){
+    console.log("Actualizar--------------------------------------------");
+    console.log(this.negocios);
+  }
   
   marcadores(){
    this.delete_marker(); 
