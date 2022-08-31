@@ -6,6 +6,7 @@ import { MapComponent } from './View/map/map.component';
 import { ReporteGeneralComponent } from './View/reporte-general/reporte-general.component';
 import { NewsComponent } from './View/news/news.component';
 import { InformationComponent } from './View/information/information.component';
+import { EditServiceComponent } from './View/edit-service/edit-service.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
       {
         path: "mapa",component: MapComponent
       },
+      {
+        path: "edit-service",component:EditServiceComponent
+      }
 
     ]
   },

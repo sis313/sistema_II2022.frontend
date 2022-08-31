@@ -1,11 +1,13 @@
 <mat-drawer-container class="all">
     <mat-drawer mode="side" opened>
       <app-sidebar></app-sidebar>
+      
     </mat-drawer>
   
   <mat-drawer-content class="p-3">
       <app-header></app-header>
-      <app-reporte-general> </app-reporte-general>
+      <app-edit-service></app-edit-service>
+      <!--<app-reporte-general></app-reporte-general>-->
       <router-outlet> </router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

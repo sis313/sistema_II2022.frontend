@@ -23,8 +23,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MapComponent,
     NewsComponent,
     InformationComponent,
-    BoliviaComponent
-
+    BoliviaComponent,
   ],
   imports: [
     HttpClientModule,

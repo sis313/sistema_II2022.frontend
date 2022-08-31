@@ -11,6 +11,7 @@ import {MatListModule} from '@angular/material/list';
 import { ReporteGeneralComponent } from '../View/reporte-general/reporte-general.component';
 import { CityComponent } from '../View/bolivia/city/city.component';
 import { MunicipalityComponent } from '../View/bolivia/municipality/municipality.component';
+import { EditServiceComponent } from '../View/edit-service/edit-service.component';
 @NgModule({
     declarations: [
       FooterComponent,
@@ -19,10 +20,11 @@ import { MunicipalityComponent } from '../View/bolivia/municipality/municipality
       ReporteGeneralComponent,
       CityComponent,
       MunicipalityComponent, 
-      MainComponent
+      MainComponent,
+      EditServiceComponent
       
     ],
-    exports: [FooterComponent, HeaderComponent, SidebarComponent, MainComponent,  MunicipalityComponent ,CityComponent,ReporteGeneralComponent],
+    exports: [FooterComponent, HeaderComponent, SidebarComponent, MainComponent,  MunicipalityComponent ,CityComponent,ReporteGeneralComponent,EditServiceComponent],
     imports: [CommonModule, RouterModule,  ReactiveFormsModule, MatListModule,
         MatSidenavModule],
   })
