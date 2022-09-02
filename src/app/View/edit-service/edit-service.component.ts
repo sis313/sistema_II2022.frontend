@@ -67,7 +67,8 @@ export class EditServiceComponent implements OnInit {
     this.map= new mapboxgl.Map({
     container: 'mapa-mapbox', // container ID
     //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
-    style: 'mapbox://styles/mapbox/streets-v11',
+    //style: 'mapbox://styles/mapbox/streets-v11',
+    style: 'mapbox://styles/mapbox/satellite-streets-v11',
     center: [-50.6462411, -21.7835007],// starting position
     zoom: 14,// starting zoom
     minZoom:2.8,
@@ -105,7 +106,7 @@ export class EditServiceComponent implements OnInit {
     this.map= new mapboxgl.Map({
       container: 'mapa-mapbox', // container ID
       //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/satellite-streets-v11',
       center: [this.negocios[0].longitude,this.negocios[0].latitude], // starting position
       zoom: 14,// starting zoom
       minZoom:2.8,
@@ -142,9 +143,9 @@ export class EditServiceComponent implements OnInit {
     this.map= new mapboxgl.Map({
       container: 'mapa-mapbox', // container ID
       //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/satellite-streets-v11',
       center: [this.negocios[0].longitude,this.negocios[0].latitude],// starting position
-      zoom: 20,// starting zoom
+      zoom:18,// starting zoom
       
       });
       this.country_Geojson()
@@ -262,7 +263,9 @@ export class EditServiceComponent implements OnInit {
         const width = marker.properties.iconSize[0];
         const height = marker.properties.iconSize[1];
         el.className = 'marker';
-        el.style.backgroundImage = `url(https://www.shareicon.net/data/128x128/2016/08/18/814959_multimedia_512x512.png)`;
+        //el.style.backgroundImage = `url(https://www.shareicon.net/data/128x128/2016/08/18/814959_multimedia_512x512.png)`;
+        el.style.backgroundImage = `url('./../../../assets/images/placeholder_pointer_direction_gps_navigation_map_marker_location_pin_icon_210798.png')`;
+
         //el.style.width = `${width}px`;
         el.style.width='10px';
         //el.style.height = `${height}px`;
@@ -369,7 +372,7 @@ export class EditServiceComponent implements OnInit {
         const width = marker.properties.iconSize[0];
         const height = marker.properties.iconSize[1];
         el.className = 'marker';
-        el.style.backgroundImage = `url(https://www.shareicon.net/data/128x128/2016/08/18/814959_multimedia_512x512.png)`;
+        el.style.backgroundImage = `url('./../../../assets/images/placeholder_pointer_direction_gps_navigation_map_marker_location_pin_icon_210798.png')`;
         el.style.width = `${width}px`;
         el.style.height = `${height}px`;
        

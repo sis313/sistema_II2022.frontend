@@ -1,5 +1,4 @@
 mat-drawer-container {
-  height: 100%;
   width: 100%;
   background: #F6F6F4;
   border: #F6F6F4;
@@ -14,4 +13,9 @@ mat-drawer-container mat-drawer-content app-edit-service{
 }
 .mat-drawer {
   background-color: transparent !important;
+}
+mat-drawer-content{
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
+
 }
