@@ -1,0 +1,132 @@
+.login {
+    background-color: #ffffff;
+    &__page {
+      background-attachment: scroll;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+    &__row {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  @media (min-width: 768px) {
+    .login {
+      &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+  
+  
+  body {
+    font-family: "Karla", sans-serif;
+    background-color: #dff2f3;
+    min-height: 100vh;
+  }
+  
+  /*Márgenes del cuadro*/
+  .brand-wrapper { 
+    margin-bottom: 50px; 
+  }
+  
+  /*Forma de tarjeta*/  
+  .login-card 
+  {
+    border: 0;
+    border-radius: 27.5px;
+    overflow: hidden;
+    background-color: #e9f6fc; 
+  }
+  
+  /*Formato para la imagen*/
+  .login-card-img {
+    border-radius: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; 
+  }
+  
+  /*Borde para la tarjeta*/
+  .login-card .card-body {
+    padding: 85px 60px 60px; 
+  }
+  
+  /*Subtítulo*/
+  .login-card-description {
+    font-size: 25px;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 23px; 
+  }
+  
+  /*Título*/
+  .login-card-title {
+    font-size: 35px;
+    color: #043845;
+    font-weight: normal;
+    margin-bottom: 23px; 
+  }
+  
+  /*Labels*/
+  .login-card .form-control {
+    border: 1px solid #070645;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    min-height: 45px;
+    font-size: 16px;
+    line-height: 15;
+    font-weight: normal; 
+  }
+  
+  /*Boton*/
+  .login-card .login-btn { 
+    padding: 13px 20px 12px;
+    background-color: #043845;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px; 
+  }
+  
+  /*Cuando el cursor se pone en el botón de Login*/
+  .login-card .login-btn:hover {
+    border: 1px solid #070645;
+    background-color: transparent;
+    color: #043845; 
+  }
+  
+  /* Registre aquí*/
+  .login-card-footer-text { 
+    font-size: 16px;
+    color: #0d2366;
+    margin-bottom: 60px; 
+  }
+  
+  @media (max-width: 767px) {
+    .login-card-footer-text {
+        margin-bottom: 24px; 
+    } 
+  }
+  
+  .login-card-footer-nav a {
+    font-size: 14px;
+    color: #919aa3; 
+  }
+    
