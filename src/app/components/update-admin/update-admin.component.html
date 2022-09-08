@@ -1,95 +1,66 @@
-<!--<div class="login__page" [style.background-image]="'url(https://fondosmil.com/fondo/8247.jpg)'" >
-    <div class="login__row min-h-screen">
-      <div class="login__hero flex flex-col justify-center items-center py-10 px-4 sm:px-8 xl:px-20 text-white">
-        <a [routerLink]="['']" class="w-48 inline-block"><img src="https://images.vexels.com/media/users/3/132103/isolated/preview/2b512b5ece5d914e68950bfdbf73b481-icono-de-circulo-de-carrito-de-compras.png" alt="Trendy" /></a>
-        <h2 class="text-center mt-6"></h2>
-      </div>
-      <div class="login__content flex flex-col justify-center bg-accent" style="background-color: #A4A9A7;">
-        <div class="login w-full max-w-xl rounded-md mx-auto border p-4 sm:p-8 xl:p-20">
-          <form [formGroup]="newAdminForm" (ngSubmit)="editProvider()">
-            <h1 class="text-2xl font-bold">EDITAR INFORMACIÓN - ADMINISTRADOR</h1>
-            <div class="mb-4 mt-6">
-              <label class="block text-gray-700 text-sm font-semibold mb-2" for="nombre"> Nombre </label>
-              <input
-                class="text-sm appearance-none rounded w-full py-2 px-3 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline h-10"
-                id="nombre"
-                type="text"
-                placeholder="Nombre"
-                formControlName="nombre"
-              />
-            </div>
-            <div class="mb-4 mt-6">
-              <label class="block text-gray-700 text-sm font-semibold mb-2" for="apellido"> Apellido </label>
-              <input
-                class="text-sm appearance-none rounded w-full py-2 px-3 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline h-10"
-                id="apellido"
-                type="text"
-                placeholder="Apellido"
-                formControlName="apellido"
-              />
-            </div>
-            <div class="mb-4 mt-6">
-              <label class="block text-gray-700 text-sm font-semibold mb-2" for="edad"> Edad </label>
-              <input
-                class="text-sm appearance-none rounded w-full py-2 px-3 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline h-10"
-                id="edad"
-                type="number" min="21" max="65"
-                placeholder="Edad"
-                formControlName="edad"
-               />
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="update-admin.component.css">
+</head>
+<body>
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+      <div class="card register-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="https://cdn.andro4all.com/andro4all/2020/09/Google-Maps-para-Android.jpg?width=1200" alt="register" class="register-card-img">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="brand-wrapper">
+                <p class="register-card-title" >
+               ACTUALIZAR INFORMACIÓN
+                </p>
+                <p class="register-card-subtitle">
+                  ADMINISTRADOR
+                </p>
+              </div>
+              <p class="register-card-description">Ingrese sus datos a ser modificados</p>
+              <form [formGroup]="newAdminForm">
+                <div class="form-group">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="fullname"> Nombre Completo: </label>
+                  <input type="text" name="fullname" id="fullname" formControlName="fullname" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="email"> Correo Electrónico: </label>
+                  <input type="text" name="email" id="email" formControlName="email" class="form-control" placeholder="">
+                </div>
 
-            <div class="mb-4 mt-6">
-              <label class="block text-gray-700 text-sm font-semibold mb-2" for="email"> Correo Electrónico </label>
-              <input
-                class="text-sm appearance-none rounded w-full py-2 px-3 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline h-10"
-                id="email"
-                disabled
-                type="text"
-                placeholder="Email "
-                formControlName="correoElectronico"
-              />
+                <div class="form-group">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="username"> Usuario: </label>
+                  <input type="text" name="username" id="username" formControlName="username" class="form-control" placeholder="" >
+                </div>
+                
+                <div class="form-group">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Contraseña: </label>
+                  <input type="text" name="password" id="password" formControlName="password" class="form-control" placeholder="">
+               </div>
+                <div class="form-group">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="fullname"> Confirmar contraseña: </label>
+                  <input type="text" name="confirm" id="confirm" formControlName="confirm" class="form-control" placeholder="">
+                </div>              
+                  <input name="register" id="register" class="btn btn-block register-btn mb-4" type="button"  value="Actualizar Datos">
+                </form>
+                <p class="register-card-footer-text">Todos los cambios serán guardados</p>
+                
             </div>
-            <div class="mb-6 mt-6">
-              <label class="block text-gray-700 text-sm font-semibold mb-2" for="password"> Password </label>
-              <input
-              class="text-sm bg-gray-100 appearance-none rounded w-250 py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
-              name="password" id="password" formControlName="password"
-              type="password" placeholder="password" style="font-size: 15px;"
-              [type]="hide ? 'password':'text'"
-              /> 
-              <i class="material-icons" matSuffix (click)="hide = !hide">
-                {{hide ? 'visibility': 'visibility_off'}} 
-               </i>
-            </div>
-            <div class="mb-6 mt-6">
-              <label class="block text-gray-700 text-sm font-semibold mb-2" htmlFor="confirmpassword" style="font-size: 15px;"> Confirmar Password </label>
-              <input
-                class="text-sm bg-gray-100 appearance-none rounded w-250 py-2 px-3 text-gray-700 mb-1 leading-tight focus:outline-none focus:shadow-outline h-10"
-                name="confirmpassword" id="confirmpassword" formControlName="confirmpassword"
-                type="confirmpassword" placeholder="password" style="font-size: 15px;"
-                [type]="hideconfirm ? 'password':'text'"
-              /> 
-              <i class="material-icons" matSuffix (click)="hideconfirm = !hideconfirm">
-                {{hideconfirm ? 'visibility': 'visibility_off'}} 
-               </i>
-              <br>
-            </div>
-        
-        
-
-            <div class="flex w-full mt-6">
-              <button
-                class="w-full bg-gray-800 hover:bg-grey-900 text-white text-sm py-2 px-4 font-semibold rounded focus:outline-none focus:shadow-outline h-10"
-                type="submit"
-
-              >
-                Actualizar Información
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
+      
     </div>
-
---->
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
