@@ -14,6 +14,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ReporteGeneralComponent } from './View/reporte-general/reporte-general.component';
+import { ListadoServiciosComponent } from './Components/listado-servicios/listado-servicios.component';
+import { CrearServiciosComponent } from './Components/crear-servicios/crear-servicios.component';
+import { EditarServiciosComponent } from './Components/editar-servicios/editar-servicios.component';
 
 
 
@@ -24,6 +28,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     NewsComponent,
     InformationComponent,
     BoliviaComponent,
+    ListadoServiciosComponent,
+    CrearServiciosComponent,
+    EditarServiciosComponent,
   ],
   imports: [
     HttpClientModule,

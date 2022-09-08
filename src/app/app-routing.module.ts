@@ -7,28 +7,24 @@ import { ReporteGeneralComponent } from './View/reporte-general/reporte-general.
 import { NewsComponent } from './View/news/news.component';
 import { InformationComponent } from './View/information/information.component';
 import { EditServiceComponent } from './View/edit-service/edit-service.component';
+import { ListadoServiciosComponent } from './Components/listado-servicios/listado-servicios.component';
+import { CrearServiciosComponent } from './Components/crear-servicios/crear-servicios.component';
+import { EditarServiciosComponent } from './Components/editar-servicios/editar-servicios.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'servicios',
     component: MainComponent,
     children: [
       {
-        path: "reporte-general",component: ReporteGeneralComponent
+        path: "listarServicios",component: ListadoServiciosComponent
       },
       {
-        path: "news", component: NewsComponent
+        path: "crearServicios",component: CrearServiciosComponent
       },
       {
-        path: "information", component: InformationComponent
+        path: "editarServicios",component: EditarServiciosComponent
       },
-      {
-        path: "mapa",component: MapComponent
-      },
-      {
-        path: "edit-service",component:EditServiceComponent
-      }
-
     ]
   },
   {

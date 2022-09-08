@@ -1,3 +1,14 @@
+*{
+    --color1:#745d20;
+    --color2:#cea660;
+    --color3:#f3ede0;
+    --color4:#6b7a40;
+    --colortext1:#f3ede0;;
+    --text1:40px;
+    --text2:20px;
+    --text3:10px;
+}
+
 html,body{
     height: 100%;
     width:100%;
