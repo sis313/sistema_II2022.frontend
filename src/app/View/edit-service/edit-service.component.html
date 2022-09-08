@@ -36,10 +36,19 @@
                             <div id="mapa-mapbox"></div>   
                         </div>
                     </div>
-                    <button class="btn btn-success btn-block" (click)="actualizar()">
-                        <i class="fas fa-plus-circle"></i> Actualizar</button>
-                    <button class="btn btn-primary btn-block" routerLink="/lista">
-                        <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                    <table id="buttons">
+                        <tr>
+                            <td>
+                                <button class="btn btn-success btn-block" (click)="actualizar()">
+                                <i class="fas fa-plus-circle"></i> Actualizar</button>
+                            </td>
+                            <td><button class="btn btn-primary btn-block" routerLink="/lista">
+                                <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                            </td>
+                        </tr>
+                        
+                        
+                    </table>    
                 </div>
             </div>
         </div>

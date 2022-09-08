@@ -1,9 +1,10 @@
-<p>reporte-general works!</p>
+
+
 <div class="container">
     
        
-    <form  novalidate >
-        <div class="row mt-5">
+  <form  novalidate >
+    <div class="row mt-5">
         <div class="col-md-6 ">
         <div class="form-group">
             <label for="nombre">Nombre</label>
@@ -13,7 +14,7 @@
         <div class="form-group">
             <label for="precio">Precio</label>
             <input type="number" class="form-control" id="precio" name="precio"
-          required>
+            required>
         </div>
         <div class="form-group">
             <label for="medida">Medida</label>
@@ -23,19 +24,19 @@
         <div class="form-group">
             <label for="caracteristica">Caracteristica</label>
             <input type="text" class="form-control" id="caracteristica" name="caracteristica"
-             required>
+            required>
         </div>
-  
+
         <div class="form-group">
             <label for="cantidad">Cantidad</label>
             <input type="number" class="form-control" id="cantidad" name="cantidad"
-             required>
+            required>
         </div>
         <div class="form-group">
             <label for="cantidad">Tipo Negocio </label>
             <select class="browser-default custom-select">
                 <option>Tipo Negocio</option>
-              </select>
+                </select>
         </div>
     </div>
     <div class="col-md-6 ">
@@ -45,35 +46,32 @@
             <label for="cantidad">Tipo Producto </label>
             <select class="browser-default custom-select"   >
                 <option >Tipo Producto</option>
-              </select>
+                </select>
         </div>
         <div class="form-group">
             <label for="">Seleccione una imagen </label>
             <div class="custom-file">
             
                 <label class="custom-file-label" for="customFileLangHTML" data-browse="Bestand kiezen"> {{filename}}</label>
-                  <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="selectFiles($event)" accept="image/png,image/jpg">
-              </div>
+                    <input type="file" class="custom-file-input" id="customFileLangHTML" (change)="selectFiles($event)" accept="image/png,image/jpg">
+                </div>
         </div>
         <div class="form-group">
             <img [src]="prev" class="col-auto mx-auto" alt="" >
         </div>
         <div class="form-group">
-          <label for="">Ubicacion </label>
-          <div class="custom-file" style="height: 350px;">
+            <label for="">Ubicacion </label>
+            <div class="custom-file" style="height: 350px;">
             <div id="mapa-mapbox"></div>   
-          </div>
-      </div>
-      
-            
-       
+            </div>
+        </div>
         <button class="btn btn-outline-success btn-block" >
             <i class="fas fa-plus-circle"></i> Crear</button>
         <button class="btn btn-outline-primary btn-block" routerLink="/lista">
             <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
         </div>
-    </div>
-    </form>
-  
-  
   </div>
+  </form>
+
+
+</div>

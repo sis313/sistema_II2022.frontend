@@ -20,10 +20,7 @@ i{
 }
 #color-fondo{
     width: 100%;
-    height: 100%;
-    /*background-color:#f3ede06c;*/
-    /* background-color: #697a4059; */
-
+    background-color: var(--principal-color);
     padding: 5%;
 }
 #datos-izquierda .input-group{
@@ -98,4 +95,7 @@ mat-tab{
 #country{
   margin-top: 30px;
   color: #777777;
+}
+#buttons{
+  width: 100%;
 }
