@@ -1,3 +1,4 @@
+@import 'material-icons/iconfont/material-icons.css';
 body {
   font-family: "Karla", sans-serif;
   background-color: #f3ede0;
@@ -72,6 +73,8 @@ body {
   font-weight: normal; 
 }
 
+
+
 /*Boton*/
 .register-card .register-btn { 
   padding: 13px 20px 12px;
@@ -103,3 +106,32 @@ body {
   color: #7d93aa; 
 }
   
+
+
+.input-wrapper {
+  position: relative;
+  width: 271px;
+}
+
+.input {
+  box-sizing: border-box;
+  color: #191919;
+  padding: 15px 15px 15px 35px;
+  width: 100%;
+}
+
+
+.input-icon {
+  color: #191919;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-icon.password {
+  left: unset;
+  right: 12px;
+}

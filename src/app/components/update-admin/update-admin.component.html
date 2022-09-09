@@ -5,6 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="update-admin.component.css">
 </head>
 <body>
@@ -41,14 +42,24 @@
                   <input type="text" name="username" id="username" formControlName="username" class="form-control" placeholder="" >
                 </div>
                 
-                <div class="form-group">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Contraseña: </label>
-                  <input type="text" name="password" id="password" formControlName="password" class="form-control" placeholder="">
-               </div>
-                <div class="form-group">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="fullname"> Confirmar contraseña: </label>
-                  <input type="text" name="confirm" id="confirm" formControlName="confirm" class="form-control" placeholder="">
-                </div>              
+                <div class="input-wrapper">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Contraseña: </label>   
+                    <input type="password" class="form-control" placeholder="Password" data-lpignore="true" [type]="hide ? 'password':'text'">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="input-icon password" style="margin-top:15px;"  matSuffix (click)="hide = !hide">
+                        {{hide ? 'visibility': 'visibility_off'}} 
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                      </svg>
+                </div> 
+                <div class="input-wrapper">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Contraseña: </label>   
+                    <input type="confirmpass" class="form-control" placeholder="Confirm Password" data-lpignore="true" [type]="hide ? 'password':'text'">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="input-icon password" style="margin-top:15px;"  matSuffix (click)="hide = !hide">
+                        {{hide ? 'visibility': 'visibility_off'}} 
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                      </svg>
+                </div>             
                   <input name="register" id="register" class="btn btn-block register-btn mb-4" type="button"  value="Actualizar Datos">
                 </form>
                 <p class="register-card-footer-text">Todos los cambios serán guardados</p>
