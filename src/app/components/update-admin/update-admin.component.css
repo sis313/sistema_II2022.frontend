@@ -5,15 +5,10 @@ body {
   min-height: 100vh;
 }
 
-/*Márgenes del cuadro*/
-.brand-wrapper { 
-  margin-bottom: 50px; 
-}
-
 /*Forma de tarjeta*/  
 .register-card 
 {
-  border: 0;
+  border: 50px;
   border-radius: 27.5px;
   overflow: hidden;
   background-color: #ffffff; 
@@ -74,7 +69,14 @@ body {
 }
 
 
+.input-wrapper {
+  position: relative;
+  width: 500px;
+}
 
+.icon-eye:before {
+  content: "\e9ce";
+}
 /*Boton*/
 .register-card .register-btn { 
   padding: 13px 20px 12px;
@@ -107,31 +109,21 @@ body {
 }
   
 
-
-.input-wrapper {
+div#is-relative{
+  max-width: 550px;
   position: relative;
-  width: 271px;
-}
-
-.input {
-  box-sizing: border-box;
-  color: #191919;
-  padding: 15px 15px 15px 35px;
-  width: 100%;
 }
 
 
-.input-icon {
-  color: #191919;
+#icon{
   position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  display: block;
+  bottom: .2rem;
+  right: 1rem;
+  
+  user-select: none;
+  cursor: pointer;
 }
-
-.input-icon.password {
-  left: unset;
-  right: 12px;
+input.input{
+  padding-right: 2.5rem;
 }

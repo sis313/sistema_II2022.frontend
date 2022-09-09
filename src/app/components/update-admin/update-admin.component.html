@@ -42,24 +42,31 @@
                   <input type="text" name="username" id="username" formControlName="username" class="form-control" placeholder="" >
                 </div>
                 
-                <div class="input-wrapper">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Contraseña: </label>   
-                    <input type="password" class="form-control" placeholder="Password" data-lpignore="true" [type]="hide ? 'password':'text'">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="input-icon password" style="margin-top:15px;"  matSuffix (click)="hide = !hide">
+                <div class="form-group">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Contraseña: </label>
+                  <div id="is-relative">
+                    <input type="password" name="password" id="password" formControlName="password" class="form-control" placeholder="" 
+                    [type]="hide ? 'password':'text'">
+                    <span id="icon">
+                      <i class="material-icons" matSuffix (click)="hide = !hide">
                         {{hide ? 'visibility': 'visibility_off'}} 
-                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
-                      </svg>
+                       </i>
+                    </span>
+                  </div>
                 </div> 
-                <div class="input-wrapper">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Contraseña: </label>   
-                    <input type="confirmpass" class="form-control" placeholder="Confirm Password" data-lpignore="true" [type]="hide ? 'password':'text'">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="input-icon password" style="margin-top:15px;"  matSuffix (click)="hide = !hide">
-                        {{hide ? 'visibility': 'visibility_off'}} 
-                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
-                      </svg>
-                </div>             
+
+                <div class="form-group">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="confirmpassword"> Confirmar contraseña: </label>
+                  <div id="is-relative">
+                    <input type="confirmpassword" name="confirmpassword" id="confirmpassword" formControlName="confirmpassword" class="form-control" placeholder="" 
+                    [type]="hideconfirm ? 'password':'text'">
+                    <span id="icon">
+                      <i class="material-icons" matSuffix (click)="hideconfirm = !hideconfirm">
+                        {{hideconfirm ? 'visibility': 'visibility_off'}} 
+                       </i>
+                    </span>
+                  </div>
+                </div>            
                   <input name="register" id="register" class="btn btn-block register-btn mb-4" type="button"  value="Actualizar Datos">
                 </form>
                 <p class="register-card-footer-text">Todos los cambios serán guardados</p>
