@@ -6,7 +6,7 @@ import { CrearServiciosComponent } from './Components/G5Servicios/crear-servicio
 import { EditarServiciosComponent } from './Components/G5Servicios/editar-servicios/editar-servicios.component';
 
 const routes: Routes = [
-  {
+  { 
     path: 'servicios',
     component: MainComponent,
     children: [
