@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 
 import { DomSanitizer } from '@angular/platform-browser';
-import { EditServiceService } from 'src/app/Service/edit-service.service';
+import { EditServiceService } from 'src/app/Services/edit-service.service';
 @Component({
   selector: 'app-edit-service',
   templateUrl: './editar-servicios.component.html',
