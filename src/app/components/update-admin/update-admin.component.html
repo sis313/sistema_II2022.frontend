@@ -5,7 +5,6 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="update-admin.component.css">
 </head>
 <body>
@@ -27,10 +26,10 @@
                 </p>
               </div>
               <p class="register-card-description">Ingrese sus datos a ser modificados</p>
-              <form [formGroup]="newAdminForm">
+              <form [formGroup]="newAdminForm" (ngSubmit)="editProvider()">
                 <div class="form-group">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="fullname"> Nombre Completo: </label>
-                  <input type="text" name="fullname" id="fullname" formControlName="fullname" class="form-control" placeholder="">
+                  <label class="block text-gray-700 text-sm font-bold mb-2" for="name"> Nombre Completo: </label>
+                  <input type="text" name="name" id="name" formControlName="name" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
                   <label class="block text-gray-700 text-sm font-bold mb-2" for="email"> Correo Electrónico: </label>
@@ -67,7 +66,7 @@
                     </span>
                   </div>
                 </div>            
-                  <input name="register" id="register" class="btn btn-block register-btn mb-4" type="button"  value="Actualizar Datos">
+                  <input name="register" id="register" class="btn btn-block register-btn mb-4" type="submit"  value="Actualizar Datos">
                 </form>
                 <p class="register-card-footer-text">Todos los cambios serán guardados</p>
                 

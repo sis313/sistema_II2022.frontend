@@ -25,6 +25,10 @@ export class UpdateAdminComponent implements OnInit {
               private router: Router,) { 
     this.newAdminForm=this.fb.group({
       name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      confirmpassword: new FormControl('', Validators.required),
                 
     })            
   }
@@ -41,7 +45,7 @@ export class UpdateAdminComponent implements OnInit {
       createDate: this.adminProvider.createDate,
       updateDate: this.adminProvider.updateDate
     }
-    //await this.updateProvider(newProvider);
+    await this.updateProvider(newProvider);
 
   }
 
@@ -50,7 +54,15 @@ export class UpdateAdminComponent implements OnInit {
 
     console.log("ID del administrador: ",this.idParam);
     this.adminProvider = await this.getUserById(this.idParam);
-    console.log(this.adminProvider);
+    this.newAdminForm.setValue(
+      {
+        name: this.adminProvider.name,
+        email: this.adminProvider.email,
+        username: this.adminProvider.nickname,
+        password: this.adminProvider.password,
+        confirmpassword: this.adminProvider.password
+      });
+    console.log("Datos del administrador: ",this.newAdminForm.value);
 
   }
 
@@ -61,5 +73,48 @@ export class UpdateAdminComponent implements OnInit {
       respuesta = response;
     }).catch(e => console.error(e));
     return respuesta;
+  }
+
+  successNotification(mensaje:string){
+    Swal.fire({
+      title: 'CORRECTO',
+      text: mensaje,
+      icon: 'success',
+      showCancelButton: false,
+      confirmButtonText: 'Ok',
+    }).then((result) => {
+      if (result.value) {
+        console.log('Admin dashboard')
+       // this.router.navigateByUrl('');
+      }
+    })
+  } 
+    
+  wrongNotification(mensaje:string){
+    Swal.fire({
+      icon: 'error',
+      title: 'Error en la modificación de datos',
+      text: mensaje,
+    })
+  }
+
+  async updateProvider(provider:user){
+    if(this.newAdminForm.valid){
+      let respuesta;
+      this.adminListService.updateProvider(this.idParam,provider).toPromise().then(async (response: any) => {
+        if(this.newAdminForm.value.password ==  this.newAdminForm.value.confirmpassword) {
+          this.successNotification('Se modificaron los datos correctamente');
+          respuesta = response;
+          console.log("LA RESPUESTA ES:")
+          console.log(respuesta)
+          console.log("FIN RESPUESTA")
+          return respuesta;
+        } else {
+          this.wrongNotification('Las contraseñas no coinciden, intente de nuevo');  
+        }
+      }).catch(e => console.error(e));
+    } else{
+      this.wrongNotification('Complete los espacios vacíos')
+    } 
   }
 }
