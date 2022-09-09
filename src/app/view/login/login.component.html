@@ -1,4 +1,5 @@
-<<div class="page-holder align-items-center py-4 bg-gray-100 vh-100">
+<router-outlet></router-outlet>
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 px-lg-4"  *ngIf="userlogin">
@@ -26,52 +27,16 @@
               </div>-->
 
 
-              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalVerificacion" type="submit" >Ingresar</button>
+              <button class="btn btn-primary" data-bs-toggle="modal" type="submit" >Ingresar</button>
             </form>
           </div>
           <div class="card-footer px-lg-5 py-lg-4">
-            <div class="text-sm text-muted">No tienes una cuenta? <a style="color: blue" (click)="user_register()">Registrate</a>.</div>
+
+            <div class="text-sm text-muted">No tienes una cuenta? <a style="color: blue" href="/registro">Registrate</a>.</div>
           </div>
         </div>
       </div>
-      <!-- register -->
-      <div class="col-lg-6 px-lg-4" *ngIf="userregister">
-        <div class="card">
-          <div class="card-header px-lg-5">
-            <div class="card-heading text-primary">Registro de usuario</div>
-          </div>
-          <div class="card-body p-lg-5">
-            <h3 class="mb-4">Registrate</h3>
-            <p class="text-muted text-sm mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-            <form action="../../../index.html">
-              <div class="form-floating mb-3">
-                <input class="form-control" id="username" type="email" placeholder="name@example.com" required>
-                <label for="username">Nombre de usuario</label>
-              </div>
-              <div class="form-floating mb-3">
 
-
-                <input class="form-control" id="floatingInput2" type="email" placeholder="name@example.com" required>
-                <label for="floatingInput">Correo electronico</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input class="form-control" id="floatingPassword2" type="password" placeholder="Password" required>
-                <label for="floatingPassword">Contraseña</label>
-              </div>
-              <!-- <div class="form-check mb-3">
-                 <input class="form-check-input" type="checkbox" name="agree" id="agree">
-                 <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
-               </div>-->
-               <div class="form-group">
-                 <button class="btn btn-primary" id="regidter" type="button" name="registerSubmit">Registarse</button>
-               </div>
-             </form>
-           </div>
-           <div class="card-footer px-lg-5 py-lg-4">
-             <div class="text-sm text-muted">Ya tienes una cuenta? <a style="color: blue" (click)="user_login()">vuelve al ingreso</a>.</div>
-           </div>
-         </div>
-       </div>
        <div class="col-lg-6 col-xl-5 ms-xl-auto px-lg-4 text-center text-primary"><img class="img-fluid mb-4" width="1000" src="https://datos.gob.es/sites/default/files/styles/image_json_ld/public/blog/image/imagen_post_35.jpg" alt="" >
          <h1 class="mb-4"><br class="d-none d-lg-inline">Sistema georeferenciado.</h1>
          <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -80,84 +45,4 @@
    </div>
  </div>
 
-
-
-
-
-<div class="modal fade" id="modalVerificacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true" >
-  <div class="modal-dialog">
-    <div class="modal-content align-content-center">
-      <div class="modal-header">
-        <h3 class="modal-title col-11 text-center">Verifica tu correo</h3>
-        <button id="cerrar" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
-      </div>
-
-
-      <div class="modal-body text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="blue" class="bi bi-envelope-exclamation" viewBox="0 0 16 16">
-          <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-          <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1.5a.5.5 0 0 1-1 0V11a.5.5 0 0 1 1 0Zm0 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-        </svg>
-        <h6>Enviamos un correo de verificacion a:</h6>
-        <h6>el correo va aqui</h6>
-        <button class="btn btn-primary" id="reenviar" type="button" name="reenviarSubmit">Reenviar correo</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="modal fade" id="modalVerificacionT" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true" >
-  <div class="modal-dialog">
-    <div class="modal-content align-content-center">
-      <div class="modal-header">
-        <h3 class="modal-title col-11 text-center">Registro completado</h3>
-        <button id="cerrar1" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-
-      <div class="modal-body text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="green" class="bi bi-envelope-check" viewBox="0 0 16 16">
-          <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-          <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"/>
-        </svg>
-        <h6>Felicidades</h6>
-        <h6>Su cuenta ha sido verificada</h6>
-        <button class="btn btn-primary" id="iniciar" type="button" name="reenviarSubmit">Reenviar correo</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="modal fade" id="modalVerificacionF" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true" >
-  <div class="modal-dialog">
-    <div class="modal-content align-content-center">
-      <div class="modal-header">
-        <h3 class="modal-title col-11 text-center">Verificacion fallida</h3>
-        <button id="cerrar2" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
-      </div>
-
-
-      <div class="modal-body text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="red" class="bi bi-envelope-x" viewBox="0 0 16 16">
-          <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-          <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-4.854-1.354a.5.5 0 0 0 0 .708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647-.646-.647a.5.5 0 0 0-.708 0Z"/>
-        </svg>
-        <h6>Algo salio mal</h6>
-        <h6>Tu correo electronico no pudo ser verificado :(</h6>
-        <button class="btn btn-primary" id="volver" type="button" name="reenviarSubmit">Registrarse</button>
-      </div>
-    </div>
-  </div>
-</div>
 
