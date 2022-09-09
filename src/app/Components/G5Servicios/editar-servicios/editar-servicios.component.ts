@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {environment} from '../../../environments/environment';
+import {environment} from '../../../../environments/environment';
 import * as mapboxgl from 'mapbox-gl'
 import { Router } from '@angular/router';
 
 
 import { DomSanitizer } from '@angular/platform-browser';
-import { EditServiceService } from 'src/app/Services/edit-service.service';
+import { EditServiceService } from 'src/app/Services/G5Servicios/edit-service.service';
 @Component({
   selector: 'app-edit-service',
   templateUrl: './editar-servicios.component.html',
