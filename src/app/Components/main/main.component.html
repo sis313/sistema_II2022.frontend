@@ -1,6 +1,5 @@
 <mat-drawer-container class="all">
   <mat-drawer mode="side" opened>
-    <app-sidebar></app-sidebar>
     
   </mat-drawer>
   
@@ -11,14 +10,14 @@
       <!-- <app-edit-service></app-edit-service> -->
       <!--<app-reporte-general></app-reporte-general>-->
       <router-outlet> </router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+    </mat-drawer-content>  
+  </mat-drawer-container>    
 
 
   <!--  
       <mat-drawer-container class="all">
     <mat-drawer
-      class="sidebar"
+      class="sidebar" 
       mode="side"
       [class.menu-open]="isSidebarOpen2"
       [class.menu-close]="!isSidebarOpen2"

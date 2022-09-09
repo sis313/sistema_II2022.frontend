@@ -1,22 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import * as mapboxgl from 'mapbox-gl'
-import { HttpEventType, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { HospitalService } from 'src/app/Service/hospital.service';
-import { CityService } from 'src/app/Service/city.service';
-import { Hospital } from 'src/app/Models/Hospital';
-import { City } from 'src/app/Models/City';
-import { Country } from 'src/app/Models/Country';
-import { CountryService } from 'src/app/Service/country.service';
-import { Producto } from 'src/app/Models/producto';
 
-import { Area } from 'src/app/Models/area';
-import { TipoProducto } from 'src/app/Models/tipoProducto';
 
 import { DomSanitizer } from '@angular/platform-browser';
-import { Imagen } from 'src/app//Models/imagen';
 import { EditServiceService } from 'src/app/Service/edit-service.service';
 @Component({
   selector: 'app-edit-service',
@@ -27,9 +15,6 @@ export class EditarServiciosComponent implements OnInit {
 
   lat:number=0;
   lon:number=0;
-  hosp:Array<Hospital>=[];
-  city:Array<City>=[];
-  country:Array<Country>=[];
   map!: mapboxgl.Map;
   dat:any;
   currentMarkers:any[]=[];
@@ -45,8 +30,6 @@ export class EditarServiciosComponent implements OnInit {
   nombreimagen ='default.jpg';
   nombre :string="";
   precio: number=0;
-  area :Area[] = [];
-  tipoproducto :TipoProducto[] = [];
   areaid = 1;
   tipoproductoid = 1;
   nombreArea='';
@@ -57,7 +40,7 @@ export class EditarServiciosComponent implements OnInit {
  
 
   negocios:any | undefined;
-  constructor(private sanitizer:DomSanitizer,private countries:CountryService ,private hos: HospitalService,private cities:CityService, private router: Router,private editServiceService:EditServiceService) { }
+  constructor(private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService) { }
  
   ngOnInit(): void {
    
@@ -164,88 +147,10 @@ export class EditarServiciosComponent implements OnInit {
     console.log(this.negocios);
   }
   
-  marcadores(){
-   this.delete_marker(); 
-  console.log("cantidad"+this.hosp.length)
-  for(let i=0;i<this.hosp.length ;i++){
-  
-    
-    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML (
-      `<div class:"mapboxgl-popup-content" style="color:black;margin:0,padding:0, font: 200 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif"><h2>Ciudad : ${this.hosp[i].nameCity}<br> latitud-longitud : ${this.hosp[i].latitude};<br>  ${this.hosp[i].longitude}</h2></div>`
-      );
-
-    const marker2 = new mapboxgl.Marker({ color: 'yellow', rotation: 25 })
-    .setLngLat([this.hosp[i].longitude,this.hosp[i].latitude])
-    .setPopup(popup)
-    
-    .addTo(this.map);
-
-    
-  }
 
 
-  }
-  hospitales(){
-    this.hos.all().subscribe(
-      data => {
-        this.hosp = data;
-       this.marcadores();
-      // this.clusters();
-        console.log(this.hosp);
-      },
-      err => {
-        console.log(err.error);
-      }
-    );
-  }
 
-  ciudades(){
 
-    this.cities.all().subscribe(
-      data => {
-        this.city = data;
-       //this.marcadores()
-       this.ciudades_Geojson();
-        console.log(this.city);
-      },
-      err => {
-        console.log(err.error);
-      }
-    );
-  }
-
-  ciudades_Geojson(){
-    this.dat=JSON.parse(JSON.stringify({
-      "type": "FeatureCollection",
-      features: [
-        {
-          "type": "Feature",
-          "properties": {"message": "Null Island",'iconSize': [25, 25],"confirmed":"","deaths":"","recovered":""},
-          "geometry": {
-            "type": "Point",
-              "coordinates": [
-                0,0
-              ]
-            }
-        }
-       
-    ]
-    
-      }));
-
-      for(let i=0;i<this.city.length;i++){
-   
-        this.dat.features.push(JSON.parse(JSON.stringify({
-         "type":"Feature",
-         "properties":{"message":this.city[i].city,'iconSize': [10, 10],"confirmed":this.city[i].confirmed,"deaths":this.city[i].deaths,"recovered":this.city[i].recovered},
-          "geometry":{"type":"Point", "coordinates":[this.city[i].longitude,this.city[i].latitude]}
-       })))
-         
-       }
-       //this.delete_marker();
-    this.Marker_city();
-
-  }
 
   Marker_city(){
      
@@ -380,7 +285,6 @@ export class EditarServiciosComponent implements OnInit {
           if(marker.geometry.coordinates[0]==-65.2696 && marker.geometry.coordinates[1]== -19.031){
             //this.map.remove();
             this.map.setZoom(1);
-            this.hospitales();
             this.map.flyTo({
               center: [-62.5062222,-17.0653827],
               zoom: 5
