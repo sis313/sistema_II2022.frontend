@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     RouterModule,  
     ReactiveFormsModule, 
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

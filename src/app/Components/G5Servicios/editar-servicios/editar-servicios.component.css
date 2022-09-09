@@ -10,6 +10,18 @@
 i{
   color: var(--color3);
 }
+input,select{
+  margin-left: 10px;
+  border: 2px solid var(--color1);
+}
+input:focus,input:hover,input:visited,input:active{
+  border-bottom: 0px;
+  border: 2px solid var(--color2) !important;
+}
+select:focus,select:hover,select:visited,select:active{
+  border-bottom: 0px;
+  border: 2px solid var(--color2) !important;
+}
 #principal{
     /* background-image: url('https://analiticaderetail.com/wp-content/uploads/2018/10/analisis-de-ventas.jpg'); */
     /* background-color: var(--color3); */

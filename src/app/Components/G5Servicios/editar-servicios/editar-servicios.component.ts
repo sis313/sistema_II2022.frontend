@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 
 import { DomSanitizer } from '@angular/platform-browser';
 import { EditServiceService } from 'src/app/Services/G5Servicios/edit-service.service';
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-edit-service',
   templateUrl: './editar-servicios.component.html',
@@ -142,9 +144,34 @@ export class EditarServiciosComponent implements OnInit {
         this.cambiarPosicion(e.lngLat.lng,e.lngLat.lat);
       });
   }
+  nombre_act:any;
+  desc_act:any;
+  tipo_act:any;
   actualizar(){
     console.log("Actualizar--------------------------------------------");
     console.log(this.negocios);
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: "Quieres actualizar los datos de tu negocio?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, actualizar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.editServiceService.actualizarNegocio(
+          {
+            "nombre":this.nombre_act,
+            "descripction":this.desc_act,
+            "tipo":this.tipo_act,
+            "latitud":this.negocios[0].latitude,
+            "longitud":this.negocios[0].longitude
+          }
+        );
+      }
+    })
+    
   }
   
 

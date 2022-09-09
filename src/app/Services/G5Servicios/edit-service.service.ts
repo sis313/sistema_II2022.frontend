@@ -6,6 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EditServiceService {
+  actualizarNegocio(datos:any) {
+    alert(
+      JSON.stringify(datos)
+    );
+  }
 
   Peurl='http://localhost:8080';
   httpOptions  = {headers : new HttpHeaders({'Content-Type':'application/json'})}
