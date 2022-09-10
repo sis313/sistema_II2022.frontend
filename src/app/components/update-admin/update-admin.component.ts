@@ -117,4 +117,16 @@ export class UpdateAdminComponent implements OnInit {
       this.wrongNotification('Complete los espacios vacíos')
     } 
   }
+
+  keyPressAlphaNumeric(event: { keyCode: any; preventDefault: () => void; }) {
+
+    var inp = String.fromCharCode(event.keyCode);
+
+    if (/[a-zA-Z]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
+  }
 }

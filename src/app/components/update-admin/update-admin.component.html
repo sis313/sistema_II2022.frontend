@@ -29,11 +29,11 @@
               <form [formGroup]="newAdminForm" (ngSubmit)="editProvider()">
                 <div class="form-group">
                   <label class="block text-gray-700 text-sm font-bold mb-2" for="name"> Nombre Completo: </label>
-                  <input type="text" name="name" id="name" formControlName="name" class="form-control" placeholder="">
+                  <input type="text" name="name" id="name" formControlName="name" class="form-control" placeholder="" (keypress)="keyPressAlphaNumeric($event)">                  
                 </div>
                 <div class="form-group">
                   <label class="block text-gray-700 text-sm font-bold mb-2" for="email"> Correo Electrónico: </label>
-                  <input type="text" name="email" id="email" formControlName="email" class="form-control" placeholder="">
+                  <input type="text" name="email" id="email" formControlName="email"  class="form-control" placeholder="">
                 </div>
 
                 <div class="form-group">
