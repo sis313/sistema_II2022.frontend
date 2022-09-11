@@ -1,0 +1,65 @@
+
+<div class="container-fluid" id="container">
+  
+    <div class="form-check" hidden="true">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Default checkbox
+      </label>
+    </div>
+    <div class="form-check" hidden="true">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+      <label class="form-check-label" for="flexCheckChecked">
+        Checked checkbox
+      </label>
+    </div>
+    
+    <form class="row g-3" hidden="true">
+      <div class="col-auto">
+        <label for="staticEmail2" class="visually-hidden">Palabra clave</label>
+        <input type="text"  id="staticEmail2" placeholder="palabra clave">
+      </div>
+       <!--<div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Password</label>
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+      </div>-->
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+      </div>
+    </form>
+  <br>
+    <p class="mb-1" hidden="true">Negocios</p>
+      <div class="list-group">
+        
+        
+          <tr *ngFor="let negocio of negocios">
+          <div class="d-flex w-100 justify-content-between" style="background-color: #CEA660;  padding: 20px;">
+            
+                     <div class="list-group-item" id="list-group-item" style="background-color: #745d20; width: 225 px; height: 225px;">
+                <img src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
+            </div>
+           
+            <div class="col-md-4">
+            <p class="mb-1">Tipo de negocio</p>
+            <p class="mb-1">Nombre {{negocio.nombre}}</p>
+            <p class="mb-1">Descripcion</p>
+        </div>
+
+       <div>
+        <button type="button" class="btn" id="btnSucursales">Sucursales</button>
+        <br>
+  <button type="button" class="btn" (click)="eliminarNegocio(negocio.nombre)" id="btnEliminar">Eliminar</button>
+</div>
+  
+  
+  
+          </div>
+         
+          
+       
+  
+       
+  
+  
+  </div>
+  <br>

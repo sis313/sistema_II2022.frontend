@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { NegocioComponent } from './view/negocio/negocio.component';
 import { ProductoComponent } from './view/producto/producto.component';
 import { SucursalComponent } from './view/sucursal/sucursal.component';
+import { ListaSucursalComponent } from './view/lista-sucursal/lista-sucursal.component';
+import { ListaNegocioComponent } from './view/lista-negocio/lista-negocio.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,12 @@ const routes: Routes = [
   },
   {
     path:'producto',component:ProductoComponent
+  },
+  {
+    path:'lista-sucursal',component:ListaSucursalComponent
+  },
+  {
+    path:'lista-negocio',component:ListaNegocioComponent
   }
 ];
 
