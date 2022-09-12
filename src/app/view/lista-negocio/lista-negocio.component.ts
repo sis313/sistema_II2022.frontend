@@ -9,25 +9,32 @@ import { ListaNegocioService } from 'src/app/service/lista-negocio.service';
 export class ListaNegocioComponent implements OnInit {
 
   negocios = [
-    { nombre: 'En obrajes', estado: 'Cerrado',horario: '12:00 a 14:00' },
-    { nombre: 'En obrajessadsa', estado: 'Cerrado',horario: '12:00 a 14:00' },
-    { nombre: 'En obrajessadsa', estado: 'Cerrado',horario: '12:00 a 14:00' },
-    { nombre: 'En obrajessadsa', estado: 'Cerrado',horario: '12:00 a 14:00' },
+    { idBusiness:0,name:'nombre',description:'description',idTypeBusiness:0,status:0,userIdUser:0 },
 ];
 
   constructor(private service: ListaNegocioService) { 
-    this.service.getNegocios().subscribe(data=>{
-      //console.warn(data)
+    this.service.getNegocios().subscribe((data:any)=>{
       console.log(data)
+      this.negocios=data
     })
   }
 
   ngOnInit(): void {
   }
 
-  eliminarNegocio(nombre: String) {
-    if(confirm("Are you sure to delete "+nombre)) {
-      console.log("Implement delete functionality here");
+  eliminarNegocio(idBusiness: any, name: any) {
+    if(confirm("Are you sure to delete "+idBusiness+name)) {
+      console.log(typeof(idBusiness+""))
+      this.service.deleteNegocio(idBusiness+"").subscribe((response: any)=>{
+        if(response.length==0){
+          console.log("sin respuesta")
+        }else{
+          console.log(response);
+        }
+      });
+
+
+
     }
   }
 }

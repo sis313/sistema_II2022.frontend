@@ -40,15 +40,15 @@
             </div>
            
             <div class="col-md-4">
-            <p class="mb-1">Tipo de negocio</p>
-            <p class="mb-1">Nombre {{negocio.nombre}}</p>
-            <p class="mb-1">Descripcion</p>
+            <p class="mb-1">Tipo de negocio: {{negocio.idTypeBusiness}}</p>
+            <p class="mb-1">Nombre: {{negocio.name}}</p>
+            <p class="mb-1">Descripción: {{negocio.description}}</p>
         </div>
 
        <div>
         <button type="button" class="btn" id="btnSucursales">Sucursales</button>
         <br>
-  <button type="button" class="btn" (click)="eliminarNegocio(negocio.nombre)" id="btnEliminar">Eliminar</button>
+  <button type="button" class="btn" (click)="eliminarNegocio(negocio.idBusiness,negocio.name)" id="btnEliminar">Eliminar</button>
 </div>
   
   
