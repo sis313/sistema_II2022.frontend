@@ -8,7 +8,7 @@ export class ListaSucursalService {
   constructor(private http: HttpClient) { }
 
   getSucursales(){
-    let url = "https://serviceprojectspring.herokuapp.com/api/city"
+    let url = "https://serviceprojectspring.herokuapp.com/api/branch"
     return this.http.get(url);
   }
 }

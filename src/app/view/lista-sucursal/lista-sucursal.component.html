@@ -42,16 +42,14 @@
               <img src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
           </div>
             <div>
-                <p class="mb-1">Cerrado</p>
-                <p class="mb-1">3 days ago</p>
-                <p class="mb-1">Sucursal obrajes {{sucursal.nombre}}</p>
-                <p class="mb-1">Horarios</p>
+                <p class="mb-1">idBusiness {{sucursal.idBusiness}}</p>
+                <p class="mb-1">Dirección {{sucursal.direction}}</p>
                 
                 <ul class="list-group">
-                    <li class="list-group-item">Lunes a Viernes 6 am - 4 pm</li>
-                    <li class="list-group-item">Sabado 6 am - 12 pm; 14 pm - 20 pm</li>
-                    <li class="list-group-item">Domingo 6 am - 12 pm</li>
-                    <li class="list-group-item">Feriados 9 am - 12 pm</li>
+                    <li class="list-group-item">{{sucursal.attentionDays}} </li>
+                   <li class="list-group-item">{{sucursal.openHour}} a {{sucursal.closeHour}}</li>
+                   <!--   <li class="list-group-item">Domingo 6 am - 12 pm</li>
+                    <li class="list-group-item">Feriados 9 am - 12 pm</li>-->
                   </ul>
                 </div>
 
@@ -66,10 +64,11 @@
                     <div id="mapa-mapbox"></div>   
                   </div>-->
                   <a href="#" class="btn" id="btnRuta">Ruta</a>
+                 
                 </div>
               </div>
 
-
+              
           </div>
             </tr>
       

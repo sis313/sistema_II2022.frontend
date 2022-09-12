@@ -9,10 +9,8 @@ import { ListaSucursalService } from 'src/app/service/lista-sucursal.service';
 export class ListaSucursalComponent implements OnInit {
 
   sucursales = [
-    { nombre: 'En obrajes', estado: 'Cerrado',horario: '12:00 a 14:00' },
-    { nombre: 'asdasdas', estado: 'Cerrado',horario: '12:00 a 14:00' },
-    { nombre: 'En obrajes', estado: 'Cerrado',horario: '12:00 a 14:00' },
-    { nombre: 'asdasdas', estado: 'Cerrado',horario: '12:00 a 14:00' },
+    {attentionDays: 'Monday',closeHour: '06:01:01',createDate: '2021-12-31',direction: 'branch direction',idBranch: 4,idBusiness: 104,
+    /*idLocation: 4,idZone: 4,image: "aW1hZ2UgZmlsZQ==",*/openHour: '06:01:01',status: 1,updateDate: '2021-12-31'},
 ];
 
 comentarios = [
@@ -23,10 +21,11 @@ comentarios = [
 ];
 
 constructor(private service: ListaSucursalService) { 
-  /*this.service.getSucursales().subscribe(data=>{
+  this.service.getSucursales().subscribe((data:any)=>{
     //console.warn(data)
     console.log(data)
-  })*/
+    this.sucursales=data
+  })
 }
   ngOnInit(): void {
   }

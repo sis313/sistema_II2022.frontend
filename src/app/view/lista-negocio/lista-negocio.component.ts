@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaNegocioService } from 'src/app/service/lista-negocio.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-lista-negocio',
@@ -12,7 +13,7 @@ export class ListaNegocioComponent implements OnInit {
     { idBusiness:0,name:'nombre',description:'description',idTypeBusiness:0,status:0,userIdUser:0 },
 ];
 
-  constructor(private service: ListaNegocioService) { 
+  constructor(private service: ListaNegocioService, private router: Router) { 
     this.service.getNegocios().subscribe((data:any)=>{
       console.log(data)
       this.negocios=data
@@ -31,7 +32,16 @@ export class ListaNegocioComponent implements OnInit {
         }else{
           console.log(response);
         }
+        /*console.log("antes")
+        this.router.navigate([this.router.url]);
+        console.log("despues")*/
       });
+
+     /* this.service.getNegocios().subscribe((data:any)=>{
+        console.log(data)
+        this.negocios=data
+       
+      })*/
 
 
 
