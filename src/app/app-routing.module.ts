@@ -5,10 +5,11 @@ import { UpdateAdminComponent } from './components/update-admin/update-admin.com
 
 const routes: Routes = [
   { path: 'updateAdmin/:id', component: UpdateAdminComponent },
+  { path: 'business', component: BusinessListComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

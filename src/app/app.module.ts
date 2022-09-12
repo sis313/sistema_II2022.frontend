@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UpdateAdminComponent } from './components/update-admin/update-admin.component';
 import { BusinessListComponent } from './components/business-list/business-list.component';
+// import {MatTableModule} from '@angular/material/table'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BusinessListComponent } from './components/business-list/business-list.
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
