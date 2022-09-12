@@ -6,7 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UpdateAdminComponent } from './components/update-admin/update-admin.component';
 import { BusinessListComponent } from './components/business-list/business-list.component';
-// import {MatTableModule} from '@angular/material/table'
+import {MatTableModule} from '@angular/material/table'
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { BusinessListComponent } from './components/business-list/business-list.
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatMenuModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
