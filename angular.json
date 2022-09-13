@@ -1,19 +1,13 @@
+
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-<<<<<<< HEAD
   "cli": {
-    "analytics": "b05c08d6-211a-4811-8131-be8c37fb3724"
+    "analytics": "22332d07-1989-4cfb-be34-b47db0fb7877"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "covid-frontend": {
-=======
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
     "Prueba": {
->>>>>>> 4fbf3cacd96f0876ee6c02e17e1f0987d25c7386
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -27,11 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-<<<<<<< HEAD
-            "outputPath": "dist/covid-frontend",
-=======
             "outputPath": "dist/Prueba",
->>>>>>> 4fbf3cacd96f0876ee6c02e17e1f0987d25c7386
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -41,11 +31,7 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-=======
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
->>>>>>> 4fbf3cacd96f0876ee6c02e17e1f0987d25c7386
               "src/styles.css"
             ],
             "scripts": []
@@ -87,17 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-<<<<<<< HEAD
-              "browserTarget": "covid-frontend:build:production"
-            },
-            "development": {
-              "browserTarget": "covid-frontend:build:development"
-=======
               "browserTarget": "Prueba:build:production"
             },
             "development": {
               "browserTarget": "Prueba:build:development"
->>>>>>> 4fbf3cacd96f0876ee6c02e17e1f0987d25c7386
             }
           },
           "defaultConfiguration": "development"
@@ -105,11 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-<<<<<<< HEAD
-            "browserTarget": "covid-frontend:build"
-=======
             "browserTarget": "Prueba:build"
->>>>>>> 4fbf3cacd96f0876ee6c02e17e1f0987d25c7386
           }
         },
         "test": {
@@ -124,11 +99,7 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-=======
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
->>>>>>> 4fbf3cacd96f0876ee6c02e17e1f0987d25c7386
               "src/styles.css"
             ],
             "scripts": []
@@ -137,9 +108,5 @@
       }
     }
   },
-<<<<<<< HEAD
-  "defaultProject": "covid-frontend"
-=======
   "defaultProject": "Prueba"
->>>>>>> 4fbf3cacd96f0876ee6c02e17e1f0987d25c7386
 }

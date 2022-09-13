@@ -13,7 +13,7 @@ export class ListaNegocioComponent implements OnInit {
     { idBusiness:0,name:'nombre',description:'description',idTypeBusiness:0,status:0,userIdUser:0 },
 ];
 
-  constructor(private service: ListaNegocioService, private router: Router) { 
+  constructor(private service: ListaNegocioService) { 
     this.service.getNegocios().subscribe((data:any)=>{
       console.log(data)
       this.negocios=data
