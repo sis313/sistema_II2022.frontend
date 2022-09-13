@@ -35,7 +35,7 @@ const routes: Routes = [
         path: "negocio",component: NegocioComponent
       },
       {
-        path: "editarServicios",component: EditarServiciosComponent
+        path: "editar-negocio",component: EditarServiciosComponent
       },
     ]
   },

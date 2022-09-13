@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { EditServiceService } from 'src/app/service/edit-service.service';
 import Swal from 'sweetalert2'
+import { ListaNegocioService } from 'src/app/service/lista-negocio.service';
+import { NegocioService } from 'src/app/service/negocio.service';
 
 @Component({
   selector: 'app-edit-service',
@@ -39,13 +41,19 @@ export class EditarServiciosComponent implements OnInit {
   caracteristica='';
   cantidad = null;
   medida = '';
- 
-
+  negocioSeleccionado:any;
   negocios:any | undefined;
-  constructor(private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService) { }
- 
+  constructor(private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService) { }
+  obtenerNegocios(){
+    this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{
+      console.log(data)
+      this.negocios=data
+    })
+    console.log("OBTENER NEGOCIOS");
+    console.log(this.negocios);
+  }
   ngOnInit(): void {
-   
+    this.obtenerNegocios();
     
     (mapboxgl as any).accessToken =environment.mapboxkey;
   
@@ -147,6 +155,7 @@ export class EditarServiciosComponent implements OnInit {
   nombre_act:any;
   desc_act:any;
   tipo_act:any;
+  mostrar:any;
   actualizar(){
     console.log("Actualizar--------------------------------------------");
     console.log(this.negocios);
@@ -166,7 +175,8 @@ export class EditarServiciosComponent implements OnInit {
             "descripction":this.desc_act,
             "tipo":this.tipo_act,
             "latitud":this.negocios[0].latitude,
-            "longitud":this.negocios[0].longitude
+            "longitud":this.negocios[0].longitude,
+            "mostrar":this.mostrar
           }
         );
       }
@@ -363,6 +373,12 @@ export class EditarServiciosComponent implements OnInit {
       //console.log(imagen);
       //this.prev=imagen.base;
     //})
+
+  }
+  buscar(){
+    console.log(this.negocioSeleccionado);
+    this.desc_act=this.negocioSeleccionado.description;
+    this.mostrar=(this.negocioSeleccionado.status==1)?true:false;
 
   }
 

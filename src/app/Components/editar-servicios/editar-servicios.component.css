@@ -3,6 +3,7 @@
     color: var(--color1);
     font-size: var(--text2);
     font-weight: 400;
+
 }
 .btn{
   color:var(--color3);
@@ -10,15 +11,22 @@
 i{
   color: var(--color3);
 }
-input,select{
+input,select,textarea{
   margin-left: 10px;
   border: 2px solid var(--color1);
+  box-sizing:border-box!important;
+  box-sizing:border-box!important;
+
 }
 input:focus,input:hover,input:visited,input:active{
   border-bottom: 0px;
   border: 2px solid var(--color2) !important;
 }
 select:focus,select:hover,select:visited,select:active{
+  border-bottom: 0px;
+  border: 2px solid var(--color2) !important;
+}
+textarea:focus,textarea:hover,textarea:visited,textarea:active{
   border-bottom: 0px;
   border: 2px solid var(--color2) !important;
 }
