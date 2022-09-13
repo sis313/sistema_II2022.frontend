@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from 'src/app/Service/store.service';
 import { error } from '@angular/compiler/src/util';
-import { Store} from 'src/app/Model/store.model';
+import { Store } from 'src/app/Model/store.model';
 
 
 
@@ -23,9 +23,10 @@ export class MainListComponent implements OnInit {
   async revisarName(){
     this.storeC.getStoreNameHttp(this.nombre).toPromise().then(
       data => {
-        //this.storeD.push();
-        //this.storeData.setStoreName(this.storeD)
-        console.log(data);
+       // console.log(data);
+        this.storeD = data
+        this.storeC.setStoreName(this.storeD)
+        console.log(this.storeC.getStoreName());
     });
     console.log(this.nombre);
   }
