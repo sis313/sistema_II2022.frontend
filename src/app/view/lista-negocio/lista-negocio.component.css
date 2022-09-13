@@ -1,0 +1,33 @@
+#container {
+    background: #6b7a40;
+    min-height: 100%;
+  }
+
+  
+#btnSucursales {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+#btnEliminar {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}

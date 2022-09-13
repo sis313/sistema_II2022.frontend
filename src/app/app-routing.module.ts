@@ -1,30 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from './Components/main/main.component';
-import { ListadoServiciosComponent } from './Components/listado-servicios/listado-servicios.component';
-import { CrearServiciosComponent } from './Components/crear-servicios/crear-servicios.component';
-import { EditarServiciosComponent } from './Components/editar-servicios/editar-servicios.component';
+import { NegocioComponent } from './view/negocio/negocio.component';
+import { ProductoComponent } from './view/producto/producto.component';
+import { SucursalComponent } from './view/sucursal/sucursal.component';
+import { ListaSucursalComponent } from './view/lista-sucursal/lista-sucursal.component';
+import { ListaNegocioComponent } from './view/lista-negocio/lista-negocio.component';
 
 const routes: Routes = [
-  { 
-    path: 'servicios',
-    component: MainComponent,
-    children: [
-      {
-        path: "listarServicios",component: ListadoServiciosComponent
-      },
-      {
-        path: "crearServicios",component: CrearServiciosComponent
-      },
-      {
-        path: "editarServicios",component: EditarServiciosComponent
-      },
-    ]
+  {
+    path:'',component:NegocioComponent
+    
   },
   {
-    path: '**',
-    redirectTo: 'servicios',
-  }, 
+    path:'negocio',component:NegocioComponent
+    
+  },
+  {
+    path:'sucursal',component:SucursalComponent
+  },
+  {
+    path:'producto',component:ProductoComponent
+  },
+  {
+    path:'lista-sucursal',component:ListaSucursalComponent
+  },
+  {
+    path:'lista-negocio',component:ListaNegocioComponent
+  }
 ];
 
 @NgModule({
