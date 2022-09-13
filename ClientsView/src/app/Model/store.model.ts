@@ -7,16 +7,9 @@ export interface StoreDto{
     estado: string;
 }
 export class Store{
-    public idNegocio: number = 0;
-    public NombreNegocio: string = "";
-    public contacto: number = 0;
-    public descripcion: string = "";
-    public tipoNegocio: number = 0;
-    public estado: string = "";
-
-    constructor(idNegocio: number,NombreNegocio: string, 
-        contacto: number, descripcion: string,
-        tipoNegocio: number ,estado: string) {
+    constructor(public idNegocio: number,public NombreNegocio: string, 
+        public contacto: number, public descripcion: string,
+        public tipoNegocio: number , public estado: string) {
         this.idNegocio = idNegocio;
         this.NombreNegocio = NombreNegocio;
         this.contacto = contacto;
@@ -25,4 +18,14 @@ export class Store{
         this.estado = estado;
     }
 
+}
+export class StoreData{
+    store: Store [] = [];
+    constructor(){}
+    setStoreName(data: Store []){
+        this.store = data;
+    }
+    getStoreName(){
+        return this.store;
+    }
 }

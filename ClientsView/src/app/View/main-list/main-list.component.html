@@ -14,7 +14,7 @@ class="container mt-5">
             <label for="businessName" class="h4">Nombre del negocio</label> <div class="input-group">
               <!-- <div class="input-group-prepend">
                 <i class="input-group-text fa fa-search"></i>
-              </div> --> <input id="businessName" type="text" class="form-control " placeholder="Ingrese el nombre del 
+              </div> --> <input id="businessName" [(ngModel)]="nombre" type="text" class="form-control " placeholder="Ingrese el nombre del 
               negocio">
             </div>
           </div> <div class="form-group col-md-4">
@@ -24,7 +24,7 @@ class="container mt-5">
             </select>
           </div>
         </div> <div class="">
-          <button class="btn btn-success btn-lg btn-block"><i class="fa fa-search"></i> Buscar</button>
+          <a class="btn btn-success btn-lg btn-block" (click)="revisarName()"><i class="fa fa-search"></i> Buscar</a>
         </div>
       </div>
     </div>
