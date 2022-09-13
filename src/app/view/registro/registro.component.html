@@ -15,65 +15,51 @@
           <div class="card-body p-lg-5" >
             <h3 class="mb-4">Registrate</h3>
             <p class="text-muted text-sm mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-            <form action="../../../index.html">
+            <form [formGroup]="UserForm" (ngSubmit)="saveUser()">
 
               <div class="form-floating mb-3">
-                <input class="form-control" id="name" type="email" placeholder="name@example.com" required>
+                <input formControlName="name" name="name" class="form-control" id="name" type="email" placeholder="name@example.com" required>
                 <label for="username">Nombre completo</label>
               </div>
 
 
               <div class="form-floating mb-3">
-                <input class="form-control" id="username" type="email" placeholder="name@example.com" required>
+                <input formControlName="nickname" name="nickname" class="form-control" id="username" type="email" placeholder="name@example.com" required>
                 <label for="username">Nombre de usuario</label>
               </div>
               <div class="form-floating mb-3">
-
-
-                <input class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
+                <input formControlName="email" name="email" class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
                 <label for="floatingInput">Correo electronico</label>
               </div>
               <div class="form-floating mb-3">
-                <input class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
+                <input formControlName="password" class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
                 <label for="floatingPassword">Contraseña</label>
               </div>
 
               <div class="form-floating mb-3">
-                <input class="form-control" id="RepeatPassword" type="password" placeholder="Password" required>
+                <input formControlName="repeatedPassword" class="form-control" id="RepeatPassword" type="password" placeholder="Password" required>
                 <label for="floatingPassword">Repite tu Contraseña</label>
               </div>
               <!-- <div class="form-check mb-3">
                  <input class="form-check-input" type="checkbox" name="agree" id="agree">
                  <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
                </div>-->
-<br>
-
-
-<h5>Escoge tu tipo de cuenta:</h5>
-
               <div class="form-check">
-                <input class="form-check-input"  type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
+                <input formControlName="userType"  value="1" class="form-check-input" type="radio" checked>
+                <label    class="form-check-label" for="flexRadioDefault1">
                   Quiero buscar un negocio
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-                <label class="form-check-label" for="flexRadioDefault2">
+                <input formControlName="userType"  value="2"  class="form-check-input" type="radio" >
+                <label  class="form-check-label" for="flexRadioDefault2">
                   Soy propietario de un negocio
                 </label>
               </div>
-
-
-
-
-
-
               <div class="form-group">
                 <br>
-                <button class="btn btn-primary "
+                <button [disabled]="!UserForm.valid" class="btn btn-primary "
                         style="float: right; background-color:#6B7A40"
-
 
                         data-bs-toggle="modal" data-bs-target="#modalVerificacion" type="submit" >Registrarse <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
                   <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
