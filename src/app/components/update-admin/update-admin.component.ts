@@ -26,7 +26,7 @@ export class UpdateAdminComponent implements OnInit {
     this.newAdminForm=this.fb.group({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      username: new FormControl('', Validators.required),
+      nickname: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       confirmpassword: new FormControl('', Validators.required),
                 
@@ -37,10 +37,10 @@ export class UpdateAdminComponent implements OnInit {
    
     let newProvider:user={
       name: this.newAdminForm.value.name,
-      email: this.adminProvider.email,
-      password: this.adminProvider.password,
+      email: this.newAdminForm.value.email,
+      password: this.newAdminForm.value.password,
       status: this.adminProvider.status,
-      nickname:this.adminProvider.nickname,
+      nickname:this.newAdminForm.value.nickname,
       typeUserId: this.adminProvider.typeUserId,
       createDate: this.adminProvider.createDate,
       updateDate: this.adminProvider.updateDate
@@ -58,7 +58,7 @@ export class UpdateAdminComponent implements OnInit {
       {
         name: this.adminProvider.name,
         email: this.adminProvider.email,
-        username: this.adminProvider.nickname,
+       nickname: this.adminProvider.nickname,
         password: this.adminProvider.password,
         confirmpassword: this.adminProvider.password
       });
@@ -85,7 +85,7 @@ export class UpdateAdminComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         console.log('Admin dashboard')
-       // this.router.navigateByUrl('');
+        this.router.navigateByUrl('/business');
       }
     })
   } 
@@ -122,7 +122,7 @@ export class UpdateAdminComponent implements OnInit {
 
     var inp = String.fromCharCode(event.keyCode);
 
-    if (/[a-zA-Z]/.test(inp)) {
+    if (/[a-z A-Z]/.test(inp)) {
       return true;
     } else {
       event.preventDefault();
