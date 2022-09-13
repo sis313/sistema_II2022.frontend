@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
-import { user } from '../model/User';
 import { business } from '../model/Business';
 @Injectable({
   providedIn: 'root'
@@ -17,6 +16,17 @@ export class BusinesslistService {
     const url = `${this.baseUrl}adminBusiness`;
     console.log(url);
     return this.http.get<business[]>(url);
+  }
+
+  getBusinessById(id:number):Observable<business>{
+    const url = `${this.baseUrl}business/${id}`;
+    console.log(url);
+    return this.http.get<business>(url);
+  }
+
+  updateProvider(idProvider:number,provider:business):Observable<business>{
+    const url = `${this.baseUrl}business/${idProvider}`;
+    return this.http.put<business>(url,provider)
   }
 
   // getData(){
