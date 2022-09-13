@@ -9,12 +9,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
-import { ListadoServiciosComponent } from './Components/G5Servicios/listado-servicios/listado-servicios.component';
-import { CrearServiciosComponent } from './Components/G5Servicios/crear-servicios/crear-servicios.component';
-import { EditarServiciosComponent } from './Components/G5Servicios/editar-servicios/editar-servicios.component';
+import { ListadoServiciosComponent } from './Components/listado-servicios/listado-servicios.component';
+import { CrearServiciosComponent } from './Components/crear-servicios/crear-servicios.component';
+import { EditarServiciosComponent } from './Components/editar-servicios/editar-servicios.component';
 
-import { HeaderComponent } from './Components/G5Servicios/header/header.component';
-import { MainComponent } from './Components/G5Servicios/main/main.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { MainComponent } from './Components/main/main.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
