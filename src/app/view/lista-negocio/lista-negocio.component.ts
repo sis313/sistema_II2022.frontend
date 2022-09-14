@@ -14,24 +14,23 @@ export class ListaNegocioComponent implements OnInit {
 ];
 
   constructor(private service: ListaNegocioService, private router: Router) { 
+    
+  }
+
+  ngOnInit(): void {
     this.service.getNegocios().subscribe((data:any)=>{
       console.log(data)
       this.negocios=data
     })
   }
 
-  ngOnInit(): void {
-  }
-
   eliminarNegocio(idBusiness: any, name: any) {
     if(confirm("Are you sure to delete "+idBusiness+name)) {
       console.log(typeof(idBusiness+""))
       this.service.deleteNegocio(idBusiness+"").subscribe((response: any)=>{
-        if(response.length==0){
-          console.log("sin respuesta")
-        }else{
           console.log(response);
-        }
+          this.ngOnInit();
+        
         /*console.log("antes")
         this.router.navigate([this.router.url]);
         console.log("despues")*/
