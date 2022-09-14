@@ -1,0 +1,21 @@
+mat-drawer-container {
+  width: 100%;
+  background: #F6F6F4;
+  border: #F6F6F4;
+}
+mat-drawer-container mat-drawer-content app-edit-service{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.mat-drawer-side {
+  border-right: none !important;
+}
+.mat-drawer {
+  background-color: transparent !important;
+}
+mat-drawer-content{
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
+
+}

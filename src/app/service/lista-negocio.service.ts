@@ -8,12 +8,16 @@ export class ListaNegocioService {
   constructor(private http: HttpClient) { }
   
   getNegocios(){
-    let url = "http://serviceprojectspring.herokuapp.com/api/business"
-    return this.http.get(url);
+    //let url = "http://serviceprojectspring.herokuapp.com/api/business"
+    let url="http://localhost:8080/api/business"
+    return this.http.get("http://localhost:8080/api/business");
   }
 
   deleteNegocio(id: string){
     let url = "http://serviceprojectspring.herokuapp.com/api/business/"+id
     return this.http.delete(url)
+  }
+  getNegociosDeUsuarioPorID(id:any){
+    return this.http.get("http://localhost:8080/api/business/?userId="+id);
   }
 }

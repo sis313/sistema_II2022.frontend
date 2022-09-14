@@ -1,4 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    --color1:#745d20;
+    --color2:#cea660;
+    --color3:#f3ede0;
+    --color4:#6b7a40;
+    --colortext1:#f3ede0;;
+    --text1:40px;
+    --text2:20px;
+    --text3:10px;
+}
+
+html,body{
+    height: 100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+body { margin: 0;}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;}
