@@ -7,6 +7,7 @@ import { MainListComponent } from './View/main-list/main-list.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HomeComponentComponent } from './View/home-component/home-component.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HomeComponentComponent } from './View/home-component/home-component.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponentComponent},
       {path: 'main', component: MainListComponent},
