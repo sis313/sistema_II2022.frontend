@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaSucursalService } from 'src/app/service/lista-sucursal.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,10 +9,7 @@ import { ListaSucursalService } from 'src/app/service/lista-sucursal.service';
   styleUrls: ['./listado-sucursales-por-id.component.css']
 })
 export class ListadoSucursalesPorIDComponent implements OnInit {
-  sucursales = [
-    {attentionDays: 'Monday',closeHour: '06:01:01',createDate: '2021-12-31',direction: 'branch direction',idBranch: 4,idBusiness: 104,
-    /*idLocation: 4,idZone: 4,image: "aW1hZ2UgZmlsZQ==",*/openHour: '06:01:01',status: 1,updateDate: '2021-12-31'},
-];
+  sucursales:any;
 
 comentarios = [
   { nombre: 'carlos', comentario: 'bien',fecha: '23/04/12' },
@@ -20,14 +18,20 @@ comentarios = [
 
 ];
 
-constructor(private service: ListaSucursalService) { 
-  this.service.getSucursales().subscribe((data:any)=>{
+constructor(private service: ListaSucursalService,private router: Router) { 
+  this.service.getSucursalesLocalhost().subscribe((data:any)=>{
     //console.warn(data)
     console.log(data)
     this.sucursales=data
-  })
+    console.log(this.sucursales);
+  });
+  
 }
   ngOnInit(): void {
+  }
+  actualizarSucursal(id:any){
+    console.log("Ir a ruta de negocio:"+id);
+    this.router.navigate(['editar-sucursal',id]);
   }
 
 }

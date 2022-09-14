@@ -9,6 +9,8 @@ import { ListaNegocioComponent } from './view/lista-negocio/lista-negocio.compon
 import { NegocioComponent } from './view/negocio/negocio.component';
 import { ListadoServiciosComponent } from './Components/listado-servicios/listado-servicios.component';
 import { CrearServiciosComponent } from './Components/crear-servicios/crear-servicios.component';
+import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales-por-id/listado-sucursales-por-id.component';
+import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,9 @@ const routes: Routes = [
   {
     path:'lista-sucursal',component:ListaSucursalComponent
   },
+  {
+    path:'editar-sucursal/:id',component:EditarSucursalComponent
+  },
   { 
     path: 'servicios',
     component: MainComponent,
@@ -35,7 +40,7 @@ const routes: Routes = [
         path: "negocio",component: NegocioComponent
       },
       {
-        path: "editar-negocio",component: EditarServiciosComponent
+        path: "editar-negocio",component: EditarServiciosComponent,
       },
     ]
   },

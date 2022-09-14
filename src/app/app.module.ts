@@ -31,6 +31,7 @@ import { EditarServiciosComponent } from './Components/editar-servicios/editar-s
 import { HeaderComponent } from './Components/header/header.component';
 import { MainComponent } from './Components/main/main.component';
 import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales-por-id/listado-sucursales-por-id.component';
+import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales
     HeaderComponent,
     MainComponent,
     ListadoSucursalesPorIDComponent,
+    EditarSucursalComponent,
   ],
   imports: [
     HttpClientModule,

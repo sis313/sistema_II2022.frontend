@@ -8,23 +8,13 @@
     <p class="mb-1" style="size: 14px; color: black">Comentarios</p>
     <br />
     <ol class="list-group">
-      <tr *ngFor="let comentario of comentarios">
+      <tr *ngFor="let sucursal of sucursales" (click)="actualizarSucursal(sucursal.idBranch)">
         <li
           class="list-group-item d-flex justify-content-between align-items-start"
           style="background-color: #cea660; padding: 20px"
         >
-          <img
-            src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg"
-            class="card-img-top"
-            alt="..."
-            style="width: 100px; height: 100px"
-          />
-          <div class="ms-2 me-auto">
-            Fecha y hora{{ comentario.fecha }}
-            <div class="fw-bold">Usuario{{ comentario.nombre }}</div>
-            Comentario{{ comentario.comentario }}
-          </div>
-          <span class="badge bg-primary rounded-pill">14</span>
+          <p>{{sucursal.idBranch}}</p>
+          <p>{{sucursal.direction}}</p>
         </li>
       </tr>
     </ol>

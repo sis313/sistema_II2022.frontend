@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ListaSucursalService {
+  getSucursalesLocalhost() {
+    let url = "http://localhost:8080/api/branch"
+    return this.http.get(url);
+  }
 
   constructor(private http: HttpClient) { }
 
