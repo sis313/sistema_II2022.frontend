@@ -6,5 +6,5 @@ export class UserModel{
     email:string = "";
     nickname:string = "";
     password:string = "";
-    type:string = "";
+    idTypeUser:string = "";
 }
