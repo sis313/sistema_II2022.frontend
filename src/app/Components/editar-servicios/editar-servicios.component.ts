@@ -9,6 +9,7 @@ import { EditServiceService } from 'src/app/service/edit-service.service';
 import Swal from 'sweetalert2'
 import { ListaNegocioService } from 'src/app/service/lista-negocio.service';
 import { NegocioService } from 'src/app/service/negocio.service';
+import { ListadoHelperService } from 'src/app/service/listado-helper.service';
 
 @Component({
   selector: 'app-edit-service',
@@ -43,7 +44,9 @@ export class EditarServiciosComponent implements OnInit {
   medida = '';
   negocioSeleccionado:any;
   negocios:any | undefined;
-  constructor(private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService) { }
+  id_negocio:String="";
+  constructor(private listadoHelperService:ListadoHelperService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService) { 
+  }
   obtenerNegocios(){
     this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{
       console.log(data)
@@ -53,6 +56,7 @@ export class EditarServiciosComponent implements OnInit {
     console.log(this.negocios);
   }
   ngOnInit(): void {
+    this.id_negocio="1";
     this.obtenerNegocios();
     
     (mapboxgl as any).accessToken =environment.mapboxkey;
@@ -379,7 +383,8 @@ export class EditarServiciosComponent implements OnInit {
     console.log(this.negocioSeleccionado);
     this.desc_act=this.negocioSeleccionado.description;
     this.mostrar=(this.negocioSeleccionado.status==1)?true:false;
-
+    this.listadoHelperService.cambiarIdNegocio(this.negocioSeleccionado.idBusiness);
+    
   }
 
 
