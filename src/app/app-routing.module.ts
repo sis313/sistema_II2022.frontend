@@ -9,6 +9,7 @@ import { ListaNegocioComponent } from './view/lista-negocio/lista-negocio.compon
 import { NegocioComponent } from './view/negocio/negocio.component';
 import { ListadoServiciosComponent } from './Components/listado-servicios/listado-servicios.component';
 import { CrearServiciosComponent } from './Components/crear-servicios/crear-servicios.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path:'lista-sucursal',component:ListaSucursalComponent
+  },
+  {
+    path:'dashboard',component:DashboardComponent
   },
   { 
     path: 'servicios',
