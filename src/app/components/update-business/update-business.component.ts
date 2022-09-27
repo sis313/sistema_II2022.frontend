@@ -82,7 +82,7 @@ export class UpdateBusinessComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         console.log('Business dashboard')
-       // this.router.navigateByUrl('');
+        this.router.navigateByUrl('/business');
       }
     })
   } 
