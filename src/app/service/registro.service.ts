@@ -12,12 +12,7 @@ export class RegistroService {
 
   
   saveUser(User: UserModel){
-    return this.http.post<UserModel>(Config.apiUrl + '/v1/api/user', User)
-    .subscribe(
-      data => {
-        console.log("POST Request is successful ", data);
-      }
-    );
+    return this.http.post<any>(Config.apiUrl + '/v1/api/user', User);
   
   }
 }
