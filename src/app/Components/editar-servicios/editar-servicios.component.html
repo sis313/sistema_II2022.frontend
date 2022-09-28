@@ -28,8 +28,7 @@
                     <div class="form-group">
                         <label for="cantidad">Tipo Negocio </label>
                         <select [(ngModel)]="tipo_act" class="browser-default custom-select">
-                            <option>Tienda de barrio</option>
-                            <option>Tecnico de celulares</option>
+                            <option [value]="tipo.idTypeBusiness" *ngFor="let tipo of listaTiposNegoocio;" [selected]="negocioSeleccionado.idTypeBusiness==tipo.idTypeBusiness">{{tipo.name}}</option>
                         </select>
                     </div>
                     <div class="form-switch">
@@ -37,7 +36,7 @@
                         <br>
                         <input [(ngModel)]="mostrar" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                     </div>
-                      
+                    <button class="btn btn-primary" (click)="actualizarServicio()">Actualizar</button>
                 </div>
                 <div class="col-md-6 " id="lado-derecho">
                    <app-listado-sucursales-por-id></app-listado-sucursales-por-id>

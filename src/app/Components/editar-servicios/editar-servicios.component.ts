@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
 import { ListaNegocioService } from 'src/app/service/lista-negocio.service';
 import { NegocioService } from 'src/app/service/negocio.service';
 import { ListadoHelperService } from 'src/app/service/listado-helper.service';
+import { TiposNegocioService } from 'src/app/service/tipos-negocio.service';
 
 @Component({
   selector: 'app-edit-service',
@@ -17,6 +18,9 @@ import { ListadoHelperService } from 'src/app/service/listado-helper.service';
   styleUrls: ['./editar-servicios.component.css']
 })
 export class EditarServiciosComponent implements OnInit {
+actualizarServicio() {
+  console.log(this.tipo_act);
+}
 
   lat:number=0;
   lon:number=0;
@@ -45,20 +49,31 @@ export class EditarServiciosComponent implements OnInit {
   negocioSeleccionado:any;
   negocios:any | undefined;
   id_negocio:String="";
-  constructor(private listadoHelperService:ListadoHelperService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService) { 
+  constructor(private tiposNegocioService:TiposNegocioService,private listadoHelperService:ListadoHelperService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService) { 
   }
   obtenerNegocios(){
     this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{
       console.log(data)
       this.negocios=data
+      this.negocioSeleccionado=this.negocios[0];
+      this.id_negocio=this.negocios[0].idTypeBusiness;
+      this.buscar();
     })
     console.log("OBTENER NEGOCIOS");
     console.log(this.negocios);
   }
+  listaTiposNegoocio:any;
+  obtenerTiposNegocio() {
+    this.tiposNegocioService.getTiposNegocio().subscribe((data:any)=>{
+      console.log(data)
+      this.listaTiposNegoocio=data;
+      this.tipo_act=this.negocioSeleccionado.idTypeBusiness;
+    })  
+  }
   ngOnInit(): void {
     this.id_negocio="1";
     this.obtenerNegocios();
-    
+    this.obtenerTiposNegocio();
     (mapboxgl as any).accessToken =environment.mapboxkey;
   
     this.map= new mapboxgl.Map({
@@ -131,6 +146,7 @@ export class EditarServiciosComponent implements OnInit {
       // }
       });
   }
+ 
 
   cambiarPosicion(longitud:any,latitud:any){
     console.log(this.map);
