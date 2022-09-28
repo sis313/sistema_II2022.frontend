@@ -191,16 +191,7 @@ export class EditarSucursalComponent implements OnInit {
       confirmButtonText: 'Si, actualizar!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.editServiceService.actualizarNegocio(
-          {
-            "nombre":this.nombre_act,
-            "descripction":this.desc_act,
-            "tipo":this.tipo_act,
-            "latitud":this.negocios[0].latitude,
-            "longitud":this.negocios[0].longitude,
-            "mostrar":this.mostrar
-          }
-        );
+        
       }
     })
     

@@ -18,6 +18,11 @@
                         <option *ngFor="let i of negocios;" [ngValue]="i">{{i.name}}</option>
                         </select>
                     </div>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nuevo nombre</label>
+                        <input [(ngModel)]="nuevo_nombre" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Deje vacio si no quiere actualizar">
+                    </div>                      
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Descripcion</span>
@@ -36,6 +41,9 @@
                         <br>
                         <input [(ngModel)]="mostrar" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                     </div>
+                    <br>
+                    <br>
+                    <br>
                     <button class="btn btn-primary" (click)="actualizarServicio()">Actualizar</button>
                 </div>
                 <div class="col-md-6 " id="lado-derecho">

@@ -6,10 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EditServiceService {
-  actualizarNegocio(datos:any) {
-    alert(
-      JSON.stringify(datos)
-    );
+  actualizarNegocio(datos:any,id:any) {
+    // alert(
+    //   JSON.stringify(datos)
+    // );
+    console.log("Actualizar negocio");
+    return this.http.put("http://localhost:8080/api/business/"+id,datos);
   }
 
   Peurl='http://localhost:8080';
