@@ -20,6 +20,26 @@ import { LocationServiceService } from 'src/app/service/location-service.service
   styleUrls: ['./editar-sucursal.component.css']
 })
 export class EditarSucursalComponent implements OnInit {
+// uploadFile($event:Event | null) {
+//   if($event.target!=null){
+//     let file=($event.target as HTMLInputElement).files[0])
+//   }
+//  this.convertToBase64(file);
+// }
+// convertToBase64(file:File){
+
+// }
+//     point: {
+//         x: 266,
+//         y: 464
+//     },
+//      target: {...},
+//      type: "click"
+// }
+imagen:any;
+actualizarInfo() {
+  console.log(this.imagen)
+}
 
 
   
@@ -51,6 +71,10 @@ export class EditarSucursalComponent implements OnInit {
   medida = '';
   negocioSeleccionado:any;
   negocios:any | undefined;
+
+
+  inicio:any;
+  fin:any;
   constructor(private activatedRoute:ActivatedRoute,private sucursalService:SucursalService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService,private locationServiceService:LocationServiceService) { }
   obtenerNegocios(){
     this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{

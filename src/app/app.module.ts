@@ -34,7 +34,6 @@ import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +67,7 @@ import { EditarSucursalComponent } from './Components/editar-sucursal/editar-suc
     MatListModule,
     MatSidenavModule,
     FormsModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

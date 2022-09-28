@@ -5,13 +5,7 @@
         <div  novalidate >
             <div class="row mt-5">
                 <div class="col-md-6 " id="datos-izquierda">
-                    
-                    <!-- <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Nombre</span>
-                        </div>
-                        <input [(ngModel)]="nombre_act" type="text" class="form-control"aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                    </div> -->
+
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Direccion</span>
@@ -19,19 +13,60 @@
                         <textarea [(ngModel)]="datos_sucursal.direction"  class="form-control" id="floatingTextarea2" style="height: 200px"></textarea>
 
                     </div>
-                    <div class="form-group">
-                        <label for="cantidad">Tipo Negocio </label>
-                        <select [(ngModel)]="tipo_act" class="browser-default custom-select">
-                            <option>Tienda de barrio</option>
-                            <option>Tecnico de celulares</option>
-                        </select>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Inicio</span>
+                        </div>
+                        <input type="time" class="form-control">
+                        
                     </div>
-                    <div class="form-switch">
-                        <label for="flexSwitchCheckDefault" >Mostrar negocio</label>
-                        <br>
-                        <input [(ngModel)]="mostrar" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Fin</span>
+                        </div>
+                        <input type="time" class="form-control">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Lunes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Martes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Miercoles</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Jueves</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Viernes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Sabado</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Domingo</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                        <input [(ngModel)]="imagen" type="file" class="form-control" id="inputGroupFile01">
                     </div>
                       
+                    <button class="btn btn-primary" ()="actualizarInfo()">Actualizar</button>
+                    <!-- <ngx-mat-timepicker [(ngModel)]="inicio">
+                    </ngx-mat-timepicker>
+
+                    <br>
+                    <br>
+                    <ngx-mat-timepicker [(ngModel)]="fin">
+                    </ngx-mat-timepicker> -->
                 </div>
                 <div class="col-md-6 " id="lado-derecho">
                     <div id="color-fondod">
