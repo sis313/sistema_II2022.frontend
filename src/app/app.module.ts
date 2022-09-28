@@ -31,6 +31,8 @@ import { EditarServiciosComponent } from './Components/editar-servicios/editar-s
 import { HeaderComponent } from './Components/header/header.component';
 import { MainComponent } from './Components/main/main.component';
 import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales-por-id/listado-sucursales-por-id.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
 
 @NgModule({
@@ -47,6 +49,7 @@ import { EditarSucursalComponent } from './Components/editar-sucursal/editar-suc
     HeaderComponent,
     MainComponent,
     ListadoSucursalesPorIDComponent,
+    DashboardComponent,
     EditarSucursalComponent,
   ],
   imports: [
@@ -64,7 +67,8 @@ import { EditarSucursalComponent } from './Components/editar-sucursal/editar-suc
     ReactiveFormsModule, 
     MatListModule,
     MatSidenavModule,
-    FormsModule
+    FormsModule,
+    Ng2GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
