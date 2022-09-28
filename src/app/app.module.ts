@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VerificacionComponent } from './view/verificacion/verificacion.component';
 import { VerificacionErrorComponent } from './view/verificacion-error/verificacion-error.component';
 import { VerificacionexitosaComponent } from './view/verificacionexitosa/verificacionexitosa.component';
+import { RecuperacionComponent } from './view/recuperacion/recuperacion.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { VerificacionexitosaComponent } from './view/verificacionexitosa/verific
     RegistroComponent,
     VerificacionComponent,
     VerificacionErrorComponent,
-    VerificacionexitosaComponent
+    VerificacionexitosaComponent,
+    RecuperacionComponent
 
   ],
   imports: [

@@ -6,6 +6,7 @@ import {RegistroComponent} from "./view/registro/registro.component";
 import {VerificacionComponent} from "./view/verificacion/verificacion.component";
 import {VerificacionErrorComponent} from "./view/verificacion-error/verificacion-error.component";
 import{VerificacionexitosaComponent} from "./view/verificacionexitosa/verificacionexitosa.component";
+import {RecuperacionComponent} from "./view/recuperacion/recuperacion.component";
 
 const routes: Routes = [
   {path:'registro',
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {path:'verificacion-exitosa',
     component: VerificacionexitosaComponent
+  },
+  {path:'recuperacion',
+    component: RecuperacionComponent
   }
 
 ];
