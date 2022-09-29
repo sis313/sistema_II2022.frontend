@@ -8,25 +8,12 @@ export interface ClientDto {
     estado: string;
 }
 export class Client{
-    public idUuario: number;
-    public nombre: string;
-    public celular: number;
-    public idTipoUsuario: number;
-    public correoElectronico: string;
-    public contrasenia: string;
-    public estado: string;
-
+    
     constructor(
-        {idUuario,nombre,celular,idTipoUsuario,
-            correoElectronico,contrasenia,estado}: ClientDto = {
-                idUuario: 0,
-                nombre: '',
-                celular: 0,
-                idTipoUsuario: 0, 
-                correoElectronico: '',
-                contrasenia: '',
-                estado: '', 
-            }
+        public idUuario: number, public nombre: string
+        ,public celular: number,public idTipoUsuario: number,
+        public correoElectronico: string,public contrasenia: string
+        , public estado: string
     ){
         this.idUuario = idUuario;
         this.nombre = nombre;
