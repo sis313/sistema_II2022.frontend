@@ -15,6 +15,7 @@ import { RecuperacionComponent } from './view/recuperacion/recuperacion.componen
 import { EnvioRecuperacionComponent } from './view/envio-recuperacion/envio-recuperacion.component';
 
 import { CorreoRecuperacionComponent } from './view/correo-recuperacion/correo-recuperacion.component';
+import { NavbarComponent } from './view/navbar/navbar.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CorreoRecuperacionComponent } from './view/correo-recuperacion/correo-r
 
     EnvioRecuperacionComponent,
 
-    CorreoRecuperacionComponent
+    CorreoRecuperacionComponent,
+      NavbarComponent
 
   ],
   imports: [

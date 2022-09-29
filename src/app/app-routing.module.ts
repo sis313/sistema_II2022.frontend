@@ -9,6 +9,7 @@ import{VerificacionexitosaComponent} from "./view/verificacionexitosa/verificaci
 import {RecuperacionComponent} from "./view/recuperacion/recuperacion.component";
 import {CorreoRecuperacionComponent} from "./view/correo-recuperacion/correo-recuperacion.component";
 import {EnvioRecuperacionComponent} from "./view/envio-recuperacion/envio-recuperacion.component";
+import {NavbarComponent} from "./view/navbar/navbar.component";
 
 const routes: Routes = [
   {path:'registro',
@@ -37,6 +38,9 @@ const routes: Routes = [
   },
   {path:'envio-recuperacion',
     component: EnvioRecuperacionComponent
+  },
+  {path:'navbar',
+    component: NavbarComponent
   },
 
 ];
