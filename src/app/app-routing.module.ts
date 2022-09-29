@@ -7,6 +7,8 @@ import {VerificacionComponent} from "./view/verificacion/verificacion.component"
 import {VerificacionErrorComponent} from "./view/verificacion-error/verificacion-error.component";
 import{VerificacionexitosaComponent} from "./view/verificacionexitosa/verificacionexitosa.component";
 import {RecuperacionComponent} from "./view/recuperacion/recuperacion.component";
+import {CorreoRecuperacionComponent} from "./view/correo-recuperacion/correo-recuperacion.component";
+import {EnvioRecuperacionComponent} from "./view/envio-recuperacion/envio-recuperacion.component";
 
 const routes: Routes = [
   {path:'registro',
@@ -29,7 +31,13 @@ const routes: Routes = [
   },
   {path:'recuperacion',
     component: RecuperacionComponent
-  }
+  },
+  {path:'correo-recuperacion',
+    component: CorreoRecuperacionComponent
+  },
+  {path:'envio-recuperacion',
+    component: EnvioRecuperacionComponent
+  },
 
 ];
 

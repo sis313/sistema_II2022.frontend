@@ -12,6 +12,10 @@ import { VerificacionErrorComponent } from './view/verificacion-error/verificaci
 import { VerificacionexitosaComponent } from './view/verificacionexitosa/verificacionexitosa.component';
 import { RecuperacionComponent } from './view/recuperacion/recuperacion.component';
 
+import { EnvioRecuperacionComponent } from './view/envio-recuperacion/envio-recuperacion.component';
+
+import { CorreoRecuperacionComponent } from './view/correo-recuperacion/correo-recuperacion.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { RecuperacionComponent } from './view/recuperacion/recuperacion.componen
     VerificacionComponent,
     VerificacionErrorComponent,
     VerificacionexitosaComponent,
-    RecuperacionComponent
+    RecuperacionComponent,
+
+    EnvioRecuperacionComponent,
+
+    CorreoRecuperacionComponent
 
   ],
   imports: [
