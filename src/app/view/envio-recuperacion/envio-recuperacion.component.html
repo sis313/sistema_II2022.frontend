@@ -1,0 +1,69 @@
+
+
+<router-outlet></router-outlet>
+<div class="page-holder align-items-center py-4 bg-gray-1000 vh-100" style="background-color: #CEA660">
+  <div class="container" style="position: absolute;
+  top: 20%;
+  left: 30%;">
+    <div class="row align-items-center">
+      <div class="col-lg-6 px-lg-4"  >
+        <div class="card">
+          <div class="card-header " style="background-color: #6B7A40">
+            <div class="card-heading text-primary" > <h1 style="color:#F3EDE0">Recuperacion de cuenta</h1>  </div>
+          </div>
+          <div class="card-body p-lg-4">
+
+
+              <h3 class="mb-4">Ingresa tu nueva contraseña</h3>
+            <div class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="green"  class="bi bi-bookmark-check" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+              </svg>
+            </div>
+<br>
+            <form ><!--[formGroup]="UserForm" (ngSubmit)="saveUser()"-->
+
+
+                <div class="form-floating mb-3">
+                  <input class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
+
+
+                  <label for="floatingPassword">Contraseña</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control" id="floatingPassword2" type="password" placeholder="Password" required>
+
+
+                  <label for="floatingPassword">Repita su contraseña</label>
+                </div>
+                <!-- <div class="form-check mb-3">
+                   <input class="form-check-input" type="checkbox" name="agree" id="agree">
+                   <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
+                 </div>-->
+
+                <div class="form-group">
+                  <br>
+                  <!--[disabled]="!UserForm.valid" class="btn btn-primary "-->
+
+                  <button class="btn btn-success pull-right" id="registro"  (click)="alertaregistro()" style="background-color:#6B7A40" ><a style="color: #F3EDE0" > Registra tu contraseña</a>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                    <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+                  </svg></button>
+<br>
+                  <br>
+                  <button class="btn btn-success pull-right" routerLink="/"  style="background-color:#6B7A40" >
+
+                    Vuelve al ingreso</button>
+
+                </div>
+              </form>
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div></div>
+
