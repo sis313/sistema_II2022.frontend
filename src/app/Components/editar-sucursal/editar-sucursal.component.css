@@ -134,3 +134,10 @@ mat-tab{
   margin-top: 30px;
   color: #777777;
 }
+.input-group{
+  padding: 0 !important;
+  margin-bottom: 40px !important;
+}
+.form-check{
+  margin: 0px 15px !important;
+}

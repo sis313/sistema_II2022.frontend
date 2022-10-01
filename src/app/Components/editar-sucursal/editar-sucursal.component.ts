@@ -13,6 +13,8 @@ import Swal from 'sweetalert2'
 import { ListaNegocioService } from 'src/app/service/lista-negocio.service';
 import { NegocioService } from 'src/app/service/negocio.service';
 import { LocationServiceService } from 'src/app/service/location-service.service';
+import { Observable, Subscriber } from 'rxjs';
+import { ZonasServiceService } from '../../service/zonas-service.service';
 
 @Component({
   selector: 'app-editar-sucursal',
@@ -20,15 +22,35 @@ import { LocationServiceService } from 'src/app/service/location-service.service
   styleUrls: ['./editar-sucursal.component.css']
 })
 export class EditarSucursalComponent implements OnInit {
-// uploadFile($event:Event | null) {
-//   if($event.target!=null){
-//     let file=($event.target as HTMLInputElement).files[0])
-//   }
-//  this.convertToBase64(file);
-// }
-// convertToBase64(file:File){
+    onChange($event:Event){
+      this.file = ($event.target as HTMLInputElement)?.files?.[0];
+      console.log(this.file);
+      this.convertToBase64(this.file)
 
-// }
+    }
+    file:any;
+    img:any;
+    convertToBase64(file:File){
+      const observable=new Observable((subscriber:Subscriber<any>)=>{
+        this.readFile(file,subscriber);
+      });
+      observable.subscribe((d)=>{
+        console.log(d);
+        this.img=d;
+      });
+    }
+  readFile(file: File, subscriber: Subscriber<any>) {
+    const filereader=new FileReader();
+    filereader.readAsDataURL(file);
+    filereader.onload=()=>{
+      subscriber.next(filereader.result);
+      subscriber.complete();
+    }
+    filereader.onerror=(error)=>{
+      subscriber.error(error);
+      subscriber.complete();
+    }
+  }
 //     point: {
 //         x: 266,
 //         y: 464
@@ -70,12 +92,12 @@ actualizarInfo() {
   cantidad = null;
   medida = '';
   negocioSeleccionado:any;
-  negocios:any | undefined;
+  negocios:any;
 
 
   inicio:any;
   fin:any;
-  constructor(private activatedRoute:ActivatedRoute,private sucursalService:SucursalService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService,private locationServiceService:LocationServiceService) { }
+  constructor(private zonasService:ZonasServiceService,private activatedRoute:ActivatedRoute,private sucursalService:SucursalService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService,private locationServiceService:LocationServiceService) { }
   obtenerNegocios(){
     this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{
       console.log(data)
@@ -85,11 +107,18 @@ actualizarInfo() {
     console.log(this.negocios);
   }
   location:any;
+  listaZonas:any;
+  zona_seleccionada:any;
   ngOnInit(): void {
+    this.zonasService.obtenerZonas().subscribe((data:any)=>{
+      this.listaZonas=data;
+    });
     this.activatedRoute.params.subscribe( params => {
       this.sucursalService.getSucursalPorID(params['id']).subscribe((data:any)=>{
         //console.warn(data)
-        this.datos_sucursal=data;        
+        this.datos_sucursal=data;
+        this.mostrar=this.datos_sucursal.status;
+        this.img="data:image/jpeg;base64,"+this.datos_sucursal.image;
         console.log(data);
         this.locationServiceService.getLocationID(this.datos_sucursal.idLocation).subscribe((l:any)=>{
           //console.warn(data)
@@ -204,24 +233,81 @@ actualizarInfo() {
   mostrar:any;
   actualizar(){
     console.log("Actualizar--------------------------------------------");
-    console.log(this.negocios);
-    Swal.fire({
-      title: 'Estas seguro?',
-      text: "Quieres actualizar los datos de tu negocio?",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, actualizar!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        
-      }
+    console.log(this.desc_act);
+    console.log(this.inicio+":00");
+    console.log(this.fin+":00");
+    console.log(JSON.stringify(this.dias));
+    this.img=this.img.replace("data:image/jpeg;base64,","");
+    this.img=this.img.replace("data:image/jpg;base64,","");
+    this.img=this.img.replace("data:image/png;base64,","");
+    this.img=this.img.replace("data:image/svg;base64,","");
+
+    console.log(this.img);
+    console.log(this.zona_seleccionada)
+    console.log(this.negocios[0].latitude)
+    console.log(this.negocios[0].longitude)
+    console.log(this.datos_sucursal.idLocation);
+    console.log("2022-09-28")
+    console.log(this.mostrar)
+    console.log(this.datos_sucursal.idBusiness)
+    let actualizar={
+      "address": this.desc_act,
+      "openHour": "2022-01-01T"+this.inicio+":00",
+      "closeHour": "2022-01-01T"+this.fin+":00",
+      // "attentionDays": JSON.stringify(this.dias),
+      "attentionDays":"",
+      "image":this.img,
+      "idZone": Number(this.zona_seleccionada),
+      "idLocation": this.datos_sucursal.idLocation,
+      "idBusiness": this.datos_sucursal.idBusiness,
+      "createDate": "2022-01-01",
+      "updateDate": "2022-01-01",
+      "status": (this.mostrar)?1:0
+    }
+  //   actualizar={
+  //     "address": this.desc_act+"",
+  //     "openHour": "2022-01-01T"+this.inicio+":00",
+  //     "closeHour": "2022-01-01T"+this.fin+":00",
+  //     "attentionDays": "d",
+  //     "image": this.img,
+  //     "idZone": 1,
+  //     "idLocation": 1,
+  //     "idBusiness": 1,
+  //     "createDate": "2022-01-01",
+  //     "updateDate": "2022-01-01",
+  //     "status": 1
+  // }
+  
+    let id=this.datos_sucursal.idBranch;
+    console.log(id);
+    console.log(actualizar);
+    this.sucursalService.actualizarSucursal(id,actualizar).subscribe((data:any)=>{
+      console.log(data)
     })
+    // Swal.fire({
+    //   title: 'Estas seguro?',
+    //   text: "Quieres actualizar los datos de tu negocio?",
+    //   icon: 'warning',
+    //   showCancelButton: true,
+    //   confirmButtonColor: '#3085d6',
+    //   cancelButtonColor: '#d33',
+    //   confirmButtonText: 'Si, actualizar!'
+    // }).then((result) => {
+    //   if (result.isConfirmed) {
+        
+    //   }
+    // })
     
   }
-  
-
+  dias={
+    "lunes":true,
+    "martes":true,
+    "miercoles":true,
+    "jueves":true,
+    "viernes":true,
+    "sabado":true,
+    "domingo":true,
+  }
 
 
 
@@ -416,7 +502,7 @@ actualizarInfo() {
     console.log(this.negocioSeleccionado);
     this.desc_act=this.negocioSeleccionado.description;
     this.mostrar=(this.negocioSeleccionado.status==1)?true:false;
-
+    
   }
 
 
