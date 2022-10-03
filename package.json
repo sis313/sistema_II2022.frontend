@@ -25,6 +25,7 @@
     "mapbox-gl": "^2.4.1",
     "ng2-google-charts": "^7.0.0",
     "ngnz-time-input": "0.0.4",
+    "ngx-star-rating": "^2.0.1",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.4.34",
     "tslib": "^2.3.0",

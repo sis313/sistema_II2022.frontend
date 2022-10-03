@@ -15,6 +15,7 @@ import { NegocioService } from 'src/app/service/negocio.service';
 import { LocationServiceService } from 'src/app/service/location-service.service';
 import { Observable, Subscriber } from 'rxjs';
 import { ZonasServiceService } from '../../service/zonas-service.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-sucursal',
@@ -97,7 +98,12 @@ actualizarInfo() {
 
   inicio:any;
   fin:any;
-  constructor(private zonasService:ZonasServiceService,private activatedRoute:ActivatedRoute,private sucursalService:SucursalService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService,private locationServiceService:LocationServiceService) { }
+  public form: FormGroup;
+  constructor(private fb: FormBuilder,private zonasService:ZonasServiceService,private activatedRoute:ActivatedRoute,private sucursalService:SucursalService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService,private locationServiceService:LocationServiceService) { 
+    this.form = this.fb.group({
+      rating: ['5', Validators.required],
+    })
+  }
   obtenerNegocios(){
     this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{
       console.log(data)
@@ -110,6 +116,7 @@ actualizarInfo() {
   listaZonas:any;
   zona_seleccionada:any;
   ngOnInit(): void {
+    
     this.zonasService.obtenerZonas().subscribe((data:any)=>{
       this.listaZonas=data;
     });

@@ -34,6 +34,7 @@ import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,8 @@ import { EditarSucursalComponent } from './Components/editar-sucursal/editar-suc
     MatSidenavModule,
     FormsModule,
     Ng2GoogleChartsModule,
+
+    NgxStarRatingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
