@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { ListaSucursalService } from 'src/app/service/lista-sucursal.service';
+import { Router } from '@angular/router';
+import { ListadoHelperService } from 'src/app/service/listado-helper.service';
 
 
 @Component({
@@ -8,26 +10,35 @@ import { ListaSucursalService } from 'src/app/service/lista-sucursal.service';
   styleUrls: ['./listado-sucursales-por-id.component.css']
 })
 export class ListadoSucursalesPorIDComponent implements OnInit {
-  sucursales = [
-    {attentionDays: 'Monday',closeHour: '06:01:01',createDate: '2021-12-31',direction: 'branch direction',idBranch: 4,idBusiness: 104,
-    /*idLocation: 4,idZone: 4,image: "aW1hZ2UgZmlsZQ==",*/openHour: '06:01:01',status: 1,updateDate: '2021-12-31'},
-];
-
+  sucursales:any;
+id_negocio:any;
 comentarios = [
   { nombre: 'carlos', comentario: 'bien',fecha: '23/04/12' },
   { nombre: 'ronaldo', comentario: 'bien',fecha: '23/04/12' },
   { nombre: 'victor', comentario: 'bien',fecha: '23/04/12' },
 
 ];
+constructor(private listadoHelperService:ListadoHelperService,private service: ListaSucursalService,private router: Router) { 
 
-constructor(private service: ListaSucursalService) { 
-  this.service.getSucursales().subscribe((data:any)=>{
-    //console.warn(data)
-    console.log(data)
-    this.sucursales=data
-  })
+  
 }
   ngOnInit(): void {
+    this.listadoHelperService.cambiosIdNegocioObservable.subscribe((id_negocio)=>{
+      this.id_negocio=id_negocio;
+      this.buscarSucursales(this.id_negocio);
+    });
+  }
+  buscarSucursales(id:any){
+    this.service.getSucursalesLocalhost(id).subscribe((data:any)=>{
+      //console.warn(data)
+      console.log(data)
+      this.sucursales=data
+      console.log(this.sucursales);
+    });
+  }
+  actualizarSucursal(id:any){
+    console.log("Ir a ruta de negocio:"+id);
+    this.router.navigate(['editar-sucursal',id]);
   }
 
 }

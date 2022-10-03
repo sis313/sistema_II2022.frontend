@@ -33,7 +33,10 @@ import { MainComponent } from './Components/main/main.component';
 import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales-por-id/listado-sucursales-por-id.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
-
+import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { ListadoSucursalRatingComponent } from './Components/listado-sucursal-rating/listado-sucursal-rating.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,8 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
     MainComponent,
     ListadoSucursalesPorIDComponent,
     DashboardComponent,
+    EditarSucursalComponent,
+    ListadoSucursalRatingComponent,
   ],
   imports: [
     HttpClientModule,
@@ -66,7 +71,9 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
     MatListModule,
     MatSidenavModule,
     FormsModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
+    NgxStarRatingModule,
+    MdbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,4 +17,6 @@
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
   }
-  
+  li:hover{
+    background-color: #fff !important;
+  }

@@ -1,0 +1,143 @@
+*{
+    --principal-color:rgba(23, 24, 25, 0.883);
+    color: var(--color1);
+    font-size: var(--text2);
+    font-weight: 400;
+
+}
+.btn{
+  color:var(--color3);
+}
+i{
+  color: var(--color3);
+}
+input,select,textarea{
+  margin-left: 10px;
+  border: 2px solid var(--color1);
+  box-sizing:border-box!important;
+  box-sizing:border-box!important;
+
+}
+input:focus,input:hover,input:visited,input:active{
+  border-bottom: 0px;
+  border: 2px solid var(--color2) !important;
+}
+select:focus,select:hover,select:visited,select:active{
+  border-bottom: 0px;
+  border: 2px solid var(--color2) !important;
+}
+textarea:focus,textarea:hover,textarea:visited,textarea:active{
+  border-bottom: 0px;
+  border: 2px solid var(--color2) !important;
+}
+#principal{
+    /* background-image: url('https://analiticaderetail.com/wp-content/uploads/2018/10/analisis-de-ventas.jpg'); */
+    /* background-color: var(--color3); */
+    /* background: linear-gradient(180deg, rgba(247,243,232,1) 3%, rgba(243,237,224,1) 11%, rgba(243,237,224,1) 100%);     margin: 0; */
+    width: 100% !important;
+    max-width: 100%;
+    padding: 0%;
+}
+#color-fondo{
+    width: 100%;
+    height: 100%;
+    /*background-color:#f3ede06c;*/
+    /* background-color: #697a4059; */
+
+    padding: 3%;
+}
+
+#datos-izquierda .input-group{
+    margin-bottom: 15vh;
+}
+#lado-derecho{
+  background-image: url('https://analiticaderetail.com/wp-content/uploads/2018/10/analisis-de-ventas.jpg');
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 0 !important;
+}
+#color-fondod{
+  background-color: #f3ede06d;
+  width: 100%;
+  height: 100%;
+  padding: 1%;
+
+}
+.custom-file{
+  height: 600px;
+}
+#mapa-mapbox{
+
+    margin: 30px 30px;
+    z-index: 2;
+    width: 80%;
+    height: 100%;
+    border: 8px solid var(--color1);
+}
+
+.mapboxgl-popup-close-button {
+    display: none;
+  }
+
+  .mapboxgl-popup-content {
+    font: 200 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    background-color:black;
+    width: 180px;
+  }
+
+  .mapboxgl-popup-content h3 {
+    background: #91c949;
+    color: #fff;
+    margin: 0;
+    
+    border-radius: 3px 3px 0 0;
+    font-weight: 200;
+    margin-top: -15px;
+  }
+
+  .mapboxgl-popup-content h4 {
+    margin: 0;
+ 
+   
+  }
+
+  .mapboxgl-popup-content div {
+    
+  }
+
+  .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+    margin-top: 15px;
+  }
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+    border-bottom-color: #91c949;
+  }
+
+mat-card{
+  border-radius:24px;
+  background-color: #EDEDE8;
+  box-shadow: 0px 0px 57px -7px rgba(119, 119, 119, 0.12);
+  margin-bottom: 60px;
+}
+mat-tab{
+  color: #1D3150;
+}
+
+#cardmap{
+  height:990px;
+}
+
+
+#country{
+  margin-top: 30px;
+  color: #777777;
+}
+.input-group{
+  padding: 0 !important;
+  margin-bottom: 40px !important;
+}
+.form-check{
+  margin: 0px 15px !important;
+}
