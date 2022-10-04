@@ -6,18 +6,18 @@ export interface ComentaryDto{
     estado: number;
 }
 export class Comentary{
-    public idComentario: number = 0;
-    public nombre: string = "";
-    public idUsuario: number = 0;
-    public stock: any = {};
-    public estado: number = 0;
+    public id_comment: number = 0;
+    public message: string = "";
+    public id_user: number = 0;
+    public id_business: number = 0;
+    public status: number = 0;
 
-    constructor (idComentario: number, nombre: string,
-        idUsuario: number, stock: any, estado: number) {
-            this.idComentario = idComentario;
-            this.nombre = nombre;
-            this.idUsuario = idUsuario;
-            this.stock = stock;
-            this.estado = estado;
+    constructor (id_comment: number, message: string,
+        id_user: number, id_business: number, status: number) {
+            this.id_comment = id_comment;
+            this.message = message;
+            this.id_user = id_user;
+            this.id_business = id_business;
+            this.status = status;
         }
 }
