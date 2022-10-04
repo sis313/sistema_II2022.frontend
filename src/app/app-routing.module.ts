@@ -7,9 +7,9 @@ import { InactiveBusinessListComponent } from './components/inactive-business-li
 
 const routes: Routes = [
   { path: 'updateAdmin/:id', component: UpdateAdminComponent },
-  { path: 'business', component: BusinessListComponent },
+  { path: 'activeBusinessList', component: BusinessListComponent },
   { path: 'updateBusiness/:id', component: UpdateBusinessComponent },
-  { path: 'inactiveBusinessList/:id', component: InactiveBusinessListComponent },
+  { path: 'inactiveBusinessList', component: InactiveBusinessListComponent },
 ];
 
 @NgModule({
