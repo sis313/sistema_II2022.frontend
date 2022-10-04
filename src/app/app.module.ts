@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InactiveBusinessListComponent } from './components/inactive-business-list/inactive-business-list.component';
 
 
 
@@ -19,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     UpdateAdminComponent,
-    BusinessListComponent
+    BusinessListComponent,
+    InactiveBusinessListComponent
   ],
   imports: [
     BrowserModule,
