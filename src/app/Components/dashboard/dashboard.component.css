@@ -1,0 +1,74 @@
+#container {
+    background: #6b7a40;
+    min-height: 100%;
+  }
+
+  #btn1 {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+#btn2 {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+#btn3 {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+#btn4 {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+#btn5 {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}

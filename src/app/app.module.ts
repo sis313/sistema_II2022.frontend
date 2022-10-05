@@ -35,6 +35,9 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { ListadoSucursalRatingComponent } from './Components/listado-sucursal-rating/listado-sucursal-rating.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +54,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ListadoSucursalesPorIDComponent,
     DashboardComponent,
     EditarSucursalComponent,
+    ListadoSucursalRatingComponent,
   ],
   imports: [
     HttpClientModule,
@@ -69,6 +73,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSidenavModule,
     FormsModule,
     Ng2GoogleChartsModule,
+    NgxStarRatingModule,
+    MdbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent],

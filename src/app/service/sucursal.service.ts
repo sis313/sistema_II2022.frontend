@@ -15,4 +15,7 @@ export class SucursalService {
     console.log("Actualizar "+id);
     return this.http.put("http://localhost:8080/api/branch/"+id,datos);
   }
+  getRatingSucursalID(id:any){
+    return this.http.get("http://localhost:8080/api/rating/?branchId="+id);
+  }
 }

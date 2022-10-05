@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import * as mapboxgl from 'mapbox-gl'
 import { Router } from '@angular/router';
@@ -11,6 +11,8 @@ import { ListaNegocioService } from 'src/app/service/lista-negocio.service';
 import { NegocioService } from 'src/app/service/negocio.service';
 import { ListadoHelperService } from 'src/app/service/listado-helper.service';
 import { TiposNegocioService } from 'src/app/service/tipos-negocio.service';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { ListadoSucursalRatingComponent } from '../listado-sucursal-rating/listado-sucursal-rating.component';
 
 @Component({
   selector: 'app-edit-service',
@@ -18,7 +20,6 @@ import { TiposNegocioService } from 'src/app/service/tipos-negocio.service';
   styleUrls: ['./editar-servicios.component.css']
 })
 export class EditarServiciosComponent implements OnInit {
-
   nuevo_nombre:any;
   actualizarServicio() {
     let nombre=(this.nuevo_nombre=="")?this.negocioSeleccionado.name:this.nuevo_nombre;
@@ -48,7 +49,7 @@ export class EditarServiciosComponent implements OnInit {
   mostrar:any;
   listaTiposNegoocio:any;
 
-  constructor(private tiposNegocioService:TiposNegocioService,private listadoHelperService:ListadoHelperService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService) { 
+  constructor(private modalService: MdbModalService,private tiposNegocioService:TiposNegocioService,private listadoHelperService:ListadoHelperService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService) { 
   }
   obtenerNegocios(){
     this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{
@@ -80,6 +81,10 @@ export class EditarServiciosComponent implements OnInit {
     this.listadoHelperService.cambiarIdNegocio(this.negocioSeleccionado.idBusiness);
     
   }
-
-
+  modalRef: MdbModalRef<ListadoSucursalRatingComponent> | null = null;
+  mostrarRatings(){
+    this.modalRef = this.modalService.open(ListadoSucursalRatingComponent, {
+      data: { idNegocio: this.id_negocio },
+    });
+  }
 }
