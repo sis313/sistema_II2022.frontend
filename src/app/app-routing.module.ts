@@ -10,6 +10,7 @@ import {RecuperacionComponent} from "./view/recuperacion/recuperacion.component"
 import {CorreoRecuperacionComponent} from "./view/correo-recuperacion/correo-recuperacion.component";
 import {EnvioRecuperacionComponent} from "./view/envio-recuperacion/envio-recuperacion.component";
 import {NavbarComponent} from "./view/navbar/navbar.component";
+import {RecuperacionErrorComponent} from "./view/recuperacion-error/recuperacion-error.component";
 
 const routes: Routes = [
   {path:'registro',
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {path:'error-verificacion',
     component: VerificacionErrorComponent
+  },
+  {path:'error-recuperacion',
+    component: RecuperacionErrorComponent
   },
   {path:'verificacion-exitosa',
     component: VerificacionexitosaComponent
