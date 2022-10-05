@@ -34,6 +34,7 @@ import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
