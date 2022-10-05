@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { StoreService } from 'src/app/Service/store.service';
 import { error } from '@angular/compiler/src/util';
 import { Store } from 'src/app/Model/store.model';
+import { Router } from '@angular/router';
+import { CalTempService } from 'src/app/Service/calTemp.service';
+import { CalTemp } from 'src/app/Model/calTemp.model';
 
 @Component({
   selector: 'app-main-list',
@@ -10,8 +13,11 @@ import { Store } from 'src/app/Model/store.model';
 })
 export class MainListComponent implements OnInit {
   nombre: string = '';
+  cal: CalTemp[] = []
+  dataSend: Store[] = [];
   storeD: Store[] = [];
-  constructor(private storeC: StoreService) {}
+  constructor(private storeC: StoreService, private router: Router,
+    private callTempService: CalTempService) {}
 
   ngOnInit(): void {
     this.onCharge();
@@ -51,4 +57,17 @@ export class MainListComponent implements OnInit {
       this.revisarName();
     }
   }
+
+  calificar(dataSend: Store){
+    console.log(dataSend)
+    this.callTempService.setCallTempData(this.dataSend);
+    console.log(this.callTempService.getCallTempData());
+
+    this.router.navigate(['/cal']);
+  }
+
+
+
+
+
 }

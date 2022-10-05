@@ -7,13 +7,15 @@ import { MainListComponent } from './View/main-list/main-list.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HomeComponentComponent } from './View/home-component/home-component.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { CalSpaceComponent } from './View/cal-space/cal-space.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainListComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
+    CalSpaceComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([
       {path: 'home', component: HomeComponentComponent},
       {path: 'main', component: MainListComponent},
-      {path: '',redirectTo: '/home', pathMatch: 'full'}
+      {path: '',redirectTo: '/home', pathMatch: 'full'},
+      {path: 'cal', component: CalSpaceComponent}
     ]),
   ],
   providers: [],
