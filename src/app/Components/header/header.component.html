@@ -1,24 +1,53 @@
-<div class="body">
+<div id="contenido_total">
 
     <div id="titulo">
-        APP ... - NEGOCIOS
+      <div id="cabecera-con-hover">
+        <img id="img-logo" src="./../../../assets/images/logo_pagina_taller.jpg" alt="">
+        <p>APP...NEGOCIOS</p>
+      </div>
+      <div id="cabecera-sin-hover">
+        <p>APP...NEGOCIOS</p>
+      </div>
     </div>
     <div id="nav">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" routerLink="lista-negocio">Listado</a>
+                  <li class="nav-item"  id="opcion-servicios">
+                    <a class="nav-link">Servicios</a>
+                    <ul class="nav-item" id="menu-interno-servicios">
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink="lista-negocio">Listado</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink="negocio">Crear</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink="editar-negocio">Editar</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item menus-internos" id="opcion-sucursales">
+                    <a class="nav-link">Sucursales</a>
+                    <ul class="nav-item" id="menu-interno-sucursales">
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink="lista-negocio">Listado</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink="negocio">Crear</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink="editar-negocio">Editar</a>
+                      </li>
+                    </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="negocio">Crear</a>
+                    <a class="nav-link">Rating sucursales</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="editar-negocio">Editar</a>
+                    <a class="nav-link">Dashboard</a>
                   </li>
                 </ul>
               </div>
