@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 //import { CalTempService } from 'src/app/Service/calTemp.service';
 import { Store } from 'src/app/Model/store.model';
 import { StoreService } from 'src/app/Service/store.service';
@@ -12,7 +13,7 @@ import { StoreService } from 'src/app/Service/store.service';
 })
 export class CalSpaceComponent implements OnInit {
   textDescription: string = "";
-  constructor(private storeService: StoreService) { }
+  constructor(private storeService: StoreService, private router: Router) { }
   data: Store[] =this.storeService.getStoreTemp();
   ngOnInit(): void {
    this.onCharge();
@@ -21,5 +22,12 @@ export class CalSpaceComponent implements OnInit {
   onCharge(){
     console.log("estamos aca")
     console.log(this.data);
+  }
+  Calificar(){
+
+  }
+  Volver(){
+    this.router.navigate(['/main'])
+
   }
 }
