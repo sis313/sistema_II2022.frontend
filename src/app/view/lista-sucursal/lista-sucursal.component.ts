@@ -30,4 +30,28 @@ constructor(private service: ListaSucursalService) {
   ngOnInit(): void {
   }
 
+  eliminarSucursal(idBranch: any/*, name: any*/) {
+    if(confirm("Are you sure to delete "+idBranch+/*name*/"nombre")) {
+      console.log(typeof(idBranch+""))
+      this.service.deleteSucursal(idBranch+"").subscribe((response: any)=>{
+          console.log(response);
+          console.log("fin")
+          this.ngOnInit();
+        
+        /*console.log("antes")
+        this.router.navigate([this.router.url]);
+        console.log("despues")*/
+      });
+
+     /* this.service.getNegocios().subscribe((data:any)=>{
+        console.log(data)
+        this.negocios=data
+       
+      })*/
+
+
+
+    }
+  }
+
 }
