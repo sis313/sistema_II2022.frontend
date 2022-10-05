@@ -34,4 +34,30 @@ export class InactiveBusinessListComponent implements OnInit {
     return respuesta;
   }
 
+  async restoreBusiness(id: any,status:any) {
+    Swal.fire({
+      icon: 'warning',
+      title: '¿Está seguro de activar negocio?',
+      showConfirmButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar',
+    }).then(async (result) => {
+      if (result.value) {
+        await this.restoreBusinessById(id,status);
+        console.log('SE RESTURÓ EL NEGOCIO CORRECTAMENTE');
+        
+      }
+    });
+  }
+
+  async restoreBusinessById(id: number,status:any) {
+    this.businessListService
+      .restoreBusiness(id,status)
+      .toPromise()
+      .then((response) => {})
+      .catch((e) => console.error(e));
+  }
+
+
 }

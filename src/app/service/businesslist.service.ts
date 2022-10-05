@@ -41,4 +41,9 @@ export class BusinesslistService {
     return this.http.delete<void>(url);
   }
 
+
+  restoreBusiness(idBusiness: number,provider:business): Observable<business> {
+    const url = `${this.baseUrl}adminBusinessStatus/${idBusiness}`;
+    return this.http.put<business>(url,provider);
+  }
 }
