@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { business } from 'src/app/model/Business';
 import { BusinesslistService } from 'src/app/service/businesslist.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-business-list',
@@ -35,6 +36,46 @@ export class BusinessListComponent implements OnInit {
   
   newChange(): void {
     this.router.navigateByUrl('/updateAdmin/1');
+  }
+
+
+  async deleteBusiness(id: any) {
+    Swal.fire({
+      icon: 'warning',
+      title: '¿Está seguro de eliminar negocio?',
+      showConfirmButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar',
+    }).then(async (result) => {
+      if (result.value) {
+        await this.deleteBusinessById(id);
+        console.log('SE ELIMINO AL NEGOCIO CORRECTAMENTE');
+        await this.successNotificationDeleteCorrectly();
+      }
+    });
+  }
+
+  async deleteBusinessById(id: number) {
+    this.businessListService
+      .deleteBusiness(id)
+      .toPromise()
+      .then((response) => {})
+      .catch((e) => console.error(e));
+  }
+
+  async successNotificationDeleteCorrectly() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Negocio eliminado correctamente',
+      showConfirmButton: true,
+      confirmButtonText: 'Aceptar',
+    }).then(async (result) => {
+      if (result.value) {
+        console.log('owner List');
+        await window.location.reload();
+      }
+    });
   }
 
 }

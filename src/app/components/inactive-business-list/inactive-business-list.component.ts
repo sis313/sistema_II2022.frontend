@@ -16,7 +16,7 @@ export class InactiveBusinessListComponent implements OnInit {
   inactive:business[] = [];
   businessList:business[] = [];
 
-  constructor(private _liveAnnouncer: LiveAnnouncer,private businessListService: BusinesslistService,private router: Router) {}
+  constructor(private businessListService: BusinesslistService,private router: Router) {}
 
   async ngOnInit(): Promise<void> {
 
@@ -28,6 +28,7 @@ export class InactiveBusinessListComponent implements OnInit {
     let respuesta!:business[];
     await this.businessListService.getListInactiveBusiness().toPromise().then((response) => {
       respuesta = response;
+      console.log(respuesta);
     }).catch(e => console.error(e));
 
     return respuesta;

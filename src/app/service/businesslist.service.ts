@@ -35,4 +35,10 @@ export class BusinesslistService {
     return this.http.get<business[]>(url);
   }
 
+  //Modificar
+  deleteBusiness(idBusiness: number): Observable<void> {
+   const url = `${this.baseUrl}/${idBusiness}`;
+    return this.http.delete<void>(url);
+  }
+
 }

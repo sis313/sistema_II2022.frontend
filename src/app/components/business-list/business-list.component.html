@@ -61,11 +61,11 @@
               </thead>
               <tbody>
                 <tr
-                  *ngFor="let inactive of businessList"
+                  *ngFor="let active of businessList"
                   class="alert"
                   role="alert"
                 >
-                  <td class="border-bottom-0">{{ inactive.id }}</td>
+                  <td class="border-bottom-0">{{ active.id }}</td>
                   <td class="border-bottom-0">
                     <div
                       class="img"
@@ -76,22 +76,22 @@
                   </td>
                   <td class="border-bottom-0">
                     <div class="email">
-                      <span>{{ inactive.name }}</span>
-                      <span>Fecha registro: {{ inactive.createDate }}</span>
+                      <span>{{ active.name }}</span>
+                      <span>Fecha registro: {{ active.createDate }}</span>
                     </div>
                   </td>
-                  <td class="border-bottom-0">{{ inactive.description }}</td>
+                  <td class="border-bottom-0">{{ active.description }}</td>
                   <td class="status border-bottom-0">
                     <span class="active">Activo :D</span>
 					<span>    </span>
                   </td>
                   <td class="border-bottom-0">
-                    <button class="btn">
+                    <button class="btn" (click)="deleteBusiness(active?.id)">
                       <i class="material-symbols-outlined">
                         delete_sweep
                       </i>
                     </button>
-					<button class="btn">
+					<button class="btn" >
 						<i class="material-symbols-outlined">
 							auto_fix
 						</i>
