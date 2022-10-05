@@ -33,9 +33,10 @@ body {
   background-color: #6b7a40;
   border: none;
   color: white;
-  padding: 5px 10px;
-  font-size: 15px;
+  padding: 10px;
   cursor: pointer;
+  animation-duration: 1s;
+
 }
 
 /*Cuando el cursor se pone en el botón de register*/
@@ -43,6 +44,7 @@ body {
   border: none solid #cea660;
   background-color: #cea660;
   color: #483e47; 
+  border-radius: 8px;
 }
 
 .ftco-section {
@@ -85,7 +87,7 @@ body {
   .table tbody th, .table tbody td {
     border: none;
     padding: 30px;
-    font-size: 18px;
+    font-size: 15px;
     background: #fff;
     vertical-align: middle;}
   .table tbody td.status span {
@@ -123,7 +125,7 @@ body {
   .table tbody td .email span {
     display: block; }
     .table tbody td .email span:last-child {
-      font-size: 15px;
+      font-size: 12px;
       color:#697a40ad }
   .table tbody td .close span {
     font-size: 12px;

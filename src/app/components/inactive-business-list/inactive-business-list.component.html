@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="inactive-business-list.component.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 	<section class="ftco-section">
@@ -24,6 +25,7 @@
 						<table class="table table-responsive-xl">
 						  <thead>
 						    <tr>
+							  <th>ID</th>	
 						      <th>Foto de Negocio</th>
 						      <th>Nombre</th>
 						      <th>Descripción</th>
@@ -33,20 +35,24 @@
 						    </tr>
 						  </thead>
 						  <tbody>
-						    <tr class="alert" role="alert">
+						    <tr *ngFor="let inactive of businessList;" class="alert" role="alert">
+							  <td class="border-bottom-0">{{inactive.id}}</td>	
 							  <td class="border-bottom-0">
 								<div class="img" style="background-image: url(https://diariofarma.com/wp-content/uploads/2018/12/Farmacia-Ja%C3%A9n_27.08.15-e1544535985370.jpg);"></div>
 							  </td>
 						      <td class="border-bottom-0">
 						      	<div class="email">
-						      		<span>Lind Group</span>
-						      		<span>Fecha registro: 01/08/2022</span>
+						      		<span>{{inactive.name}}</span>
+						      		<span>Fecha registro: {{inactive.createDate}}</span>
 						      	</div>
 						      </td>
-						      <td class="border-bottom-0">Edra Pharmaceuticals LLC</td>
+						      <td class="border-bottom-0">{{inactive.description}}</td>
 						      <td class="status border-bottom-0"><span class="inactive">Inactivo</span></td>
 						      <td class="border-bottom-0">
-                                <button class="btn"><i class='fa fa-undo'></i></button>
+                                <button class="btn"><i class="material-symbols-outlined">
+									restore_from_trash
+									
+								</i></button>
 				        	   </td>
 						    </tr>
 						  </tbody>
