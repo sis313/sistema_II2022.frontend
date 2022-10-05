@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from'sweetalert2';
+import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-inactive-business-list',

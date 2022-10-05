@@ -2,49 +2,22 @@
 body {
   font-family: "Karla", sans-serif;
   background-color: #f3ede0;
-  min-height: 100vh;
-}
+  
+  min-height: 100vh; }
+  
 
-/*Forma de tarjeta*/  
-.register-card 
-{
-  border: 50px;
-  border-radius: 27.5px;
-  overflow: hidden;
-  background-color: #ffffff; 
-}
-
-/*Formato para la imagen*/
-.register-card-img {
-  border-radius: 0;
-  position: absolute;
-  width: 80%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover; 
-}
-
-/*Borde para la tarjeta*/
-.register-card .card-body {
-  padding: 85px 60px 60px; 
-}
-
-/*Descripción*/
-.register-card-description {
-  font-size: 25px;
-  color: #CEa660;
-  font-weight: normal;
-  margin-bottom: 23px;
-  text-align:center; 
-}
-
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #000000; }
+ 
 /*Título*/
 .register-card-title {
   font-size: 35px;
   color: #483e47;
   font-weight: normal;
   border-image: initial;
-  border: 1px solid #000000;
+  border: 1px solid #745D20;
   text-align:center;
 }
 
@@ -56,74 +29,103 @@ body {
   text-align:center;
 }
 
-
-/*Labels*/
-.register-card .form-control {
-  border: 1px solid #000000;
-  padding: 15px 25px;
-  margin-bottom: 20px;
-  min-height: 45px;
-  font-size: 16px;
-  line-height: 15;
-  font-weight: normal; 
-}
-
-
-.input-wrapper {
-  position: relative;
-  width: 500px;
-}
-
-.icon-eye:before {
-  content: "\e9ce";
-}
-/*Boton*/
-.register-card .register-btn { 
-  padding: 13px 20px 12px;
-  background-color: #CEa660;
-  border-radius: 4px;
-  font-size: 17px;
-  font-weight: bold;
-  line-height: 20px;
-  color: #fff;
-  margin-bottom: 24px; 
+.btn {
+  background-color: #6b7a40;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 /*Cuando el cursor se pone en el botón de register*/
-.register-card .register-btn:hover {
-  border: 1px solid #cea660;
+.btn:hover {
+  border: none solid #cea660;
   background-color: #cea660;
   color: #483e47; 
 }
 
-
-@media (max-width: 767px) {
-  .register-card-footer-text {
-      margin-bottom: 24px; 
-  } 
-}
-
-.register-card-footer-nav a {
-  font-size: 14px;
-  color: #d44c0d; 
-}
-  
-
-div#is-relative{
-  max-width: 550px;
-  position: relative;
-}
+.ftco-section {
+  padding: 20px 0; }
 
 
-#icon{
-  position: absolute;
-  display: block;
-  bottom: .2rem;
-  right: 1rem;
-  
-  user-select: none;
-  cursor: pointer;
-}
-input.input{
-  padding-right: 2.5rem;
-}
+
+.heading-section {
+  font-size: 28px;
+  color: #000; }
+
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.table-wrap {
+  overflow-x: scroll; }
+
+.table {
+  min-width: 1000px !important;
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29); }
+  .table thead th {
+    border: none;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #745D20 }
+  .table thead tr {
+    background: #fff;
+    border-bottom: 4px solid #eceffa; }
+  .table tbody tr {
+    margin-bottom: 10px;
+    border-bottom: 4px solid #f8f9fd; }
+    .table tbody tr:last-child {
+      border-bottom: 0; }
+  .table tbody th, .table tbody td {
+    border: none;
+    padding: 30px;
+    font-size: 18px;
+    background: #fff;
+    vertical-align: middle;}
+  .table tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px;
+     }
+    .table tbody td.status span:after {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      content: '';
+      border-radius: 50%; }
+  .table tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750; }
+    .table tbody td.status .active:after {
+      background: #23bd5a; }
+  .table tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c; }
+    .table tbody td.status .waiting:after {
+      background: #f2be1d; }
+  .table tbody td.status .inactive {
+    background: #FDDDDD;
+    color: #CF0C0C; }
+    .table tbody td.status .inactive:after {
+      background: #F21D1D; }    
+  .table tbody td .img {
+    width: 150px;
+    height: 150px;
+  }
+  .table tbody td .email span {
+    display: block; }
+    .table tbody td .email span:last-child {
+      font-size: 15px;
+      color:#697a40ad }
+  .table tbody td .close span {
+    font-size: 12px;
+    color: #dc3545; }
+
