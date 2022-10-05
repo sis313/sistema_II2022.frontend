@@ -13,6 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InactiveBusinessListComponent } from './components/inactive-business-list/inactive-business-list.component';
+import { OwnerListComponent } from './components/owner-list/owner-list.component';
 
 
 
@@ -21,7 +22,8 @@ import { InactiveBusinessListComponent } from './components/inactive-business-li
     AppComponent,
     UpdateAdminComponent,
     BusinessListComponent,
-    InactiveBusinessListComponent
+    InactiveBusinessListComponent,
+    OwnerListComponent
   ],
   imports: [
     BrowserModule,
