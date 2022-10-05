@@ -37,6 +37,9 @@ const routes: Routes = [
     path: 'servicios',
     component: MainComponent,
     children: [
+      { 
+        path:'',component:ListaNegocioComponent
+      },
       {
         path:'lista-negocio',component:ListaNegocioComponent
       },

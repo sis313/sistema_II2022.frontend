@@ -52,19 +52,16 @@ textarea:focus,textarea:hover,textarea:visited,textarea:active{
 }
 #lado-derecho{
   background-image: url('https://analiticaderetail.com/wp-content/uploads/2018/10/analisis-de-ventas.jpg');
-  overflow: hidden;
+  overflow: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 700px;
   padding: 0 !important;
+  
 }
-#color-fondod{
-  background-color: #f3ede06d;
-  width: 100%;
-  height: 100%;
-  padding: 1%;
-
-}
+#lado-derecho::-webkit-scrollbar {
+  width: 50px !important;
+} 
 .custom-file{
   height: 600px;
 }
