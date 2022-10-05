@@ -25,8 +25,9 @@ import { CalSpaceComponent } from './View/cal-space/cal-space.component';
     RouterModule.forRoot([
       {path: 'home', component: HomeComponentComponent},
       {path: 'main', component: MainListComponent},
+      {path: 'cal', component: CalSpaceComponent},
       {path: '',redirectTo: '/home', pathMatch: 'full'},
-      {path: 'cal', component: CalSpaceComponent}
+      
     ]),
   ],
   providers: [],

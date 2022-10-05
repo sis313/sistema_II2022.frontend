@@ -7,12 +7,19 @@ import { Store } from '../Model/store.model';
 })
 export class StoreService {
   store: Store[] = [];
+  storeTemp: Store[] = [];
   constructor(private http: HttpClient) {}
   setStoreName(data: Store[]) {
     this.store = data;
   }
   getStoreName() {
     return this.store;
+  }
+  setStoreTemp(data:Store[]){
+    this.storeTemp = data;
+  }
+  getStoreTemp(){
+    return this.storeTemp;
   }
 
   getStoreAll() {

@@ -58,11 +58,20 @@ export class MainListComponent implements OnInit {
     }
   }
 
-  calificar(dataSend: Store){
-    console.log(dataSend)
-    this.callTempService.setCallTempData(this.dataSend);
-    console.log(this.callTempService.getCallTempData());
-
+  calificar(data: Store){
+   // console.log(dataSend)
+    // for (let i in data){
+    //   this.dataSend.push({
+    //     id_business: data[i].id_business,
+    //     name: data[i].name,
+    //     description: data[i].description
+    //   });
+    // }
+    
+    this.dataSend.push(data);
+    console.log(this.dataSend);
+    this.storeC.setStoreTemp(this.dataSend);
+    console.log(this.storeC.getStoreTemp());
     this.router.navigate(['/cal']);
   }
 
