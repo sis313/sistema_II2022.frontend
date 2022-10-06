@@ -10,6 +10,7 @@ import { HomeComponentComponent } from './View/home-component/home-component.com
 import { HttpClientModule } from '@angular/common/http';
 import { CalSpaceComponent } from './View/cal-space/cal-space.component';
 import { ComentListComponent } from './View/comment-list/comment-list.component';
+import { MapComponent } from './View/map/map.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ComentListComponent } from './View/comment-list/comment-list.component'
     MainListComponent,
     HomeComponentComponent,
     CalSpaceComponent,
-    ComentListComponent
+    ComentListComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,15 +27,15 @@ import { ComentListComponent } from './View/comment-list/comment-list.component'
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'home', component: HomeComponentComponent},
-      {path: 'main', component: MainListComponent},
-      {path: 'cal', component: CalSpaceComponent},
-      {path: 'comment', component: ComentListComponent},
-      {path: '',redirectTo: '/home', pathMatch: 'full'},
-      
+      { path: 'home', component: HomeComponentComponent },
+      { path: 'main', component: MainListComponent },
+      { path: 'cal', component: CalSpaceComponent },
+      { path: 'comment', component: ComentListComponent },
+      {path: 'map', component: MapComponent},
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
