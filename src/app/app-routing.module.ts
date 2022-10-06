@@ -18,12 +18,13 @@ const routes: Routes = [
   {
     path: 'main',
     component: MainComponent,
-    children: [
-      { path: 'updateAdmin/:id', component: UpdateAdminComponent },
-      { path: 'business', component: BusinessListComponent },
-      { path: 'updateBusiness/:id', component: UpdateBusinessComponent }
-    ]
   },
+
+  { path: 'updateAdmin/:id', component: UpdateAdminComponent },
+  { path: 'business', component: BusinessListComponent },
+  { path: 'updateBusiness/:id', component: UpdateBusinessComponent },
+  { path: 'adminHome', component: AdminHomeComponent },
+  { path: 'storeList', component: StoreListComponent }
 ];
 
 @NgModule({
