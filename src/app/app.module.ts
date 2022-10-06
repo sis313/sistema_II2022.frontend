@@ -17,9 +17,11 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
+import { OwnerListComponent } from './components/owner-list/owner-list.component';
+import { InactiveBusinessListComponent } from './components/inactive-business-list/inactive-business-list.component';
 import {StoreListComponent} from "./components/store-list/store-list.component";
 import {AdminHomeComponent} from "./components/admin-home/admin-home.component";
-
+import { CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {AdminHomeComponent} from "./components/admin-home/admin-home.component";
     BusinessListComponent,
     MainComponent,
     StoreListComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    InactiveBusinessListComponent,
+    OwnerListComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import {AdminHomeComponent} from "./components/admin-home/admin-home.component";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    CommonModule
 
 
   ],

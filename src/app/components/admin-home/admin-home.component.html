@@ -14,7 +14,7 @@
         <div class="card register-card">
           <div class="row no-gutters">
             <div class="col-md-5">
-              <img src="https://thumbs.dreamstime.com/b/creative-dark-map-wallpaper-location-marks-gps-innovation-navigation-concept-d-rendering-228030488.jpg" alt="register" class="register-card-img">
+              <img src="https://static.vecteezy.com/system/resources/previews/002/920/438/original/abstract-city-map-seamless-pattern-roads-navigation-gps-use-for-pattern-fills-surface-textures-web-page-background-wallpaper-illustration-free-vector.jpg" alt="register" class="register-card-img">
             </div>
             <div class="col-md-7" style="text-align: center;">
               <div class="card-body">
@@ -27,23 +27,34 @@
                   </p>
                 </div>
                 <p class="register-card-description">Funciones principales</p>
-                <button type="button" class="btn btn-secondary" style="text-align: center;" onclick="location.href='/activeBusinessList'">
+                <div class="brand-wrapper" style="height: 100px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/1567/1567073.png" alt="logo" class="logo" style="width: 60px; height: 60px;">
+                  <button type="button" class="btn btn-secondary" style="text-align: center; margin-left: 110px;" [routerLink]="'/activeBusinessList'">
                     LISTA DE NEGOCIOS ACTIVOS
-                </button>
-                <div style="height: 30px;"></div>
-                <button type="button" class="btn btn-secondary" style="text-align: center;" onclick="location.href='/inactiveBusinessList'">
+                 </button> 
+                </div>
+                <div class="brand-wrapper" style="height: 100px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/269/269099.png" alt="logo" class="logo" style="width: 60px; height: 60px;">
+                  <button type="button" class="btn btn-secondary" style="text-align: center; margin-left: 110px;" [routerLink]="'/inactiveBusinessList'">
                     LISTA DE NEGOCIOS INACTIVOS
-                </button>
-                <div style="height: 30px;"></div>
-                <button type="button" class="btn btn-secondary" style="text-align: center;" onclick="location.href='/ownerList'">
-                    LISTA DE DUEÑOS DE NEGOCIOS
-                </button>
-                <div style="height: 30px;"></div>
-                <button type="button" class="btn btn-secondary" style="text-align: center;" onclick="location.href='/storeList'">
+                 </button> 
+                </div>
+                <div class="brand-wrapper" style="height: 100px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/3170/3170748.png" alt="logo" class="logo" style="width: 60px; height: 60px;">
+                  <button type="button" class="btn btn-secondary" style="text-align: center; margin-left: 110px;" [routerLink]="'/ownerList'">
+                    LISTA DE DUEÑOS DE NEGOCIOS 
+                 </button> 
+                </div>
+                <div class="brand-wrapper" style="height: 100px;">
+                  <img src="https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png" alt="logo" class="logo" style="width: 60px; height: 60px;">
+                  <button type="button" class="btn btn-secondary" style="text-align: center; margin-left: 110px;" [routerLink]="'/storeList'">
                     LISTA DE NEGOCIOS
-                </button>
+                 </button> 
+                </div>
               </div>
+              <p class="register-card-footer-text">¿Quiere modificar su información? <a href="/updateAdmin/1" class="text-reset">Presione Aquí</a></p>
             </div>
+           
           </div>
         </div>
         

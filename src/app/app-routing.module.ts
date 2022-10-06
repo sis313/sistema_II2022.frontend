@@ -21,8 +21,10 @@ const routes: Routes = [
   },
 
   { path: 'updateAdmin/:id', component: UpdateAdminComponent },
-  { path: 'business', component: BusinessListComponent },
+  { path: 'activeBusinessList', component: BusinessListComponent },
+  { path: 'inactiveBusinessList', component: InactiveBusinessListComponent},
   { path: 'updateBusiness/:id', component: UpdateBusinessComponent },
+  { path: 'ownerList', component: OwnerListComponent },
   { path: 'adminHome', component: AdminHomeComponent },
   { path: 'storeList', component: StoreListComponent }
 ];
