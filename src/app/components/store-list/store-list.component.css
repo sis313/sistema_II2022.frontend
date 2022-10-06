@@ -131,3 +131,154 @@ summary::after {
  time{ color: #757575; opacity: .75; }  
 .list-unstyled { margin-top:15px; padding-left: 0; list-style: none;}
 .list-unstyled li{ margin-bottom:6px; }
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #000000;
+  }
+  
+  /*Título*/
+  .register-card-title {
+    font-size: 35px;
+    color: #483e47;
+    font-weight: normal;
+    border-image: initial;
+    border: 1px solid #745d20;
+    text-align: center;
+  }
+  
+  /*Subtítulo*/
+  .register-card-subtitle {
+    font-size: 30px;
+    color: #483e47;
+    font-weight: normal;
+    text-align: center;
+  }
+  
+  .btn {
+    background-color: #6b7a40;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    animation-duration: 1s;
+  }
+  
+  /*Cuando el cursor se pone en el botón de register*/
+  .btn:hover {
+    border: none solid #cea660;
+    background-color: #cea660;
+    color: #483e47;
+    border-radius: 8px;
+  }
+  
+  .ftco-section {
+    padding: 20px 0;
+  }
+  
+  .heading-section {
+    font-size: 28px;
+    color: #000;
+  }
+  
+  .img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .table-wrap {
+    overflow-x: scroll;
+  }
+  
+  .table {
+    min-width: 1000px !important;
+    width: 100%;
+    -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+    box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  }
+  .table thead th {
+    border: none;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #745d20;
+  }
+  .table thead tr {
+    background: #fff;
+    border-bottom: 4px solid #eceffa;
+  }
+  .table tbody tr {
+    margin-bottom: 10px;
+    border-bottom: 4px solid #f8f9fd;
+  }
+  .table tbody tr:last-child {
+    border-bottom: 0;
+  }
+  .table tbody th,
+  .table tbody td {
+    border: none;
+    padding: 30px;
+    font-size: 15px;
+    background: #fff;
+    vertical-align: middle;
+  }
+  .table tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px;
+  }
+  .table tbody td.status span:after {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    border-radius: 50%;
+  }
+  .table tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750;
+    margin: 10px;
+  }
+  .table tbody td.status .active:after {
+    background: #23bd5a;
+  }
+  .table tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c;
+  }
+  .table tbody td.status .waiting:after {
+    background: #f2be1d;
+  }
+  .table tbody td.status .inactive {
+    background: #fddddd;
+    color: #cf0c0c;
+  }
+  .table tbody td.status .inactive:after {
+    background: #f21d1d;
+  }
+  .table tbody td .img {
+    width: 150px;
+    height: 150px;
+  }
+  .table tbody td .email span {
+    display: block;
+  }
+  .table tbody td .email span:last-child {
+    font-size: 12px;
+    color: #697a40ad;
+  }
+  .table tbody td .close span {
+    font-size: 12px;
+    color: #dc3545;
+  }
+  
+  
+  
+  
+  
