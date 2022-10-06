@@ -13,7 +13,8 @@ import { CalTemp } from 'src/app/Model/calTemp.model';
 })
 export class MainListComponent implements OnInit {
   nombre: string = '';
-  cal: CalTemp[] = []
+  cal: CalTemp[] = [];
+  active:number = 0;
   dataSend: Store[] = [];
   storeD: Store[] = [];
   constructor(private storeC: StoreService, private router: Router,
@@ -34,6 +35,10 @@ export class MainListComponent implements OnInit {
         console.log(this.storeC.getStoreName());
       });
     console.log(this.nombre);
+  }
+  modalMore(){
+    this.active = 1;
+    console.log(this.active);
   }
 
   async onCharge() {
