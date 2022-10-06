@@ -40,7 +40,7 @@ export class MainListComponent implements OnInit {
     this.active = 1;
     console.log(this.active);
   }
-
+  
   async onCharge() {
     this.storeC
       .getStoreAll()
@@ -79,7 +79,9 @@ export class MainListComponent implements OnInit {
     console.log(this.storeC.getStoreTemp());
     this.router.navigate(['/cal']);
   }
-
+  lista(){
+    this.router.navigate(['/comment']);
+  }
 
 
 

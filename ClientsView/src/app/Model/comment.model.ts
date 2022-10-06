@@ -1,9 +1,13 @@
 export class Comment{
+    public idComment: number =0;
+        public message: string ="";
+        public idBusiness: number =0;
+        public status: number = 0;
     constructor(
-        public idComment: number,
-        public message: string,
-        public idBusiness: number,
-        public status: number
+         idComment: number,
+         message: string,
+         idBusiness: number,
+         status: number
         ){
             this.idComment = idComment;
             this.message = message;

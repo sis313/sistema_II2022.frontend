@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Store } from 'src/app/Model/store.model';
 import { StoreService } from 'src/app/Service/store.service';
 //imp } from 'src/app/Model/calTemp.model';
+import { CommentService } from 'src/app/Service/comment.service';
+import { Comment } from 'src/app/Model/comment.model';
 
 
 @Component({
@@ -13,8 +15,15 @@ import { StoreService } from 'src/app/Service/store.service';
 })
 export class CalSpaceComponent implements OnInit {
   textDescription: string = "";
-  constructor(private storeService: StoreService, private router: Router) { }
-  data: Store[] =this.storeService.getStoreTemp();
+  num: number=0;
+  data: Store[] = [];
+  comment: Comment[]= [];
+  constructor(private storeService: StoreService, private router: Router,
+    private commentService: CommentService ) {
+      this.data = this.storeService.getStoreTemp();
+      this.num =2;
+     }
+   
   ngOnInit(): void {
    this.onCharge();
   }
@@ -24,7 +33,16 @@ export class CalSpaceComponent implements OnInit {
     console.log(this.data);
   }
   Calificar(){
-
+    // for (let i in this.data){
+    this.comment.push({
+      idComment: this.num,
+      message: this.textDescription,
+      idBusiness: this.data[0].id_business,
+      status: 1
+    });
+    this.commentService.setComment(this.comment);
+    this.router.navigate(['/main']);
+  // }
   }
   Volver(){
     this.router.navigate(['/main'])

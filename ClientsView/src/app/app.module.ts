@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponentComponent } from './View/home-component/home-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CalSpaceComponent } from './View/cal-space/cal-space.component';
-import { CommentListComponent } from './View/comment-list/comment-list.component'; 
+import { ComentListComponent } from './View/comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { CommentListComponent } from './View/comment-list/comment-list.component
     MainListComponent,
     HomeComponentComponent,
     CalSpaceComponent,
-    CommentListComponent
+    ComentListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { CommentListComponent } from './View/comment-list/comment-list.component
       {path: 'home', component: HomeComponentComponent},
       {path: 'main', component: MainListComponent},
       {path: 'cal', component: CalSpaceComponent},
-      {path: 'comment', component: CommentListComponent},
+      {path: 'comment', component: ComentListComponent},
       {path: '',redirectTo: '/home', pathMatch: 'full'},
       
     ]),
