@@ -17,10 +17,12 @@ export class CalSpaceComponent implements OnInit {
   textDescription: string = "";
   num: number=0;
   data: Store[] = [];
+  commentS : Comment[] = [];
   comment: Comment[]= [];
   constructor(private storeService: StoreService, private router: Router,
     private commentService: CommentService ) {
       this.data = this.storeService.getStoreTemp();
+      this.commentS = this.commentService.getComment();
       this.num =2;
      }
    
@@ -33,7 +35,16 @@ export class CalSpaceComponent implements OnInit {
     console.log(this.data);
   }
   Calificar(){
-    // for (let i in this.data){
+    if (this.commentS.length>0){
+     for (let i in this.commentS){
+    this.comment.push({
+      idComment: this.commentS[i].idComment,
+      message: this.commentS[i].message,
+      idBusiness: this.commentS[i].status,
+      status: 1
+    });
+  }
+}
     this.comment.push({
       idComment: this.num,
       message: this.textDescription,
@@ -42,7 +53,7 @@ export class CalSpaceComponent implements OnInit {
     });
     this.commentService.setComment(this.comment);
     this.router.navigate(['/main']);
-  // }
+   
   }
   Volver(){
     this.router.navigate(['/main'])
