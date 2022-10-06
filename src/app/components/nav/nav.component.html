@@ -1,25 +1,54 @@
-<head>
-    <link rel="stylesheet" href="nav.component.css" />
-</head>
 <nav class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-        <button class="sidebar-open btnsidebar" (click)="sidebarShow = !sidebarShow">
-            Open Sidebar
+  <div class="navbar-header">
+      <button class="sidebar-open btnsidebar" (click)="sidebarShow = !sidebarShow" style="float: left; margin: 10px;">
+        <i class="material-symbols-outlined">
+          menu
+        </i>
+      </button>
+        <div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+          <button class="sidebar-close" (click)="sidebarShow = !sidebarShow">
+            <i class="material-symbols-outlined">
+              cancel
+            </i>
           </button>
-          <div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
-            <button class="sidebar-close" (click)="sidebarShow = !sidebarShow">x</button>
-            <div class="sidebar-content">
-                <h2 class="set-align"></h2>
-                <div class="set-sidebar-text">Dashbord</div>
-                <div class="set-sidebar-text">Home</div>
-                <div class="set-sidebar-text">Profile</div>
-                <div class="set-sidebar-text">Message</div>
-                <div class="set-sidebar-text">Help</div>
-                <div class="set-sidebar-text">Setting</div>
-                <div class="set-sidebar-text">Sign Out</div>
-            </div>
+          <div class="sidebar-content">
+              <h2 class="set-align"></h2>
+              <p class="register-card-title" style="padding: 10px">
+                Opciones
+              </p>
+              <div class="set-sidebar-text" [routerLink]="'/activeBusinessList'">
+                <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
+                  list
+                </span>
+                Negocios Activos
+              </div>
+              <div class="set-sidebar-text" [routerLink]="'/inactiveBusinessList'">
+                <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
+                  filter_list_off
+                </span>
+                Negocios Inactivos
+              </div>
+              <div class="set-sidebar-text" [routerLink]="'/ownerList'">
+                <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
+                  person_4
+                </span>
+                Dueños de negocios
+              </div>
+              <div class="set-sidebar-text" [routerLink]="'/storeList'">
+                <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
+                  store
+                </span>
+                Negocios
+              </div>
+              <div class="set-sidebar-text" [routerLink]="'/main'">
+                <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
+                  logout
+                </span>
+                Cerrar sesión
+              </div>
+              <img src="https://cdn-icons-png.flaticon.com/512/4781/4781517.png" style="height: 150px; width:150px; display:block; margin:auto;">
           </div>
-    </div>
-   
- 
-  </nav>
+          
+        </div>
+  </div>
+</nav>

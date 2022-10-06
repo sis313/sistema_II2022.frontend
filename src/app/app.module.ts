@@ -22,6 +22,7 @@ import { InactiveBusinessListComponent } from './components/inactive-business-li
 import {StoreListComponent} from "./components/store-list/store-list.component";
 import {AdminHomeComponent} from "./components/admin-home/admin-home.component";
 import { CommonModule} from '@angular/common';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CommonModule} from '@angular/common';
     StoreListComponent,
     AdminHomeComponent,
     InactiveBusinessListComponent,
-    OwnerListComponent
+    OwnerListComponent, 
+    NavComponent
   ],
   imports: [
     BrowserModule,

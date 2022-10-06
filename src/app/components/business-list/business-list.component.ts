@@ -16,6 +16,7 @@ import Swal from 'sweetalert2';
 export class BusinessListComponent implements OnInit {
   inactive:business[] = [];
   businessList:business[] = [];
+  public sidebarShow: boolean = false;
 
   constructor(private _liveAnnouncer: LiveAnnouncer,private businessListService: BusinesslistService,private router: Router) {}
 
@@ -72,10 +73,13 @@ export class BusinessListComponent implements OnInit {
       confirmButtonText: 'Aceptar',
     }).then(async (result) => {
       if (result.value) {
-        console.log('owner List');
+        console.log('business List');
         await window.location.reload();
       }
     });
   }
 
+  async editBusiness(id: any) {
+    await this.router.navigateByUrl(`/updateBusiness/${id}`);
+  }
 }

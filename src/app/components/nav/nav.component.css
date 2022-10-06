@@ -1,15 +1,20 @@
+
 nav.navbar {
-    background-color: #CC1414;
+ 
+    z-index: 100
 }
-
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    box-sizing: border-box;
-    font-size: 16px;
+  
+/*Título*/
+.register-card-title {
+    font-size: 25px;
+    color: #483e47;
+    font-weight: normal;
+    text-align: center;
 }
-
-.sidebar-open{
-    background-color: #080808;
+  
+  
+  .sidebar-open{
+    
     border: none;
     color: white;
     padding: 16px 32px;
@@ -19,75 +24,74 @@ nav.navbar {
     font-size: 16px;
     margin: 4px 2px;
     transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.btnsidebar{
-    background-color: black;
-    color: white;
-    border: 1px solid #555555; 
-    border-radius: 10px;
-}
-
-.btnsidebar:hover{
+   
+  }
+  
+  .btnsidebar{
+    background-color: transparent;
+    color: rgb(14, 82, 138);
+    padding: 1px;
+    margin: 1px;
+  }
+  
+  .btnsidebar:hover{
     box-shadow: 2px 2px 5px gray;
-} 
-
-.sidebar-slider {
+  } 
+  
+  .sidebar-slider {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: black;
+    background-color: #eee1c5;
     transform: translateX(-100%);
     transition: ease-in-out 300ms transform;
     width: 300px;
     display:inline-block;
-}
-
-.sidebar-slider.sidebar-slide-in {
+  }
+  
+  .sidebar-slider.sidebar-slide-in {
     transform: translateX(0%);
     transition: ease-in-out 600ms transform;
-}
-
-.sidebar-close {
+  }
+  
+  .sidebar-close {
     position: fixed;
     top: 0;
     right: 0;
-    color: black;
+    color: rgb(204, 6, 6);
     cursor: pointer;
-    background-color: white;
+    background-color: transparent;
     border: none;
-    margin: 7px;
-    border-radius: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 21px;
-    font-weight: 400;
-}
-
-.sidebar-content {
+    
+  }
+  
+  .sidebar-content {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: black;
     font-size: 16px;
     padding: 10px;
     height: 100%;
     margin-top:66px;
     
-}
-
-.set-align{
+  }
+  
+  .set-align{
     text-align: center;
-}
-
-.set-sidebar-text{
+  }
+  
+  .set-sidebar-text{
     padding: 11px;
-}
-
-.set-sidebar-text:hover{
-    background-image: linear-gradient(to right, rgb(150, 218, 250),black);
+  }
+  
+  .set-sidebar-text:hover{
+    background-image: #D1913C;  
+    background-image: -webkit-linear-gradient(to right, #FFD194, #D1913C);  
+    background-image: linear-gradient(to right, #FFD194, #D1913C); 
+    font: bold;
     color: black;
-    border-left: 10px solid rgb(3, 172, 250);
+    text-shadow: #000000;
+    border-left: 10px solid #6b7a40;
     cursor: pointer;
-}
+  }

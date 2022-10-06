@@ -46,7 +46,7 @@ export class InactiveBusinessListComponent implements OnInit {
       if (result.value) {
         await this.restoreBusinessById(id,status);
         console.log('SE RESTURÓ EL NEGOCIO CORRECTAMENTE');
-        
+        await this.successNotificationRestoreCorrectly();
       }
     });
   }
@@ -60,4 +60,18 @@ export class InactiveBusinessListComponent implements OnInit {
   }
 
 
+  async successNotificationRestoreCorrectly() {
+    let self = this;
+    Swal.fire({
+      icon: 'success',
+      title: 'Negocio habilitado correctamente',
+      showConfirmButton: true,
+      confirmButtonText: 'Aceptar',
+    }).then(async (result) => {
+      if (result.value) {
+        console.log('inactive business List');
+        await window.location.reload();
+      }
+    });
+  }
 }

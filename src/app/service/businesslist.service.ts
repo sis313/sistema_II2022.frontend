@@ -37,7 +37,7 @@ export class BusinesslistService {
 
   //Modificar
   deleteBusiness(idBusiness: number): Observable<void> {
-   const url = `${this.baseUrl}/${idBusiness}`;
+   const url = `${this.baseUrl}adminBusiness/deleteBusiness/${idBusiness}`;
     return this.http.delete<void>(url);
   }
 
@@ -46,4 +46,5 @@ export class BusinesslistService {
     const url = `${this.baseUrl}adminBusinessStatus/${idBusiness}`;
     return this.http.put<business>(url,provider);
   }
+  
 }
