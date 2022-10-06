@@ -15,4 +15,11 @@ export class ListaSucursalService {
     let url = "https://serviceprojectspring.herokuapp.com/api/branch"
     return this.http.get(url);
   }
+
+  //http://localhost:8080/api/branch/1
+
+  deleteSucursal(id: string){
+    let url = "http://serviceprojectspring.herokuapp.com/api/branch/"+id
+    return this.http.delete(url)
+  }
 }
