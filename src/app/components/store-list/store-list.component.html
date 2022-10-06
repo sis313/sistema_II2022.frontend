@@ -1,19 +1,45 @@
-<div *ngFor ="let item of zonebusiness ">
-<mat-card>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<link rel="stylesheet" href="store-list.component.css">
+    </head>
+	<div class="brand-wrapper">
+        <p class="register-card-title" style="padding: 10px">
+          LISTA DE NEGOCIOS 
+        </p>
+      </div>
+      
+    <body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-dark">
+						    <tr>
+						      <th>ID tiendas.</th>
+						      <th>Nombre</th>
+						      <th>Numero de tiendas</th>
+                              <th>Sucursales</th>
 
-    <mat-card-title>Nombre {{item.name}} </mat-card-title>
-    <mat-card-subtitle> numero de negocio{{item.numberBusiness}}</mat-card-subtitle>
-    <mat-card-subtitle> id {{item.zone_business}}</mat-card-subtitle>
-    <mat-card-actions align="end">
-        <button mat-button (click)="listBusinessByZone(item.zone_business)">Negocios</button>
-    </mat-card-actions>
-    <div *ngFor ="let asd of item.listbusiness " >
-        <mat-card-title>nombre de negocio 2 {{asd.name}}</mat-card-title>
-
-    </div>
-  <mat-card></mat-card>
-
-</mat-card>
-</div>
-
+						      
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr *ngFor ="let item of zonebusiness" class="alert" role="alert">
+                                <td>{{item.zone_business}}</td> 
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.numberBusiness}}</td>
+                                <td>
+                                    <div *ngFor ="let asd of item.listbusiness "> {{asd.name}}</div>    
+                                </td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
 

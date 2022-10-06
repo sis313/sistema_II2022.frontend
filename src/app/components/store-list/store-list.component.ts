@@ -67,8 +67,6 @@ export class StoreListComponent implements OnInit {
       this.zonebusiness[i].listbusiness=businesslist;
   }
 
-  
-
 }
 
   
