@@ -35,14 +35,15 @@
       
   
             <tr *ngFor="let sucursal of sucursales">
-          <div class="list-group-item d-flex w-100 justify-content-between" id="list-group-item" style="background-color: #CEA660;  padding: 20px;">
+              <div *ngIf="sucursal.status==1">
+          <div  class="list-group-item d-flex w-100 justify-content-between" id="list-group-item" style="background-color: #CEA660;  padding: 20px;">
        
 
             <div class="list-group-item" style="background-color: #745d20; width: 225 px; height: 225px;">
               <img src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
           </div>
             <div>
-                <p class="mb-1">idBusiness {{sucursal.idBusiness}}</p>
+                <p class="mb-1">idBusiness {{sucursal.idBranch}}</p>
                 <p class="mb-1">Dirección {{sucursal.direction}}</p>
                 
                 <ul class="list-group">
@@ -71,6 +72,7 @@
 
               
           </div>
+        </div>
             </tr>
       
   <br>

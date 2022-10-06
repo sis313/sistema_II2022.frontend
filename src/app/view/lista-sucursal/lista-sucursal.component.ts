@@ -21,13 +21,14 @@ comentarios = [
 ];
 
 constructor(private service: ListaSucursalService) { 
-  this.service.getSucursales().subscribe((data:any)=>{
-    //console.warn(data)
-    console.log(data)
-    this.sucursales=data
-  })
+this.ngOnInit()
 }
   ngOnInit(): void {
+    this.service.getSucursales().subscribe((data:any)=>{
+      //console.warn(data)
+      console.log(data)
+      this.sucursales=data
+    })
   }
 
   eliminarSucursal(idBranch: any/*, name: any*/) {
