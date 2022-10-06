@@ -1,5 +1,5 @@
 <div class="container" id="principal" style="padding: 15px !important">
-  <div class="container d-flex justify-content-center align-items-center flex-column" >
+  <div *ngIf="mostrar_opciones" class="container d-flex justify-content-center align-items-center flex-column" >
     <h2>Sucursal seleccionada</h2>
     <div class="container d-flex justify-content-center align-items-center flex-row">
       <div class="form-group mx-3">
@@ -10,8 +10,8 @@
       </div>
       <div class="form-group mx-3">
         <label for="cantidad">Nombres sucursales </label>
-        <select [(ngModel)]="negocioSeleccionado" (change)="buscar()" class="browser-default custom-select">
-        <option *ngFor="let i of negocios;" [ngValue]="i">{{i.name}}</option>
+        <select [(ngModel)]="sucursalSeleccionada" (change)="cambiarPosicionPorIDLocationSucursal(sucursalSeleccionada.idZone)"  class="browser-default custom-select">
+        <option *ngFor="let i of sucursales;" [ngValue]="i">{{i.idBranch+" "+i.address}}</option>
         </select>
       </div>  
     </div>
@@ -32,7 +32,7 @@
           <span class="input-group" id="basic-addon1">Direccion</span>
           <div class="input-group">
             <textarea
-              [(ngModel)]="desc_act"
+              [(ngModel)]="sucursalSeleccionada.address"
               class="form-control"
               id="floatingTextarea2"
               style="height: 200px"
@@ -40,11 +40,11 @@
           </div>
           <span class="input-group" id="basic-addon1">Inicio</span>
           <div class="input-group">
-            <input type="time" [(ngModel)]="inicio" class="form-control" />
+            <input type="time" [(ngModel)]="sucursalSeleccionada.openHour" class="form-control" />
           </div>
           <span class="input-group" id="basic-addon1">Fin</span>
           <div class="input-group">
-            <input type="time" [(ngModel)]="fin" class="form-control" />
+            <input type="time" [(ngModel)]="sucursalSeleccionada.closeHour" class="form-control" />
           </div>
           <div
             class=""
@@ -133,7 +133,7 @@
             <input type="file" (change)="onChange($event)" />
           </div>
           <img
-            [src]="img"
+            [src]="'data:image/jpg;base64,'+sucursalSeleccionada.image"
             alt=""
             style="width: 200px; height: 200px; overflow: hidden"
           />
@@ -143,7 +143,7 @@
           <label for="flexSwitchCheckDefault">Mostrar negocio</label>
           <div class="form-switch" style="margin-bottom: 40px">
             <input
-              [(ngModel)]="mostrar"
+              [(ngModel)]="sucursalSeleccionada.status"
               class="form-check-input"
               type="checkbox"
               role="switch"
@@ -154,10 +154,10 @@
           <div class="form-group">
             <label for="cantidad">Zonas </label>
             <select
-              [(ngModel)]="zona_seleccionada"
               class="browser-default custom-select"
+              (change)="seleccionarZona($event.target)"
             >
-              <option [value]="zona.idZone" *ngFor="let zona of listaZonas">
+              <option [value]="index" *ngFor="let zona of listaZonas;let index=index" [selected]="zona.idZone==sucursalSeleccionada.idZone">
                 {{ zona.name }}
               </option>
             </select>

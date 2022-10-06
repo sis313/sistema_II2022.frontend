@@ -48,6 +48,9 @@ const routes: Routes = [
         path:'editar-sucursal/:id',component:EditarSucursalComponent
       },
       {
+        path:'editar-sucursal',component:EditarSucursalComponent
+      },
+      {
         path:'crear-sucursal',component:SucursalComponent
       },
       {

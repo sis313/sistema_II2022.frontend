@@ -16,6 +16,8 @@ import { LocationServiceService } from 'src/app/service/location-service.service
 import { Observable, Subscriber } from 'rxjs';
 import { ZonasServiceService } from '../../service/zonas-service.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ListaSucursalService } from 'src/app/service/lista-sucursal.service';
+import { Zona } from '../../model/Zona';
 
 
 
@@ -25,6 +27,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./editar-sucursal.component.css']
 })
 export class EditarSucursalComponent implements OnInit {
+    verSucursalSeleccionado() {
+      console.log(this.sucursalSeleccionada);
+    }
     onChange($event:Event){
       this.file = ($event.target as HTMLInputElement)?.files?.[0];
       console.log(this.file);
@@ -39,7 +44,11 @@ export class EditarSucursalComponent implements OnInit {
       });
       observable.subscribe((d)=>{
         console.log(d);
-        this.img=d;
+        d=d.replace("data:image/jpeg;base64,","");
+        d=d.replace("data:image/jpg;base64,","");
+        d=d.replace("data:image/png;base64,","");
+        d=d.replace("data:image/svg;base64,","");
+        this.sucursalSeleccionada.image=d;
       });
     }
   readFile(file: File, subscriber: Subscriber<any>) {
@@ -101,7 +110,7 @@ actualizarInfo() {
   inicio:any;
   fin:any;
   public form: FormGroup;
-  constructor(private fb: FormBuilder,private zonasService:ZonasServiceService,private activatedRoute:ActivatedRoute,private sucursalService:SucursalService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService,private locationServiceService:LocationServiceService) { 
+  constructor(private service: ListaSucursalService,private fb: FormBuilder,private zonasService:ZonasServiceService,private activatedRoute:ActivatedRoute,private sucursalService:SucursalService,private sanitizer:DomSanitizer, private router: Router,private editServiceService:EditServiceService,private listaNegocioService:ListaNegocioService,private negocioService:NegocioService,private locationServiceService:LocationServiceService) { 
     this.form = this.fb.group({
       rating: ['5', Validators.required],
     })
@@ -110,35 +119,56 @@ actualizarInfo() {
     this.listaNegocioService.getNegociosDeUsuarioPorID(1).subscribe((data:any)=>{
       console.log(data)
       this.negocios=data
+      this.negocioSeleccionado=this.negocios[0];
+      this.buscarSucursales(this.negocioSeleccionado.idBusiness);
     })
     console.log("OBTENER NEGOCIOS");
     console.log(this.negocios);
   }
   location:any;
-  listaZonas:any;
-  zona_seleccionada:any;
-  ngOnInit(): void {
-    
+  listaZonas:Zona[]=[];
+  zona_seleccionada:Zona | undefined;
+  cambiarPosicionPorIDLocationSucursal(id:any){
+    this.locationServiceService.getLocationID(id).subscribe((l:any)=>{
+      //console.warn(data)
+      this.location=l;        
+      console.log(this.location);
+      this.cambiarPosicion(this.location.longitude,this.location.latitude);
+    });
+  }
+  obtenerZonas(){
     this.zonasService.obtenerZonas().subscribe((data:any)=>{
+      console.log(data);
       this.listaZonas=data;
+      console.log(this.listaZonas);
     });
+  }
+  mostrar_opciones=false;
+  ngOnInit(): void {
+    this.obtenerZonas();
+   
     this.activatedRoute.params.subscribe( params => {
-      this.sucursalService.getSucursalPorID(params['id']).subscribe((data:any)=>{
-        //console.warn(data)
-        this.datos_sucursal=data;
-        this.mostrar=this.datos_sucursal.status;
-        this.img="data:image/jpeg;base64,"+this.datos_sucursal.image;
-        console.log(data);
-        this.locationServiceService.getLocationID(this.datos_sucursal.idLocation).subscribe((l:any)=>{
+      console.log("PARAMS-----------------------------------------------------------------------------------------------------------------------------------------------------------"+params['id'])
+      if(params['id']==null){
+        console.log('UNDEFINED------------------------------------------------------------------------------------------------------------------------------------------------------------')
+        this.obtenerNegocios();
+        this.mostrar_opciones=true;
+      }else{
+        console.log('VALOR--------------------------------------------------------------------------------------------------------------------------------------------------------------'+params['id']);
+        this.mostrar_opciones=false;
+        this.sucursalService.getSucursalPorID(params['id']).subscribe((data:any)=>{
           //console.warn(data)
-          this.location=l;        
-          console.log(this.location);
-          this.cambiarPosicion(this.location.longitude,this.location.latitude);
+          this.sucursalSeleccionada=data;
+          // this.sucursalSeleccionada.image="data:image/jpeg;base64,"+this.sucursalSeleccionada.image;
+          console.log(data);
+          this.cambiarPosicionPorIDLocationSucursal(this.sucursalSeleccionada.idBranch)
+          this.buscarZonas();
         });
-      });
+      }
+     
     });
-    this.obtenerNegocios();
-    
+   
+     
     (mapboxgl as any).accessToken =environment.mapboxkey;
   
     this.map= new mapboxgl.Map({
@@ -246,32 +276,25 @@ actualizarInfo() {
     console.log(this.inicio+":00");
     console.log(this.fin+":00");
     console.log(JSON.stringify(this.dias));
-    this.img=this.img.replace("data:image/jpeg;base64,","");
-    this.img=this.img.replace("data:image/jpg;base64,","");
-    this.img=this.img.replace("data:image/png;base64,","");
-    this.img=this.img.replace("data:image/svg;base64,","");
-
-    console.log(this.img);
-    console.log(this.zona_seleccionada)
-    console.log(this.negocios[0].latitude)
-    console.log(this.negocios[0].longitude)
-    console.log(this.datos_sucursal.idLocation);
-    console.log("2022-09-28")
-    console.log(this.mostrar)
-    console.log(this.datos_sucursal.idBusiness)
+    this.sucursalSeleccionada.image=this.sucursalSeleccionada.image.replace("data:image/jpeg;base64,","");
+    this.sucursalSeleccionada.image=this.sucursalSeleccionada.image.replace("data:image/jpg;base64,","");
+    this.sucursalSeleccionada.image=this.sucursalSeleccionada.image.replace("data:image/png;base64,","");
+    this.sucursalSeleccionada.image=this.sucursalSeleccionada.image.replace("data:image/svg;base64,","");
+    console.log("zona seleccionada ")
+    console.log(this.zona_seleccionada);
     let actualizar={
-      "address": this.desc_act,
-      "openHour": "2022-01-01T"+this.inicio+":00",
-      "closeHour": "2022-01-01T"+this.fin+":00",
+      "address": this.sucursalSeleccionada.address,
+      "openHour": "2022-01-01T"+this.sucursalSeleccionada.openHour,
+      "closeHour": "2022-01-01T"+this.sucursalSeleccionada.closeHour,
       // "attentionDays": JSON.stringify(this.dias),
       "attentionDays":"",
-      "image":this.img,
-      "idZone": Number(this.zona_seleccionada),
-      "idLocation": this.datos_sucursal.idLocation,
-      "idBusiness": this.datos_sucursal.idBusiness,
+      "image":this.sucursalSeleccionada.image,
+      "idZone": Number(this.zona_seleccionada?.idZone),
+      "idLocation": this.sucursalSeleccionada.idLocation,
+      "idBusiness": this.sucursalSeleccionada.idBusiness,
       "createDate": "2022-01-01",
       "updateDate": "2022-01-01",
-      "status": (this.mostrar)?1:0
+      "status": (this.sucursalSeleccionada.status)?1:0
     }
   //   actualizar={
   //     "address": this.desc_act+"",
@@ -287,12 +310,18 @@ actualizarInfo() {
   //     "status": 1
   // }
   
-    let id=this.datos_sucursal.idBranch;
+    let id=this.sucursalSeleccionada.idBranch;
     console.log(id);
     console.log(actualizar);
     this.sucursalService.actualizarSucursal(id,actualizar).subscribe((data:any)=>{
       console.log(data)
     })
+
+
+
+
+
+
     // Swal.fire({
     //   title: 'Estas seguro?',
     //   text: "Quieres actualizar los datos de tu negocio?",
@@ -511,8 +540,32 @@ actualizarInfo() {
     console.log(this.negocioSeleccionado);
     this.desc_act=this.negocioSeleccionado.description;
     this.mostrar=(this.negocioSeleccionado.status==1)?true:false;
-    
+    this.buscarSucursales(this.negocioSeleccionado.idBusiness);
   }
+  sucursales:any;
+  sucursalSeleccionada:any;
+  buscarSucursales(id:any){
+    this.service.getSucursalesLocalhost(id).subscribe((data:any)=>{
+      //console.warn(data)
+      console.log(data)
+      this.sucursales=data
+      console.log(this.sucursales);
+      this.sucursalSeleccionada=this.sucursales[0];
+      this.cambiarPosicionPorIDLocationSucursal(this.sucursales[0].idBranch);
+      this.buscarZonas();
 
-
+    });
+  }
+  buscarZonas(){
+    this.obtenerZonas();
+    for(let i=0;i<this.listaZonas.length;i++){
+      if(this.listaZonas[i].idZone==this.sucursalSeleccionada.idZone){
+        this.zona_seleccionada=this.listaZonas[i];
+      }
+    }
+  }
+  seleccionarZona(zona:any){
+    this.zona_seleccionada=this.listaZonas[zona.value]
+    console.log(this.zona_seleccionada)
+  }
 }
