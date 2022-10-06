@@ -6,6 +6,7 @@ import { UpdateBusinessComponent } from './components/update-business/update-bus
 import { InactiveBusinessListComponent } from './components/inactive-business-list/inactive-business-list.component';
 import { OwnerListComponent } from './components/owner-list/owner-list.component';
 import { StoreListComponent } from './components/store-list/store-list.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 
 const routes: Routes = [
   { path: 'updateAdmin/:id', component: UpdateAdminComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'updateBusiness/:id', component: UpdateBusinessComponent },
   { path: 'inactiveBusinessList', component: InactiveBusinessListComponent },
   { path: 'ownerList', component: OwnerListComponent},
-  { path: 'storeList', component: StoreListComponent}
+  { path: 'storeList', component: StoreListComponent},
+  { path: 'adminHome', component:AdminHomeComponent}
 
 ];
 

@@ -16,6 +16,8 @@ import { InactiveBusinessListComponent } from './components/inactive-business-li
 import { OwnerListComponent } from './components/owner-list/owner-list.component';
 import { StoreListComponent } from './components/store-list/store-list.component';
 import { MatCardModule } from '@angular/material/card';
+import { NavComponent } from './components/nav/nav.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { MatCardModule } from '@angular/material/card';
     InactiveBusinessListComponent,
     OwnerListComponent,
     StoreListComponent,
+    NavComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,
