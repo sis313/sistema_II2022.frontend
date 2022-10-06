@@ -29,8 +29,21 @@ export class BusinesslistService {
     return this.http.put<business>(url,provider)
   }
 
-  // getData(){
-  //   const url = `${this.baseUrl}adminBusiness`;
-  //   return this.http.get(url);
-  // }
+  getListInactiveBusiness():Observable<business[]> {
+    const url = `${this.baseUrl}adminBusiness/status=0`;
+    console.log(url);
+    return this.http.get<business[]>(url);
+  }
+
+  //Modificar
+  deleteBusiness(idBusiness: number): Observable<void> {
+   const url = `${this.baseUrl}/${idBusiness}`;
+    return this.http.delete<void>(url);
+  }
+
+
+  restoreBusiness(idBusiness: number,provider:business): Observable<business> {
+    const url = `${this.baseUrl}adminBusinessStatus/${idBusiness}`;
+    return this.http.put<business>(url,provider);
+  }
 }
