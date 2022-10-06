@@ -8,14 +8,16 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HomeComponentComponent } from './View/home-component/home-component.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CalSpaceComponent } from './View/cal-space/cal-space.component'; 
+import { CalSpaceComponent } from './View/cal-space/cal-space.component';
+import { CommentListComponent } from './View/comment-list/comment-list.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainListComponent,
     HomeComponentComponent,
-    CalSpaceComponent
+    CalSpaceComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,
