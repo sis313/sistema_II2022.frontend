@@ -28,6 +28,7 @@ import { CommentListComponent } from './View/comment-list/comment-list.component
       {path: 'home', component: HomeComponentComponent},
       {path: 'main', component: MainListComponent},
       {path: 'cal', component: CalSpaceComponent},
+      {path: 'comment', component: CommentListComponent},
       {path: '',redirectTo: '/home', pathMatch: 'full'},
       
     ]),
