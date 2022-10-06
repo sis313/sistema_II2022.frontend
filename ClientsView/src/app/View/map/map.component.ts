@@ -18,6 +18,8 @@ export class MapComponent implements OnInit {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    marker([-16.523178, -68.112209]).addTo(map)
+    var markerTest = marker([-16.523178, -68.112209]);
+    markerTest.bindPopup('<b>Hello world!</b><br>I am a popup.').openPopup();
+    markerTest.addTo(map);
   }
 }
