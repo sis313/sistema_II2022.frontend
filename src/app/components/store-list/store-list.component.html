@@ -1,45 +1,41 @@
-<!doctype html>
 <html lang="en">
-  <head>
-  	<link rel="stylesheet" href="store-list.component.css">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Expansion panels</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
     </head>
-	<div class="brand-wrapper">
-        <p class="register-card-title" style="padding: 10px">
-          LISTA DE NEGOCIOS 
-        </p>
-      </div>
-      
     <body>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="table-wrap">
-						<table class="table">
-						  <thead class="thead-dark">
-						    <tr>
-						      <th>ID tiendas.</th>
-						      <th>Nombre</th>
-						      <th>Numero de tiendas</th>
-                              <th>Sucursales</th>
 
-						      
-						    </tr>
-						  </thead>
-						  <tbody>
-						    <tr *ngFor ="let item of zonebusiness" class="alert" role="alert">
-                                <td>{{item.zone_business}}</td> 
-                                    <td>{{item.name}}</td>
-                                    <td>{{item.numberBusiness}}</td>
-                                <td>
-                                    <div *ngFor ="let asd of item.listbusiness "> {{asd.name}}</div>    
-                                </td>
-						    </tr>
-						  </tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="brand-wrapper">
+                  <p class="register-card-title" style="padding: 10px">
+                    LISTA DE NEGOCIOS ACTIVOS
+                  </p>
+                </div>
+              
+                <div class="panel">
+                <details *ngFor ="let item of zonebusiness">
+                    <summary >
+                    <ul >
+                        <li class="titleName">{{item.name}}</li>
+                        <li class="titleValue"> {{item.numberBusiness}}</li>
+                    </ul>
+                    </summary>
+                    <div *ngFor ="let asd of item.listbusiness " class="content">
+                        <p>
+                            {{asd.name}}
+                        </p>
+                    </div>
+                </details>  
+            </div>
+        </div>
+        </div>
+       
+    </body>
 </html>
 
