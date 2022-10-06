@@ -12,29 +12,18 @@ import { CrearServiciosComponent } from './Components/crear-servicios/crear-serv
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales-por-id/listado-sucursales-por-id.component';
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
+import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/listado-ratings-menu.component';
 
 const routes: Routes = [
   {
-    path:'',component:NegocioComponent
+    path:'',component:MainComponent
     
   },
-  {
-    path:'sucursal',component:SucursalComponent
-  },
-  {
-    path:'producto',component:ProductoComponent
-  },
-  {
-    path:'lista-sucursal',component:ListaSucursalComponent
-  },
-  {
-    path:'dashboard',component:DashboardComponent
-  },
-  {
-    path:'editar-sucursal/:id',component:EditarSucursalComponent
-  },
+  // {
+  //   path:'producto',component:ProductoComponent
+  // },
   { 
-    path: 'servicios',
+    path: 'adm',
     component: MainComponent,
     children: [
       { 
@@ -48,6 +37,21 @@ const routes: Routes = [
       },
       {
         path: "editar-negocio",component: EditarServiciosComponent,
+      },
+      {
+        path:'dashboard',component:DashboardComponent
+      },
+      {
+        path:'lista-sucursal',component:ListaSucursalComponent
+      },
+      {
+        path:'editar-sucursal/:id',component:EditarSucursalComponent
+      },
+      {
+        path:'crear-sucursal',component:SucursalComponent
+      },
+      {
+        path:'listado-rating-menu',component:ListadoRatingsMenuComponent
       },
     ]
   },

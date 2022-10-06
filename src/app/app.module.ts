@@ -37,6 +37,7 @@ import { EditarSucursalComponent } from './Components/editar-sucursal/editar-suc
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { ListadoSucursalRatingComponent } from './Components/listado-sucursal-rating/listado-sucursal-rating.component';
+import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/listado-ratings-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { ListadoSucursalRatingComponent } from './Components/listado-sucursal-ra
     DashboardComponent,
     EditarSucursalComponent,
     ListadoSucursalRatingComponent,
+    ListadoRatingsMenuComponent,
   ],
   imports: [
     HttpClientModule,

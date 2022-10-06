@@ -83,8 +83,9 @@ export class EditarServiciosComponent implements OnInit {
   }
   modalRef: MdbModalRef<ListadoSucursalRatingComponent> | null = null;
   mostrarRatings(){
+
     this.modalRef = this.modalService.open(ListadoSucursalRatingComponent, {
-      data: { idNegocio: this.id_negocio },
+      data: { idNegocio: this.negocioSeleccionado.idBusiness },
     });
   }
 }

@@ -45,6 +45,7 @@ textarea:focus,textarea:hover,textarea:visited,textarea:active{
     /* background-color: #697a4059; */
 
     padding: 3%;
+    padding-top: 0%;
 }
 
 #datos-izquierda .input-group{

@@ -94,7 +94,7 @@ nav li:hover{
 
 }*/
 #titulo #cabecera-con-hover{
-    display:none;
+    display:flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
@@ -107,7 +107,7 @@ nav li:hover{
     margin: 5px;
     margin-right: 100px;
 }
-#contenido_total:hover #cabecera-con-hover{
+/* #contenido_total:hover #cabecera-con-hover{
     display: flex;
     transition-duration: 3s !important;
     
@@ -116,7 +116,7 @@ nav li:hover{
     display: none;
     transition-duration: 3s !important;
 
-}
+} */
 
 /* 
 .nav-item:hover{

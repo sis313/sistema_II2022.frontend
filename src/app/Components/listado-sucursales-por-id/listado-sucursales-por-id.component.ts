@@ -38,7 +38,7 @@ constructor(private listadoHelperService:ListadoHelperService,private service: L
   }
   actualizarSucursal(id:any){
     console.log("Ir a ruta de negocio:"+id);
-    this.router.navigate(['editar-sucursal',id]);
+    this.router.navigate(['/adm/editar-sucursal',id]);
   }
 
 }

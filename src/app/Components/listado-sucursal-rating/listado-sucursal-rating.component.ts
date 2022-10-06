@@ -18,11 +18,11 @@ export class ListadoSucursalRatingComponent implements OnInit {
   }
   listadoRating:SucursalRating[]=[];
   ngOnInit(): void {
-    
     this.service.getSucursalesLocalhost(this.idNegocio).subscribe((data:any)=>{
-      console.warn(data)
-      this.listadoSucursales=data;
+      console.log(this.idNegocio)
       console.log(data[0].idBranch)
+      console.log(data)
+      this.listadoSucursales=data;
       for(let i=0;i<this.listadoSucursales.length;i++){
         this.sucursalService.getRatingSucursalID(data[i].idBranch).subscribe((data2:any)=>{
           console.log(data2.averageScore);
