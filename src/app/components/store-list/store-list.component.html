@@ -1,0 +1,19 @@
+<div *ngFor ="let item of zonebusiness ">
+<mat-card>
+
+    <mat-card-title>Nombre {{item.name}} </mat-card-title>
+    <mat-card-subtitle> numero de negocio{{item.numberBusiness}}</mat-card-subtitle>
+    <mat-card-subtitle> id {{item.zone_business}}</mat-card-subtitle>
+    <mat-card-actions align="end">
+        <button mat-button (click)="listBusinessByZone(item.zone_business)">Negocios</button>
+    </mat-card-actions>
+    <div *ngFor ="let asd of item.listbusiness " >
+        <mat-card-title>nombre de negocio 2 {{asd.name}}</mat-card-title>
+      
+    </div>
+   
+</mat-card>
+</div>
+  
+
+

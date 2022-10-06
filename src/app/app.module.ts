@@ -14,7 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InactiveBusinessListComponent } from './components/inactive-business-list/inactive-business-list.component';
 import { OwnerListComponent } from './components/owner-list/owner-list.component';
-
+import { StoreListComponent } from './components/store-list/store-list.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { OwnerListComponent } from './components/owner-list/owner-list.component
     UpdateAdminComponent,
     BusinessListComponent,
     InactiveBusinessListComponent,
-    OwnerListComponent
+    OwnerListComponent,
+    StoreListComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { OwnerListComponent } from './components/owner-list/owner-list.component
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
 
 
   ],
