@@ -40,7 +40,7 @@ export class CalSpaceComponent implements OnInit {
     this.comment.push({
       idComment: this.commentS[i].idComment,
       message: this.commentS[i].message,
-      idBusiness: this.commentS[i].status,
+      idBusiness: this.commentS[i].idBusiness,
       status: 1
     });
   }
