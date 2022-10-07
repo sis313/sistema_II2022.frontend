@@ -22,17 +22,17 @@
               </svg>
             </div>
 <br>
-            <form ><!--[formGroup]="UserForm" (ngSubmit)="saveUser()"-->
+            <form [formGroup]="passwordForm" (ngSubmit)="resetPassword()"><!--[formGroup]="UserForm" (ngSubmit)="saveUser()"-->
 
 
                 <div class="form-floating mb-3">
-                  <input class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
+                  <input formControlName="password" class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
 
 
                   <label for="floatingPassword">Contraseña</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input class="form-control" id="floatingPassword2" type="password" placeholder="Password" required>
+                  <input formControlName="passwordConfirm" class="form-control" id="floatingPassword2" type="password" placeholder="Password" required>
 
 
                   <label for="floatingPassword">Repita su contraseña</label>
@@ -46,12 +46,12 @@
                   <br>
                   <!--[disabled]="!UserForm.valid" class="btn btn-primary "-->
 
-                  <button class="btn btn-success pull-right" id="registro"  (click)="alertaregistro()" style="background-color:#6B7A40" ><a style="color: #F3EDE0" > Registra tu contraseña</a>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                  <button [disabled]="!passwordForm.valid" class="btn btn-success pull-right" id="registro" style="background-color:#6B7A40" type="submit" ><a style="color: #F3EDE0" > Registra tu contraseña</a>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
                     <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
                   </svg></button>
 <br>
                   <br>
-                  <button class="btn btn-success pull-right" routerLink="/"  style="background-color:#6B7A40" >
+                  <button  class="btn btn-success pull-right"   style="background-color:#6B7A40" >
 
                     Vuelve al ingreso</button>
 

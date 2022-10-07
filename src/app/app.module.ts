@@ -28,12 +28,10 @@ import { RecuperacionErrorComponent } from './view/recuperacion-error/recuperaci
     VerificacionErrorComponent,
     VerificacionexitosaComponent,
     RecuperacionComponent,
-
     EnvioRecuperacionComponent,
-
     CorreoRecuperacionComponent,
-      NavbarComponent,
-      RecuperacionErrorComponent
+    NavbarComponent,
+    RecuperacionErrorComponent
 
   ],
   imports: [

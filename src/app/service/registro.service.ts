@@ -12,7 +12,7 @@ export class RegistroService {
 
   
   saveUser(User: UserModel){
-    return this.http.post<any>(Config.apiUrl + '/v1/api/user', User);
+    return this.http.post<any>(Config.apiUrl + '/v1/api/user/publico/register', User);
   
   }
 }

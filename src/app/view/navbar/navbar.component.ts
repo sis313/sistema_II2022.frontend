@@ -23,7 +23,8 @@ export class NavbarComponent implements OnInit {
       cancelButtonText: "Cancelar",
     }) .then(resultado => {
       if (resultado.value) {
-
+        localStorage.setItem('token', '');
+        localStorage.setItem('username', '');
         window.location.href = "/";
       }
     });
