@@ -2,7 +2,7 @@
 export interface LocationDto{
     idLocation: number;
     latitude: number,
-    longitude: Number
+    longitude: number
 
 }
 
