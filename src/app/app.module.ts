@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { EnvioRecuperacionComponent } from './view/envio-recuperacion/envio-recu
 import { CorreoRecuperacionComponent } from './view/correo-recuperacion/correo-recuperacion.component';
 import { NavbarComponent } from './view/navbar/navbar.component';
 import { RecuperacionErrorComponent } from './view/recuperacion-error/recuperacion-error.component';
+import { ListaUsuariosComponent } from './view/lista-usuarios/lista-usuarios.component';
 
 
 @NgModule({
@@ -28,10 +30,13 @@ import { RecuperacionErrorComponent } from './view/recuperacion-error/recuperaci
     VerificacionErrorComponent,
     VerificacionexitosaComponent,
     RecuperacionComponent,
+
     EnvioRecuperacionComponent,
+
     CorreoRecuperacionComponent,
-    NavbarComponent,
-    RecuperacionErrorComponent
+      NavbarComponent,
+      RecuperacionErrorComponent,
+      ListaUsuariosComponent
 
   ],
   imports: [
@@ -40,8 +45,8 @@ import { RecuperacionErrorComponent } from './view/recuperacion-error/recuperaci
     FormsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    NgxPaginationModule
 
   ],
   providers: [],

@@ -11,6 +11,7 @@ import {CorreoRecuperacionComponent} from "./view/correo-recuperacion/correo-rec
 import {EnvioRecuperacionComponent} from "./view/envio-recuperacion/envio-recuperacion.component";
 import {NavbarComponent} from "./view/navbar/navbar.component";
 import {RecuperacionErrorComponent} from "./view/recuperacion-error/recuperacion-error.component";
+import {ListaUsuariosComponent} from "./view/lista-usuarios/lista-usuarios.component";
 
 const routes: Routes = [
   {path:'registro',
@@ -46,6 +47,10 @@ const routes: Routes = [
   {path:'navbar',
     component: NavbarComponent
   },
+  {path:'lista-usuarios',
+    component: ListaUsuariosComponent
+  },
+
 
 ];
 

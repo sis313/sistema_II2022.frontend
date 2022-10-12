@@ -20,7 +20,9 @@ export class NavbarComponent implements OnInit {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: "Sí",
+      confirmButtonColor: '#6b7a40',
       cancelButtonText: "Cancelar",
+      cancelButtonColor: '#8e9187',
     }) .then(resultado => {
       if (resultado.value) {
         localStorage.setItem('token', '');
