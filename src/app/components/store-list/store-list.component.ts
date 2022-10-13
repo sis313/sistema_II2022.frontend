@@ -4,7 +4,7 @@ import { businessbyzone } from 'src/app/model/BusinessByZone';
 import { numberstore } from 'src/app/model/StoreList';
 import { zonebusiness } from 'src/app/model/ZoneBusiness';
 import { StorelistService } from 'src/app/service/storelist.service';
-
+//import * as html2pdf from 'html2pdf.js'
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',
@@ -14,6 +14,8 @@ export class StoreListComponent implements OnInit {
   store:numberstore[] = [];
   business:businessbyzone[] = [];
   zonebusiness:zonebusiness[] = [];
+  //element:HTMLElement | any;
+  
 
   constructor(private storelist: StorelistService,private router: Router) { }
 
