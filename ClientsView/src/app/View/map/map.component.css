@@ -1,4 +1,11 @@
 
-
 #map { height: 600px; }
+
+.leaflet-popup-content img{
+    width: 100%;
+}
+
+.popup-title{
+    font-size: 20px;
+}
 
