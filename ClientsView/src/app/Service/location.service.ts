@@ -15,14 +15,29 @@ export class LocationService {
   getStoreName() {
     return this.store;
   }
-  setStoreTemp(data:Location[]){
+  setStoreTemp(data: Location[]) {
     this.storeTemp = data;
   }
-  getStoreTemp(){
+  getStoreTemp() {
     return this.storeTemp;
   }
 
-  getAllLocations(){
-    return this.http.get<any>('https://serviceprojectspring.herokuapp.com/api/location');
+  getAllLocations() {
+    return this.http.get<any>(
+      'https://serviceprojectspring.herokuapp.com/api/location'
+    );
+  }
+
+  getPosition(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (resp) => {
+          resolve({ lng: resp.coords.longitude, lat: resp.coords.latitude });
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
   }
 }
