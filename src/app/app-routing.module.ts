@@ -8,6 +8,8 @@ import { InactiveBusinessListComponent } from './components/inactive-business-li
 import { OwnerListComponent } from './components/owner-list/owner-list.component';
 import { StoreListComponent } from './components/store-list/store-list.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { NavStyleComponent } from './components/nav-style/nav-style.component';
+import { InactiveOwnerListComponent } from './components/inactive-owner-list/inactive-owner-list.component';
 
 const routes: Routes = [
   {
@@ -23,10 +25,12 @@ const routes: Routes = [
   { path: 'updateAdmin/:id', component: UpdateAdminComponent },
   { path: 'activeBusinessList', component: BusinessListComponent },
   { path: 'inactiveBusinessList', component: InactiveBusinessListComponent},
+  { path: 'inactiveOwnerList', component: InactiveOwnerListComponent},
   { path: 'updateBusiness/:id', component: UpdateBusinessComponent },
   { path: 'ownerList', component: OwnerListComponent },
   { path: 'adminHome', component: AdminHomeComponent },
-  { path: 'storeList', component: StoreListComponent }
+  { path: 'storeList', component: StoreListComponent },
+  { path: 'button', component: NavStyleComponent }
 ];
 
 @NgModule({

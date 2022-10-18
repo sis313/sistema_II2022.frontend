@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.9.1",
     "html2pdf.js": "^0.10.1",
     "material-icons": "^1.11.11",
     "rxjs": "~6.6.0",

@@ -1,15 +1,12 @@
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
       <button class="sidebar-open btnsidebar" (click)="sidebarShow = !sidebarShow" style="float: left; margin: 10px;">
-        <i class="material-symbols-outlined">
-          menu
-        </i>
+        <i class="material-symbols-outlined bi bi-list" style="font-size:20px;"> </i>
       </button>
         <div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
           <button class="sidebar-close" (click)="sidebarShow = !sidebarShow">
-            <i class="material-symbols-outlined">
-              cancel
-            </i>
+            <i class="material-symbols-outlined bi bi-x-lg" style="font-size:20px;"> </i>
           </button>
 
           <div class="sidebar-content">
@@ -20,35 +17,41 @@
               </p>
               <div class="set-sidebar-text" [routerLink]="'/activeBusinessList'">
                 <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
-                  list
+                  <i class="material-symbols-outlined bi bi-list-check" style="font-size:20px;"> </i>
                 </span>
-                Negocios Activos
+                &nbsp;  Negocios Activos
               </div>
               <div class="set-sidebar-text" [routerLink]="'/inactiveBusinessList'">
                 <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
-                  filter_list_off
+                  <i class="material-symbols-outlined bi bi-bookmark-x" style="font-size:20px;"> </i>
                 </span>
-                Negocios Inactivos
+                &nbsp; Negocios Inactivos
               </div>
               <div class="set-sidebar-text" [routerLink]="'/ownerList'">
                 <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
-                  person_4
+                  <i class="material-symbols-outlined bi bi-person-check" style="font-size:20px;"> </i>
                 </span>
-                Dueños de negocios
+                &nbsp; Dueños de negocios activos
+              </div>
+              <div class="set-sidebar-text" [routerLink]="'/inactiveOwnerList'">
+                <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
+                  <i class="material-symbols-outlined bi bi-person-x" style="font-size:20px;"> </i>
+                </span>
+                &nbsp; Dueños de negocios Inactivos
               </div>
               <div class="set-sidebar-text" [routerLink]="'/storeList'">
                 <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
-                  store
+                  <i class="material-symbols-outlined bi bi-pin-map" style="font-size:20px;"> </i>
                 </span>
-                Zonas con afluencia de negocios
+                &nbsp; Zonas con afluencia de negocios
               </div>
               <div class="set-sidebar-text" [routerLink]="'/main'">
                 <span class="material-symbols-outlined" style="display:inline-block; vertical-align:top;">
-                  logout
+                  <i class="material-symbols-outlined bi bi-door-closed" style="font-size:20px;"> </i>
                 </span>
-                Cerrar sesión
+                &nbsp; Cerrar sesión
               </div>
-              <img src="https://cdn-icons-png.flaticon.com/512/4781/4781517.png" style="height: 140px; width:140px; display:block; margin:auto;">
+              <img src="assets/logo-menu.png" style="height: 140px; width:140px; display:block; margin:auto;">
           </div>
           
         </div>

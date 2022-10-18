@@ -29,7 +29,7 @@ nav.navbar {
   
   .btnsidebar{
     background-color: transparent;
-    color: rgb(14, 82, 138);
+    color: #A7D676;
     padding: 1px;
     margin: 1px;
   }
@@ -39,11 +39,12 @@ nav.navbar {
   } 
   
   .sidebar-slider {
+    border-radius: 0px 25px 25px 25px;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: #eee1c5;
+    background-color: #F9E2AE;
     transform: translateX(-100%);
     transition: ease-in-out 300ms transform;
     width: 300px;
@@ -57,9 +58,9 @@ nav.navbar {
   
   .sidebar-close {
     position: fixed;
-    top: 0;
-    right: 0;
-    color: rgb(204, 6, 6);
+    top: 20px;
+    right: 20px;
+    color: #80A823;
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -69,7 +70,7 @@ nav.navbar {
   .sidebar-content {
     display: flex;
     flex-direction: column;
-    color: black;
+    color: #745d20;
     font-size: 16px;
     padding: 10px;
     height: 100%;
@@ -86,12 +87,12 @@ nav.navbar {
   }
   
   .set-sidebar-text:hover{
-    background-image: #D1913C;  
-    background-image: -webkit-linear-gradient(to right, #FFD194, #D1913C);  
-    background-image: linear-gradient(to right, #FFD194, #D1913C); 
+    background-image: #A8DEE0;  
+    background-image: -webkit-linear-gradient(to right, #A8DEE0);  
+    background-image: linear-gradient(to right, #A8DEE0); 
     font: bold;
     color: black;
     text-shadow: #000000;
-    border-left: 10px solid #6b7a40;
+    border-left: 10px solid #80A823;
     cursor: pointer;
   }

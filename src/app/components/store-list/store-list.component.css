@@ -1,20 +1,12 @@
 @import 'material-icons/iconfont/material-icons.css';
   body {
     font-family: "Karla", sans-serif;
-    background-color: #f3ede0;
+    background-color: #ffffff;
     min-height: 100vh;
   }
     
-  /*Título*/
-  .register-card-title {
-    font-size: 35px;
-    color: #483e47;
-    font-weight: normal;
-    border-image: initial;
-    border: 1px solid #745D20;
-    text-align:center;
-  }
-  
+
+
   /*Subtítulo*/
   .register-card-subtitle {
     font-size: 30px;
@@ -22,13 +14,12 @@
     font-weight: normal;
     text-align:center;
   }
-  
+/*Caja para el título*/  
 .register-card-title {
     font-size: 35px;
     color: #483e47;
     font-weight: normal;
     border-image: initial;
-    border: 1px solid #745d20;
     text-align: center;
   }
   
@@ -48,7 +39,7 @@ details{
     background:#fff;
     
     border-bottom:1px solid #e0e0e0;
-      box-shadow:0 0 2px #6b7a40,0 2px 4px rgba(0,0,0,0.24);
+      box-shadow:0 0 2px #80A823,0 2px 4px rgba(0,0,0,0.24);
     display:flex; }
 
 details div.content{
@@ -119,7 +110,7 @@ summary::-webkit-details-marker {
 summary::after { 
     content: "ads_click";
     font-family: 'Material Icons';
-    color: #3d4627;
+    color: #80A823;
     font-size: 1.5em;
     padding: 0;
     text-align: center;
@@ -139,7 +130,7 @@ summary::after {
 
 
 .btn {
-    background-color: #6b7a40;
+    background-color: #80A823;
     border: none;
     color: white;
     padding: 10px;
