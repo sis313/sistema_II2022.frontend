@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Map, marker, tileLayer } from 'leaflet';
+import { Branch } from 'src/app/Model/branch.model';
+import { BranchService } from 'src/app/Service/branch.service';
 import { LocationService } from 'src/app/Service/location.service';
 
 @Component({
@@ -8,38 +10,65 @@ import { LocationService } from 'src/app/Service/location.service';
   styleUrls: ['./map.component.css'],
 })
 export class MapComponent implements OnInit {
-  locationD: Location[] = []
-  constructor(private locationC: LocationService) {}
+  locationD: Location[] = [];
+  branchD: Branch[] = [];
+  actualPos: any;
+  constructor(
+    private branchService: BranchService,
+    private locationService: LocationService
+  ) {}
 
-  async ngOnInit(){
-    await this.onCharge()
-    const map = new Map('map').setView([-16.523178, -68.112209], 20);
+  async ngOnInit() {
+    this.actualPos = await this.getLocation();
+    await this.onCharge();
+    console.log(this.actualPos);
+    const map = await new Map('map').setView(
+      [this.actualPos.lat, this.actualPos.lng],
+      20
+    );
 
     tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
+      maxZoom: 15,
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
-    console.log("object");
-    
-    this.locationD.forEach(item => {
-      var test = item
-      var markerTest = marker([-16.523178, -68.112209]);
-      markerTest.bindPopup('<b>Hello world!</b><br>I am a popup.').openPopup();
-      markerTest.addTo(map);
-      console.log(item);
-    })
-  }
 
+    let markerUser = marker([this.actualPos.lat, this.actualPos.lng]).addTo(map)
+
+    this.branchD.forEach((item) => {
+      let test = item;
+      let markerTest = marker([test.latitude, test.longitude]);
+
+      markerTest
+        .bindPopup(
+          `<b class="popup-title">${test.businessName}</b>
+          <div>${test.address}</div>
+          <img src="${test.image}">`
+        )
+        .openPopup();
+      markerTest.addTo(map);
+    });
+  }
 
   async onCharge() {
-    await this.locationC
-      .getAllLocations()
+    await this.branchService
+      .getAllBranch()
       .toPromise()
       .then((data) => {
-        console.log(data);
-        this.locationD = data;
+        this.branchD = data;
+        this.branchService.setBranchName(this.branchD);
+        // console.log(this.branchService.getBranchName());
       });
   }
+
+  async getLocation() {
+    let poss
+    await this.locationService.getPosition().then((pos) => {
+      //  console.log(`Position: ${pos.lng} ${pos.lat}`);
+      console.log(pos);
+      poss = pos
+    });
+    return poss;
+  }
 }
-``
+``;
