@@ -1,24 +1,16 @@
-export interface StoreDto{
-    idNegocio: number;
-    NombreNegocio: string;
-    contacto: number;
-    descripcion: string;
-    tipoNegocio: number;
-    estado: string;
-}
 export class Store{
-    constructor(public id_business: number,public name: string, 
-        public description: string, public id_type_business: number, public create_date: string,
-        public update_date: string, 
-       public status: number,  public user_id_user: number , ) {
-        this.id_business = id_business;
+    constructor(public idBusiness: number,public name: string, 
+        public description: string, public idUser: number,
+        public createDate: string, public updateDate: string, 
+       public status: number) {
+        this.idBusiness = idBusiness;
         this.name = name;
         this.description = description;
-        this.id_type_business = id_type_business;
-        this.create_date = create_date;
-        this.update_date = update_date;
+        this.idUser = idUser;
+        this.createDate = createDate;
+        this.updateDate = updateDate;
         this.status = status
-        this.user_id_user = user_id_user;
+        
     }
 
 }
