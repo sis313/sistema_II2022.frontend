@@ -12,13 +12,13 @@ export class OwnerlistService {
   constructor(private http: HttpClient) {}
 
   getListOwner(): Observable<user[]> {
-    const url = `${this.baseUrl}user/type=2/status=1`;
+    const url = `${this.baseUrl}/v1/api/user`;
     console.log(url);
     return this.http.get<user[]>(url);
   }
 
   deleteOwner(idOwner: number): Observable<void> {
-    const url = `${this.baseUrl}/user/deleteOwner/${idOwner}`;
+    const url = `${this.baseUrl}/v1/api/user/${idOwner}`;
     return this.http.delete<void>(url);
   }
 }

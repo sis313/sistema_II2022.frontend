@@ -15,13 +15,13 @@ export class AdminlistService {
 
 
   getAdminById(id:number):Observable<user>{
-    const url = `${this.baseUrl}user/${id}`;
+    const url = `${this.baseUrl}/v1/api/user/${id}`;
     console.log(url);
     return this.http.get<user>(url);
   }
 
   updateProvider(idProvider:number,provider:user):Observable<user>{
-    const url = `${this.baseUrl}user/${idProvider}`;
+    const url = `${this.baseUrl}/v1/api/user/${idProvider}`;
     return this.http.put<user>(url,provider)
   }
  

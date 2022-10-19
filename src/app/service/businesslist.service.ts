@@ -19,31 +19,31 @@ export class BusinesslistService {
   }
 
   getBusinessById(id:number):Observable<business>{
-    const url = `${this.baseUrl}business/${id}`;
+    const url = `${this.baseUrl}/api/business/${id}`;
     console.log(url);
     return this.http.get<business>(url);
   }
 
   updateProvider(idProvider:number,provider:business):Observable<business>{
-    const url = `${this.baseUrl}business/${idProvider}`;
+    const url = `${this.baseUrl}/api/business/${idProvider}`;
     return this.http.put<business>(url,provider)
   }
 
   getListInactiveBusiness():Observable<business[]> {
-    const url = `${this.baseUrl}adminBusiness/status=0`;
+    const url = `${this.baseUrl}/api/business/status=0`;
     console.log(url);
     return this.http.get<business[]>(url);
   }
 
   //Modificar
   deleteBusiness(idBusiness: number): Observable<void> {
-   const url = `${this.baseUrl}adminBusiness/deleteBusiness/${idBusiness}`;
+   const url = `${this.baseUrl}/api/business/${idBusiness}`;
     return this.http.delete<void>(url);
   }
 
 
   restoreBusiness(idBusiness: number,provider:business): Observable<business> {
-    const url = `${this.baseUrl}adminBusinessStatus/${idBusiness}`;
+    const url = `${this.baseUrl}/api/business/${idBusiness}`;
     return this.http.put<business>(url,provider);
   }
   

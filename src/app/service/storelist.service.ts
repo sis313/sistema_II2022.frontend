@@ -14,12 +14,12 @@ export class StorelistService {
   constructor(private http:HttpClient){ }
   
   getStoreList():Observable<numberstore[]>{
-    const url = `${this.baseUrl}countBusiness`;
+    const url = `${this.baseUrl}/api/custom/countBusiness`;
     console.log(url);
     return this.http.get<numberstore[]>(url);
   }
   getStoreByZone(idzone:number):Observable<businessbyzone[]>{
-    const url = `${this.baseUrl}bussinesZone/${idzone}`;
+    const url = `${this.baseUrl}/api/custom/bussinesZone/${idzone}`;
     console.log(url);
     return this.http.get<businessbyzone[]>(url);
   }
