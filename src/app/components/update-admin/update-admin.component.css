@@ -1,7 +1,7 @@
 @import 'material-icons/iconfont/material-icons.css';
 body {
   font-family: "Karla", sans-serif;
-  background-color: #f3ede0;
+  background-color: #e9dbbc;
   min-height: 100vh;
 }
 
@@ -32,7 +32,7 @@ body {
 /*Descripción*/
 .register-card-description {
   font-size: 25px;
-  color: #6b7a40;
+  color: #80A823;
   font-weight: normal;
   margin-bottom: 23px;
   text-align:center; 
@@ -59,7 +59,7 @@ body {
 
 /*Labels*/
 .register-card .form-control {
-  border: 1px solid #745D20;
+  border: 1px solid #85CBCC;
   padding: 15px 25px;
   margin-bottom: 20px;
   min-height: 45px;
@@ -80,7 +80,7 @@ body {
 /*Boton*/
 .register-card .register-btn { 
   padding: 13px 20px 12px;
-  background-color: #6b7a40;
+  background-color: #80A823;
   border-radius: 4px;
   font-size: 17px;
   font-weight: bold;
@@ -91,9 +91,9 @@ body {
 
 /*Cuando el cursor se pone en el botón de register*/
 .register-card .register-btn:hover {
-  border: 1px solid #cea660;
-  background-color: #cea660;
-  color: #483e47; 
+  border: 1px solid #F9E2AE;
+  background-color: #F9E2AE;
+  color: #000000; 
 }
 
 

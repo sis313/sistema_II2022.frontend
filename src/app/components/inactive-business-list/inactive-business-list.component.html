@@ -39,7 +39,7 @@
 						  </thead>
 						  <tbody>
 						    <tr *ngFor="let inactive of businessList;" class="alert" role="alert">
-							  <td class="border-bottom-0" style="background-color: #F9E2AE; border-radius: 5px;">{{inactive.id}}</td>	
+							  <td class="border-bottom-0" style="background-color: #F9E2AE; border-radius: 5px;">{{inactive.idBusiness}}</td>	
 							  <td class="border-bottom-0">
 								<div class="img" style="background-image: url(https://diariofarma.com/wp-content/uploads/2018/12/Farmacia-Ja%C3%A9n_27.08.15-e1544535985370.jpg); border-radius: 10px;"></div>
 							  </td>
@@ -55,7 +55,7 @@
 								<span>    </span>
 							  </td>
 						      <td class="border-bottom-0">
-                                <button class="btn" (click)="restoreBusiness(inactive?.id,inactive?.status)">
+                                <button class="btn" (click)="restoreBusiness(inactive?.idBusiness,inactive?.status)">
 									<i class="material-symbols-outlined bi bi-arrow-clockwise" style="font-size:20px;"></i>
 								</button>
 				        	   </td>

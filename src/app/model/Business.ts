@@ -1,5 +1,5 @@
 export interface business {
-  id?: number;
+  idBusiness?: number;
   name: string;
   description: string;
   typeBusinessId: number;

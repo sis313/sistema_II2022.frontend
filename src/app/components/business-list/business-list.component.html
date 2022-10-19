@@ -66,7 +66,7 @@
                   class="alert"
                   role="alert"
                 >
-                  <td class="border-bottom-0" style="background-color: #F9E2AE; border-radius: 5px;">{{ active.id }}</td>
+                  <td class="border-bottom-0" style="background-color: #F9E2AE; border-radius: 5px;">{{ active.idBusiness }}</td>
                   <td class="border-bottom-0">
                     <div
                       class="img"
@@ -88,7 +88,7 @@
 					<span>    </span>
                   </td>
                   <td class="border-bottom-0">
-                    <button class="btn" (click)="deleteBusiness(active?.id)">
+                    <button class="btn" (click)="deleteBusiness(active?.idBusiness)">
                       <i class="material-symbols-outlined bi bi-trash2" style="font-size:20px;">                       
                       </i>
                     </button>

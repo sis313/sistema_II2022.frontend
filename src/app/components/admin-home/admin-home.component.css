@@ -1,7 +1,7 @@
 @import 'material-icons/iconfont/material-icons.css';
 body {
   font-family: "Karla", sans-serif;
-  background-color: #f3ede0;
+  background-color: #e9dbbc;
   min-height: 100vh;
 }
 /*Forma de tarjeta*/  
@@ -31,7 +31,7 @@ body {
 /*Descripción*/
 .register-card-description {
   font-size: 25px;
-  color: #6b7a40;
+  color: #80A823;
   font-weight: normal;
   margin-bottom: 23px;
   text-align:center; 
@@ -57,7 +57,7 @@ body {
 
 
 .btn {
-  background-color: #6b7a40;
+  background-color: #80A823;
   border: none;
   color: white;
   padding: 10px;
@@ -68,8 +68,8 @@ body {
 
 /*Cuando el cursor se pone en el botón de register*/
 .btn:hover {
-  border: none solid #cea660;
-  background-color: #cea660;
+  border: none solid #F9E2AE;
+  background-color: #F9E2AE;
   color: #483e47;
   border-radius: 8px;
 }

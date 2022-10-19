@@ -13,7 +13,7 @@ export class BusinesslistService {
 
 
   getListBusiness():Observable<business[]> {
-    const url = `${this.baseUrl}adminBusiness/status=1`;
+    const url = `${this.baseUrl}/api/business/status=1`;
     console.log(url);
     return this.http.get<business[]>(url);
   }

@@ -1,14 +1,41 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   font-family: "Karla", sans-serif;
+  background-color: #ffffff;
   min-height: 100vh;
-  background-color: #f3ede0;
 }
+
+/*Título*/
+.register-card-title {
+  font-size: 30px;
+  color: #483e47;
+  font-weight: normal;
+  border-image: initial;
+  text-align: center;
+}
+
+/*Subtítulo*/
+.register-card-subtitle {
+  font-size: 20px;
+  color: #483e47;
+  font-weight: normal;
+  text-align:center;
+}
+
+/*Descripción*/
+.register-card-description {
+  font-size: 25px;
+  color: #80A823;
+  font-weight: normal;
+  margin-bottom: 23px;
+  text-align:center; 
+}
+
+  
 /*Cards*/
 .container-card{
   width: 100%;
@@ -49,11 +76,11 @@ body{
 }
 .card .contenido-card h3{
   margin-bottom: 15px;
-  color: #7a7a7a;
+  color: #cf8d41;
 }
 .card .contenido-card p{
   line-height: 1.8;
-  color: #6a6a6a;
+  color: #265d5e;
   font-size: 14px;
   margin-bottom: 5px;
 }
@@ -62,14 +89,14 @@ body{
   padding: 10px;
   margin-top: 10px;
   text-decoration: none;
-  color: #6b7a40;
-  border: 1px solid #6b7a40;
+  color: #80A823;
+  border: 1px solid #80A823;
   border-radius: 4px;
   transition: all 400ms ease;
   margin-bottom: 5px;
 }
 .card .contenido-card a:hover{
-  background: #6b7a40;
+  background: #80A823;
   color: #fff;
 }
 @media only screen and (min-width:320px) and (max-width:768px){
