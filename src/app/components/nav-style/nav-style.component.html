@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pure CSS DropDown Menu</title>
+  <link rel="stylesheet" href="nav-style.component.scss">
+  <link  href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap"  rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+
+
+
+<section>
+  
+    <nav>
+      <ul class="menuItems">
+        <li><div style="width: 120px;"></div> <img src="assets/banner.png" style="height: 80px;"></li> 
+        <li><div style="height: 30px;  width: 150px;"> </div></li> 
+        <li><div style="height: 30px; width: 120px;"></div><a href='/adminHome' data-item='Menú'><i class="bi bi-menu-app"></i> Menú</a></li>
+        
+        <li><div style="height: 30px;  width: 150px;"></div><a data-item='Negocios'><i class="bi bi-building"></i> Negocios</a>
+            <ul>
+               
+                <li><a href="/activeBusinessList" style="font-size: 18px;"><i class="bi bi-check-all"></i> Negocios Activos</a></li>
+                <li><a href="/inactiveBusinessList" style="font-size: 18px;"><i class="bi bi-x-lg"></i> Negocios Inactivos</a></li>
+                <li><a></a></li>
+            </ul> 
+        </li>
+        
+        <li><div style="height: 30px; width: 150px;"></div><a href='#' data-item='Dueños'><i class="bi bi-person"></i> Dueños</a>
+            <ul>
+                <li><a href="/ownerList" style="font-size: 18px;"><i class="bi bi-check-all" ></i> Dueños Activos</a></li>
+                <li><a href="/inactiveOwnerList"style="font-size: 18px;"><i class="bi bi-x-lg"></i> Dueños Inactivos</a></li>
+                <li><a></a></li>
+            </ul>
+        </li>
+      
+        <li><div style="height: 30px; width: 150px;"></div><a href='/storeList' data-item='Zonas'><i class="bi bi-signpost"></i> Zonas</a></li>
+        
+        <li><div style="height: 30px; width: 150px;"></div><a href='/main' data-item='Salir'><i class="bi bi-door-closed"></i> Salir</a></li>
+      </ul>
+    </nav>
+  
+  </section>
+  
+  
