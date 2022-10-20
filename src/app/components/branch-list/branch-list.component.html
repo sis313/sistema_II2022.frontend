@@ -1,1 +1,70 @@
-<p>branch-list works!</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="branch-list.component.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+	<app-nav-style></app-nav-style>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div style="width: 90%; height: 50px">
+					<app-nav></app-nav> 
+				</div>
+				<div class="brand-wrapper">
+					<p class="register-card-title" style=" padding: 10px;" >
+				  		 LISTA DE SUCURSALES
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-responsive-xl">
+						  <thead>
+						    <tr style="text-align: center; background-color: #F9E2AE; border-radius: 5px;">
+							  <th>ID</th>	
+						      <th>Foto de Negocio</th>
+						      <th>Zona</th>
+						      <th>Días de Atención</th>
+						      <th>Horarios de atención</th>
+							  <th>&nbsp;</th>
+						      
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr *ngFor="let inactive of branchList;" class="alert" role="alert">
+							  <td class="border-bottom-0" style="background-color: #F9E2AE; border-radius: 5px;">{{inactive.idBranch}}</td>	
+							  <td class="border-bottom-0">
+								<div class="img" style="border-radius: 10px;"><img src={{inactive.image}} style="height: 140px; width:140px; display:block; margin:auto;"></div>
+							  </td>
+						      <td class="border-bottom-0">
+						      	<div class="email">
+						      		<span>{{inactive.address}}</span>
+						      		<span> </span>
+						      	</div>
+						      </td>
+						      <td class="border-bottom-0">{{inactive.attentionDays}}</td>
+						      <td class="status border-bottom-0">
+								<span class="active">{{inactive.openHour}}</span>
+								<span class="inactive">{{inactive.closeHour}}</span>
+							  </td>
+						      <td class="border-bottom-0">
+                                
+				        	   </td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body> 
+

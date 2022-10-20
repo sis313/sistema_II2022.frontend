@@ -10,6 +10,7 @@ import { StoreListComponent } from './components/store-list/store-list.component
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { NavStyleComponent } from './components/nav-style/nav-style.component';
 import { InactiveOwnerListComponent } from './components/inactive-owner-list/inactive-owner-list.component';
+import { BranchListComponent } from './components/branch-list/branch-list.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'ownerList', component: OwnerListComponent },
   { path: 'adminHome', component: AdminHomeComponent },
   { path: 'storeList', component: StoreListComponent },
-  { path: 'button', component: NavStyleComponent }
+  { path: 'button', component: NavStyleComponent },
+  { path: 'branchList', component:BranchListComponent}
 ];
 
 @NgModule({

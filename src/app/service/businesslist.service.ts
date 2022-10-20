@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { business } from '../model/Business';
+import { branch} from '../model/Branch';
 @Injectable({
   providedIn: 'root'
 })
@@ -45,6 +46,13 @@ export class BusinesslistService {
   restoreBusiness(idBusiness: number,provider:business): Observable<business> {
     const url = `${this.baseUrl}/api/business/${idBusiness}`;
     return this.http.put<business>(url,provider);
+  }
+
+  //Ver sucursales
+  getListBranch():Observable<branch[]>{
+    const url = `${this.baseUrl}/api/branch`;
+    console.log(url);
+    return this.http.get<branch[]>(url);
   }
   
 }
