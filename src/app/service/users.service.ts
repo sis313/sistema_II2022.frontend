@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Config } from '../api';
+import { UserModel } from '../model/registro';
 
 
 
@@ -17,6 +18,10 @@ export class UsersService {
   }
 
   getUsers(){
-    return this.http.get<any>(this.API_URL)
+    return this.http.get<UserModel[]>(this.API_URL);
+  }
+
+  updateUser(user: UserModel){
+    return this.http.put<UserModel>(this.API_URL,user);
   }
 }

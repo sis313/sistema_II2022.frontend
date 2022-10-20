@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import { UserModel } from 'src/app/model/registro';
 import { UsersService } from 'src/app/service/users.service';
 import Swal from "sweetalert2";
 
@@ -10,8 +11,11 @@ import Swal from "sweetalert2";
 })
 export class ListaUsuariosComponent implements OnInit {
   pages: number = 1;
-  dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
-  user:any;
+  dataset: UserModel[];
+  filteredData : UserModel[]; 
+  user:UserModel;
+  roles:string;
+
   constructor(private router: Router,private route:ActivatedRoute, private userService: UsersService) { }
 
 
@@ -32,16 +36,45 @@ export class ListaUsuariosComponent implements OnInit {
 
   getUsers(){
     this.userService.getUsers().subscribe(data =>{
-     
         this.dataset = data
+        this.filteredData = this.dataset;
+        console.log( typeof data[0].roles );
         console.log( this.dataset)
-
-        
     })
   }
 
-  setUser(user:any){
+  setUser(user:UserModel){
+    console.log(user);
+    
     this.user= user; 
+  }
+  saveUser(){
+
+    this.user.roles = [{
+      name: this.roles
+    }]
+    console.log(this.user);
+    
+    this.userService.updateUser(this.user).subscribe(
+      data =>{
+        console.log(data);
+        Swal.fire({
+          title: 'edicion exitosa',
+          icon: 'success'
+        })
+        
+      }
+    )
+  }
+  search(event:any){
+    let filter: string = event.target.value
+    console.log(event.target.value);
+    this.filteredData =this.dataset.filter((user)=>{
+      if(user.name.toLowerCase().includes(filter.toLowerCase())){
+        return user
+      }
+        return null
+    });
   }
 
 }
