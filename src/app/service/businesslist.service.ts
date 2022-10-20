@@ -49,8 +49,8 @@ export class BusinesslistService {
   }
 
   //Ver sucursales
-  getListBranch():Observable<branch[]>{
-    const url = `${this.baseUrl}/api/branch`;
+  getListBranch(idBusiness: number):Observable<branch[]>{
+    const url = `${this.baseUrl}/api/branch/?businessId=${idBusiness}`;
     console.log(url);
     return this.http.get<branch[]>(url);
   }

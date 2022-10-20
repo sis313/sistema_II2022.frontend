@@ -30,6 +30,7 @@ export class OwnerListComponent implements OnInit {
       .toPromise()
       .then((response) => {
         respuesta = response;
+        console.log(respuesta);
       })
       .catch((e) => console.error(e));
 

@@ -55,7 +55,6 @@
               <thead>
                 <tr style="text-align: center; background-color: #F9E2AE; border-radius: 5px;">
                   <th>ID</th>
-                  <th>Foto de Negocio</th>
                   <th>Nombre</th>
                   <th>Descripción</th>
                   <th>Estado</th>
@@ -69,15 +68,7 @@
                   role="alert"
                 >
                   <td class="border-bottom-0" style="background-color: #F9E2AE; border-radius: 5px;">{{ active.idBusiness }}</td>
-                  <td class="border-bottom-0">
-                    <div
-                      class="img"
-                      style="
-                        background-image: url(https://diariofarma.com/wp-content/uploads/2018/12/Farmacia-Ja%C3%A9n_27.08.15-e1544535985370.jpg);
-                        border-radius: 10px;
-                      "
-                    ></div>
-                  </td>
+                  
                   <td class="border-bottom-0">
                     <div class="email">
                       <span>{{ active.name }}</span>
@@ -99,7 +90,7 @@
                     </i>
                   </button>
                   <button class="btn">
-                    <i class="material-symbols-outlined bi bi-shop" style="font-size:20px;" >                       
+                    <i class="material-symbols-outlined bi bi-shop" style="font-size:20px;" (click)="branchList(active?.idBusiness)">                       
                     </i>
                   </button>
                   </td>

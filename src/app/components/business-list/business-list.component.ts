@@ -30,6 +30,7 @@ export class BusinessListComponent implements OnInit {
     let respuesta!:business[];
     await this.businessListService.getListBusiness().toPromise().then((response) => {
       respuesta = response;
+      console.log(respuesta);
     }).catch(e => console.error(e));
 
     return respuesta;
@@ -81,5 +82,9 @@ export class BusinessListComponent implements OnInit {
 
   async editBusiness(id: any) {
     await this.router.navigateByUrl(`/updateBusiness/${id}`);
+  }
+
+  async branchList(id: any) {
+    await this.router.navigateByUrl(`/branchList/${id}`);
   }
 }

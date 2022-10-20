@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'adminHome', component: AdminHomeComponent },
   { path: 'storeList', component: StoreListComponent },
   { path: 'button', component: NavStyleComponent },
-  { path: 'branchList', component:BranchListComponent}
+  { path: 'branchList/:id', component:BranchListComponent}
 ];
 
 @NgModule({
