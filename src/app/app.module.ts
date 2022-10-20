@@ -25,6 +25,7 @@ import { CommonModule} from '@angular/common';
 import { NavComponent } from './components/nav/nav.component';
 import { NavStyleComponent } from './components/nav-style/nav-style.component';
 import { InactiveOwnerListComponent } from './components/inactive-owner-list/inactive-owner-list.component';
+import { BranchListComponent } from './components/branch-list/branch-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { InactiveOwnerListComponent } from './components/inactive-owner-list/ina
     AdminHomeComponent,
     InactiveBusinessListComponent,
     OwnerListComponent, 
-    NavComponent, NavStyleComponent, InactiveOwnerListComponent
+    NavComponent, NavStyleComponent, InactiveOwnerListComponent, BranchListComponent
   ],
   imports: [
     BrowserModule,
