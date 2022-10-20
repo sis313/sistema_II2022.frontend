@@ -36,22 +36,7 @@ export class OwnerListComponent implements OnInit {
     return respuesta;
   }
 
-  async deleteOwner(id: any) {
-    Swal.fire({
-      icon: 'warning',
-      title: '¿Está seguro de eliminar al dueño :O?',
-      showConfirmButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Aceptar',
-      cancelButtonText: 'Cancelar',
-    }).then(async (result) => {
-      if (result.value) {
-        await this.deleteOwnerById(id);
-        console.log('SE ELIMINO AL DUEÑO');
-        await this.successNotificationDeleteCorrectly();
-      }
-    });
-  }
+  
 
   async deleteOwnerById(id: number) {
     this.ownerlistService
