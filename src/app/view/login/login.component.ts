@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { identity } from 'rxjs';
 import { loginModel } from 'src/app/model/login';
 import { LoginService } from 'src/app/service/login.service';
+import { UsersService } from 'src/app/service/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.userlogin = true;
     this.userregister = false;
   }
-  constructor(private loginService : LoginService, private router:Router) { }
+  constructor(private loginService : LoginService, private router:Router, private userService: UsersService) { }
 
   
   
@@ -43,11 +46,34 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.userData).subscribe(
       data => {
         localStorage.setItem('token', data.accessToken);
-        localStorage.setItem('username', this.userData.username);
-        this.router.navigate(['verificacion']);
+        this.getUser(this.userData.username)
 
+      },
+      (error)=>{
+        console.log(error.error.status);
+        
+        Swal.fire({
+          title: "Error",
+          text: "Invalid password or nickname",
+          icon: 'error'
+        })
       }
     )
   }
-
+  getUser(username:string){
+    this.userService.getUser(username).subscribe((data) =>{
+      console.log(data)
+      let user:any = data;
+      if(user.status==="Pending"){
+          this.router.navigate(['verificacion'])
+      }
+      if(user.status==="Active"){
+        Swal.fire({
+          title: 'Succesful login',
+          text: "You logged succesfuly",
+          icon: 'success'  
+        })
+      }
+    })
+  }
 }

@@ -12,7 +12,8 @@ import Swal from 'sweetalert2'
 export class EnvioRecuperacionComponent implements OnInit {
   username: string;
   user : UserModel;
-  passwordForm: FormGroup
+  passwordForm: FormGroup;
+  
   constructor(private route: ActivatedRoute, private recuperacionService: RecuperacionService) { 
     this.route.queryParams.subscribe(params => {
       this.username = params['user'];

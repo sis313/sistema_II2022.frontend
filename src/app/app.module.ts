@@ -1,7 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxPaginationModule } from 'ngx-pagination';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './view/login/login.component';
@@ -19,6 +17,7 @@ import { CorreoRecuperacionComponent } from './view/correo-recuperacion/correo-r
 import { NavbarComponent } from './view/navbar/navbar.component';
 import { RecuperacionErrorComponent } from './view/recuperacion-error/recuperacion-error.component';
 import { ListaUsuariosComponent } from './view/lista-usuarios/lista-usuarios.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({

@@ -35,37 +35,23 @@
         <th>Nombre</th>
         <th>Usuario</th>
         <th>Rol</th>
-
-
       </tr>
       </thead>
       <tbody>
-
-
-
       <tr   *ngFor="
-      let data of dataset | paginate: { itemsPerPage: 2, currentPage: pages }
+      let data of dataset | paginate: { itemsPerPage: 10, currentPage: pages }
     " class="tableRow">
-     <!--   <td>
-          {{usuario.idRegistro}}
+        <td>{{data.idUser}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.nickname}}</td>
+        <td>
+          <span *ngIf="data.idTypeUser===1">USER</span>
+          <span *ngIf="data.idTypeUser===2">OWNER</span>
+          <span *ngIf="data.idTypeUser===3">ADMIN</span>
         </td>
         <td>
-          {{usuario.ingreso}}
+          <button  (click)="setUser(data)" class="btn btn-success pull-right" id="edit"  data-bs-toggle="modal" data-bs-target="#modalEditUsuario" style="background-color:#6B7A40" ><a style="color: #F3EDE0" > Editar </a> </button>
         </td>
-        <td>
-          {{usuario.salida}}
-        </td>
-        <td>
-          {{usuario.idUsuario}}
-        </td>!-->
-        {{ data }}
-
-
-        <td>
-          <button class="btn btn-success pull-right" id="edit"  data-bs-toggle="modal" data-bs-target="#modalEditUsuario" style="background-color:#6B7A40" ><a style="color: #F3EDE0" > Editar </a> </button>
-
-        </td>
-
       </tr>
 
       </tbody>
