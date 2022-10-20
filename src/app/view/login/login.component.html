@@ -1,12 +1,12 @@
 <router-outlet></router-outlet>
 
-<div class="page-holder align-items-center py-4 bg-gray-100 vh-100" style="background-color: #CEA660">
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100" style="background-color: #FBC78D">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 px-lg-4"  *ngIf="userlogin">
         <div class="card">
-          <div class="card-header px-lg-5" style="background-color: #6B7A40">
-            <div class="card-heading text-primary"> <h1 style="color:#F3EDE0">Ingreso</h1></div>
+          <div class="card-header px-lg-5" style="background-color: #A7D676">
+            <div class="card-heading text-primary"> <h1 style="color:#F9E2AE">Ingreso</h1></div>
           </div>
           <div class="card-body p-lg-5">
             <h3 class="mb-4">Inicia sesion!</h3>
@@ -27,14 +27,14 @@
                 <label class="form-check-label" for="remember">Remember me</label>
               </div>-->
 
-              <button [disabled]="!loginForm.valid" class="btn btn-success pull-right"  style="background-color:#6B7A40" >
+              <button [disabled]="!loginForm.valid" class="btn btn-success pull-right"  style="background-color:#A7D676" >
 
                 Ingresar</button>
             </form>
           </div>
-          <div class="card-footer px-lg-5 py-lg-4" style=" background-color:#745D20">
+          <div class="card-footer px-lg-5 py-lg-4" style=" background-color:#85CBCC">
 
-            <div class="text-sm text-muted"> <a style="color: #F3EDE0">No tienes una cuenta?</a> <a style="color: blue" routerLink="/registro">Registrate</a>.</div>
+            <div class="text-sm text-muted"> <a style="color: #f9e2ae">No tienes una cuenta?</a> <a style="color: blue" routerLink="/registro">Registrate</a>.</div>
            <br>
             <div class="text-sm text-muted"> <a style="color: #F3EDE0">Olvidaste tu contraseña?</a> <a style="color: blue" routerLink="/recuperacion">Recuperar cuenta</a>.</div>
 
