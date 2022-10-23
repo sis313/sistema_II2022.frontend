@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
+<script src="html2pdf.bundle.min.js"></script>
     
 <body>
     <app-nav-style></app-nav-style>
@@ -30,7 +31,7 @@
                       type="button"
                       class="btn btn-secondary"
                       style="float: right; margin: 10px;"  
-                      
+                      (click)="generarReporte()"
                     > <i class="material-symbols-outlined bi bi-clipboard2-data" style="font-size:20px;"></i>
                     &nbsp;  Generar Reporte
                     </button>

@@ -25,9 +25,9 @@ export class BusinesslistService {
     return this.http.get<business>(url);
   }
 
-  updateProvider(idProvider:number,provider:business):Observable<business>{
-    const url = `${this.baseUrl}/api/business/${idProvider}`;
-    return this.http.put<business>(url,provider)
+  updateBusiness(id:number,business:business):Observable<business>{
+    const url = `${this.baseUrl}/api/business/${id}`;
+    return this.http.put<business>(url,business)
   }
 
   getListInactiveBusiness():Observable<business[]> {

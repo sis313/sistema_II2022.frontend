@@ -81,7 +81,7 @@ export class BusinessListComponent implements OnInit {
   }
 
   async editBusiness(id: any) {
-    await this.router.navigateByUrl(`/updateBusiness/${id}`);
+    await this.router.navigateByUrl(`/updateBusinessFix/${id}`);
   }
 
   async branchList(id: any) {

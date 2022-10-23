@@ -11,6 +11,7 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 import { NavStyleComponent } from './components/nav-style/nav-style.component';
 import { InactiveOwnerListComponent } from './components/inactive-owner-list/inactive-owner-list.component';
 import { BranchListComponent } from './components/branch-list/branch-list.component';
+import { UpdateBusinessFixComponent } from './components/update-business-fix/update-business-fix.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
   { path: 'activeBusinessList', component: BusinessListComponent },
   { path: 'inactiveBusinessList', component: InactiveBusinessListComponent},
   { path: 'inactiveOwnerList', component: InactiveOwnerListComponent},
-  { path: 'updateBusiness/:id', component: UpdateBusinessComponent },
+  { path: 'updateBusinessFix/:id', component: UpdateBusinessFixComponent },
   { path: 'ownerList', component: OwnerListComponent },
   { path: 'adminHome', component: AdminHomeComponent },
   { path: 'storeList', component: StoreListComponent },

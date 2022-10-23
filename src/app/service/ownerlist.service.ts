@@ -17,6 +17,12 @@ export class OwnerlistService {
     return this.http.get<user[]>(url);
   }
 
+  getListInactiveOwner(): Observable<user[]> {
+    const url = `${this.baseUrl}/v1/api/user`;
+    console.log(url);
+    return this.http.get<user[]>(url);
+  }
+
   deleteOwner(idOwner: number): Observable<void> {
     const url = `${this.baseUrl}/v1/api/user/${idOwner}`;
     return this.http.delete<void>(url);

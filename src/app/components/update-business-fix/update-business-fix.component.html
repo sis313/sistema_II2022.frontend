@@ -1,0 +1,60 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="update-business-fix.component.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+      <div class="container">
+        <div class="card register-card">
+          <div class="row no-gutters">
+            <div class="col-md-5">
+              <img src="https://www.kibrispdr.org/data/782/marketing-wallpaper-20.jpg" alt="register" class="register-card-img">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="brand-wrapper">
+                  <p class="register-card-title" >
+                 ACTUALIZAR INFORMACIÓN
+                  </p>
+                  <p class="register-card-subtitle">
+                    NEGOCIO
+                  </p>
+                </div>
+                <p class="register-card-description">Ingrese los datos a ser modificados</p>
+                <form [formGroup]="newAdminForm" (ngSubmit)="editProvider()">
+                  <div class="form-group">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name"> Nombre del Negocio: </label>
+                    <input type="text" name="name" id="name" formControlName="name" class="form-control" placeholder="" (keypress)="keyPressAlphaNumeric($event)">                  
+                  </div>
+                  <div class="form-group">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="description"> Descripción del Negocio: </label>
+                    <input type="text" name="description" id="description" formControlName="description"  class="form-control" placeholder="">
+                  </div>
+  
+                  
+                  <button type="button" class="btn btn-block register-btn mb-4" name="register" id="register" type="submit" > 
+                    <i class="material-symbols-outlined bi bi-pencil" style="font-size:20px;"></i>
+                    &nbsp; Actualizar datos del Negocio
+                  </button>  
+
+                  </form>
+                  <p class="register-card-footer-text">Todos los cambios serán guardados</p>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+  

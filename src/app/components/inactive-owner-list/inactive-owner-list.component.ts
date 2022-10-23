@@ -26,7 +26,7 @@ export class InactiveOwnerListComponent implements OnInit {
   async getOwnerData() {
     let respuesta!: user[];
     await this.ownerlistService
-      .getListOwner()
+      .getListInactiveOwner()
       .toPromise()
       .then((response) => {
         respuesta = response;
