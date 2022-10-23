@@ -91,7 +91,7 @@
 
               <!-- BEGIN RESULT -->
               <div class="">
-                <h2><i class="fa fa-file-o"></i> Result</h2>
+                <h2><i class="fa fa-file-o"></i> RESULTADOS</h2>
                 <hr>
 
 
@@ -128,7 +128,9 @@
                       <tr *ngFor="let item of storeD">
                         <td class="number text-center" id="idText">{{item.idBusiness}}</td>
                         <td class="image"><img src="https://via.placeholder.com/200x100/333333" alt=""></td>
-                        <td class="product"><strong>{{item.name}}</strong><br>{{item.description}}</td>
+                        <td class="product">
+                          <strong id="nameText">{{item.name}}</strong><br>{{item.description}}
+                        </td>
                         <td class="rate text-right">
 
                           <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i

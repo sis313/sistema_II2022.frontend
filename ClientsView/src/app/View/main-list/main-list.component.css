@@ -9,4 +9,10 @@ body{
 }
 h2{
     color: #FFFFFF;
+    font-weight: bold;
+}
+#nameText{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
 }
