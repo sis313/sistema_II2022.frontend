@@ -1,8 +1,13 @@
 #baner{
     height: 50px;
     width: 150px;
+    background-color: #FFFFFF;
 }
-#bodyNav{
-    background-color: #FBC78D;
-    
+#espacio{
+    background-color: #F9E2AE;
+}
+#nav-text{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
 }
