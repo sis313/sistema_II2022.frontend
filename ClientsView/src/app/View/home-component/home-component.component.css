@@ -1,6 +1,10 @@
+body{
+    background-color: #85CBCC;
+}
+
 #space{
     height: max-content;
-    background-color: #CEA660;
+   
     padding-left:35px;
     padding-right: 35px;
     padding-bottom: 15px;
@@ -8,7 +12,7 @@
 }
 #image{
     /*background: url(../../../assets/La_Paz_Skyline.jpg);*/
-    background-color: #CEA660;
+    background-color: #85CBCC;
     height: max-content;
     width: 100%;
     
@@ -18,10 +22,10 @@
     align-content: center;
 }
 #title1{
-    color: #F3EDE0;
+    color: #F9C78D;
 }
 #slogan{
-    color: #F3EDE0;
+    color: #85CBCC;
 }
 #card1{
     background-color: #745D20;

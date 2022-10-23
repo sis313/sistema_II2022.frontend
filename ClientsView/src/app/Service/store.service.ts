@@ -23,7 +23,7 @@ export class StoreService {
   }
 
   getStoreAll() {
-    return this.http.get<any>('http://localhost:8080/Business');
+    return this.http.get<any>('https://serviceprojectspring.herokuapp.com/api/business');
   }
 
   getStoreNameHttp(nameStore: string) {

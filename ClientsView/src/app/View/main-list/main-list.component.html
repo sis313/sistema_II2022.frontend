@@ -124,7 +124,7 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr *ngFor="let item of storeD">
-                        <td class="number text-center">{{item.id_business}}</td>
+                        <td class="number text-center">{{item.idBusiness}}</td>
                         <td class="image"><img src="https://via.placeholder.com/200x100/333333" alt=""></td>
                         <td class="product"><strong>{{item.name}}</strong><br>{{item.description}}</td>
                         <td class="rate text-right">
@@ -134,9 +134,18 @@
 
                         </td>
                         =
-                        <td><button class="btn btn-primary" (click)="modalMore()">Ver más</button></td>
-                        <td><button class="btn btn-warning" (click)="calificar(item)">Calificar</button></td>
-                        <td><button class="btn btn-danger" (click)="lista()">Revisar comentarios</button></td>
+                        <td><button class="btn btn-primary" (click)="modalMore()">
+                          <!-- Ver más -->
+                          <i class="bi bi-eye-fill"></i>
+                        </button></td>
+                        <td><button class="btn btn-warning" (click)="calificar(item)">
+                          <i class="bi bi-star-fill"></i>
+                          <!-- Calificar -->
+                        </button></td>
+                        <td><button class="btn btn-danger" (click)="lista()">
+                          <i class="bi bi-chat-left-text-fill"></i>
+                          <!-- Revisar comentarios -->
+                        </button></td>
                         <!-- modal -->
                         <div *ngIf="active==1" >
                           

@@ -48,7 +48,7 @@ export class CalSpaceComponent implements OnInit {
     this.comment.push({
       idComment: this.num,
       message: this.textDescription,
-      idBusiness: this.data[0].id_business,
+      idBusiness: this.data[0].idBusiness,
       status: 1
     });
     this.commentService.setComment(this.comment);
