@@ -29,13 +29,13 @@ import { FavoritesListComponent } from './View/favorites-list/favorites-list.com
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponentComponent },
+      { path: '', component: HomeComponentComponent },
       { path: 'main', component: MainListComponent },
       { path: 'cal', component: CalSpaceComponent },
       { path: 'comment', component: ComentListComponent },
       {path: 'map', component: MapComponent},
       {path: 'favorite', component: FavoritesListComponent},
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+
     ]),
   ],
   providers: [],

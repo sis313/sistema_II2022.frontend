@@ -1,53 +1,57 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 <!-- Toolbar-->
-<body>
-  
 
-<nav class="navbar navbar-expand-lg navbar-light  site-header sticky-top py-1" style="background-color: #A7D676;">
-  <!--<a class="navbar-brand" href="#">Navbar</a>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light  site-header sticky-top py-1" style="background-color: #A7D676;">
+    <!--<a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 -->
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <div class="container">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active" id="espacio">
-        <!-- <a class="nav-link" href="#">LOGO BUSINESS SPACE<span class="sr-only">(current)</span></a> -->
-        <img src="../assets/Banner_BOActive.png" id="baner" alt="">
-      </li>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/home" id="nav-text" routerLinkActive="active">INICIO</a>
-      </li>
-      &nbsp;
-      &nbsp;
-      
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/main" id="nav-text" routerLinkActive="active">SERVICIOS</a>
-      </li>
-      &nbsp;
-      &nbsp;
-      
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/map" id="nav-text" routerLinkActive="active">MAPA</a>
-      </li>
-      &nbsp;
-      &nbsp;
-      
-    </ul>
-    <!-- Change this part -->
-     <!-- User logo space-->
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div class="container">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active" id="espacio">
+            <!-- <a class="nav-link" href="#">LOGO BUSINESS SPACE<span class="sr-only">(current)</span></a> -->
+            <a routerLink="/">
+              <img src="../assets/Banner_BOActive.png" id="baner" alt="">
+            </a>
+          </li>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" id="nav-text" routerLinkActive="active">INICIO</a>
+          </li>
+          &nbsp;
+          &nbsp;
 
-    </form>
-  </div>
-  </div>
-</nav>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/main" id="nav-text" routerLinkActive="active">SERVICIOS</a>
+          </li>
+          &nbsp;
+          &nbsp;
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/map" id="nav-text" routerLinkActive="active">MAPA</a>
+          </li>
+          &nbsp;
+          &nbsp;
+
+        </ul>
+        <!-- Change this part -->
+        <!-- User logo space-->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+        </form>
+      </div>
+    </div>
+  </nav>
 </body>
 <router-outlet></router-outlet>
