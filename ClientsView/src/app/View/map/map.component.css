@@ -9,3 +9,15 @@
     font-size: 20px;
 }
 
+.bo-info {
+    background-color: #85cbcc;
+    border-color: #85cbcc;
+    color: #fff;
+}
+
+
+.bo-info:hover {
+    background-color: #fff;
+    border-color: #85cbcc;
+    color: #85cbcc;
+}
