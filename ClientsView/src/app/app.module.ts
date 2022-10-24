@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CalSpaceComponent } from './View/cal-space/cal-space.component';
 import { ComentListComponent } from './View/comment-list/comment-list.component';
 import { MapComponent } from './View/map/map.component';
+import { FavoritesListComponent } from './View/favorites-list/favorites-list.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MapComponent } from './View/map/map.component';
     CalSpaceComponent,
     ComentListComponent,
     MapComponent,
+    FavoritesListComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { MapComponent } from './View/map/map.component';
       { path: 'cal', component: CalSpaceComponent },
       { path: 'comment', component: ComentListComponent },
       {path: 'map', component: MapComponent},
+      {path: 'favorite', component: FavoritesListComponent},
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]),
   ],
