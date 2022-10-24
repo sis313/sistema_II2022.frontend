@@ -10,14 +10,8 @@ export class Rating{
 
 
     constructor (
-        {idRating, score,
-            favoriteStatus, idBranch, idUser}: RatingDto = {
-                idRating: 0,
-                score: 0,
-                favoriteStatus: true,
-                idBranch: 0,
-                idUser: 0
-             }){
+        public idRating: number, public score: number,
+        public   favoriteStatus: boolean, public idBranch: number, public idUser:number){
       idRating = idRating;
       score = score;
       favoriteStatus = favoriteStatus;

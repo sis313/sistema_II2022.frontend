@@ -5,18 +5,18 @@
         <h1>LISTA DE FAVORITOS </h1>
         
 
-        <!-- *ngIf="exist==0" -->
+       
 
-    <div  >
+    <div  *ngIf="exist==0" >
         <br>
         <br>
-        <h1> NO COMMENTS YET</h1>
+        <h1> NO FAVORITES YET</h1>
     </div>  
 
 
-    <!-- *ngIf="exist>0"  -->
+    
 
-    <div>
+    <div  *ngIf="exist>0">
         <div class="container">
     
      
@@ -30,13 +30,13 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <tr *ngFor="let item of comment">
-                    <td *ngIf="item.status==1">{{item.idComment}}</td>
+                <tr *ngFor="let item of ratingData">
+                    <td *ngIf="item.favoriteStatus==true">{{item.idRating}}</td>
     
-                    <td *ngIf="item.status==1">{{item.message}}</td>
-                    <td *ngIf="item.status==1">{{item.idBusiness}}</td>
+                    <td *ngIf="item.favoriteStatus==true">{{item.score}}</td> 
+                     <td *ngIf="item.favoriteStatus==true">{{item.favoriteStatus}}</td>
     
-                </tr> -->
+                </tr>
               </tbody>
     
         </table>

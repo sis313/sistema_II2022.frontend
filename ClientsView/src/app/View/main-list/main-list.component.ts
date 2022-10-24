@@ -82,6 +82,9 @@ export class MainListComponent implements OnInit {
   lista(){
     this.router.navigate(['/comment']);
   }
+  favorite(){
+    this.router.navigate(['/favorite']);
+  }
 
 
 

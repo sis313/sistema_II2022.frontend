@@ -15,4 +15,7 @@ export class RatingService{
     getRating(){
         return this.rating;
     }
+    getRatingHttp(){
+        return this.http.get<any>('https://serviceprojectspring.herokuapp.com/api/rating');
+    }
 }
