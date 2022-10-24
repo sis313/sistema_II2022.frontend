@@ -13,7 +13,7 @@
     
 <body>
     <app-nav-style></app-nav-style>
-    <section class="ftco-section">
+    <section class="ftco-section" id="pdf">
         <div class="container">
             <div class="row justify-content-center">
                 <div style="width: 90%; height: 50px">  
@@ -21,7 +21,7 @@
                     
                 </div>
                 
-                <div class="brand-wrapper">
+                <div class="brand-wrapper" >
                     <p class="register-card-title" style=" padding: 10px;" >
                            LISTA DE ZONAS Y NEGOCIOS
                     </p>
@@ -31,15 +31,15 @@
                       type="button"
                       class="btn btn-secondary"
                       style="float: right; margin: 10px;"  
-                      (click)="generarReporte()"
+                      (click)="createPdf()"
                     > <i class="material-symbols-outlined bi bi-clipboard2-data" style="font-size:20px;"></i>
                     &nbsp;  Generar Reporte
                     </button>
-                  </div>
+                  </div> 
             </div>   
         </div>
         &nbsp;
-        <div class="container">
+        <div class="container" >
             <div class="panel">  
                 <details *ngFor ="let item of zonebusiness">
                     <summary >
@@ -56,6 +56,7 @@
                 </details>  
             </div>
         </div>
+        
     </section>
 </body>   
     

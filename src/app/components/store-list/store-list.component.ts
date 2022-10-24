@@ -4,8 +4,8 @@ import { businessbyzone } from 'src/app/model/BusinessByZone';
 import { numberstore } from 'src/app/model/StoreList';
 import { zonebusiness } from 'src/app/model/ZoneBusiness';
 import { StorelistService } from 'src/app/service/storelist.service';
-declare var html2pdf: any;
-
+import * as html2pdf from 'html2pdf.js'
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',
@@ -15,7 +15,7 @@ export class StoreListComponent implements OnInit {
   store:numberstore[] = [];
   business:businessbyzone[] = [];
   zonebusiness:zonebusiness[] = [];
-  private element!:HTMLElement | any;
+  private item:HTMLElement;
   
   constructor(private storelist: StorelistService,private router: Router) { }
 
@@ -68,19 +68,34 @@ export class StoreListComponent implements OnInit {
       this.zonebusiness[i].listbusiness=businesslist;
   }
 
-  generarReporte() {
+  async createPdf() {
    
-    
-    this.element = document.getElementById('content-print');
-    console.log(this.element)
+    this.item = document.getElementById('pdf');
+    console.log(this.item)
     var opt = {
       margin:       1,
-      filename:     'output.pdf',
+      filename:     'Reporte de Zonas.pdf',
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 2 },
       jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
     }
-    html2pdf().from(this.element).set(opt).save();
+    html2pdf().from(this.item).set(opt).save();
+    await this.successReport()
+
+  }
+
+  async successReport() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Reporte creado correctamente',
+      showConfirmButton: true,
+      confirmButtonText: 'Aceptar',
+    }).then(async (result) => {
+      if (result.value) {
+        console.log('store List');
+        await window.location.reload();
+      }
+    });
   }
 }
 

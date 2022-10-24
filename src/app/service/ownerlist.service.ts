@@ -12,13 +12,13 @@ export class OwnerlistService {
   constructor(private http: HttpClient) {}
 
   getListOwner(): Observable<user[]> {
-    const url = `${this.baseUrl}/v1/api/user`;
+    const url = `${this.baseUrl}/v1/api/user/type=1/status=1`;
     console.log(url);
     return this.http.get<user[]>(url);
   }
 
   getListInactiveOwner(): Observable<user[]> {
-    const url = `${this.baseUrl}/v1/api/user`;
+    const url = `${this.baseUrl}/v1/api/user/type=1/status=0`;
     console.log(url);
     return this.http.get<user[]>(url);
   }
