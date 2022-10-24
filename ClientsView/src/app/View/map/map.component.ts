@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Map, marker, tileLayer } from 'leaflet';
+import { Map, marker, tileLayer, Icon } from 'leaflet';
 import { Branch } from 'src/app/Model/branch.model';
 import { BranchService } from 'src/app/Service/branch.service';
 import { LocationService } from 'src/app/Service/location.service';
@@ -10,31 +10,54 @@ import { LocationService } from 'src/app/Service/location.service';
   styleUrls: ['./map.component.css'],
 })
 export class MapComponent implements OnInit {
+  //Assets Location Folder
+  assetsLocation: string = '../../../assets/map';
+
   locationD: Location[] = [];
   branchD: Branch[] = [];
+
+  //Map variables
   actualPos: any;
+  mainMap: any;
+  // userIcon = new this.LeafIcon({iconUrl: this.assetsLocation + '/marker/user.png'});
+
   constructor(
     private branchService: BranchService,
     private locationService: LocationService
   ) {}
 
   async ngOnInit() {
+    //Get actual position
     this.actualPos = await this.getLocation();
+
+    //Charge all branches
     await this.onCharge();
-    console.log(this.actualPos);
-    const map = await new Map('map').setView(
+
+    //Create the map
+    this.mainMap = await new Map('map').setView(
       [this.actualPos.lat, this.actualPos.lng],
       20
     );
 
+    //Add the tile layer
     tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 15,
+      maxZoom: 16,
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    }).addTo(this.mainMap);
 
-    let markerUser = marker([this.actualPos.lat, this.actualPos.lng]).addTo(map)
+    //Create user Icon
+    let userIcon = new Icon({
+      iconUrl: this.assetsLocation + '/marker/user.png',
+      iconSize: [20, 30],
+    });
 
+    //Create the user marker
+    marker([this.actualPos.lat, this.actualPos.lng], { icon: userIcon }).addTo(
+      this.mainMap
+    );
+
+    //Create the branch markers
     this.branchD.forEach((item) => {
       let test = item;
       let markerTest = marker([test.latitude, test.longitude]);
@@ -46,7 +69,7 @@ export class MapComponent implements OnInit {
           <img src="${test.image}">`
         )
         .openPopup();
-      markerTest.addTo(map);
+      markerTest.addTo(this.mainMap);
     });
   }
 
@@ -62,13 +85,22 @@ export class MapComponent implements OnInit {
   }
 
   async getLocation() {
-    let poss
+    let poss;
     await this.locationService.getPosition().then((pos) => {
-      //  console.log(`Position: ${pos.lng} ${pos.lat}`);
       console.log(pos);
-      poss = pos
+      poss = pos;
     });
     return poss;
   }
+
+  /**
+   *
+   * Center the map in display
+   *
+   * @returns void
+   *
+   */
+  centerMap() {
+    this.mainMap.setView([this.actualPos.lat, this.actualPos.lng], 20);
+  }
 }
-``;
