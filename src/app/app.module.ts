@@ -38,6 +38,7 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { ListadoSucursalRatingComponent } from './Components/listado-sucursal-rating/listado-sucursal-rating.component';
 import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/listado-ratings-menu.component';
+import { ChartModule } from 'primeng/chart';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +76,8 @@ import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/l
     FormsModule,
     Ng2GoogleChartsModule,
     NgxStarRatingModule,
-    MdbModalModule
+    MdbModalModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent],

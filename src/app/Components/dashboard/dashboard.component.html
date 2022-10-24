@@ -3,12 +3,14 @@
     <div class="container text-center">
         <div class="row row-cols-auto">
           <div class="col"><button class="btn btn-outline-success" id="btn1" (click)="global()">Global</button></div>
-          <div class="col"><button class="btn btn-outline-success" id="btn2" (click)="semestral()">Semestral</button></div>
-          <div class="col"><button class="btn btn-outline-success" id="btn3" (click)="trimestral()">Trimestral</button></div>
-          <div class="col"><button class="btn btn-outline-success" id="btn4" (click)="mensual()">Mensual</button></div>
-          <div class="col"><button class="btn btn-outline-success" id="btn5" (click)="diario()">Diario</button></div>
+          <div class="col"><button class="btn btn-outline-success" id="btn2" (click)="anual()">Anual</button></div>
+          <div class="col"><button class="btn btn-outline-success" id="btn3" (click)="semestral()">Semestral</button></div>
+          <div class="col"><button class="btn btn-outline-success" id="btn4" (click)="trimestral()">Trimestral</button></div>
+          <div class="col"><button class="btn btn-outline-success" id="btn5" (click)="mensual()">Mensual</button></div>
+          <div class="col"><button class="btn btn-outline-success" id="btn6" (click)="diario()">Diario</button></div>
         </div>
-      </div>
+ 
+      
 
       <!--
       <div class="container text-center">
@@ -44,18 +46,312 @@
   -->
 
 <br>
-<div class="container text-center">
-<google-chart  [data]="pieChart" [hidden]="stateFlag()==0"></google-chart>
+<div class="container text-center" >
+  
+ <!--<google-chart  [data]="pieChartDeprecated" [hidden]="false"></google-chart>
 <br>
-<google-chart  [data]="pieChart2" [hidden]="stateFlag()==1"></google-chart>
+<google-chart  [data]="pieChart2Deprecated" [hidden]="false"></google-chart>
 <br>
-<google-chart  [data]="pieChart3" [hidden]="stateFlag()==2"></google-chart>
+<google-chart  [data]="pieChart3Deprecated" [hidden]="false"></google-chart>
 <br>
-<google-chart  [data]="columnChart" [hidden]="stateFlag()==3"></google-chart>
+<google-chart  [data]="columnChartDeprecated" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></google-chart>
 <br>
-<google-chart  [data]="lineChart" [hidden]="stateFlag()==4"></google-chart>
+<google-chart  [data]="lineChartDeprecated" [hidden]="false"></google-chart>
 <br>
-<google-chart [data]="areaChart" [hidden]="stateFlag()==0"></google-chart>
-<br>
+<google-chart [data]="areaChartDeprecated" [hidden]="false"></google-chart>-->
+
 </div>
+
+ <!--
+<h1>Dashboard with controls</h1>
+<google-charts-dashboard [data]="dashboard"></google-charts-dashboard>
+<div class="ui equal width grid">
+  <div class="five wide column">
+    <google-charts-control [data]="slider"></google-charts-control>
+    <google-chart [data]="dashboardPieChart"></google-chart>
+  </div>
+  <div class="column">
+    <google-charts-control [data]="categoryPicker"></google-charts-control>
+    <p></p>
+    <google-chart [data]="dashboardTable"></google-chart>
+    <p></p>
+    <input type="button" class="ui button" value="Toggle row numbers" (click)="toggleRowNumbers()">
+  </div>
+</div>
+<p></p>
+<p><a routerLink="/dashboard">More dashboard examples</a></p>
+
+<h1>Column chart</h1>
+<google-chart id="columnChart" [data]="columnChart"></google-chart>
+<input type="button" class="ui button" value="Change data" (click)="changeData()">
+<input type="button" class="ui button" value="Change chart type" (click)="changeChartType()">
+<input type="button" class="ui button" value="Open as PNG" (click)="openAsPNG()">
+<input type="button" class="ui button" value="Open chart editor" (click)="editChart(columnChart)">
+<div class="ui modal" id="pngModal" style="width: 90%; max-width:1200px;">
+  <div class="header">PNG image</div>
+  <img class="image" [src]="[imageURI]">
+</div>
+
+<h4>Material</h4>
+<google-chart [data]="barChart"></google-chart>
+<p></p>
+<h4>Stacked</h4>
+<google-chart [data]="stackedColumnChart"></google-chart>
+<h1>Pie chart</h1>
+<google-chart [data]="pieChart"></google-chart>
+<h1>Vega chart</h1>
+<google-chart [data]="vegaChart"></google-chart>
+<h1>Gauge</h1>
+<div style="width: 1px; margin: 0 auto;">
+  <google-chart [data]="gaugeChart"></google-chart>
+</div>
+<h1>Scatter chart</h1>
+<google-chart [data]="scatterChart"></google-chart>
+<h1>Timeline chart</h1>
+<google-chart [data]="timelineChart"></google-chart>
+<input class="ui button" type="button" value="Clear selection" (click)="clearTimelineSelection()">
+<h1>Line chart with events</h1>
+<h4>Selected row: {{selectEvent?.row}}</h4>
+<h4>Selected column: {{selectEvent?.column}}</h4>
+<pre>{{selectEvent | json}}</pre>
+<google-chart [data]="lineChart" (chartReady)="ready($event)" (chartError)="error($event)" (chartSelect)="select($event)"></google-chart>
+<h1>Combo chart</h1>
+<div class="alert alert-info" role="alert">
+See console log for mouse over events.
+</div>
+<google-chart [data]="comboChart" (mouseOver)="mouseOver($event)" (mouseOut)="mouseOut($event)"></google-chart>
+
+<h1>Table with formatter</h1>
+<p></p>
+<google-chart [data]="tableChart"></google-chart>
+<p></p>
+<h4>DateFormat</h4>
+<google-chart [data]="tableWithDates"></google-chart>
+<p></p>
+<h4>PatternFormat</h4>
+<google-chart [data]="tableWithPatternFormat"></google-chart>
+<p></p>
+<h4>With remote source</h4>
+<google-chart [data]="remoteSourceData"></google-chart>
+
+<h1>GeoChart</h1>
+<div class="alert alert-info" role="alert">
+  Selected region: <code>{{regionClickEvent | json}}</code>
+</div>
+<google-chart [data]="geoChart" (regionClick)="geoChartRegionClick($event)"></google-chart>
+
+<h1>OrgChart</h1>
+<google-chart [data]="orgChart"></google-chart>
+<input class="ui button" type="button" value="Toggle collapse" (click)="collapseOrgChart()">
+<h1>TreeMap</h1>
+<h2>click on the button below to append data</h2>
+<google-chart [data]="treeMap"></google-chart>
+<input class="ui button" type="button" value="Append data" (click)="appendDataToTreeMap()">
+<h1>CandlestickChart</h1>
+<google-chart [data]="candlestickChart"></google-chart>
+<h1>AnnotationChart</h1>
+<google-chart [data]="annotationChart"></google-chart>
+<p></p>
+<h4>With charts in tooltip</h4>
+<p>Adapted from <a href="https://developers.google.com/chart/interactive/docs/customizing_tooltip_content#placing-charts-in-tooltips">here</a>.</p>
+<google-chart [data]="tooltipChart" hidden></google-chart>
+<google-chart [data]="columnChartWTooltips" (chartReadyOneTime)="setupTooltips()"></google-chart>
+<p></p>-->
+
+
+</div>
+ <!--
+<div class="p-grid p-p-4">
+  <div class="p-col-4">
+    
+    <p-chart type="bar" [data]="databar"></p-chart>
+</div>
+<div class="p-col-4">
+
+  <p-chart type="doughnut" [data]="datadoughnut"></p-chart>
+</div>
+<div class="p-col-4">
+
+  <p-chart type="line" [data]="dataline"></p-chart>
+</div>
+</div>
+-->
+ <!--
+<div class="p-grid p-p-4">
+  
+  <div class="p-col-4">
+
+    <p-chart type="polarArea" [data]="datapolar"></p-chart>
+</div>
+  <div class="p-col-4">
+
+    <p-chart type="pie" [data]="datapie"></p-chart>
+  </div>
+  <div class="p-col-4">
+
+    <p-chart type="radar" [data]="dataradar"></p-chart>
+  </div>
+</div>
+-->
+<!-- Combo Line & Bar Chart -->
+<!--
+<div class="p-grid p-p-4">
+  <div class="p-col-12">
+
+    <p-chart type="bar" [data]="datacombo" [options]="chartOptions"></p-chart>
+    </div>
+</div>
+-->
+
+  
+  <!--<h1 class="text-center">Dashboard resumen ultimo mes</h1>
+  <div class="row">
+      <div class="col-md-3">
+          <button type="submit" class="text-center" mat-raised-button mat-button color="primary"
+                  routerLink="/dashboard/chart">Ver resumen Global</button>
+      </div>
+  </div>-->
+ <!-- <div class="container">
+    <br>
+
+  <div class="row">
+  
+ 
+</div>
+</div>-->
+
+<div class="container" id="lol2">
+
+ <!-- <h1 class="text-center">Dashboard resumen Global</h1>-->
+  <div class="row">
+    <!--<div class="col-md-3">-->
+         <!-- <button type="submit" class="text-center" mat-raised-button mat-button color="primary"
+                  routerLink="/dashboard/chart-mes">Ver resumen ultimo mes</button>-->
+          <!--<br>
+          <br>
+          <table class="table table-bordered">
+              <tr class="success">
+                  <td class="active">Eventos: {{cantEventos}}</td>
+              </tr>
+              <tr class="success">
+                  <td class="active">
+                      Clientes: {{cantClientes}}
+                  </td>
+              </tr>
+              <tr class="success">
+                  <td class="active">
+                  Organizadores: {{cantOrganiz}}
+                  </td>
+              </tr>
+              <tr class="success">
+                  <td class="active">
+                  Compras: {{cantCompras}}
+                  </td>
+              </tr>
+              <tr class="success">
+                  <td class="active">
+                  Calificaciones: {{cantCalif}}
+                  </td>
+              </tr>
+              <tr class="success">
+                  <td class="active">
+                  Comentarios: {{cantComent}}
+                  </td>
+              </tr>
+          </table>
+      </div>-->
+  <!--    <div class="col-md-3">
+          <h3 class="text-center">Eventos</h3>
+          <p-chart type="pie" [data]="eventosData" [options]="pieOptions"></p-chart>
+      </div>
+      <div class="col-md-3">
+          <h3 class="text-center">Compras</h3>
+          <p-chart type="pie" [data]="comprasData" [options]="pieOptions"></p-chart>
+      </div>
+      <div class="col-md-3">
+          <h3 class="text-center">Tickets</h3>
+          <p-chart type="pie" [data]="ticketsData" [options]="pieOptions"></p-chart>
+      </div>-->
+  </div>
+  <br>
+  <div class="row" >
+    <div class="col-md-4">
+        <h3 class="text-center" [hidden]="true">Global</h3>
+        <p-chart type="pie" [data]="eventosMesData" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
+    </div>
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Global</h3>
+        <p-chart type="bar" [data]="eventosMesData" [options]="barOptions" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
+    </div>
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Global</h3>
+      <p-chart type="bar" [data]="entradasMesData" [options]="barOptions" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
+  </div>
+</div>
+  <div class="row">
+     
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Anuak</h3>
+      <p-chart type="pie" [data]="ultimoAnnio" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
+  </div>
+  <div class="col-md-4">
+    <h3 class="text-center" [hidden]="true">Anual</h3>
+    <p-chart type="bar" [data]="dineroMesData" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
+</div>
+  
+
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Semestral</h3>
+      <p-chart type="pie" [data]="ultimoSemestre" [hidden]="stateFlag()==1 || stateFlag()==0 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
+  </div>
+  <div class="col-md-4">
+    <h3 class="text-center" [hidden]="true">Semestral</h3>
+    <p-chart type="bar" [data]="dineroMesData5" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==5 || stateFlag()==3 || stateFlag()==4 || stateFlag()==1"></p-chart>
+</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Trimestral</h3>
+      <p-chart type="pie" [data]="ultimoTrimestre" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==0 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
+  </div>
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Trimestral</h3>
+      <p-chart type="bar" [data]="dineroMesData2" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==1 || stateFlag()==4 || stateFlag()==5"></p-chart>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Mensual</h3>
+      <p-chart type="pie" [data]="ultimoMes" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==0 || stateFlag()==5" [options]="pieOptions"></p-chart>
+  </div>
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Mensuak</h3>
+      <p-chart type="bar" [data]="dineroMesData3" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==5 || stateFlag()==1"></p-chart>
+  </div>
+
+
+  </div>
+  <div class="row">
+   
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Diario</h3>
+      <p-chart type="pie" [data]="ultimoDia" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==0" [options]="pieOptions"></p-chart>
+  </div>
+    <div class="col-md-4">
+      <h3 class="text-center" [hidden]="true">Diario</h3>
+      <p-chart type="bar" [data]="dineroMesData4" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==1"></p-chart>
+  </div>
+
+  </div>
+
+  <div class="row">
+  
+  </div>
+</div>
+
 </div>
