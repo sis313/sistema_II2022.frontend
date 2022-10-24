@@ -101,6 +101,6 @@ export class MapComponent implements OnInit {
    *
    */
   centerMap() {
-    this.mainMap.setView([this.actualPos.lat, this.actualPos.lng], 20);
+    this.mainMap.flyTo([this.actualPos.lat, this.actualPos.lng], 16);
   }
 }
