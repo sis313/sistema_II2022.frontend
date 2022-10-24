@@ -6,6 +6,7 @@ import { StoreService } from 'src/app/Service/store.service';
 //imp } from 'src/app/Model/calTemp.model';
 import { CommentService } from 'src/app/Service/comment.service';
 import { Comment } from 'src/app/Model/comment.model';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -43,6 +44,7 @@ export class CalSpaceComponent implements OnInit {
       idBusiness: this.commentS[i].idBusiness,
       status: 1
     });
+   
   }
 }
     this.comment.push({
@@ -51,6 +53,19 @@ export class CalSpaceComponent implements OnInit {
       idBusiness: this.data[0].idBusiness,
       status: 1
     });
+    // Swal.fire({
+    //   title: "Registrado!",
+    //   text: "El comentario fue registrado de manera exitosa!",
+    //   icon: "success",
+    //   buttons: ["Aww yiss!"],
+
+    // });
+    Swal.fire({
+      title: "Registrado!",
+      text: "El comentario fue registrado de manera exitosa!",
+      icon: 'success',
+      
+    })
     this.commentService.setComment(this.comment);
     this.router.navigate(['/main']);
    
