@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
 export class CalSpaceComponent implements OnInit {
   textDescription: string = "";
   num: number=0;
+  user: number = 0;
   data: Store[] = [];
   commentS : Comment[] = [];
   comment: Comment[]= [];
@@ -25,34 +26,52 @@ export class CalSpaceComponent implements OnInit {
       this.data = this.storeService.getStoreTemp();
       this.commentS = this.commentService.getComment();
       this.num =2;
+      this.user = Number(localStorage.getItem("token"));
      }
    
   ngOnInit(): void {
    this.onCharge();
   }
+/*
+"idComment": 4,
+    "message": "buen lugar",
+    "idUser": 1,
+    "idBusiness": 3,
+    "status": 1
+*/
 
   onCharge(){
     console.log("estamos aca")
     console.log(this.data);
   }
-  Calificar(){
-    if (this.commentS.length>0){
-     for (let i in this.commentS){
-    this.comment.push({
-      idComment: this.commentS[i].idComment,
-      message: this.commentS[i].message,
-      idBusiness: this.commentS[i].idBusiness,
-      status: 1
-    });
+  async Calificar(){
+//     if (this.commentS.length>0){
+//      for (let i in this.commentS){
+//     this.comment.push({
+//       idComment: this.commentS[i].idComment,
+//       message: this.commentS[i].message,
+//       idBusiness: this.commentS[i].idBusiness,
+//       status: 1
+//     });
    
-  }
-}
+//   }
+// }
+    
     this.comment.push({
-      idComment: this.num,
+      idComment: 2,
       message: this.textDescription,
+      idUser: this.user,
       idBusiness: this.data[0].idBusiness,
       status: 1
     });
+    console.log(this.comment);
+    await this.commentService
+    .setCommentHttp(this.comment)
+    .toPromise()
+    .then(async(data)=>{
+      console.log(data);
+    }).catch(e => console.error(e));
+
     // Swal.fire({
     //   title: "Registrado!",
     //   text: "El comentario fue registrado de manera exitosa!",
@@ -66,8 +85,8 @@ export class CalSpaceComponent implements OnInit {
       icon: 'success',
       
     })
-    this.commentService.setComment(this.comment);
-    this.router.navigate(['/main']);
+    // this.commentService.setComment(this.comment);
+    // this.router.navigate(['/main']);
    
   }
   Volver(){

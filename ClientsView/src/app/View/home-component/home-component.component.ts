@@ -10,6 +10,7 @@ export class HomeComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    localStorage.setItem('token', "3");
   }
 
 }
