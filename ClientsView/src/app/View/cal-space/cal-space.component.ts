@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
 export class CalSpaceComponent implements OnInit {
   textDescription: string = "";
   num: number=0;
+  currentRate =0;
   user: number = 0;
   data: Store[] = [];
   commentS : Comment[] = [];
@@ -58,7 +59,7 @@ export class CalSpaceComponent implements OnInit {
    
   }
 }
-this.commentS.push({
+this.comment.push({
   idComment: 6,
   message: this.textDescription,
   idUser: this.user,
@@ -66,22 +67,22 @@ this.commentS.push({
   status: 1
 });
     
-    // this.comment.push({
-    //   idComment: 6,
-    //   message: this.textDescription,
-    //   idUser: this.user,
-    //   idBusiness: this.data[0].idBusiness,
-    //   status: 1
-    // });
-    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    // console.log(this.comment);
-    // // const dataBackend = JSON.stringify(this.comment);
-    // // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
-    // // console.log(dataBackend);
+    this.comment.push({
+      idComment: 6,
+      message: this.textDescription,
+      idUser: this.user,
+      idBusiness: this.data[0].idBusiness,
+      status: 1
+    });
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    console.log(this.comment);
+    // const dataBackend = JSON.stringify(this.comment);
+    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
+    // console.log(dataBackend);
 
-    // await this.commentService
-    // .setCommentHttp(this.comment)
-    // .subscribe();
+    await this.commentService
+    .setCommentHttp(this.comment)
+    .subscribe();
    
     
 
@@ -98,6 +99,43 @@ this.commentS.push({
       icon: 'success',
       
     })
+    // this.commentService.setComment(this.comment);
+    // this.router.navigate(['/main']);
+   
+  }
+  Favoritos(){
+    if (this.commentS.length>0){
+     for (let i in this.commentS){
+    this.comment.push({
+      idComment: this.commentS[i].idComment,
+      message: this.commentS[i].message,
+      idUser: this.user,
+      idBusiness: this.commentS[i].idBusiness,
+      status: 1
+    });
+   
+  }
+}
+    this.comment.push({
+      idComment: this.num,
+      message: "Agregado a favoritos",
+      idUser: this.user,
+      idBusiness: this.data[0].idBusiness,
+      status: 1
+    });
+    // Swal.fire({
+    //   title: "Registrado!",
+    //   text: "El comentario fue registrado de manera exitosa!",
+    //   icon: "success",
+    //   buttons: ["Aww yiss!"],
+
+    // });
+    Swal.fire({
+      title: "Registrado!",
+      text: "El negocio!",
+      icon: 'success',
+      
+    })
     this.commentService.setComment(this.comment);
     this.router.navigate(['/main']);
    
@@ -105,5 +143,42 @@ this.commentS.push({
   Volver(){
     this.router.navigate(['/main'])
 
+  }
+  Rankin(){
+    if (this.commentS.length>0){
+     for (let i in this.commentS){
+    this.comment.push({
+      idComment: this.commentS[i].idComment,
+      message: this.commentS[i].message,
+      idUser: this.user,
+      idBusiness: this.commentS[i].idBusiness,
+      status: 1
+    });
+   
+  }
+}
+    this.commentS.push({
+      idComment: this.num,
+      message: "Se le dio un rankin de "+this.currentRate,
+      idUser: this.user,
+      idBusiness: this.data[0].idBusiness,
+      status: 1
+    });
+    // Swal.fire({
+    //   title: "Registrado!",
+    //   text: "El comentario fue registrado de manera exitosa!",
+    //   icon: "success",
+    //   buttons: ["Aww yiss!"],
+
+    // });
+    Swal.fire({
+      title: "Registrado!",
+      text: "Se registro el rankin!",
+      icon: 'success',
+      
+    })
+    this.commentService.setComment(this.comment);
+    this.router.navigate(['/main']);
+   
   }
 }
