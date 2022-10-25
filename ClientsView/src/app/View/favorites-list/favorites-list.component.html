@@ -23,18 +23,18 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                  <th scope="col"># Comentario</th>
+                  <th scope="col"># Rating</th>
+                  <th scope="col">id User</th>
+                  <th scope="col">Score</th>
                   
-                  <th scope="col">Message</th>
-                  <th scope="col">id business</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of ratingData">
                     <td *ngIf="item.favoriteStatus==true">{{item.idRating}}</td>
-    
+                    <td *ngIf="item.favoriteStatus==true">{{item.idUser}}</td>
                     <td *ngIf="item.favoriteStatus==true">{{item.score}}</td> 
-                     <td *ngIf="item.favoriteStatus==true">{{item.favoriteStatus}}</td>
+                    
     
                 </tr>
               </tbody>
