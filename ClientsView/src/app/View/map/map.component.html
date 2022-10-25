@@ -1,13 +1,26 @@
 <div class="m-5">
   <h1 class="center title">Servicios cerca de ti</h1>
-  <br>
-  <div class="">
-    <button class="btn bo-info" (click)="centerMap()">
-      <i class="bi-solid bi-compass-fill"></i>
-      <b> Centrar Mapa</b>
-    </button>
-  </div>
-  <div class="map-container">
-    <div id="map"></div>
+  <hr>
+  <div class="row">
+
+    <div class="col-8">
+      <button class="btn bo-info" (click)="centerMap()">
+        <i class="bi-solid bi-compass-fill"></i>
+        <b> Centrar Mapa</b>
+      </button>
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="col mt-5">
+
+      <h1 class="center sub-title">Filtrar por categorias</h1>
+      <div class="ml-4" *ngFor="let item of getAllCategories()">
+        <div>
+          <input class="form-check-input" type="checkbox" value="" id="" checked>
+          {{item.name}}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

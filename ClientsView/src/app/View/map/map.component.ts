@@ -3,6 +3,7 @@ import { Map, marker, tileLayer, Icon } from 'leaflet';
 import { Branch } from 'src/app/Model/branch.model';
 import { BranchService } from 'src/app/Service/branch.service';
 import { LocationService } from 'src/app/Service/location.service';
+import { CategoryService } from 'src/app/Service/category.service';
 
 @Component({
   selector: 'app-map',
@@ -23,12 +24,16 @@ export class MapComponent implements OnInit {
 
   constructor(
     private branchService: BranchService,
-    private locationService: LocationService
+    private locationService: LocationService,
+    private categoryService: CategoryService
   ) {}
 
   async ngOnInit() {
     //Get actual position
     this.actualPos = await this.getLocation();
+
+    //Fetch all categories
+    await this.fetchAllCategories();
 
     //Charge all branches
     await this.onCharge();
@@ -91,6 +96,20 @@ export class MapComponent implements OnInit {
       poss = pos;
     });
     return poss;
+  }
+
+  async fetchAllCategories() {
+    await this.categoryService
+      .getAllCategories()
+      .toPromise()
+      .then((data) => {
+        this.categoryService.setCategoryName(data);
+        console.log(this.categoryService.getCategoryName());
+      });
+  }
+
+  getAllCategories() {
+    return this.categoryService.getCategoryName();
   }
 
   /**

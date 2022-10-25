@@ -16,6 +16,11 @@
     font-weight: 900;
 }
 
+.sub-title{
+    font-size: 26px;
+    font-weight: 700;
+}
+
 .map-container{
     border: 5px solid #85cbcc;
     border-radius: 10px;

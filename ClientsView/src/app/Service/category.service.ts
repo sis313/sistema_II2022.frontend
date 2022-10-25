@@ -5,7 +5,7 @@ import { Category } from '../Model/category.model';
 @Injectable({
   providedIn: 'root',
 })
-export class BranchService {
+export class CategoryService {
   category: Category[] = [];
   categoryTemp: Category[] = [];
   constructor(private http: HttpClient) {}
