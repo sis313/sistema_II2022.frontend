@@ -1,0 +1,8 @@
+#share-buttons a i{
+    font-size: 100px;
+}
+#share-buttons{
+    width: 100%;
+    text-align: center;
+    margin: 50px 0px;
+}

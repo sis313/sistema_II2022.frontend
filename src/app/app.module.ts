@@ -38,6 +38,10 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { ListadoSucursalRatingComponent } from './Components/listado-sucursal-rating/listado-sucursal-rating.component';
 import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/listado-ratings-menu.component';
+import { RedesSocialesComponent } from './Components/redes-sociales/redes-sociales.component';
+
+// Cargar script redes sociales
+import { CargarScriptsService } from './service/cargar-scripts.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +60,7 @@ import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/l
     EditarSucursalComponent,
     ListadoSucursalRatingComponent,
     ListadoRatingsMenuComponent,
+    RedesSocialesComponent,
   ],
   imports: [
     HttpClientModule,
@@ -77,7 +82,9 @@ import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/l
     NgxStarRatingModule,
     MdbModalModule
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -13,6 +13,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales-por-id/listado-sucursales-por-id.component';
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
 import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/listado-ratings-menu.component';
+import { RedesSocialesComponent } from './Components/redes-sociales/redes-sociales.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,9 @@ const routes: Routes = [
       {
         path:'listado-rating-menu',component:ListadoRatingsMenuComponent
       },
+      {
+        path:'redes-sociales',component:RedesSocialesComponent
+      }
     ]
   },
 ];
