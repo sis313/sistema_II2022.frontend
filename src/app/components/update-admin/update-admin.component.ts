@@ -85,7 +85,7 @@ export class UpdateAdminComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         console.log('Admin dashboard')
-        this.router.navigateByUrl('/business');
+        this.router.navigateByUrl('/activeBusinessList');
       }
     })
   } 

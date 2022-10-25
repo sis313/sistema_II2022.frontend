@@ -2,9 +2,10 @@ export interface business {
   idBusiness?: number;
   name: string;
   description: string;
-  typeBusinessId: number;
+  idTypeBusiness: number;
+  idUser: number;
   createDate: Date;
   updateDate: Date;
   status: number;
-  userId: number;
+  
 }

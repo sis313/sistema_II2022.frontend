@@ -47,7 +47,7 @@ export class InactiveOwnerListComponent implements OnInit {
     }).then(async (result) => {
       if (result.value) {
         await this.deleteOwnerById(id);
-        console.log('SE ELIMINO AL DUEÑO');
+        console.log('SE ELIMINO AL DUEÑO ' +id );
         await this.successNotificationDeleteCorrectly();
       }
     });

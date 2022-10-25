@@ -36,10 +36,10 @@ export class UpdateBusinessFixComponent implements OnInit {
       name: this.newAdminForm.value.name,
       description: this.newAdminForm.value.description,
       status: this.adminBusiness.status,
-      typeBusinessId:this.adminBusiness.typeBusinessId,
+      idTypeBusiness:this.adminBusiness.idTypeBusiness,
       createDate: this.adminBusiness.createDate,
       updateDate: this.adminBusiness.updateDate,
-      userId: this.adminBusiness.userId
+      idUser: this.adminBusiness.idUser
     }
     await this.updateBusiness(newBusiness);
 
@@ -78,7 +78,7 @@ export class UpdateBusinessFixComponent implements OnInit {
       }).then((result) => {
       if (result.value) {
         console.log('Admin dashboard')
-        this.router.navigateByUrl('/business');
+        this.router.navigateByUrl('/activeBusinessList');
       }
     })
   } 
