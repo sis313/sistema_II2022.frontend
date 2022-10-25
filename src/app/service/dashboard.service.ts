@@ -54,4 +54,33 @@ export class DashboardService {
     return this.http.get(url);
   }
   
+  postAux(obj: any) {
+    let url  = "http://serviceprojectspring.herokuapp.com/api/log"
+    return this.http.post(url, JSON.parse(obj))
+  }
+
+
+
+
+
+
+
+/*error => {
+if (this.mensajeError(error) == JSON.stringify("Se requieren los parametros _id y estado, capacidad o imagenes")) {
+  console.log("Se requieren los parametros _id y estado, capacidad o imagenes")
+} else {
+  if (this.mensajeError(error) == JSON.stringify("capacidad debe ser positiva")) {
+    console.log("capacidad debe ser positiva")
+  } else {
+    if (this.mensajeError(error) == JSON.stringify("se vendieron mas tickets que los que desea configurar")) {
+      console.log("se vendieron mas tickets que los que desea configurar")
+    } else {
+      console.log("Verifique sus datos")
+    }
+  }
+}
+},);*/
+
+
+
 }

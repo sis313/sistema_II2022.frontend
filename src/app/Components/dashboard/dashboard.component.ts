@@ -39,6 +39,7 @@ export class DashboardComponent implements OnInit {
   cantCalif: any;
   cantComent: any;
   eventosMesData: any;
+  eventosMesDataModified: any;
   entradasMesData: any;
   dineroMesData: any;
   dineroMesData2: any;
@@ -359,6 +360,7 @@ console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
           label: 'Visitas anuales',
           backgroundColor: [
             "#FFFC33",
+            
           ],
           data: dataAux 
         }
@@ -386,28 +388,45 @@ console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
             label: 'Visitas globales',
             backgroundColor: [
               '#42A5F5',
+             
+              
             ],
-            data: dataAux //[
-              //1,2,3,4,5,6,7,8,9,10,11,12
-             /* response[0],
-              response[1],
-              response[2],
-              response[3],
-              response[4],
-              response[5],
-              response[6],
-              response[7],
-              response[8],
-              response[9],
-              response[10],
-              response[11]*/
-          //  ]
+            data: dataAux 
+          }
+        ]
+      };
+      this.eventosMesDataModified = {
+        labels: labelsAux, /*['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']*/
+        datasets: [
+          {
+            label: 'Visitas globales',
+            backgroundColor: [
+              '#42A5F5',
+              "#FFFC33",
+              "#66BB6A",
+              "#FF6384",
+              "#FFCE56",
+              "#36A2EB",
+              
+            ],
+            data: dataAux 
           }
         ]
       };
     });
 
 
+
+    /*
+     "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+                */
    // this.ticketsService.getEntradasPorMes().subscribe((response: any) => {
     this.service.getDashboardRatingsQuantities().subscribe((data:any)=>{
       //console.log("entradas mes: " + response);
@@ -465,7 +484,16 @@ console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
 
 
   ngOnInit(): void {
-
+  /*let obj = '{'
+      obj += '"date" : "2022-09-24",'
+      obj += '"idBusiness" : 3,'
+      obj += '"idBranch" : 3,'
+      obj += '"idUser" : 3}' ;
+      let string = JSON.stringify(obj);
+     // console.log(JSON.parse(string))
+ this.service.postAux(JSON.parse(string)).subscribe((response: any)=>{
+    console.log(response);
+  });*/
       
 
  
