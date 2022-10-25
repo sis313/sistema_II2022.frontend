@@ -39,7 +39,7 @@ export class InactiveOwnerListComponent implements OnInit {
   async deleteOwner(id: any) {
     Swal.fire({
       icon: 'warning',
-      title: '¿Está seguro de eliminar al dueño :O?',
+      title: '¿Está seguro de restaurar al dueño?',
       showConfirmButton: true,
       showCancelButton: true,
       confirmButtonText: 'Aceptar',
@@ -55,7 +55,7 @@ export class InactiveOwnerListComponent implements OnInit {
 
   async deleteOwnerById(id: number) {
     this.ownerlistService
-      .deleteOwner(id)
+      .restoreOwner(id)
       .toPromise()
       .then((response) => {})
       .catch((e) => console.error(e));
@@ -65,7 +65,7 @@ export class InactiveOwnerListComponent implements OnInit {
     let self = this;
     Swal.fire({
       icon: 'success',
-      title: 'Dueño eliminado correctamente',
+      title: 'Dueño restaurado correctamente',
       showConfirmButton: true,
       confirmButtonText: 'Aceptar',
     }).then(async (result) => {

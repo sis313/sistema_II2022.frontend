@@ -43,9 +43,9 @@ export class BusinesslistService {
   }
 
 
-  restoreBusiness(idBusiness: number,provider:business): Observable<business> {
+  restoreBusiness(idBusiness: number): Observable<void> {
     const url = `${this.baseUrl}/api/business/${idBusiness}`;
-    return this.http.put<business>(url,provider);
+    return this.http.delete<void>(url);
   }
 
   //Ver sucursales

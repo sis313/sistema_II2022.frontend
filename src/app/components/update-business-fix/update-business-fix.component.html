@@ -27,7 +27,7 @@
                   </p>
                 </div>
                 <p class="register-card-description">Ingrese los datos a ser modificados</p>
-                <form [formGroup]="newAdminForm" (ngSubmit)="editProvider()">
+                <form [formGroup]="newAdminForm" (ngSubmit)="editBusiness()">
                   <div class="form-group">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="name"> Nombre del Negocio: </label>
                     <input type="text" name="name" id="name" formControlName="name" class="form-control" placeholder="" (keypress)="keyPressAlphaNumeric($event)">                  

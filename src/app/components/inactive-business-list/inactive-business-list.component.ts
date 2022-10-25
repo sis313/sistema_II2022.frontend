@@ -44,16 +44,16 @@ export class InactiveBusinessListComponent implements OnInit {
       cancelButtonText: 'Cancelar',
     }).then(async (result) => {
       if (result.value) {
-        await this.restoreBusinessById(id,status);
+        await this.restoreBusinessById(id);
         console.log('SE RESTURÓ EL NEGOCIO CORRECTAMENTE');
         await this.successNotificationRestoreCorrectly();
       }
     });
   }
 
-  async restoreBusinessById(id: number,status:any) {
+  async restoreBusinessById(id: number) {
     this.businessListService
-      .restoreBusiness(id,status)
+      .restoreBusiness(id)
       .toPromise()
       .then((response) => {})
       .catch((e) => console.error(e));
