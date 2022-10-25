@@ -139,7 +139,7 @@ body {
   
   #booking {
       font-family: 'Alice', serif;
-      background: #6b7a40;
+      background: #85CBCC;
   }
   
   .booking-form {
@@ -174,7 +174,7 @@ body {
       right: 0;
       bottom: 0;
       top: 0;
-      background: #CEA660;
+      background: #FBC78D;
    
   }
   
@@ -297,7 +297,7 @@ body {
       display: block;
       width: 100%;
       color: #fff;
-      background-color: #745D20;
+      background-color: #A7D676;
       font-weight: 700;
       font-size: 18px;
       border: none;
