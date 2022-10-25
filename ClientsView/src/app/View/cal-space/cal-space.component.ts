@@ -46,34 +46,42 @@ export class CalSpaceComponent implements OnInit {
     console.log(this.data);
   }
   async Calificar(){
-//     if (this.commentS.length>0){
-//      for (let i in this.commentS){
-//     this.comment.push({
-//       idComment: this.commentS[i].idComment,
-//       message: this.commentS[i].message,
-//       idBusiness: this.commentS[i].idBusiness,
-//       status: 1
-//     });
-   
-//   }
-// }
-    
+    if (this.commentS.length>0){
+     for (let i in this.commentS){
     this.comment.push({
-      idComment: 6,
-      message: this.textDescription,
+      idComment: this.commentS[i].idComment,
+      message: this.commentS[i].message,
       idUser: this.user,
-      idBusiness: this.data[0].idBusiness,
+      idBusiness: this.commentS[i].idBusiness,
       status: 1
     });
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    console.log(this.comment);
-    // const dataBackend = JSON.stringify(this.comment);
-    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
-    // console.log(dataBackend);
+   
+  }
+}
+this.commentS.push({
+  idComment: 6,
+  message: this.textDescription,
+  idUser: this.user,
+  idBusiness: this.data[0].idBusiness,
+  status: 1
+});
+    
+    // this.comment.push({
+    //   idComment: 6,
+    //   message: this.textDescription,
+    //   idUser: this.user,
+    //   idBusiness: this.data[0].idBusiness,
+    //   status: 1
+    // });
+    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    // console.log(this.comment);
+    // // const dataBackend = JSON.stringify(this.comment);
+    // // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
+    // // console.log(dataBackend);
 
-    await this.commentService
-    .setCommentHttp(this.comment)
-    .subscribe();
+    // await this.commentService
+    // .setCommentHttp(this.comment)
+    // .subscribe();
    
     
 
@@ -90,8 +98,8 @@ export class CalSpaceComponent implements OnInit {
       icon: 'success',
       
     })
-    // this.commentService.setComment(this.comment);
-    // this.router.navigate(['/main']);
+    this.commentService.setComment(this.comment);
+    this.router.navigate(['/main']);
    
   }
   Volver(){
