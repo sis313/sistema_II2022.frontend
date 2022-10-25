@@ -64,10 +64,10 @@ export class LoginComponent implements OnInit {
     this.userService.getUser(username).subscribe((data) =>{
       console.log(data)
       let user:any = data;
-      if(user.status==="Pending"){
+      if(user.status===0){
           this.router.navigate(['verificacion'])
       }
-      if(user.status==="Active"){
+      if(user.status===1){
         Swal.fire({
           title: 'Succesful login',
           text: "You logged succesfuly",
