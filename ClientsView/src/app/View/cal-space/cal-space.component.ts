@@ -20,6 +20,7 @@ export class CalSpaceComponent implements OnInit {
   user: number = 0;
   data: Store[] = [];
   commentS : Comment[] = [];
+  commentPH: any[] = [];
   comment: Comment[]= [];
   constructor(private storeService: StoreService, private router: Router,
     private commentService: CommentService ) {
@@ -58,19 +59,23 @@ export class CalSpaceComponent implements OnInit {
 // }
     
     this.comment.push({
-      idComment: 2,
+      idComment: 6,
       message: this.textDescription,
       idUser: this.user,
       idBusiness: this.data[0].idBusiness,
       status: 1
     });
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     console.log(this.comment);
+    // const dataBackend = JSON.stringify(this.comment);
+    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
+    // console.log(dataBackend);
+
     await this.commentService
     .setCommentHttp(this.comment)
-    .toPromise()
-    .then(async(data)=>{
-      console.log(data);
-    }).catch(e => console.error(e));
+    .subscribe();
+   
+    
 
     // Swal.fire({
     //   title: "Registrado!",
