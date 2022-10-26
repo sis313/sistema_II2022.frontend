@@ -12,16 +12,16 @@ import Swal from 'sweetalert2';
 export class RecuperacionComponent implements OnInit {
 
   constructor(private recuperacionService: RecuperacionService) { }
-  
+
   emailForm: FormGroup
   ngOnInit(): void {
     this.emailForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email])
     })
   }
-  
+
   recoverPassword(){
-    
+
     let email = new UserModel();
     email.email = this.emailForm.get('email').value;
     this.recuperacionService.recoverPassword(email).subscribe(
@@ -33,9 +33,17 @@ export class RecuperacionComponent implements OnInit {
           icon: 'success',
           confirmButtonText: 'Volver'
         })
+      }, error => {
+        Swal.fire({
+          title:'Correo invalido',
+          text: 'El correo electronico ingresado no está registrado',
+          icon: 'error',
+          confirmButtonText: 'Volver'
+        })
       }
     )
-    
+
+
   }
 
 }

@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   userlogin = true;
   userregister = false;
-  userData: loginModel ; 
+  userData: loginModel ;
 
   loginForm: FormGroup;
   //Buttons clicks functionalities
@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   }
   constructor(private loginService : LoginService, private router:Router, private userService: UsersService) { }
 
-  
-  
+
+
   ngOnInit(): void {
     this.userData = new loginModel();
     this.loginForm = new FormGroup({
@@ -51,10 +51,10 @@ export class LoginComponent implements OnInit {
       },
       (error)=>{
         console.log(error.error.status);
-        
+
         Swal.fire({
           title: "Error",
-          text: "Invalid password or nickname",
+          text: "Usuario o Contraseña invalida",
           icon: 'error'
         })
       }
@@ -69,10 +69,14 @@ export class LoginComponent implements OnInit {
       }
       if(user.status===1){
         Swal.fire({
-          title: 'Succesful login',
-          text: "You logged succesfuly",
-          icon: 'success'  
+          title: 'Acceso exitoso',
+          text: "Iniciaste sesión correctamente",
+          icon: 'success'
         })
+        if(user.roles[0].name =="ADMIN"){
+          this.router.navigate(['lista-usuarios'])
+        }
+
       }
     })
   }

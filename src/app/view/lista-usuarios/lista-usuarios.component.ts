@@ -61,19 +61,6 @@ export class ListaUsuariosComponent implements OnInit {
     this.user= user;
     console.log("DFF"+user.roles[0].name);
     this.roles = user.roles[0].name;
-    // if(user.roles[0].name == "Dueño de negocio")
-    // {
-    //   this.roles = "OWNER";
-    // }
-    // else if(user.roles[0].name == "Cliente")
-    // {
-    //   this.roles = "USER";
-    // }
-    // else if(user.roles[0].name == "Administrador")
-    // {
-    //   this.roles = "ADMIN";
-    // }
-
   }
   saveUser(){
     if(this.roles == "Dueño de negocio")
@@ -97,10 +84,9 @@ export class ListaUsuariosComponent implements OnInit {
       data =>{
         console.log(data);
         Swal.fire({
-          title: 'edicion exitosa',
+          title: 'Edicion exitosa',
           icon: 'success'
         })
-
       }
     )
     this.getUsers();

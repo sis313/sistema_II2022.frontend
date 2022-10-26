@@ -13,4 +13,7 @@ export class VerificacionexitosaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  login(){
+    window.location.href = "/";
+  }
 }

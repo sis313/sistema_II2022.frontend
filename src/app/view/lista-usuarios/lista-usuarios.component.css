@@ -5,6 +5,11 @@ body {
 .ngx-pagination .disabled {
   color: #020202 !important;
 }
+.ngx-pagination {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 .ngx-pagination .current, btn-info{
   background: #85CBCC !important;
 }

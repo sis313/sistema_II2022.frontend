@@ -1,23 +1,26 @@
 <router-outlet></router-outlet>
 
-<div class="page-holder align-items-center py-4 bg-gray-100 vh-100" style="background-color: #FBC78D">
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100" style="background-color: #F9E2AE">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 px-lg-4"  *ngIf="userlogin">
+        <br>
+        <br>
+        <br>
         <div class="card">
-          <div class="card-header px-lg-5" style="background-color: #A7D676">
-            <div class="card-heading text-primary"> <h1 style="color:#F9E2AE">Ingreso</h1></div>
+          <div class="card-header px-lg-5" style="background-color: #85CBCC">
+            <div class="card-heading text-primary"> <h1 style="color:#000000">BoActive</h1></div>
           </div>
           <div class="card-body p-lg-5">
             <h3 class="mb-4">Inicia sesion!</h3>
             <p class="text-muted text-sm mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
             <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
               <div class="form-floating mb-3">
-                <input formControlName="username" class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
-                <label for="floatingInput">Nombre de usuario</label>
+                <input formControlName="username" class="form-control" id="floatingInput" type="user"required>
+                <label for="floatingInput">Usuario</label>
               </div>
               <div class="form-floating mb-3">
-                <input formControlName="password" class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
+                <input formControlName="password" class="form-control" id="floatingPassword" type="password" required>
 
 
                 <label for="floatingPassword">Contraseña</label>
@@ -27,16 +30,16 @@
                 <label class="form-check-label" for="remember">Remember me</label>
               </div>-->
 
-              <button [disabled]="!loginForm.valid" class="btn btn-success pull-right"  style="background-color:#A7D676" >
+              <button [disabled]="!loginForm.valid" class="btn btn-success pull-right"  style="background-color:#A7D676; color: #020202" >
 
                 Ingresar</button>
             </form>
           </div>
-          <div class="card-footer px-lg-5 py-lg-4" style=" background-color:#85CBCC">
+          <div class="card-footer px-lg-5 py-lg-4" style=" background-color:#A8DEE0">
 
-            <div class="text-sm text-muted"> <a style="color: #f9e2ae">No tienes una cuenta?</a> <a style="color: blue" routerLink="/registro">Registrate</a>.</div>
+            <div class="text-sm text-muted"> <a style="color: #000000">No tienes una cuenta?</a> <a style="color: blue" routerLink="/registro">Registrate</a>.</div>
            <br>
-            <div class="text-sm text-muted"> <a style="color: #F3EDE0">Olvidaste tu contraseña?</a> <a style="color: blue" routerLink="/recuperacion">Recuperar cuenta</a>.</div>
+            <div class="text-sm text-muted"> <a style="color: #000000">Olvidaste tu contraseña?</a> <a style="color: blue" routerLink="/recuperacion">Recuperar cuenta</a>.</div>
 
 
 
@@ -52,7 +55,6 @@
 
 
        <div class="col-lg-6 col-xl-5 ms-xl-auto px-lg-4 text-center text-primary"><img class="img-fluid mb-4" he ="700" src="./assets/Banner_BOActive.png" alt="" >
-         <h1 class="mb-4" style="color:#F3EDE0"><br  class="d-none d-lg-inline" >BO Active</h1>
 
        </div>
      </div>

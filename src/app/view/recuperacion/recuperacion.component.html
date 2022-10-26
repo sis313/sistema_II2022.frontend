@@ -1,16 +1,18 @@
 
-<div class="page-holder align-items-center py-4 bg-gray-100 vh-1000" style="background-color: #FBC78D ">
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100" style="background-color: #F9E2AE ">
   <div class="container">
     <div class="row align-items-center" >
       <div class="col-lg-6 col-xl-5 ms-xl-auto px-lg-4 text-center text-primary" ><img class="img-fluid mb-4" width="250" src="https://cdn-icons-png.flaticon.com/512/4293/4293689.png" alt="" >
-        <h1 class="mb-4"  style="color:#FBC78D" ><br class="d-none d-lg-inline" >Recupera tu cuenta.</h1>
+        <h1 class="mb-4"  style="color:#85CBCC" ><br class="d-none d-lg-inline" >Recupera tu cuenta.</h1>
         <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
       </div>
       <!-- register -->
       <div class="col-lg-6 px-lg-4">
+        <br>
+        <br>
         <div class="card" >
-          <div class="card-header px-lg-5" style="background-color: #A7D676" >
-            <div class="card-heading "   > <h1 style="color:#FBC78D">Recuperacion de contraseña</h1></div>
+          <div class="card-header px-lg-5" style="background-color: #FBC78D" >
+            <div class="card-heading" style="padding: 10px;"> <h2 style="color:#000000; text-align: center">Olvidaste tu contraseña?</h2></div>
           </div>
           <div class="card-body p-lg-5" >
             <h3 class="mb-4">Ingresa tu correo para recuperar tu cuenta</h3>
@@ -32,17 +34,16 @@
                 <br>
                 <!--[disabled]="!UserForm.valid" class="btn btn-primary "-->
 
-                <button [disabled]="!emailForm.valid"  class="btn btn-success pull-right"   style="background-color:#A7D676" ><a style="color: #F9E2AE" > Envia tu correo</a>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
-                  <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
-                </svg></button>
+                <button [disabled]="!emailForm.valid"  class="btn btn-success pull-right"   style="background-color:#A7D676" ><a style="color: #000000" > Enviar correo</a>
+                  </button>
 
 
 
               </div>
             </form>
           </div>
-          <div class="card-footer px-lg-5 py-lg-4"  style=" background-color:#85CBCC">
-           <a class="nav-link" style="color: blue" href="/" >volver al ingreso</a>.</div>
+          <div class="card-footer px-lg-5 py-lg-4"  style=" background-color:#FBC78D">
+            <div class="text-sm text-muted"> <a style="color: #000000">Ya tienes una cuenta?</a> <a style="color: blue" routerLink="/">Login</a>.</div>
           </div>
         </div>
       </div>

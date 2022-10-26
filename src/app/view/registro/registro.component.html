@@ -1,19 +1,20 @@
+<router-outlet></router-outlet>
 
-<div class="page-holder align-items-center py-4 bg-gray-100 vh-1000" style="background-color: #FBC78D">
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100" style="background-color: #F9E2AE">
   <div class="container">
     <div class="row align-items-center" >
       <div class="col-lg-6 col-xl-5 ms-xl-auto px-lg-4 text-center text-primary" ><img class="img-fluid mb-4" width="250" src="https://cdn-icons-png.flaticon.com/512/3534/3534139.png" alt="" >
-        <h1 class="mb-4"  style="color:#F9E2AE" ><br class="d-none d-lg-inline" >BO Active</h1>
+        <img class="img-fluid mb-4" he ="700" src="./assets/Banner_BOActive.png" alt="" >
         <p class="lead text-muted">Registrate para empezar la experiencia.</p>
       </div>
       <!-- register -->
       <div class="col-lg-6 px-lg-4">
         <div class="card" >
           <div class="card-header px-lg-5" style="background-color: #A7D676" >
-            <div class="card-heading "   > <h1 style="color:#F9E2AE">Registro de usuario</h1></div>
+            <div class="card-heading " style="padding: 8px;"> <h1 style="color:#000000; text-align: center">BoActive</h1></div>
           </div>
           <div class="card-body p-lg-5" >
-            <h3 class="mb-4">Registrate</h3>
+            <h3 class="mb-4">Registrate !</h3>
 
             <form [formGroup]="UserForm" (ngSubmit)="saveUser()">
 
@@ -46,13 +47,13 @@
                </div>-->
               <div class="form-check">
                 <input formControlName="userType"  value="2" class="form-check-input" type="radio" checked>
-                <label  class="form-check-label" for="flexRadioDefault1">
+                <label  class="form-check-label" id="flexRadioDefault1">
                   Quiero buscar un negocio
                 </label>
               </div>
               <div class="form-check">
                 <input formControlName="userType"  value="3"  class="form-check-input" type="radio" >
-                <label  class="form-check-label" for="flexRadioDefault2">
+                <label  class="form-check-label" id="flexRadioDefault2">
                   Soy propietario de un negocio
                 </label>
               </div>
@@ -61,8 +62,8 @@
                 <div class="spinner spinner-border text-warning" role="status" #spinner>
                   <span class="visually-hidden">Loading...</span>
                 </div>
-                <button [disabled]="!UserForm.valid" class="btn btn-primary "
-                        style="float: right; background-color:#6B7A40"
+                <button class="btn btn-primary "
+                        style="float: right; background-color:#A8DEE0; color: #020202; border: 1px solid #020202 !important;"
                         type="submit" >Registrarse <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
                   <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
                 </svg></button>
@@ -70,11 +71,10 @@
             </form>
           </div>
           <div class="card-footer px-lg-5 py-lg-4"  style=" background-color:#A7D676">
-            <div class="text-sm text-muted" ><a style="color: #F9E2AE" >Ya tienes una cuenta?</a> <a class="nav-link" style="color: blue" href="/" >vuelve al ingreso</a>.</div>
+            <div class="text-sm text-muted"> <a style="color: #000000">Ya tienes una cuenta?</a> <a style="color: blue" routerLink="/">Login</a>.</div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
