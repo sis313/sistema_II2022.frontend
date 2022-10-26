@@ -1,6 +1,4 @@
-body{
-    background-color: #F9E2AE;
-}
+
 #imagenLogo{
     width: 350px;
     height: 400px;
@@ -40,4 +38,70 @@ body{
     height: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+
+.sub-title{
+    font-size: 26px;
+    font-weight: 700;
+}
+.hero{
+    width   : 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    text-align: center;
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.content a{
+    text-decoration: none;
+    display: inline-block;
+    color: #000000;
+    background: #ffffff;
+    
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-weight: 700;
+    border-radius: 50px;
+}
+
+.content a:hover{
+    background: #85CBCC;
+    color: #ffffff;
+}
+.back-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .back-video {
+        width: 100%;
+        height: auto;   
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .back-video {
+        width: auto;
+        height: 100%;   
+    }
 }
