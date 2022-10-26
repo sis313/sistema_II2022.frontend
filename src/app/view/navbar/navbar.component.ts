@@ -19,10 +19,10 @@ export class NavbarComponent implements OnInit {
       title: "¿Cerrar sesion?",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: "Sí",
-      confirmButtonColor: '#6b7a40',
+      confirmButtonText: "Aceptar",
+      confirmButtonColor: '#A8DEE0',
       cancelButtonText: "Cancelar",
-      cancelButtonColor: '#8e9187',
+      cancelButtonColor: '#A7D676',
     }) .then(resultado => {
       if (resultado.value) {
         localStorage.setItem('token', '');

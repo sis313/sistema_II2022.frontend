@@ -23,7 +23,7 @@
               <button
                 class="btn btn-lg btn-success"
                 type="submit"
-                style="background-color: #6b7a40"
+                style="background-color: #A7D676; color: #020202"
               >
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -45,8 +45,8 @@
   >
     <thead>
       <tr>
-        <th>Nro</th>
-        <th>Nombre</th>
+        <th>Nro.</th>
+        <th>Nombre Completo</th>
         <th>Usuario</th>
         <th>Rol</th>
       </tr>
@@ -72,7 +72,7 @@
             id="edit"
             data-bs-toggle="modal"
             data-bs-target="#modalEditUsuario"
-            style="background-color: #6b7a40"
+            style="background-color: #A7D676; color: #020202"
             (click)="setUser(data)"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -84,10 +84,7 @@
     </tbody>
   </table>
 
-  <pagination-controls
-    style="color: #6b7a40"
-    (pageChange)="pages = $event"
-  ></pagination-controls>
+  <pagination-controls (pageChange)="pages = $event" nextLabel="Siguiente" previousLabel="Anterior"></pagination-controls>
 </body>
 
 <div
@@ -102,7 +99,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="titulo">Editar rol de usuario</h5>
+        <h5 class="modal-title" id="titulo"> <b> Editar rol de usuario</b> </h5>
         <button
           id="cerrar"
           type="button"
@@ -113,54 +110,39 @@
 
         ></button>
       </div>
-      <form (ngSubmit)="saveUser()">
+      <form (ngSubmit)="saveUser()" *ngIf="this.user!= null">
         <div class="modal-body">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              value="ADMIN"
-              [(ngModel)]="roles"
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Administrador
-            </label>
+          <div class="row">
+            <div class="col-5">
+              <b>Nombre completo:</b>
+            </div>
+            <div class="col-7">
+              {{this.user.name}}
+            </div>
           </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
-              value="USER"
-              checked
-              [(ngModel)]="roles"
-            />
-            <label class="form-check-label" for="flexRadioDefault2">
-              Usuario
-            </label>
+          <div class="row">
+            <div class="col-5">
+              <b>Usuario:</b>
+            </div>
+            <div class="col-7">
+              {{this.user.nickname}}
+            </div>
           </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              value="OWNER"
-              [(ngModel)]="roles"
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Dueño de un negocio
-            </label>
-          </div>
+          <b>Rol:</b>
+          <br>
+          <br>
+          <select [(ngModel)]="roles" name="rol" class="form-select">
+            <option value="Administrador">Administrador</option>
+            <option value="Dueño de negocio">Dueño de negocio</option>
+            <option value="Cliente">Cliente</option>
+          </select>
         </div>
         <div class="modal-footer">
           <button
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
+            style="background-color: #A8DEE0; color: #020202"
           >
             Cancelar
           </button>
@@ -168,8 +150,7 @@
             type="submit"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
-            style="background-color: #6b7a40"
-
+            style="background-color: #A7D676; color: #020202"
           >
             Guardar
           </button>

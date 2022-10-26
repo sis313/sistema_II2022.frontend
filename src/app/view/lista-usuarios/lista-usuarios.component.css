@@ -1,4 +1,15 @@
 body {
-  background-color: #FBC78D;
+  background-color: #F9E2AE;
   font-family: Arial, sans-serif;
+}
+.ngx-pagination .disabled {
+  color: #020202 !important;
+}
+.ngx-pagination .current, btn-info{
+  background: #85CBCC !important;
+}
+
+.modal-content{
+  background-color: #F9E2AE;
+  padding: 10px;
 }
