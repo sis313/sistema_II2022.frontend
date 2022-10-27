@@ -1,18 +1,66 @@
-body{
-    background-color: #F9E2AE;
+.title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #ffffff;
 }
-#resultTable{
-    background-color: #85CBCC;
+
+.sub-title {
+  font-size: 26px;
+  font-weight: 700;
 }
-#containTable{
-    background-color: #A7D676;
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-h2{
-    color: #FFFFFF;
-    font-weight: bold;
+
+.btn-my-favs {
+  background-color: #ec7070;
+  color: white;
+  border-radius: 50px;
 }
-#nameText{
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: bold;
+
+.btn-my-favs:hover {
+  background-color: #a7d676;
+  color: white;
+}
+
+.search-sec {
+  padding: 2rem;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.search-section {
+  position: relative;
+}
+.search-slt {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  color: #55595c;
+  background-color: #fff;
+  height: 3rem;
+  border-radius: 50px;
+}
+.src-btn {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 900;
+  height: 3rem;
+  border-radius: 50px;
+  border: 0;
+  background-color: #a7d676;
+  color: white;
+}
+
+.src-btn:hover {
+  background-color: #83ab23;
+  color: white;
 }
