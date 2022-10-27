@@ -1,3 +1,7 @@
+.btn {
+  border-radius: 50px;
+}
+
 .title {
   font-size: 36px;
   font-weight: 900;
@@ -71,7 +75,7 @@
   color: #000;
 }
 
-.service_sub-title{
+.service_sub-title {
   font-size: 16px;
   font-weight: 300;
   color: #646464;

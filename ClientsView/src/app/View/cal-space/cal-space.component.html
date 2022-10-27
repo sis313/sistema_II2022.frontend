@@ -1,62 +1,57 @@
-<div class="d-flex align-items-center justify-content-center">
-    <h1>DETALLE DEL SERVICIO</h1>
-    </div>
-    
-    <div class="form-group col-md-12 d-flex align-items-center justify-content-center">
-        <div *ngFor="let item of data">
-            <label ><strong>{{item.name}}</strong></label>
-            <br>
-            <br>
-            <img src="https://via.placeholder.com/200x100/333333" alt="">
-            <br>
-            <br>
-            <label ><strong>{{item.description}}</strong></label>
-            <!-- <label >{{item.id_business}}</label> -->
-            <br>
-            <br>
-            <input [(ngModel)]="textDescription" type="text" class="form-control " placeholder="Ingrese su comentario acerca del producto ">
-            <br>
-            <br>
-            <button class="btn btn-danger" (click)="Calificar()"> ACEPTAR</button>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-warning" (click)="Volver()"> VOLVER</button>
-            <br>
-            <br>
-            
-                <button class="btn btn-success" (click)="Favoritos()">Agregar a mis favoritos ⭐</button>
-                <br>
-                &nbsp;&nbsp; <form>
-                    <p class="clasificacion">
-                      <input [(ngModel)]="currentRate" id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input [(ngModel)]="currentRate" id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input [(ngModel)]="currentRate" id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input [(ngModel)]="currentRate" id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input [(ngModel)]="currentRate" id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                  </form>
-                  <button class="btn btn-success" (click)="Rankin()">Enviar ⭐ Ranking </button>
+<div *ngFor="let item of data">
+  <div class="">
+    <button class="btn-back mt-3 ml-5" (click)="Volver()"> <i class="bi bi-arrow-left-circle"></i> &nbsp;Volver</button>
+    <div class="row m-5">
+      <div class="" style="display: flex;
+        align-items: flex-end;">
+        <img src="https://via.placeholder.com/200x100/333333" alt="" width="450px">
+      </div>
+      <div class="col">
+        <div class="title-section">
+          <p class="title">{{item.name}}</p>
+          <a (click)="setFavorite()" [ngClass]="{liked: isFavorite}" class="heart-like-button"></a>
         </div>
-        <!-- <table class="table table-hover">
-            <tbody>
-                <tr *ngFor="let item of data">
-                    <td class="product">
-                        <strong>{{item.name}}</strong><br>
-                        <strong>{{item.description}}</strong>
-                    </td>
-                    <br>
-                    
-                    <td class="number text-center">{{item.id_business}}</td>
-                    <br>
-                    <td class="input-group">
-                        <input [(ngModel)]="textDescription" type="text" class="form-control " placeholder="Ingrese su comentario acerca del producto ">
-                    </td>    
-                </tr>
-    
-            </tbody>
-        </table> -->
+        <div class="" style="display: flex;
+        /* justify-content: space-between; */
+        align-items: center;">
+
+          <div class="description">
+            <p class="clasificacion">
+              <input [(ngModel)]="currentRate" id="radio1" type="radio" name="estrellas" value="5">
+              <!--
+                    --><label for="radio1">★</label>
+              <!--
+                    --><input [(ngModel)]="currentRate" id="radio2" type="radio" name="estrellas" value="4">
+              <!--
+                    --><label for="radio2">★</label>
+              <!--
+                    --><input [(ngModel)]="currentRate" id="radio3" type="radio" name="estrellas" value="3">
+              <!--
+                    --><label for="radio3">★</label>
+              <!--
+                    --><input [(ngModel)]="currentRate" id="radio4" type="radio" name="estrellas" value="2">
+              <!--
+                    --><label for="radio4">★</label>
+              <!--
+                    --><input [(ngModel)]="currentRate" id="radio5" type="radio" name="estrellas" value="1">
+              <!--
+                    --><label for="radio5">★</label>
+            </p>
+          </div>
+          <button (click)="Rankin()" class="btn-qa"><i class="bi bi-send"></i> Enviar Calificación</button>
+        </div>
+        <strong>Descripcion: </strong>
+        {{item.description}}
+      </div>
     </div>
+  </div>
+
+</div>
+<p class="sub-title ml-5">Añade un comentario:</p>
+<div class="comment-input mx-5">
+  <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="80"
+    height="80" class="rounded-circle">
+  <input [(ngModel)]="textDescription" type="textarea" class="textarea"
+    placeholder="Ingrese su comentario acerca del servicio">
+  <button class="btn-qa" (click)="Calificar()">ENVIAR</button>
+</div>

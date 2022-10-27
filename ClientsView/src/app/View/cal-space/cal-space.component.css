@@ -1,35 +1,181 @@
+.btn {
+  border-radius: 50px;
+}
+
 #form {
-    width: 250px;
-    margin: 0 auto;
-    height: 50px;
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #000;
+}
+
+.sub-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BUTTONS */
+
+.btn-back {
+  color: #fff;
+  background: #333333;
+  padding: 10px 30px;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 0;
+}
+
+.btn-back:hover {
+  background: #464646;
+  color: #fff;
+}
+
+.btn-qa {
+  margin-top: -20px;
+  margin-left: 10px;
+  color: #fff;
+  background: #85cbcc;
+  padding: 10px 30px;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 0;
+  font-size: 15px;
+}
+
+.btn-qa:hover {
+  background: #5f9596;
+}
+
+/* HEART BUTTON */
+
+.heart-like-button {
+  margin-left: 25px;
+  margin-top: -15px;
+  position: relative;
+  width: 40px;
+  height: 32.5px;
+}
+
+.heart-like-button:before {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  width: 20px;
+  height: 31.25px;
+  border-radius: 40px 40px 0 0;
+  background-color: #574136;
+  content: "";
+  cursor: pointer;
+  transition: background 0.4s;
+}
+
+.heart-like-button:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  width: 20px;
+  height: 31.25px;
+  border-radius: 40px 40px 0 0;
+  background-color: #574136;
+  content: "";
+  cursor: pointer;
+  transition: background 0.4s;
+}
+
+.heart-like-button.liked::before,
+.heart-like-button.liked::after {
+  background-color: #ec7070;
+}
+.heart-like-button.liked {
+  animation: liked 0.4s ease;
+}
+@keyframes liked {
+  0% {
+    transform: scale(0.8);
   }
-  
-  #form p {
-    text-align: center;
+  50% {
+    transform: scale(1.1);
   }
-  
-  #form label {
-    font-size: 20px;
+  100% {
+    transform: scale(1);
   }
-  
-  input[type="radio"] {
-    display: none;
-  }
-  
-  label {
-    color: grey;
-  }
-  
-  .clasificacion {
-    direction: rtl;
-    unicode-bidi: bidi-override;
-  }
-  
-  label:hover,
-  label:hover ~ label {
-    color: orange;
-  }
-  
-  input[type="radio"]:checked ~ label {
-    color: orange;
-  }
+}
+
+/* COMMENT SECTION */
+.comment-input {
+  width: 800px;
+  padding: 30px;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+.textarea {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  background-color: transparent;
+  margin-bottom: 10px;
+  resize: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.comment-input img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #000;
+}
