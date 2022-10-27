@@ -4,6 +4,7 @@ import { Branch } from 'src/app/Model/branch.model';
 import { BranchService } from 'src/app/Service/branch.service';
 import { LocationService } from 'src/app/Service/location.service';
 import { CategoryService } from 'src/app/Service/category.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-map',
@@ -25,8 +26,11 @@ export class MapComponent implements OnInit {
   constructor(
     private branchService: BranchService,
     private locationService: LocationService,
-    private categoryService: CategoryService
-  ) {}
+    private categoryService: CategoryService,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle('Mapa | BO Active');
+  }
 
   async ngOnInit() {
     //Get actual position

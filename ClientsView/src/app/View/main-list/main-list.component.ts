@@ -5,6 +5,7 @@ import { Store } from 'src/app/Model/store.model';
 import { Router } from '@angular/router';
 import { CalTempService } from 'src/app/Service/calTemp.service';
 import { CalTemp } from 'src/app/Model/calTemp.model';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-list',
@@ -18,7 +19,9 @@ export class MainListComponent implements OnInit {
   dataSend: Store[] = [];
   storeD: Store[] = [];
   constructor(private storeC: StoreService, private router: Router,
-    private callTempService: CalTempService) {}
+    private callTempService: CalTempService, private titleService:Title) {
+      this.titleService.setTitle("Servicios | BO Active");
+    }
 
   ngOnInit(): void {
     this.onCharge();
