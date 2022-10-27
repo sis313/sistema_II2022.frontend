@@ -64,3 +64,15 @@
   background-color: #83ab23;
   color: white;
 }
+
+.service_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+}
+
+.service_sub-title{
+  font-size: 16px;
+  font-weight: 300;
+  color: #646464;
+}

@@ -55,7 +55,8 @@
           <div class="col">
             <select class="search-slt" id="exampleFormControlSelect1" [(ngModel)]="selectedCategory">
               <option value="0" disabled>Seleccione una categoria...</option>
-              <option value="" *ngFor="let category of getCategories()" [ngValue]="category.idTypeBusiness">{{category.name}}</option>
+              <option value="" *ngFor="let category of getCategories()" [ngValue]="category.idTypeBusiness">
+                {{category.name}}</option>
 
             </select>
           </div>
@@ -80,66 +81,9 @@
           <div class="">
             <div class="">
               <div class="">
-                <!-- BEGIN FILTERS -->
-                <!-- <div class="col-md-3">
-                <h2 class="grid-title"><i class="fa fa-filter"></i> Categorias</h2>
-                <hr>-->
-
-                <!-- BEGIN FILTER BY CATEGORY -->
-                <!-- <div class="checkbox">
-                  <label><input type="checkbox" class="icheck"> Application</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" class="icheck"> Design</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" class="icheck"> Desktop</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" class="icheck"> Management</label>
-                </div>
-                <div class="checkbox">
-                  <label><input type="checkbox" class="icheck"> Mobile</label>
-                </div> -->
-                <!-- END FILTER BY CATEGORY -->
-
-
-
-
-                <!-- </div>  -->
-                <!-- END FILTERS -->
-
-                <!-- BEGIN RESULT -->
                 <div class="">
-                  <h2><i class="fa fa-file-o"></i> RESULTADOS</h2>
-                  <hr>
-
-
-                  <div class="padding"></div>
-                  <!-- 
-              <div class="row">
-
-                <div class="col-sm-6">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                      Order by <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Name</a></li>
-                      <li><a href="#">Date</a></li>
-                      <li><a href="#">View</a></li>
-                      <li><a href="#">Rating</a></li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="col-md-6 text-right">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
-                    <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
-                  </div>
-                </div>
-              </div> -->
+                  <h2>Resultados de busqueda:</h2>
+                  <br>
 
                   <!-- BEGIN TABLE RESULT -->
                   <div class="table-responsive" id="containTable">
@@ -149,7 +93,15 @@
                           <td class="number text-center" id="idText">{{item.idBusiness}}</td>
                           <td class="image"><img src="https://via.placeholder.com/200x100/333333" alt=""></td>
                           <td class="product">
-                            <strong id="nameText">{{item.name}}</strong><br>{{item.description}}
+                            <div class="service_data">
+                              <div class="service_title">
+                                {{item.name}}
+                              </div>
+                              <div class="service_sub-title">
+                                {{item.description}}
+                              </div>
+                            </div>
+
                           </td>
                           <td class="rate text-right">
 
@@ -157,49 +109,20 @@
                                 class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
 
                           </td>
-                          =
-                          <!-- <td><button class="btn " style="background-color: #A7D676;" (click)="modalMore()">
-                          <i class="bi bi-eye-fill"></i>
-                          <br>
-                          VER MAS 
-                          
-                        </button></td> -->
-                          <td><button class="btn " style="background-color: #A7D676;" (click)="calificar(item)">
+
+                          <td><button class="btn " style="background-color: #85cbcc;" (click)="calificar(item)">
                               <i class="bi bi-eye-fill"></i>
                               <!-- Calificar -->
                               &nbsp;
-                              VER MAS
+                              Ver mas
                             </button></td>
-                          <td><button class="btn " style="background-color: #A7D676;" (click)="lista()">
+                          <td><button class="btn " style="background-color: #f9e2ae;" (click)="lista()">
                               <i class="bi bi-chat-left-text-fill"></i>
                               <!-- Revisar comentarios -->
                               &nbsp;
-                              COMENTARIOS
+                              Comentarios
                             </button></td>
-                          <!-- modal -->
-                          <div *ngIf="active==1">
 
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    ...
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
 
 
                         </tr>
