@@ -36,7 +36,7 @@
     <!-- SearchSection -->
     <div class="search-sec">
       <div class="container">
-          <!-- Title Section -->
+        <!-- Title Section -->
         <div class="title-section">
           <h1 class="center title">Busqueda de Servicios</h1>
           <button class="btn btn-my-favs" (click)="favorite()">
@@ -44,23 +44,19 @@
             Mis Favoritos
           </button>
         </div>
-  
+
         <br>
-  
+
         <!-- SearchBar -->
         <div class="row">
           <div class="col">
             <input type="text" class=" search-slt" placeholder="Nombre del servicio..." [(ngModel)]="nombre">
           </div>
           <div class="col">
-            <select class=" search-slt" id="exampleFormControlSelect1">
-              <option>Seleccione una categoria...</option>
-              <option>Example one</option>
-              <option>Example one</option>
-              <option>Example one</option>
-              <option>Example one</option>
-              <option>Example one</option>
-              <option>Example one</option>
+            <select class="search-slt" id="exampleFormControlSelect1" [(ngModel)]="selectedCategory">
+              <option value="0" disabled>Seleccione una categoria...</option>
+              <option value="" *ngFor="let category of getCategories()" [ngValue]="category.idTypeBusiness">{{category.name}}</option>
+
             </select>
           </div>
           <div class="col">

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreService } from 'src/app/Service/store.service';
 import { error } from '@angular/compiler/src/util';
 import { Store } from 'src/app/Model/store.model';
 import { Router } from '@angular/router';
 import { CalTempService } from 'src/app/Service/calTemp.service';
+import { StoreService } from 'src/app/Service/store.service';
+import { CategoryService } from 'src/app/Service/category.service';
 import { CalTemp } from 'src/app/Model/calTemp.model';
 import { Title } from '@angular/platform-browser';
 
@@ -15,13 +16,19 @@ import { Title } from '@angular/platform-browser';
 export class MainListComponent implements OnInit {
   nombre: string = '';
   cal: CalTemp[] = [];
-  active:number = 0;
+  active: number = 0;
   dataSend: Store[] = [];
   storeD: Store[] = [];
-  constructor(private storeC: StoreService, private router: Router,
-    private callTempService: CalTempService, private titleService:Title) {
-      this.titleService.setTitle("Servicios | BO Active");
-    }
+  selectedCategory: number = 0;
+  constructor(
+    private storeC: StoreService,
+    private router: Router,
+    private callTempService: CalTempService,
+    private titleService: Title,
+    private categoryService: CategoryService
+  ) {
+    this.titleService.setTitle('Servicios | BO Active');
+  }
 
   ngOnInit(): void {
     this.onCharge();
@@ -39,11 +46,11 @@ export class MainListComponent implements OnInit {
       });
     console.log(this.nombre);
   }
-  modalMore(){
+  modalMore() {
     this.active = 1;
     console.log(this.active);
   }
-  
+
   async onCharge() {
     this.storeC
       .getStoreAll()
@@ -54,11 +61,28 @@ export class MainListComponent implements OnInit {
         this.storeC.setStoreName(this.storeD);
         console.log(this.storeC.getStoreName());
       });
+
+    this.fetchAllCategories();
+  }
+
+  async fetchAllCategories() {
+    await this.categoryService
+      .getAllCategories()
+      .toPromise()
+      .then((data) => {
+        this.categoryService.setCategoryName(data);
+        console.log(this.categoryService.getCategoryName());
+      });
+  }
+
+  getCategories() {
+    return this.categoryService.getCategoryName();
   }
 
   searchName() {
     console.log('Si da');
-
+    console.log(this.nombre);
+    console.log(this.selectedCategory);
     if (this.nombre == '') {
       this.onCharge();
     } else {
@@ -66,8 +90,8 @@ export class MainListComponent implements OnInit {
     }
   }
 
-  calificar(data: Store){
-   // console.log(dataSend)
+  calificar(data: Store) {
+    // console.log(dataSend)
     // for (let i in data){
     //   this.dataSend.push({
     //     id_business: data[i].id_business,
@@ -75,21 +99,17 @@ export class MainListComponent implements OnInit {
     //     description: data[i].description
     //   });
     // }
-    
+
     this.dataSend.push(data);
     console.log(this.dataSend);
     this.storeC.setStoreTemp(this.dataSend);
     console.log(this.storeC.getStoreTemp());
     this.router.navigate(['/cal']);
   }
-  lista(){
+  lista() {
     this.router.navigate(['/comment']);
   }
-  favorite(){
+  favorite() {
     this.router.navigate(['/favorite']);
   }
-
-
-
-
 }
