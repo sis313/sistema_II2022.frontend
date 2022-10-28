@@ -1,8 +1,17 @@
 #container {
     background: #6b7a40;
     min-height: 100%;
+ 
+  
   }
 
+
+  #lol2{
+
+    background: #fff;
+  }
+
+ 
   #btn1 {
     display: block;
     width: 100%;
@@ -60,6 +69,20 @@
 }
 
 #btn5 {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #745D20;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    height: 55px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+#btn6 {
     display: block;
     width: 100%;
     color: #fff;
