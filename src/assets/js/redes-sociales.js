@@ -1,7 +1,7 @@
 console.log("HOLA CARGANDO SCRIPTS DE REDES SOCIALES-------------------------------------------------------------------------------------------------------------------")
 console.log(document.getElementById("link-facebook"))
 //const link='https://openjavascript.info/2022/10/19/natively-deep-copy-a-javascript-object-or-array-with-structuredclone/';
-const link='https://2daa-181-115-161-74.sa.ngrok.io';
+const link='https://cca4-181-115-161-74.sa.ngrok.io/';
 const msg = encodeURIComponent('Compartiendo recurso desde angular');
 const title= encodeURIComponent(document.querySelector('title').textContent);
 console.log([link,msg,title])
