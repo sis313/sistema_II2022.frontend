@@ -1,18 +1,14 @@
 *{
-    --color1:#745d20;
-    --color2:#cea660;
-    --color3:#f3ede0;
-    --color4:#6b7a40;
     --text1:40px;
     --text2:20px;
     --text3:10px;
-    color: var(--color1);
+    color: var(--colortext2);
     padding: 0;
     margin: 0;
 }
 
 #contenido_total{
-    background: var(--color3);
+    background: var(--color4);
     z-index: 1200;
     position: fixed;
     width: 100%;
@@ -38,11 +34,11 @@ div#nav-mobile{
     align-items: center;
     justify-content: center;
     font-size: var(--text1);
-    border-bottom: 2px solid var(--color1);
+    border-bottom: 2px solid var(--colortext2);
 } 
 nav{
     padding: 0;
-    color: var(--color3);
+    color: var(--colortext2);
     font-size: var(--text2);
 }
 nav li{
@@ -51,15 +47,15 @@ nav li{
 }
 
 nav li:hover{
-    background-color: var(--color3);
-    color: var(--color1) !important;
+    background-color: var(--color4);
+    color: var(--colortext2) !important;
     font-size: 22px;
     transition-duration: 1s;
 }
 
 nav a{
     background-color: transparent;
-    color: var(--color1) !important;
+    color: var(--colortext2) !important;
 }
 #opcion-servicios:hover #menu-interno-servicios,
 #opcion-sucursales:hover #menu-interno-sucursales{
@@ -72,7 +68,7 @@ nav a{
     display: none;
     position: absolute;
     top: 100%;
-    background-color: #f3ede0d1;
+    background-color: #f9e2aed1;
 }
 
 nav{
@@ -85,10 +81,10 @@ nav ul{
     width: 20vw !important;
 }
 nav li:hover{
-    background-color: var(--color2);
+    background-color: var(--color4);
 }
 #nav,nav,nav div{
-    background-color: var(--color3);
+    background-color: var(--color4);
 
 }
 .nav-link{
@@ -179,7 +175,6 @@ nav li:hover{
     #opcion-servicios:hover #menu-interno-servicios,
     #opcion-sucursales:hover #menu-interno-sucursales{
         display:block;        
-        background-color: #cea660;
     }
     #menu-interno-servicios,
     #menu-interno-sucursales{
