@@ -31,3 +31,18 @@
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
 }
+#botones-opciones{
+    padding: 0 auto;
+    width: auto;
+    text-align: center;
+}
+@media (max-width:800px){
+    #botones-opciones{
+        display: flex;
+        flex-direction: row;
+        padding-top: 3vh;
+    }
+    #contenedor-negocio{
+        justify-content: center !important;
+    }
+}
