@@ -1,7 +1,7 @@
 <div class="container" id="principal" style="padding: 15px !important">
   <div *ngIf="mostrar_opciones" class="container d-flex justify-content-center align-items-center flex-column" >
     <h2>Sucursal seleccionada</h2>
-    <div class="container d-flex justify-content-center align-items-center flex-row">
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
       <div class="form-group mx-3">
         <label for="cantidad">Nombres negocios </label>
         <select [(ngModel)]="negocioSeleccionado" (change)="buscar()" class="browser-default custom-select">
@@ -51,12 +51,14 @@
             style="
               display: flex;
               flex-direction: horizontal;
+              flex-wrap: wrap;
               margin-bottom: 10px;
               width: 100%;
               text-align: center;
               align-items: center;
               align-content: cen;
             "
+            id="dias"
           >
             <div class="form-check">
               <input

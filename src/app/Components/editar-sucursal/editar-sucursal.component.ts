@@ -176,7 +176,7 @@ actualizarInfo() {
     //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [-50.6462411, -21.7835007],// starting position
-    zoom: 14,// starting zoom
+    zoom: 12,// starting zoom
     minZoom:2.8,
     
     });
@@ -214,7 +214,7 @@ actualizarInfo() {
       //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [this.negocios[0].longitude,this.negocios[0].latitude], // starting position
-      zoom: 14,// starting zoom
+      zoom: 12,// starting zoom
       minZoom:2.8,
       
     });
@@ -251,7 +251,7 @@ actualizarInfo() {
       //style: 'mapbox://styles/porceljhoan/ckund5chf15l117pkjr30so2i', // style URL
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [this.negocios[0].longitude,this.negocios[0].latitude],// starting position
-      zoom: 20,// starting zoom
+      zoom: 16,// starting zoom
       
       });
       this.country_Geojson()
@@ -450,7 +450,7 @@ actualizarInfo() {
        }*/
       this.dat.features.push(JSON.parse(JSON.stringify({
         "type":"Feature",
-        "properties":{"message":this.negocios[0].name ,'iconSize': [50, 50]},
+        "properties":{"message":this.negocios[0].name ,'iconSize': [20, 20]},
          "geometry":{"type":"Point", "coordinates":[this.negocios[0].longitude,this.negocios[0].latitude]}
       })))
       this.Marker_country();

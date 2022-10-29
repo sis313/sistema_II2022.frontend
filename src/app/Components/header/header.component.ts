@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarScriptsService } from '../../service/cargar-scripts.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cargarScriptsService:CargarScriptsService) { 
+    cargarScriptsService.cargarScripts(['header']);
+  }
 
   ngOnInit(): void {
   }

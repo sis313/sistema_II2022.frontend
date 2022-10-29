@@ -1,104 +1,150 @@
 <div id="contenido_total">
-    <div id="nav-web">
-      <div id="titulo">
-        <div id="cabecera-con-hover">
-          <img id="img-logo" src="./../../../assets/images/logo_pagina_taller.jpg" alt="">
-          <p>APP...NEGOCIOS</p>
-        </div>
-      </div>
-      <div id="nav">
-          <nav class="navbar navbar-expand-lg bg-light">
-              <div class="container-fluid">
-  
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav">
-                    <li class="nav-item"  id="opcion-servicios">
-                      <a class="nav-link">Servicios</a>
-                      <ul class="nav-item" id="menu-interno-servicios">
-                        <li class="nav-item">
-                          <a class="nav-link" routerLink="/adm/lista-negocio">Listado</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" routerLink="/adm/negocio">Crear</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" routerLink="/adm/editar-negocio">Editar</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item menus-internos" id="opcion-sucursales">
-                      <a class="nav-link">Sucursales</a>
-                      <ul class="nav-item" id="menu-interno-sucursales">
-                        <li class="nav-item">
-                          <a class="nav-link" routerLink="/adm/lista-sucursal">Listado</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" routerLink="/adm/crear-sucursal">Crear</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" routerLink="/adm/editar-sucursal">Editar</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink="/adm/listado-rating-menu">Rating sucursales</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink="/adm/dashboard"  >Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink="/adm/redes-sociales"  >Redes sociales</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
+  <div id="nav-web">
+    <div id="titulo">
+      <div id="cabecera-con-hover">
+        <img
+          id="img-logo"
+          src="./../../../assets/images/logo_pagina_taller.jpg"
+          alt=""
+        />
+        <p>APP...NEGOCIOS</p>
       </div>
     </div>
-    <div id="nav-mobile">
-      <div id="titulo">
-        <div id="cabecera-con-hover">
-          <i class="fa fa-bars"></i>
-          <img id="img-logo" src="./../../../assets/images/logo_pagina_taller.jpg" alt="">
+    <div id="nav">
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item" id="opcion-servicios">
+                <a class="nav-link">Servicios</a>
+                <ul class="nav-item" id="menu-interno-servicios">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/lista-negocio"
+                      >Listado</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/negocio">Crear</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/editar-negocio"
+                      >Editar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item menus-internos" id="opcion-sucursales">
+                <a class="nav-link">Sucursales</a>
+                <ul class="nav-item" id="menu-interno-sucursales">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/lista-sucursal"
+                      >Listado</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/crear-sucursal"
+                      >Crear</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/editar-sucursal"
+                      >Editar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/adm/listado-rating-menu"
+                  >Rating sucursales</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/adm/dashboard">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/adm/redes-sociales"
+                  >Redes sociales</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;" id="opciones-nav-mobile">
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-              Orders
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-              Products
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-              Customers
-            </a>
-          </li>
-        </ul>
-      </div>
-      
+      </nav>
     </div>
-    <!-- <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+  </div>
+  <div id="nav-mobile">
+    <div id="titulo">
+      <div id="cabecera-con-hover">
+        <i class="fa fa-bars" id="icono-menu"></i>
+        <img
+          id="img-logo"
+          src="./../../../assets/images/logo_pagina_taller.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div id="opciones-nav-mobile" style="width: 100%">
+      <div
+        class="d-flex flex-column text-white"
+        style="width: 100%"
+      >
+        <ul class="navbar-nav">
+              <li class="nav-item" id="opcion-servicios">
+                <a class="nav-link">Servicios</a>
+                <ul class="nav-item" id="menu-interno-servicios">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/lista-negocio"
+                      >Listado</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/negocio">Crear</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/editar-negocio"
+                      >Editar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item menus-internos" id="opcion-sucursales">
+                <a class="nav-link">Sucursales</a>
+                <ul class="nav-item" id="menu-interno-sucursales">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/lista-sucursal"
+                      >Listado</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/crear-sucursal"
+                      >Crear</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/adm/editar-sucursal"
+                      >Editar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/adm/listado-rating-menu"
+                  >Rating sucursales</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/adm/dashboard">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/adm/redes-sociales"
+                  >Redes sociales</a
+                >
+              </li>
+            </ul>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
         <span class="fs-4">Sidebar</span>

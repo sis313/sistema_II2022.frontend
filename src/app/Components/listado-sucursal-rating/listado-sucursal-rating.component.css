@@ -1,2 +1,19 @@
 *{
+    font-size: 15px;
+}
+#contenedor-principal{
+    height: 80vh !important;
+    overflow: scroll !important;
+}
+#estilo-estrellas::before{
+    font-size: 5px !important;
+}
+#estilo-estrellas form label{
+}
+
+
+@media (max-width:600px) {
+    *{
+        font-size: 12px;
+    }
 }

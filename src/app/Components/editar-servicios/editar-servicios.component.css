@@ -51,11 +51,11 @@ textarea:focus,textarea:hover,textarea:visited,textarea:active{
     margin-bottom: 15vh;
 }
 #lado-derecho{
-  background-image: url('https://analiticaderetail.com/wp-content/uploads/2018/10/analisis-de-ventas.jpg');
   overflow: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 700px;
+  max-height: 700px;
+  min-height: auto;
   padding: 0 !important;
   
 }

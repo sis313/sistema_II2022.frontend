@@ -27,3 +27,27 @@ body { margin: 0;}
 
 html, body { height: 100%; }
 body { margin: 0;}
+
+
+input.star:checked ~ label.star:before {
+    color: pink !important;
+    text-shadow: none !important;
+    font-size: 36px;
+  }
+  input.star ~ label.star:before {
+    text-shadow: none !important;
+    font-size: 36px;
+  }
+
+  @media(max-width:600px){
+
+    input.star:checked ~ label.star:before {
+        color: pink !important;
+        text-shadow: none !important;
+        font-size: 24px;
+    }
+    input.star ~ label.star:before {
+        text-shadow: none !important;
+        font-size: 24px;
+      }
+  }

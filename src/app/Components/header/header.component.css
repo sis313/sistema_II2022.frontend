@@ -9,7 +9,6 @@
     color: var(--color1);
     padding: 0;
     margin: 0;
-    font-size: 1vw;
 }
 
 #contenido_total{
@@ -19,41 +18,13 @@
     width: 100%;
     
 }
-
-@media screen and (min-width: 1000px){
-    div#nav-mobile{
-        display: none;
-    }
+div#nav-mobile{
+    display: none;
 }
-@media screen and (max-width: 1000px) {
-    div#nav-web{
-        display: none;
-    }
-    div#nav-mobile{
-        display: inline-block !important;
-        width: 100%;
-    }
-    #img-logo{
-        width: 20vw !important;
-        height: 20vw !important;
-        overflow: auto;
-
-    }
-    #cabecera-con-hover i{
-        width: 15vw;
-        height: 15vw;
-        font-size: 8vw;
-    }
-    #cabecera-con-hover i:hover #opciones-nav-mobile{
-        display: flex !important;
-    }
-    #cabecera-con-hover i #opciones-nav-mobile{
-        display: none !important;
-    }
-    #cabecera-con-hover{
-        padding-left: 10vw !important;
-    }
+#opciones-nav-mobile{
+    display: none;
 }
+
 
 #contenido-total,
 #contenido-total::before,
@@ -162,3 +133,59 @@ nav li:hover{
 .nav-item:hover .nav-link{
     background-color: blue;
 } */
+
+@media screen and (min-width: 1000px){
+    div#nav-mobile{
+        display: none !important;
+    }
+}
+@media (min-width:600px){
+    *{
+        font-size: 18px;
+    }
+    
+}
+@media (max-width:600px){
+    
+}
+@media screen and (max-width: 1000px) {
+    div#nav-web{
+        display: none;
+    }
+    div#nav-mobile{
+        display: inline-block !important;
+        width: 100%;
+    }
+    #img-logo{
+        width: 20vw !important;
+        height: 20vw !important;
+        overflow: auto;
+
+    }
+    #cabecera-con-hover i{
+        width: 15vw;
+        height: 15vw;
+        font-size: 8vw;
+    }
+    #cabecera-con-hover{
+        padding-left: 10vw !important;
+    }
+    a.nav-link{
+        width: 100% !important;
+    }
+    .nav-item{
+        width: 100% !important;
+    }
+    #opcion-servicios:hover #menu-interno-servicios,
+    #opcion-sucursales:hover #menu-interno-sucursales{
+        display:block;        
+        background-color: #cea660;
+    }
+    #menu-interno-servicios,
+    #menu-interno-sucursales{
+        display: none;
+        position: relative !important;
+        background-color: #f3ede0d1;
+    }
+
+}

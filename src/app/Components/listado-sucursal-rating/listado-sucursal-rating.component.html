@@ -1,4 +1,5 @@
-<div class="modal-header">
+<div id="contenedor-principal">
+  <div class="modal-header">
     <h2 class="modal-title" id="exampleModalLabel">Estrellas de sucursal</h2>
     <button
       type="button"
@@ -12,14 +13,19 @@
       <thead>
         <tr>
           <th scope="col">Direccion</th>
-          <th scope="col"style="width:400px;">Calificacion</th>
+          <th scope="col" style="width: 400px">Calificacion</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let rating of listadoRating">
-          <td>{{rating.address}}</td>
-          <td style="width: 400px;">
-            <ngx-star-rating [(ngModel)]="rating.rating" [disabled] ="true"></ngx-star-rating>
+          <td>{{ rating.address }}</td>
+          <td style="font-size: 5px !important;">
+            <ngx-star-rating
+              id="estilo-estrellas"
+              [(ngModel)]="rating.rating"
+              [disabled]="true"
+              style="font-size: 5px !important;"
+            ></ngx-star-rating>
           </td>
         </tr>
       </tbody>
@@ -30,3 +36,4 @@
       Cerrar
     </button>
   </div>
+</div>
