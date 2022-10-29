@@ -1,105 +1,133 @@
 <div class="container-fluid" id="container">
-<br>
-    <div class="form-check" hidden="true">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Default checkbox
-      </label>
+  <br />
+  <div class="form-check" hidden="true">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckDefault"
+    />
+    <label class="form-check-label" for="flexCheckDefault">
+      Default checkbox
+    </label>
+  </div>
+  <div class="form-check" hidden="true">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="flexCheckChecked"
+      checked
+    />
+    <label class="form-check-label" for="flexCheckChecked">
+      Checked checkbox
+    </label>
+  </div>
+
+  <form class="row g-3" hidden="true">
+    <div class="col-auto">
+      <label for="staticEmail2" class="visually-hidden">Palabra clave</label>
+      <input type="text" id="staticEmail2" placeholder="palabra clave" />
     </div>
-    <div class="form-check" hidden="true">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        Checked checkbox
-      </label>
-    </div>
-    
-    <form class="row g-3" hidden="true">
-      <div class="col-auto">
-        <label for="staticEmail2" class="visually-hidden">Palabra clave</label>
-        <input type="text"  id="staticEmail2" placeholder="palabra clave">
-      </div>
-       <!--<div class="col-auto">
+    <!--<div class="col-auto">
         <label for="inputPassword2" class="visually-hidden">Password</label>
         <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
       </div>-->
-      <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-      </div>
-    </form>
-  
-      <div class="list-group">
-        
-        
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+    </div>
+  </form>
 
-  
-      
-  
-            <tr *ngFor="let sucursal of sucursales">
-              <div *ngIf="sucursal.status==1">
-          <div  class="list-group-item d-flex w-100 justify-content-between" id="list-group-item" style="background-color: #CEA660;  padding: 20px;">
-       
-
-            <div class="list-group-item" style="background-color: #745d20; width: 225 px; height: 225px;">
-              <img src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
+  <div class="list-group">
+    <tr *ngFor="let sucursal of sucursales">
+      <div *ngIf="sucursal.status == 1">
+        <div
+          class="list-group-item d-flex w-100 justify-content-between"
+          id="list-group-item"
+          style="background-color: #cea660; padding: 20px;height: auto;  flex-wrap: wrap !important;"
+          id="contenedor-negocio"
+        >
+          <div
+            class="list-group-item"
+            style="background-color: #745d20; width: 225 px; height: auto;"
+          >
+            <img
+              src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg"
+              class="card-img-top"
+              alt="..."
+              style="width: 200px; height: 200px"
+            />
           </div>
-            <div>
-                <p class="mb-1">idBusiness {{sucursal.idBranch}}</p>
-                <p class="mb-1">Dirección {{sucursal.direction}}</p>
-                
-                <ul class="list-group">
-                    <li class="list-group-item">{{sucursal.attentionDays}} </li>
-                   <li class="list-group-item">{{sucursal.openHour}} a {{sucursal.closeHour}}</li>
-                   <!--   <li class="list-group-item">Domingo 6 am - 12 pm</li>
+          <div>
+            <p class="mb-1">idBusiness {{ sucursal.idBranch }}</p>
+            <p class="mb-1">Dirección {{ sucursal.direction }}</p>
+
+            <ul class="list-group">
+              <li class="list-group-item">{{ sucursal.attentionDays }}</li>
+              <li class="list-group-item">
+                {{ sucursal.openHour }} a {{ sucursal.closeHour }}
+              </li>
+              <!--   <li class="list-group-item">Domingo 6 am - 12 pm</li>
                     <li class="list-group-item">Feriados 9 am - 12 pm</li>-->
-                  </ul>
-                </div>
+            </ul>
+          </div>
 
-
-              <div class="list-group-item" style="background-color: #745d20; width: 225 px; height: 225px;">
-                <img src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
-                <div class="card-body">
-                  
-           
-                <!--
+          <div
+            style="background-color: transparent; width: 225 px;"
+            id="botones-opciones"
+          >
+            <!-- <img
+              src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg"
+              class="card-img-top"
+              alt="..."
+              style="width: 200px; height: 200px"
+            /> -->
+            <button
+                type="button"
+                class="btn"
+                (click)="eliminarSucursal(sucursal.idBranch)"
+                id="btnEliminarSucursal"
+              >
+                Eliminar
+              </button>
+            <div >
+              <!--
                    <div class="custom-file" style="height: 250px;">
                     <div id="mapa-mapbox"></div>   
                   </div>
                   <a href="#" class="btn" id="btnRuta">Ruta</a>-->
-                  <button type="button" class="btn" (click)="eliminarSucursal(sucursal.idBranch)" id="btnEliminarSucursal">Eliminar</button>
-               
-                </div>
-              </div>
-
               
+            </div>
           </div>
         </div>
-            </tr>
-      
-  <br>
-        <p class="mb-1" style="size: 14px; color:black">Comentarios</p>
-  <br>
-        <ol class="list-group">
-          <tr *ngFor="let comentario of comentarios">
-            <li class="list-group-item d-flex justify-content-between align-items-start" style="background-color: #CEA660;  padding: 20px;">
-              <img src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg" class="card-img-top" alt="..." style="width: 100px; height: 100px;">
-              <div class="ms-2 me-auto">
-                Fecha y hora{{comentario.fecha}}
-                <div class="fw-bold">Usuario{{comentario.nombre}}</div>
-                Comentario{{comentario.comentario}}
-              </div>
-              <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-           
-          </ol>
-  
-  
-  
-  
-  
-  
-       
       </div>
-  
-      <br>
+    </tr>
+
+    <br />
+    <p class="mb-1" style="size: 14px; color: black">Comentarios</p>
+    <br />
+    <ol class="list-group">
+      <tr *ngFor="let comentario of comentarios">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+          style="background-color: #cea660; padding: 20px"
+        >
+          <img
+            src="assets/images/16-el-tenedor-ideas-para-abrir-un-restaurante-exitoso.jpg"
+            class="card-img-top"
+            alt="..."
+            style="width: 100px; height: 100px"
+          />
+          <div class="ms-2 me-auto">
+            Fecha y hora{{ comentario.fecha }}
+            <div class="fw-bold">Usuario{{ comentario.nombre }}</div>
+            Comentario{{ comentario.comentario }}
+          </div>
+          <span class="badge bg-primary rounded-pill">14</span>
+        </li>
+      </tr>
+    </ol>
   </div>
-  
+
+  <br />
+</div>
