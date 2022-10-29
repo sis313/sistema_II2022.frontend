@@ -1,6 +1,5 @@
 body {
     background: url(http://farm5.staticflickr.com/4139/4825532997\_7a7cd3d640\_b.jpg);
-    background-size: cover;
     height: 100%;
     font-family: 'Merriweather Sans', sans-serif;
     color: #666;
@@ -125,7 +124,6 @@ body {
   
   .section {
       position: relative;
-      height: 100vh;
   }
   
   .section .section-center {
