@@ -1,3 +1,6 @@
+*{
+    font-size: 18px   ;
+}
 #share-buttons a i{
     font-size: 100px;
 }
@@ -5,4 +8,8 @@
     width: 100%;
     text-align: center;
     margin: 50px 0px;
+}
+#img-pagina{
+    width: auto;
+    overflow: hidden;
 }
