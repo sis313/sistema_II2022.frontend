@@ -1,6 +1,6 @@
 *{
     --principal-color:rgba(23, 24, 25, 0.883);
-    color: var(--color1);
+    color: var(--colortext2);
     font-size: var(--text2);
     font-weight: 400;
 
@@ -37,6 +37,7 @@ textarea:focus,textarea:hover,textarea:visited,textarea:active{
     width: 100% !important;
     max-width: 100%;
     padding: 0%;
+    background: var(--color1);
 }
 #color-fondo{
     width: 100%;

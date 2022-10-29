@@ -1,5 +1,8 @@
+*{
+  color: var(--colortext2);
+}
 #container {
-    background: #6b7a40;
+    background: var(--color2);
     max-height: 100%;
     min-height: auto;
   }

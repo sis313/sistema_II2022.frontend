@@ -7,11 +7,17 @@
 @import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
 *{
-    --color1:#745d20;
-    --color2:#cea660;
-    --color3:#f3ede0;
-    --color4:#6b7a40;
-    --colortext1:#f3ede0;;
+    /* --color1:#745d20; */
+    /* --color2:#cea660;
+    --color3:#f3ede0; */
+    /* --color4:#6b7a40; */
+    --color1:#85cbcc;
+    --color2:#fbc78d;
+    --color3:#f9e2ae;
+    --color4:#a7d676;
+    --color5:#a8dee0;
+    --colortext1:#f3ede0;
+    --colortext2:black;
     --text1:40px;
     --text2:20px;
     --text3:10px;
@@ -30,7 +36,7 @@ body { margin: 0;}
 
 
 input.star:checked ~ label.star:before {
-    color: pink !important;
+    color: var(--color2) !important;
     text-shadow: none !important;
     font-size: 36px;
   }
@@ -42,7 +48,7 @@ input.star:checked ~ label.star:before {
   @media(max-width:600px){
 
     input.star:checked ~ label.star:before {
-        color: pink !important;
+        color: var(--color2) !important;
         text-shadow: none !important;
         font-size: 24px;
     }
@@ -51,3 +57,4 @@ input.star:checked ~ label.star:before {
         font-size: 24px;
       }
   }
+

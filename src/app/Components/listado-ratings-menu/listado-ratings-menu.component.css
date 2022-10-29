@@ -1,0 +1,8 @@
+*{
+    color: var(--colortext2);
+
+}
+#principal{
+    background-color: var(--color1);
+    padding: 1vw 10vw;
+}
