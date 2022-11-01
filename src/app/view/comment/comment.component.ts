@@ -10,7 +10,8 @@ import {Comment} from 'src/app/model/comment';
 export class CommentComponent implements OnInit {
   id!:number;
   comment : Comment[]= [];
-
+  com !: Comment;
+  mensaje!:string;
   constructor(private commentService: CommentService, private activatedRoute: ActivatedRoute,
     private router: Router) { }
 
@@ -26,6 +27,24 @@ export class CommentComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  post_comment():void{
+    const comm = new Comment(0,this.mensaje,1,this.id,1)
+    
+    this.commentService.create(comm).subscribe(
+      data => {
+        console.log(data)
+        
+      },
+      err => {
+
+        // this.router.navigate(['/']);
+      }
+    );
+
+ 
+    this.router.navigate(['/adm/lista-negocio']);
   }
 
 }
