@@ -47,17 +47,17 @@ export class CalSpaceComponent implements OnInit {
 
   onCharge() {
     console.log('estamos aca');
-    this.data = [{
-      idBusiness: 1,
-      name: 'Business name example',
-      description: 'Description 123',
-      idTypeBusiness: 1,
-      idUser: 1,
-      createDate: '2022-01-01',
-      updateDate: '2022-10-25',
-      status: 1,
-    }];
-    console.log(this.data);
+    // this.data = [{
+    //   idBusiness: 1,
+    //   name: 'Business name example',
+    //   description: 'Description 123',
+    //   idTypeBusiness: 1,
+    //   idUser: 1,
+    //   createDate: '2022-01-01',
+    //   updateDate: '2022-10-25',
+    //   status: 1,
+    // }];
+    // console.log(this.data);
   }
   async Calificar() {
     if (this.commentS.length > 0) {
@@ -109,13 +109,12 @@ export class CalSpaceComponent implements OnInit {
     this.commentService.setComment(this.comment);
     this.router.navigate(['/main']);
   }
-  setFavorite() {
-    console.log('SetFavorite');
-    this.isFavorite = !this.isFavorite;
-    console.log(this.isFavorite);
-  }
 
-  Favoritos() {
+  async Favoritos() {
+    //wait 1 second
+    this.isFavorite = !this.isFavorite;
+    await this.delay(1000);
+
     this.isFavorite = !this.isFavorite;
     if (this.commentS.length > 0) {
       for (let i in this.commentS) {
@@ -143,8 +142,7 @@ export class CalSpaceComponent implements OnInit {
 
     // });
     Swal.fire({
-      title: 'Registrado!',
-      text: 'El negocio!',
+      title: 'Añadido a favoritos!',
       icon: 'success',
     });
     this.commentService.setComment(this.comment);
@@ -192,4 +190,7 @@ export class CalSpaceComponent implements OnInit {
     return this.textDescription.length > 0 ? false : true;
   }
 
+  delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 }

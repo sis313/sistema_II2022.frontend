@@ -14,13 +14,13 @@ export class ComentListComponent implements OnInit {
   }
   exist: number = 0;
   ngOnInit(): void {
-    this.comment.push({
-      idComment: 6,
-      message: 'sdada',
-      idUser: 3,
-      idBusiness: 1,
-      status: 1,
-    });
+    // this.comment.push({
+    //   idComment: 6,
+    //   message: 'sdada',
+    //   idUser: 3,
+    //   idBusiness: 1,
+    //   status: 1,
+    // });
     this.onChange();
   }
   onChange() {

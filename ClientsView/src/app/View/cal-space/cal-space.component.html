@@ -9,7 +9,7 @@
       <div class="col">
         <div class="title-section">
           <p class="title">{{item.name}}</p>
-          <a (click)="setFavorite()" [ngClass]="{liked: isFavorite}" class="heart-like-button"></a>
+          <a (click)="Favoritos()" [ngClass]="{liked: isFavorite}" class="heart-like-button"></a>
         </div>
         <div class="" style="display: flex;
         /* justify-content: space-between; */
@@ -55,9 +55,9 @@
       height="80" class="rounded-circle">
     <input [(ngModel)]="textDescription" type="textarea" class="textarea"
       placeholder="Ingrese su comentario acerca del servicio">
-    <button class="btn-qa" [ngClass]="disableButton() ? 'btn-qa-disabled' : ''" [disabled]="disableButton()"
-      (click)="Calificar()">ENVIAR</button>
   </div>
+  <button class="btn-cmm" [ngClass]="disableButton() ? 'btn-qa-disabled' : ''" [disabled]="disableButton()"
+    (click)="Calificar()">ENVIAR</button>
 </div>
 <br>
 <hr>
@@ -65,4 +65,3 @@
   <p class="title">Comentarios</p>
   <app-comment-list></app-comment-list>
 </div>
-
