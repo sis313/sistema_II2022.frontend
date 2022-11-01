@@ -88,6 +88,22 @@ input[type="radio"]:checked ~ label {
   background: #5f9596;
 }
 
+.btn-cmm {
+  margin-top: 15px;
+  margin-left: 10px;
+  color: #fff;
+  background: #85cbcc;
+  padding: 10px 30px;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 0;
+  font-size: 15px;
+}
+
+.btn-cmm:hover {
+  background: #5f9596;
+}
+
 .btn-qa-disabled {
   background-color: #85cbcc60;
   cursor: not-allowed;
@@ -161,8 +177,8 @@ input[type="radio"]:checked ~ label {
   width: 800px;
   padding: 30px;
   background: #fff;
-  border: 3px solid #000;
-  border-radius: 100px;
+  border: 1px solid #000;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
