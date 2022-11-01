@@ -47,11 +47,18 @@
   </div>
 
 </div>
-<p class="sub-title ml-5">Añade un comentario:</p>
-<div class="comment-input mx-5">
-  <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="80"
-    height="80" class="rounded-circle">
-  <input [(ngModel)]="textDescription" type="textarea" class="textarea"
-    placeholder="Ingrese su comentario acerca del servicio">
-  <button class="btn-qa" (click)="Calificar()">ENVIAR</button>
+<div class="comment-section">
+
+  <p class="sub-title ml-5">Añade un comentario:</p>
+  <div class="comment-input mx-5">
+    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="80"
+      height="80" class="rounded-circle">
+    <input [(ngModel)]="textDescription" type="textarea" class="textarea"
+      placeholder="Ingrese su comentario acerca del servicio">
+    <button class="btn-qa" [ngClass]="disableButton() ? 'btn-qa-disabled' : ''" [disabled]="disableButton()"
+      (click)="Calificar()">ENVIAR</button>
+  </div>
 </div>
+<br>
+<hr>
+<p class="title ml-5">Comentarios</p>

@@ -79,15 +79,15 @@ export class CalSpaceComponent implements OnInit {
       status: 1,
     });
 
-    this.comment.push({
-      idComment: 6,
-      message: this.textDescription,
-      idUser: this.user,
-      idBusiness: this.data[0].idBusiness,
-      status: 1,
-    });
-    console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-    console.log(this.comment);
+    // this.comment.push({
+    //   idComment: 6,
+    //   message: this.textDescription,
+    //   idUser: this.user,
+    //   idBusiness: this.data[0].idBusiness,
+    //   status: 1,
+    // });
+    // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+    // console.log(this.comment);
     // const dataBackend = JSON.stringify(this.comment);
     // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
     // console.log(dataBackend);
@@ -102,15 +102,15 @@ export class CalSpaceComponent implements OnInit {
 
     // });
     Swal.fire({
-      title: 'Registrado!',
+      title: '¡Comentario Registrado!',
       text: 'El comentario fue registrado de manera exitosa!',
       icon: 'success',
     });
-    // this.commentService.setComment(this.comment);
-    // this.router.navigate(['/main']);
+    this.commentService.setComment(this.comment);
+    this.router.navigate(['/main']);
   }
-  setFavorite(){
-    console.log("SetFavorite");
+  setFavorite() {
+    console.log('SetFavorite');
     this.isFavorite = !this.isFavorite;
     console.log(this.isFavorite);
   }
@@ -187,4 +187,9 @@ export class CalSpaceComponent implements OnInit {
     this.commentService.setComment(this.comment);
     // this.router.navigate(['/main']);
   }
+  // Function to disable button if lenght of comment is 0
+  disableButton() {
+    return this.textDescription.length > 0 ? false : true;
+  }
+
 }
