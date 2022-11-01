@@ -1,40 +1,42 @@
 <body>
-  
+  <div *ngIf="exist==0">
+    <h4>Aun no hay comentarios :(</h4>
+  </div>
+  <div *ngIf="exist>0">
+    <div>
 
-<div class="container">
-    <h1>LISTA DE COMENTARIOS </h1>
-    
-<div *ngIf="exist==0" >
-    <br>
-    <br>
-    <h1> NO COMMENTS YET</h1>
-</div>
-<div *ngIf="exist>0" >
-    <div class="container">
+    </div>
+    <div class="cont" *ngFor="let item of comment">
+      <img [src]="'https://ui-avatars.com/api/?background=random&size=80&rounded=true&name=U+'+item.idUser" />
+      <div class="content">
+        <span class="name">Usuario {{item.idUser}}</span><br>
+        <span class="id">
+          Comentario {{item.idComment}}
+        </span><br>
+        <span class="comment">{{item.message}}</span>
+      </div>
+    </div>
 
- 
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-              <th scope="col"># Comentario</th>
-              
-              <th scope="col">Message</th>
-              <th scope="col">id business</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of comment">
-                <td *ngIf="item.status==1">{{item.idComment}}</td>
+    <!-- <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"># Comentario</th>
+          <th scope="col">Message</th>
+          <th scope="col">id business</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of comment">
+          <td *ngIf="item.status==1">{{item.idComment}}</td>
+          <td *ngIf="item.status==1">{{item.message}}</td>
+          <td *ngIf="item.status==1">{{item.idBusiness}}</td>
 
-                <td *ngIf="item.status==1">{{item.message}}</td>
-                <td *ngIf="item.status==1">{{item.idBusiness}}</td>
+        </tr>
+      </tbody>
 
-            </tr>
-          </tbody>
+    </table> -->
 
-    </table>
-</div>
-</div>
-<button class="btn btn-warning" (click)="Volver()"> VOLVER</button>
-</div>
+
+  </div>
+  <div class="mb-5"></div>
 </body>

@@ -5,25 +5,31 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-comment-list',
   templateUrl: './comment-list.component.html',
-  styleUrls: ['./comment-list.component.css']
+  styleUrls: ['./comment-list.component.css'],
 })
 export class ComentListComponent implements OnInit {
-  comment : Comment[]= [];
-  constructor(private commentService: CommentService, 
-    private router: Router) { 
+  comment: Comment[] = [];
+  constructor(private commentService: CommentService, private router: Router) {
     this.comment = this.commentService.getComment();
   }
-  exist : number = 0;
+  exist: number = 0;
   ngOnInit(): void {
+    this.comment.push({
+      idComment: 6,
+      message: 'sdada',
+      idUser: 3,
+      idBusiness: 1,
+      status: 1,
+    });
     this.onChange();
   }
-  onChange(){
-    if (this.comment.length >0){
-      this.exist= 1 ;
+  onChange() {
+    if (this.comment.length > 0) {
+      this.exist = 1;
     }
   }
-  Volver(){
-    this.router.navigate(['/main']);
+  Volver() {
+    // this.router.navigate(['/main']);
+    console.log(this.comment);
   }
-
 }

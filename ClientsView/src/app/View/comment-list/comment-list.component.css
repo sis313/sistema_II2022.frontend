@@ -1,0 +1,25 @@
+.cont {
+  margin: auto;
+  padding: 30px;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 0 7px 1px rgba(60, 60, 60, 0.4);
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  margin-left: 20px;
+  display: inline;
+}
+.name {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.id {
+  font-size: 15px;
+  color: rgb(127, 127, 127);
+  margin-bottom: 20px;
+}
