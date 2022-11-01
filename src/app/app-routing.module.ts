@@ -14,7 +14,7 @@ import { ListadoSucursalesPorIDComponent } from './Components/listado-sucursales
 import { EditarSucursalComponent } from './Components/editar-sucursal/editar-sucursal.component';
 import { ListadoRatingsMenuComponent } from './Components/listado-ratings-menu/listado-ratings-menu.component';
 import { RedesSocialesComponent } from './Components/redes-sociales/redes-sociales.component';
-
+import { CommentComponent } from './view/comment/comment.component';
 const routes: Routes = [
   {
     path:'',component:MainComponent
@@ -59,6 +59,9 @@ const routes: Routes = [
       },
       {
         path:'redes-sociales',component:RedesSocialesComponent
+      },
+      {
+        path:'comment/:id',component:CommentComponent
       }
     ]
   },

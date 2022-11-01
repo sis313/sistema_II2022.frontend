@@ -1,0 +1,62 @@
+
+
+<div class="row justify-content-center" style="background-color: #FBC78D;color: black;padding: 25px;">
+
+<div class="col-12">
+    <div class="row justify-content-center">
+        <h1 style="text-align: center;margin-bottom: 35px;color: #85CBCC;background-color: #F9E2AE;">COMENTARIOS </h1>
+        <img class="col-9" style=" border-radius:20px;width: 650px;" src="https://www.misfinanzasparaminegocio.com/wp-content/uploads/2021/08/1-3-pasos-para-crear-un-negocio-1024x682.jpg" alt="">
+    </div>
+    
+</div>
+
+</div>
+
+<div class="row justify-content-center" style="background-color: #F9E2AE;color: black;padding: 25px;">
+<div class="comments-container" >
+    
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Comentario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append" style="color:black">
+            
+          <button class="btn btn-dark" type="button">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="66" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+              </svg>
+
+          </button>
+        </div>
+      </div>
+    <ul id="comments-list" class="comments-list" >
+        <li *ngFor="let com of comment">
+            <div class="comment-main-level" *ngIf="id==com.idBusiness">
+                <!-- Avatar -->
+                <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+                <!-- Contenedor del Comentario -->
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name"><a href="http://creaticode.com/blog">Usuario {{com.idUser}}</a></h6>
+                        
+                        <i class="fa fa-reply"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        {{com.message}}
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+</div>
+</div>
