@@ -11,6 +11,7 @@ import { NavStyleComponent } from './components/nav-style/nav-style.component';
 import { InactiveOwnerListComponent } from './components/inactive-owner-list/inactive-owner-list.component';
 import { BranchListComponent } from './components/branch-list/branch-list.component';
 import { UpdateBusinessFixComponent } from './components/update-business-fix/update-business-fix.component';
+import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'adminHome', component: AdminHomeComponent },
   { path: 'storeList', component: StoreListComponent },
   { path: 'button', component: NavStyleComponent },
-  { path: 'branchList/:id', component:BranchListComponent}
+  { path: 'branchList/:id', component:BranchListComponent},
+  { path: 'dashboard-admin', component:DashboardAdminComponent}
 ];
 
 @NgModule({

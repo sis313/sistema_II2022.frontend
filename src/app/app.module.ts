@@ -27,6 +27,8 @@ import { NavStyleComponent } from './components/nav-style/nav-style.component';
 import { InactiveOwnerListComponent } from './components/inactive-owner-list/inactive-owner-list.component';
 import { BranchListComponent } from './components/branch-list/branch-list.component';
 import { UpdateBusinessFixComponent } from './components/update-business-fix/update-business-fix.component';
+import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ import { UpdateBusinessFixComponent } from './components/update-business-fix/upd
     AdminHomeComponent,
     InactiveBusinessListComponent,
     OwnerListComponent, 
-    NavComponent, NavStyleComponent, InactiveOwnerListComponent, BranchListComponent, UpdateBusinessFixComponent
+    NavComponent, NavStyleComponent, InactiveOwnerListComponent, BranchListComponent, UpdateBusinessFixComponent, DashboardAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { UpdateBusinessFixComponent } from './components/update-business-fix/upd
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    CommonModule
+    CommonModule,
+    NgxChartsModule
 
 
   ],
