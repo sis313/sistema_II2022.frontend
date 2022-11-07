@@ -30,6 +30,7 @@ import { UpdateBusinessFixComponent } from './components/update-business-fix/upd
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatButtonModule,
     MatCardModule,
     CommonModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatSelectModule
 
 
   ],
