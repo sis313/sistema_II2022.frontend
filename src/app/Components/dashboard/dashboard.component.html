@@ -214,16 +214,13 @@ See console log for mouse over events.
  <!-- <div class="container">
     <br>
 
-  <div class="row">
   
- 
-</div>
 </div>-->
 
 <div class="container" id="lol2">
 
  <!-- <h1 class="text-center">Dashboard resumen Global</h1>-->
-  <div class="row">
+  
     <!--<div class="col-md-3">-->
          <!-- <button type="submit" class="text-center" mat-raised-button mat-button color="primary"
                   routerLink="/dashboard/chart-mes">Ver resumen ultimo mes</button>-->
@@ -272,86 +269,62 @@ See console log for mouse over events.
           <h3 class="text-center">Tickets</h3>
           <p-chart type="pie" [data]="ticketsData" [options]="pieOptions"></p-chart>
       </div>-->
-  </div>
-  <br>
-  <div class="row" >
-    <div class="col-md-4">
-        <h3 class="text-center" [hidden]="true">Global</h3>
-        <p-chart type="pie" [data]="eventosMesDataModified" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
-    </div>
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Global</h3>
-        <p-chart type="bar" [data]="eventosMesData" [options]="barOptions" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
-    </div>
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Global</h3>
-      <p-chart type="bar" [data]="entradasMesData" [options]="barOptions" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
-  </div>
-</div>
-  <div class="row">
-     
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Anuak</h3>
-      <p-chart type="pie" [data]="ultimoAnnio" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
-  </div>
-  <div class="col-md-4">
+    <br>
+  
+    
+
+<h3 class="text-center" [hidden]="true">Global</h3>
+
+<p-chart id="id102" type="bar" [data]="entradasMesData" [options]="barOptions" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
+<br [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5">
+<br [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5">
+<br [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5">
+<p-chart id="id101" type="bar" [data]="eventosMesData" [options]="barOptions" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
+<br [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5">
+<br [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5">
+<br [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" >
+  
+
+    <p-chart id="id100" type="pie" [data]="eventosMesDataModified" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
+  
+
+
+
+
     <h3 class="text-center" [hidden]="true">Anual</h3>
-    <p-chart type="bar" [data]="dineroMesData" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
-</div>
   
 
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Semestral</h3>
-      <p-chart type="pie" [data]="ultimoSemestre" [hidden]="stateFlag()==1 || stateFlag()==0 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
-  </div>
-  <div class="col-md-4">
-    <h3 class="text-center" [hidden]="true">Semestral</h3>
-    <p-chart type="bar" [data]="dineroMesData5" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==5 || stateFlag()==3 || stateFlag()==4 || stateFlag()==1"></p-chart>
-</div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Trimestral</h3>
-      <p-chart type="pie" [data]="ultimoTrimestre" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==0 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
-  </div>
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Trimestral</h3>
-      <p-chart type="bar" [data]="dineroMesData2" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==1 || stateFlag()==4 || stateFlag()==5"></p-chart>
-  </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Mensual</h3>
-      <p-chart type="pie" [data]="ultimoMes" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==0 || stateFlag()==5" [options]="pieOptions"></p-chart>
-  </div>
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Mensuak</h3>
-      <p-chart type="bar" [data]="dineroMesData3" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==5 || stateFlag()==1"></p-chart>
-  </div>
-
-
-  </div>
-  <div class="row">
-   
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Diario</h3>
-      <p-chart type="pie" [data]="ultimoDia" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==0" [options]="pieOptions"></p-chart>
-  </div>
-    <div class="col-md-4">
-      <h3 class="text-center" [hidden]="true">Diario</h3>
-      <p-chart type="bar" [data]="dineroMesData4" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==1"></p-chart>
-  </div>
-
-  </div>
-
-  <div class="row">
+  <p-chart type="bar" id="id201" [data]="dineroMesData" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5"></p-chart>
+  <p-chart type="pie" id="id202" [data]="ultimoAnnio" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
   
-  </div>
+
+  <h3 class="text-center" [hidden]="true">Semestral</h3>
+  <p-chart type="bar" id="id203" [data]="dineroMesData5" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==5 || stateFlag()==3 || stateFlag()==4 || stateFlag()==1"></p-chart>
+  <p-chart type="pie" id="id204" [data]="ultimoSemestre" [hidden]="stateFlag()==1 || stateFlag()==0 || stateFlag()==3 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart>
+  
+
+
+  <h3 class="text-center" [hidden]="true">Trimestral</h3>
+  <p-chart type="bar" id="id205" [data]="dineroMesData2" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==1 || stateFlag()==4 || stateFlag()==5"></p-chart>
+  <p-chart type="pie" id="id206" [data]="ultimoTrimestre" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==0 || stateFlag()==4 || stateFlag()==5" [options]="pieOptions"></p-chart> 
+  
+  
+  
+  
+  <h3 class="text-center" [hidden]="true">Mensuak</h3>
+  
+  <p-chart type="bar" id="id207" [data]="dineroMesData3" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==5 || stateFlag()==1"></p-chart>
+  <p-chart type="pie" id="id208" [data]="ultimoMes" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==0 || stateFlag()==5" [options]="pieOptions"></p-chart>
+
+
+  <h3 class="text-center" [hidden]="true">Diario</h3>
+  <p-chart type="bar" id="id209" [data]="dineroMesData4" [options]="barOptions" [hidden]="stateFlag()==0 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==1"></p-chart>
+  <p-chart type="pie" id="id210" [data]="ultimoDia" [hidden]="stateFlag()==1 || stateFlag()==2 || stateFlag()==3 || stateFlag()==4 || stateFlag()==0" [options]="pieOptions"></p-chart>
+ 
+
+
+
+
 </div>
 
 </div>

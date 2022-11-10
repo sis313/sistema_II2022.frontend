@@ -43,6 +43,7 @@ import { RedesSocialesComponent } from './Components/redes-sociales/redes-social
 
 // Cargar script redes sociales
 import { CargarScriptsService } from './service/cargar-scripts.service';
+import { CommentComponent } from './view/comment/comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { CargarScriptsService } from './service/cargar-scripts.service';
     ListadoSucursalRatingComponent,
     ListadoRatingsMenuComponent,
     RedesSocialesComponent,
+    CommentComponent,
   ],
   imports: [
     HttpClientModule,

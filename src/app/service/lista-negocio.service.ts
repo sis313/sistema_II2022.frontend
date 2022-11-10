@@ -8,9 +8,9 @@ export class ListaNegocioService {
   constructor(private http: HttpClient) { }
   
   getNegocios(){
-    //let url = "http://serviceprojectspring.herokuapp.com/api/business"
-    let url="http://localhost:8080/api/business"
-    return this.http.get("http://localhost:8080/api/business");
+    let url = "https://serviceprojectspring.herokuapp.com/api/business"
+    //let url="http://localhost:8080/api/business"
+    return this.http.get(url);
   }
 
   deleteNegocio(id: string){

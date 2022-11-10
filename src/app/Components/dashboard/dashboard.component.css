@@ -11,6 +11,11 @@
     background: #fff;
   }
 
+
+
+
+
+
  
   #btn1 {
     display: block;
@@ -94,4 +99,86 @@
     height: 55px;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
+}
+
+#id100{
+    height: 30%;
+    width:30%; 
+    display: block;
+    margin: 0 auto;; 
+}
+
+#id101{
+    height:55%;
+    width:55%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id102{
+    height: 75%;
+    width: 75%; 
+    display: block;
+    margin: 0 auto;; 
+}
+
+
+#id201{
+    height:55%;
+    width:55%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id202{
+    height:55%;
+    width:55%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id203{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id204{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id205{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id206{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id207{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id208{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id209{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
+}
+#id210{
+    height:65%;
+    width:65%; 
+    display: block;
+    margin: 0 auto;; 
 }

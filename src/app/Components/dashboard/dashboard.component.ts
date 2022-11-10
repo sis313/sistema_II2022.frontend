@@ -146,8 +146,8 @@ chartOptions: any;
    // });
 
    this.service.getSemester().subscribe((data:any)=>{
-  //  console.log(typeof(data))
-   // console.log(data)
+    //console.log(typeof(data))
+    //console.log(data)
     let labelsAux = []
     let dataAux = []
     let labelsAux2 = []
@@ -165,12 +165,12 @@ chartOptions: any;
    }
     for(let i = 0; i < data.length; i++) {
       let obj = data[i];
-      labelsAux.push(obj.idBusiness +", "+ obj.idBranch+" S"+obj.semester+"-"+obj.year)
+      labelsAux.push(obj.name +", "+ obj.address+" S"+obj.semester+"-"+obj.year)
       dataAux.push(obj.count)
       
       if(obj.semester == semester && obj.year == auxDate.getFullYear() ){
        // console.log("dentro")
-        labelsAux2.push(obj.idBusiness +", "+ obj.idBranch+" S"+obj.semester+"-"+obj.year)
+        labelsAux2.push(obj.name +", "+ obj.address+" S"+obj.semester+"-"+obj.year)
         dataAux2.push(obj.count)
       }
       //console.log(obj);
@@ -188,11 +188,12 @@ chartOptions: any;
       }
     ]
   };
+  
 });
 
    this.service.getQuarter().subscribe((data:any)=>{
   //  console.log(typeof(data))
-  //  console.log(data)
+    //console.log(data)
     let labelsAux = []
     let dataAux = []
     let labelsAux2 = []
@@ -220,11 +221,13 @@ chartOptions: any;
    }
     for(let i = 0; i < data.length; i++) {
       let obj = data[i];
-      labelsAux.push(obj.idBusiness +", "+ obj.idBranch+" Q"+obj.quarter+"-"+obj.year)
+      labelsAux.push(obj.name +", "+ obj.address+" Q"+obj.quarter+"-"+obj.year)
+      //labelsAux.push(obj.idBusiness +", "+ obj.idBranch+" Q"+obj.quarter+"-"+obj.year)
       dataAux.push(obj.count)
       if(obj.quarter == quarter && obj.year == auxDate.getFullYear() ){
         //console.log("dentro")
-        labelsAux2.push(obj.idBusiness +", "+ obj.idBranch+" Q"+obj.quarter+"-"+obj.year)
+        labelsAux2.push(obj.name +", "+ obj.address+" Q"+obj.quarter+"-"+obj.year)
+        //labelsAux2.push(obj.idBusiness +", "+ obj.idBranch+" Q"+obj.quarter+"-"+obj.year)
         dataAux2.push(obj.count)
       }
       //console.log(obj);
@@ -258,11 +261,13 @@ chartOptions: any;
      
         for(let i = 0; i < data.length; i++) {
           let obj = data[i];
-          labelsAux.push(obj.idBusiness +", "+ obj.idBranch+" "+obj.month+"/"+obj.year)
+ 
+          labelsAux.push(obj.name +", "+ obj.address+" "+obj.month+"/"+obj.year)
           dataAux.push(obj.count)
           if(obj.month == month && obj.year == auxDate.getFullYear() ){
-            console.log("dentro")
-            labelsAux2.push(obj.idBusiness +", "+ obj.idBranch+" "+obj.month+"/"+obj.year)
+            //console.log("dentro")
+          
+     labelsAux2.push(obj.name +", "+ obj.address+" "+obj.month+"/"+obj.year)
             dataAux2.push(obj.count)
           }
           //console.log(obj);
@@ -283,8 +288,8 @@ chartOptions: any;
     });
 
     this.service.getDay().subscribe((data:any)=>{
-     console.log(typeof(data))
-      console.log(data)
+    // console.log(typeof(data))
+    //  console.log(data)
       let labelsAux = []
       let dataAux = []
       let labelsAux2 = []
@@ -300,7 +305,7 @@ chartOptions: any;
        var year = auxDat3.substring(0,4);
 var month = (auxDat3.substring(5,7) )// 1 is subtracted since JS has months as 0-11, not as 1-12. Why would anyone design it like this??
 var day = auxDat3.substring(8,10)
-console.log(year+"adsd"+month+"adssa"+day)
+//console.log(year+"adsd"+month+"adssa"+day)
        /*var myDateArray = auxDat3.split("-");
 let auxDate = new Date(myDateArray[0],myDateArray[1]-1,myDateArray[2]); */
 let auxDate = new Date()
@@ -310,16 +315,16 @@ auxDate.setMonth(month);
 auxDate.setDate(day);
 
 let hoy=new Date()
-console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
-       console.log("auxdateeeeeeeeee"+typeof(auxDate)+auxDate)
-       console.log("hoy"+hoy.getDay()+"/"+hoy.getMonth()+"/"+hoy.getFullYear())
-       console.log("auxdate"+auxDate.getDay()+"/"+auxDate.getMonth()+"/"+auxDate.getFullYear())
-
-       labelsAux.push(obj.idBusiness +", "+ obj.idBranch+" "+auxDate.getDay()+"/"+auxDate.getMonth()+"/"+auxDate.getFullYear())
+//console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
+    //   console.log("auxdateeeeeeeeee"+typeof(auxDate)+auxDate)
+     //  console.log("hoy"+hoy.getDay()+"/"+hoy.getMonth()+"/"+hoy.getFullYear())
+      // console.log("auxdate"+auxDate.getDay()+"/"+auxDate.getMonth()+"/"+auxDate.getFullYear())
+ 
+    labelsAux.push(obj.name +", "+ obj.address+" "+auxDate.getDay()+"/"+auxDate.getMonth()+"/"+auxDate.getFullYear())
        dataAux.push(obj.count)
       if(hoy.getMonth() == auxDate.getMonth() && hoy.getFullYear() == auxDate.getFullYear() && auxDate.getDay() == hoy.getDay()){
-          console.log("dentro")
-          labelsAux2.push(obj.idBusiness +", "+ obj.idBranch+" "+auxDate.getDay()+"/"+auxDate.getMonth()+"/"+auxDate.getFullYear())
+       //   console.log("dentro")
+          labelsAux2.push(obj.name +", "+ obj.address+" "+auxDate.getDay()+"/"+auxDate.getMonth()+"/"+auxDate.getFullYear())
           dataAux2.push(obj.count)
         }
         //console.log(obj);
@@ -340,14 +345,14 @@ console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
   });
 
     this.service.getAnual().subscribe((data:any)=>{
-     // console.log(typeof(data))
-     // console.log(data)
+      //console.log(typeof(data))
+      //console.log(data)
       let labelsAux = []
       let dataAux = []
      
       for(let i = 0; i < data.length; i++) {
         let obj = data[i];
-        labelsAux.push(obj.idBusiness +", "+ obj.idBranch)
+        labelsAux.push(obj.name +", "+ obj.address + " "+obj.year)
         dataAux.push(obj.count)
         
         //console.log(obj);
@@ -376,7 +381,7 @@ console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
        
         for(let i = 0; i < data.length; i++) {
           let obj = data[i];
-          labelsAux.push(obj.idBusiness +", "+ obj.idBranch)
+          labelsAux.push(obj.name +", "+ obj.address)
           dataAux.push(obj.count)
           
           //console.log(obj);
@@ -437,7 +442,7 @@ console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
       let dataAux2 = []
       for(let i = 0; i < data.length; i++) {
         let obj = data[i];
-        labelsAux.push(obj.idBranch)
+        labelsAux.push(obj.name +", "+ obj.address)
         dataAux.push(obj.averageScore)
         dataAux2.push(obj.countIdRating)
         //console.log(obj);
@@ -482,8 +487,48 @@ console.log("hoyyyyyyyyyy"+typeof(hoy)+hoy)
 
   }
 
-
+  applyDarkPieTheme() {
+    this.pieOptions = {
+      plugins: {
+        legend: {
+          labels: {
+            color: '#ebedef'
+          }
+        }
+      }
+    };
+  }
+  applyDarkBarTheme() {
+    this.barOptions = {
+      plugins: {
+        legend: {
+          labels: {
+           // color: '#ebedef'
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+           // color: '#ebedef'
+          },
+          grid: {
+          //  color: 'rgba(255,255,255,0.2)'
+          }
+        },
+        y: {
+          ticks: {
+         //   color: '#ebedef'
+          },
+          grid: {
+        //    color: 'rgba(255,255,255,0.2)'
+          }
+        }
+      }
+    };
+  }
   ngOnInit(): void {
+  //this.applyDarkBarTheme()
   /*let obj = '{'
       obj += '"date" : "2022-09-24",'
       obj += '"idBusiness" : 3,'
