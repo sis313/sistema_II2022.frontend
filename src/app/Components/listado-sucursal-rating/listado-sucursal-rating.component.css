@@ -1,6 +1,10 @@
 *{
     font-size: 15px;
 }
+.btn{
+    background-color: var(--color2) !important;
+    color: white;
+}
 #contenedor-principal{
     height: 80vh !important;
     overflow: scroll !important;

@@ -6,8 +6,10 @@
 
 }
 .btn{
-  color:var(--color3);
+  background-color:var(--color2)!important;
+  color: white;
 }
+
 i{
   color: var(--color3);
 }
