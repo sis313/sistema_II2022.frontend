@@ -63,7 +63,7 @@ import { CommentComponent } from './view/comment/comment.component';
     ListadoSucursalRatingComponent,
     ListadoRatingsMenuComponent,
     RedesSocialesComponent,
-    CommentComponent,
+    CommentComponent
   ],
   imports: [
     HttpClientModule,

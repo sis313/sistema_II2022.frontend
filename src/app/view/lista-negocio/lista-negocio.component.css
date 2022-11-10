@@ -1,5 +1,5 @@
 #container {
-    background: #6b7a40;
+    background: var(--color1);
     min-height: 100%;
   }
 
@@ -8,7 +8,7 @@
     display: block;
     width: 100%;
     color: #fff;
-    background-color: #745D20;
+    background-color: var(--color2);
     font-weight: 700;
     font-size: 18px;
     border: none;
@@ -22,7 +22,7 @@
     display: block;
     width: 100%;
     color: #fff;
-    background-color: #745D20;
+    background-color: var(--color2);
     font-weight: 700;
     font-size: 18px;
     border: none;

@@ -184,3 +184,7 @@ nav li:hover{
     }
 
 }
+#opciones-nav-mobile a.nav-link:hover{
+    background-color: var(--color4) !important;
+    color:black;
+}
