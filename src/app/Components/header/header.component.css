@@ -8,7 +8,7 @@
 }
 
 #contenido_total{
-    background: var(--color4);
+    background: white;  
     z-index: 1200;
     position: fixed;
     width: 100%;
@@ -84,7 +84,7 @@ nav li:hover{
     background-color: var(--color4);
 }
 #nav,nav,nav div{
-    background-color: var(--color4);
+    background-color: white;
 
 }
 .nav-link{
