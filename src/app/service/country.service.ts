@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 
 interface Country {
+  idBusiness?: number;
   name: string;
-  value: number;
+  description: string;
+  idTypeBusiness: number;
+  idUser: number;
+  status: number;
+  value:number;
 }
 
 
@@ -13,20 +18,40 @@ export class CountryService {
   
   private data: Country[] = [
     {
-      "name": "Germany",
-      "value": 8940000
+      "idBusiness":1,
+      "name": "Prueba 1",
+      "description": "prueba description",
+      "idTypeBusiness": 1,
+      "idUser": 1,
+      "status": 1,
+      "value": 123
     },
     {
-      "name": "USA",
-      "value": 5000000
+      "idBusiness":1,
+      "name": "Prueba 1",
+      "description": "prueba description",
+      "idTypeBusiness": 1,
+      "idUser": 1,
+      "status": 1,
+      "value": 123
     },
     {
-      "name": "France",
-      "value": 7200000
+      "idBusiness":1,
+      "name": "Prueba 1",
+      "description": "prueba description",
+      "idTypeBusiness": 1,
+      "idUser": 1,
+      "status": 1,
+      "value": 123
     },
       {
-      "name": "UK",
-      "value": 6200000
+        "idBusiness":1,
+        "name": "Prueba 1",
+        "description": "prueba description",
+        "idTypeBusiness": 1,
+        "idUser": 1,
+        "status": 1,
+        "value": 123
     }
   ];
 
@@ -38,20 +63,40 @@ export class CountryService {
   randomData() {
     this.data = [
       {
-        "name": "Germany",
-        "value": Math.random() * 1000000
+        "idBusiness":1,
+        "name": "Prueba 1",
+        "description": "prueba description",
+        "idTypeBusiness": 1,
+        "idUser": 1,
+        "status": 1,
+        "value": 123
       },
       {
-        "name": "USA",
-        "value": Math.random() * 1000000
+        "idBusiness":1,
+        "name": "Prueba 1",
+        "description": "prueba description",
+        "idTypeBusiness": 1,
+        "idUser": 1,
+        "status": 1,
+        "value": 123
       },
       {
-        "name": "France",
-        "value": Math.random() * 1000000
+        "idBusiness":1,
+        "name": "Prueba 1",
+        "description": "prueba description",
+        "idTypeBusiness": 1,
+        "idUser": 1,
+        "status": 1,
+        "value": 123
       },
         {
-        "name": "UK",
-        "value": Math.random() * 1000000
+          "idBusiness":1,
+          "name": "Prueba 1",
+          "description": "prueba description",
+          "idTypeBusiness": 1,
+          "idUser": 1,
+          "status": 1,
+          "value": 123
       }
     ];
   }

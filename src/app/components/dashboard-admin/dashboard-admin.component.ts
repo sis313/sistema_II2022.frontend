@@ -6,10 +6,7 @@ import { OwnerlistService } from 'src/app/service/ownerlist.service';
 import { Router } from '@angular/router';
 import { user } from 'src/app/model/User';
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-dashboard-admin',
   templateUrl: './dashboard-admin.component.html',
@@ -36,11 +33,7 @@ export class DashboardAdminComponent implements OnInit   {
   showYAxisLabel = true;
   yAxisLabel = 'Population';
   
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
+ 
   
   colorSchemePie: Color = { 
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'], 

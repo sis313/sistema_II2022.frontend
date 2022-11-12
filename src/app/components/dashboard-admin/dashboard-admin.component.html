@@ -22,24 +22,19 @@
 				</p>
 			</div>              
 	    </div>
-        <div style="height: 50px">
-            
-                <label class="block text-gray-700 text-sm font-semibold mb-2" for="talla"> SELECCIONE LA CATEGORIA DEL PRODUCTO </label>
+        <div>
+            <label class="block text-gray-700 text-sm font-semibold mb-2" for="talla"> SELECCIONE EL DUEÑO DEL NEGOCIO: &nbsp;</label>
+            <div class="caja">
+                <select name="miselect" >
+                    <option [value]="item.idUser" *ngFor="let item of ownerList">{{item.name}}</option>
+                </select>
+            </div>
                 
-                <mat-form-field appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <mat-select>
-                      <mat-option *ngFor="let active of ownerList" [value]="active.name">
-                        {{active.name}}
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                  
-              
+                
         </div>
-        <div style="height: 50px">
-            <button (click)="onRandomData()" style="align-items: center;">
-                Random Data
+        <div>
+            <button (click)="onRandomData()" class="btn">
+                GENERAR GRÁFICAS
             </button>
         </div>
     <p class="register-card-title" style=" padding: 10px;" >
