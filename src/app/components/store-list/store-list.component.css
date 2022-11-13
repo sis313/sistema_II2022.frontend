@@ -132,7 +132,7 @@ summary::after {
 .btn {
     background-color: #A7D676;
     border: none;
-    color: white;
+    color: black;
     padding: 10px;
     cursor: pointer;
     animation-duration: 1s;

@@ -80,12 +80,12 @@ body {
 /*Boton*/
 .register-card .register-btn { 
   padding: 13px 20px 12px;
-  background-color: #80A823;
+  background-color: #A7D676;
   border-radius: 4px;
   font-size: 17px;
   font-weight: bold;
   line-height: 20px;
-  color: #fff;
+  color: black;
   margin-bottom: 24px; 
 }
 

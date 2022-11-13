@@ -57,9 +57,9 @@ body {
 
 
 .btn {
-  background-color: #80A823;
+  background-color: #A7D676;
   border: none;
-  color: white;
+  color: black;
   padding: 10px;
   margin: 10px;
   cursor: pointer;
@@ -71,5 +71,6 @@ body {
   border: none solid #F9E2AE;
   background-color: #F9E2AE;
   color: #483e47;
+  font-weight: bold;
   border-radius: 8px;
 }

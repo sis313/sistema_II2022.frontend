@@ -58,7 +58,9 @@ export class OwnerListComponent implements OnInit {
       icon: 'warning',
       title: 'Se eliminarán sus negocios y sucursales',
       showConfirmButton: true,
+      showCancelButton: true,
       confirmButtonText: 'Aceptar',
+      cancelButtonText:'Cancelar',
     }).then(async (result) => {
       if (result.value) {
         await this.deleteOwnerById(id);

@@ -20,7 +20,9 @@ export class NavStyleComponent implements OnInit {
       icon: 'warning',
       title: '¿Está seguro de cerrar sesión?',
       showConfirmButton: true,
+      showCancelButton: true,
       confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar',
     }).then(async (result) => {
       if (result.value) {
         console.log('main');

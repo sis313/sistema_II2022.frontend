@@ -54,5 +54,9 @@ export class BusinesslistService {
     console.log(url);
     return this.http.get<branch[]>(url);
   }
+
+  getActiveBranchCount(){
+    return this.http.get(`${this.baseUrl}/api/custom/businessBranchActiveCount`);
+  }
   
 }

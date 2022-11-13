@@ -38,25 +38,6 @@ body {
   text-align: center;
 }
 
-.btn {
-  background-color: #80A823;
-  border: none;
-  color: white;
-  padding: 10px;
-  margin: 10px;
-  cursor: pointer;
-  animation-duration: 1s;
-}
-
-
-
-/*Cuando el cursor se pone en el botón de register*/
-.btn:hover {
-  border: none solid #FBC78D;
-  background-color: #FBC78D;
-  color: #483e47;
-  border-radius: 8px;
-}
 
 .ftco-section {
   padding: 20px 0;
