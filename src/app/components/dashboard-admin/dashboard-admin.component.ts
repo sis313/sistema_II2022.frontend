@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CountryService } from '../../service/country.service';
-import { Color, ScaleType } from '@swimlane/ngx-charts';
-import { LegendPosition } from '@swimlane/ngx-charts';
-import { OwnerlistService } from 'src/app/service/ownerlist.service';
-import { Router } from '@angular/router';
-import { user } from 'src/app/model/User';
+import { BusinesslistService } from 'src/app/service/businesslist.service';
+import * as pluginDataLabels from 'chartjs-plugin-annotation';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 
-
+import { Label } from 'ng2-charts';
 @Component({
   selector: 'app-dashboard-admin',
   templateUrl: './dashboard-admin.component.html',
@@ -14,102 +11,90 @@ import { user } from 'src/app/model/User';
 })
 export class DashboardAdminComponent implements OnInit   {
   view: [number, number] = [900, 400];
-  active: user[] = [];
-  ownerList: user[] = [];
-  public legendPosition: LegendPosition = LegendPosition.Below;
-  // options Pie Chart
-  gradient: boolean = true;
-  showLegend: boolean = true;
-  showLabels: boolean = true;
-  isDoughnut: boolean = false;
-  legend: boolean = true;
+  branches: any = [];
+  private dato: number;
+  private datos = [];
+  private nombreCategoria = [];
+  private branch;
+  chart: any = [];
 
-  // options
-  showXAxis = true;
-  showYAxis = true;
-  gradientBar = false;
-  showXAxisLabel = true;
-  xAxisLabel = 'Country';
-  showYAxisLabel = true;
-  yAxisLabel = 'Population';
+
+  public barChartOptions: ChartOptions = {
+    responsive: true,
+    // We use these empty structures as placeholders for dynamic theming.
+    scales: { xAxes: [{}], yAxes: [{}] },
+    plugins: {
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+      }
+    }
+  };
+  public barChartLabels: Label[] = ['Cantidad de sucursales'];
+  public barChartType: ChartType = 'pie';
+
+  public barChartLegend = true;
+  public barChartPlugins = [pluginDataLabels];
+  public barChartData: ChartDataSets[];
+  public chartColors;
+
+  public barChartLabelsBar: Label[] = ['Cantidad de sucursales'];
+  public barChartTypeBar: ChartType = 'bar';
   
  
-  
-  colorSchemePie: Color = { 
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'], 
-    group: ScaleType.Ordinal, 
-    selectable: true, 
-    name: 'Customer Usage', 
-  };
-
-  colorSchemePercent: Color = { 
-    domain: ['#2364AA', '#3DA5D9', '#FEC601', '#EA7317'], 
-    group: ScaleType.Ordinal, 
-    selectable: true, 
-    name: 'Customer Usage', 
-  };
-
-  colorSchemeLinear: Color = { 
-    domain: ['#5AA454', '#C7B42C', '#AAAAAA'], 
-    group: ScaleType.Ordinal, 
-    selectable: true, 
-    name: 'Customer Usage', 
-  };
-  
-  colorSchemeLegend: Color = { 
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5'],
-    group: ScaleType.Ordinal, 
-    selectable: true, 
-    name: 'Customer Usage', 
-  };
-
-  colorSchemeVerticalBar: Color = { 
-    domain: ['#011627', '#2EC4B6', '#E71D36', '#FF9F1C'], 
-    group: ScaleType.Ordinal, 
-    selectable: true, 
-    name: 'Customer Usage', 
-  };
-  
-  
-  cardColor: string = '#232837';
+  private colores = ['#177E89', '#084C61', '#DB3A34', '#FFC857', '#323031'];
 
   async ngOnInit(): Promise<void> {
-    this.ownerList = await this.getOwnerData();
+    this.getBranchesCount();
+    
   }
 
-  async getOwnerData() {
-    let respuesta!: user[];
-    await this.ownerlistService
-      .getListOwner()
-      .toPromise()
-      .then((response) => {
-        respuesta = response;
-        console.log(respuesta);
-      })
-      .catch((e) => console.error(e));
-
-    return respuesta;
+  
+  constructor( private businessListService: BusinesslistService) {
+    this.getBranch();
   }
-  constructor( private countryService: CountryService,  private ownerlistService: OwnerlistService,
-    private router: Router ) {}
-
-  get single() {
-    return this.countryService.countryData;
-  }
-
-  onRandomData() {
-    this.countryService.randomData();
+  
+  getBranchesCount() {
+    this.businessListService.getActiveBranchCount().subscribe(res => {
+      this.branches = res;
+      console.log(res);
+      for (const cate of this.branches) {
+        this.dato = cate.activeBranchCount.toString().split(',');
+        this.datos.push(this.dato);
+        this.nombreCategoria.push(cate.name);
+        console.log(res);
+        console.log(this.dato);
+      }
+    });
   }
 
-  onSelect(data: any): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  getBranch() {
+    this.businessListService.getActiveBranchCount().subscribe(res => {
+      this.branch = res;
+      for (const cate of this.branch) {
+        this.dato = cate.activeBranchCount.toString().split(',');
+        this.datos.push(this.dato);
+        this.nombreCategoria.push(cate.name);
+       
+        console.log(res);
+        console.log(this.dato);
+      }
+     
+      this.cargarDatos(this.datos, this.nombreCategoria, this.colores);
+    });
   }
 
-  onActivate(data: any): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
+  cargarDatos(datos, nombreCategoria, colores) {
+    this.barChartData = [];
+    this.chartColors = [];
 
-  onDeactivate(data: any): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+    for (const index in datos) {
+      this.barChartData.push({ data: datos[index], label: nombreCategoria[index] });
+      this.chartColors.push({backgroundColor: colores[index]});
+    }
+
   }
+  
+
+
 }

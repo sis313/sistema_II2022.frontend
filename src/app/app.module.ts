@@ -28,9 +28,9 @@ import { InactiveOwnerListComponent } from './components/inactive-owner-list/ina
 import { BranchListComponent } from './components/branch-list/branch-list.component';
 import { UpdateBusinessFixComponent } from './components/update-business-fix/update-business-fix.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-
 import { MatSelectModule } from '@angular/material/select';
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,8 +60,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     MatCardModule,
     CommonModule,
-    NgxChartsModule,
-    MatSelectModule
+    MatSelectModule,
+    ChartsModule
 
 
   ],

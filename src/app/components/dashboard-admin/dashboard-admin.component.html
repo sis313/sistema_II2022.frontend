@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="dashboard-admin.component.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
 </head>
 
 	<app-nav-style></app-nav-style>
@@ -22,94 +23,83 @@
 				</p>
 			</div>              
 	    </div>
-        <div>
-            <label class="block text-gray-700 text-sm font-semibold mb-2" for="talla"> SELECCIONE EL DUEÑO DEL NEGOCIO: &nbsp;</label>
-            <div class="caja">
-                <select name="miselect" >
-                    <option [value]="item.idUser" *ngFor="let item of ownerList">{{item.name}}</option>
-                </select>
-            </div>
-                
-                
-        </div>
-        <div>
-            <button (click)="onRandomData()" class="btn">
-                GENERAR GRÁFICAS
-            </button>
-        </div>
+        
+        <p class="register-card-title" style=" padding: 10px;" >
+            CUADRO DE DATOS
+        </p>
+        <!-- Creación del formulario -->
+        <div class="row">
+    
+    <!-- Creación de la tabla  -->
+    <div class="col-9">
+        <table class="table">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th scope="col" style="color: #ffffff;">NOMBRE DEL NEGOCIO</th>
+                    <th scope="col" style="color: #ffffff;">CANTIDAD DE SUCURSALES</th>
+  
+                </tr>
+            </thead>
+            <tbody style="text-align:center">
+                <tr *ngFor="let categoria of branches">
+                    <td>{{categoria.name}}</td>
+                    <td>{{categoria.activeBranchCount}}</td>
+                    
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
     <p class="register-card-title" style=" padding: 10px;" >
         PIE CHART
     </p>
-	<div class="chart">	     
-        <ngx-charts-advanced-pie-chart style="text-align: center;"
-            [view]="view"
-            [scheme]="colorSchemePie"
-            [results]="single"
-            [gradient]="gradient"
-            (select)="onSelect($event)"
-            (activate)="onActivate($event)"
-            (deactivate)="onDeactivate($event)"
-            >
-        </ngx-charts-advanced-pie-chart>
+	
+    <div>
+        <div>
+          <div style="display: block" *ngIf="barChartData">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              [colors]="chartColors">
+            </canvas>
+          </div>
+          
+        </div>
     </div>
-
     <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
         PORCENTAJES 
     </p>
-	<div class="chart">	   
-        <ngx-charts-pie-grid
-            [view]="view"
-            [scheme]="colorSchemePercent"
-            [results]="single"
-            (select)="onSelect($event)">
-        </ngx-charts-pie-grid>
-    </div>  
-    
+	
     <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
         DATOS TOTALES
     </p>
-	<div class="chart">	   
-        <ngx-charts-number-card
-            [view]="view"
-            [scheme]="colorSchemeLinear"
-            [results]="single"
-            [cardColor]="cardColor"
-            (select)="onSelect($event)">
-        </ngx-charts-number-card>
-    </div>   
-
+	
     <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
         GRÁFICO DE MEDICIÓN - LEYENDA
     </p>
-	<div class="chart">
-        <ngx-charts-gauge
-            [view]="view"
-            [scheme]="colorSchemeLegend"
-            [results]="single"
-            [legend]="legend"
-            [legendPosition]="legendPosition"
-            (select)="onSelect($event)"
-            (activate)="onActivate($event)"
-            (deactivate)="onDeactivate($event)">
-        </ngx-charts-gauge>
-    </div>    
+	
     <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
         GRÁFICO DE BARRAS
     </p>
-	<div class="chart">
-        <ngx-charts-bar-vertical
-            [view]="view"
-            [scheme]="colorSchemeVerticalBar"
-            [results]="single"
-            [gradient]="gradientBar"
-            [xAxis]="showXAxis"
-            [yAxis]="showYAxis"
-            [legend]="showLegend"
-            [showXAxisLabel]="showXAxisLabel"
-            [showYAxisLabel]="showYAxisLabel"
-            [xAxisLabel]="xAxisLabel"
-            [yAxisLabel]="yAxisLabel"
-            (select)="onSelect($event)">
-      </ngx-charts-bar-vertical>
-    </div>   
+    <div>
+        <div>
+          <div style="display: block" *ngIf="barChartData">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabelsBar"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartTypeBar"
+              [colors]="chartColors">
+            </canvas>
+          </div>
+          
+        </div>
+    </div>
 </div> 
