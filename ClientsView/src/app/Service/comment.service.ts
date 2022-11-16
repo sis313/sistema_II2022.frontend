@@ -15,14 +15,12 @@ export class CommentService {
     getComment(){
         return this.comment;
     }
-    setCommentHttp(data: any[]): Observable<any>{
-        const headers = new HttpHeaders({'Content-Type': 'application/json'}); 
+    setCommentHttp(data: Comment): Observable<any>{
+        const httpOptions = new HttpHeaders({'Content-Type': 'application/json'}); 
         const dataBackend = JSON.stringify(data);
         console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         console.log(dataBackend);
-        return this.http.post<any>(
-            'https://serviceprojectspring.herokuapp.com/api/comment',
-            dataBackend, {'headers':headers} 
+        return this.http.post<Comment>('https://serviceprojectspring.herokuapp.com/api/comment',data, {headers : httpOptions});
             // ).subscribe({
             //     next: data =>{
             //         console.log(data)
@@ -31,7 +29,7 @@ export class CommentService {
             //         this.errorMessage = error.message;
             //         console.error('There was an error!', error);
             //     }
-        )
+        
         
         }
 

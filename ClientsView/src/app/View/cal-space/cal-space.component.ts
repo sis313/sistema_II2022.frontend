@@ -19,6 +19,7 @@ export class CalSpaceComponent implements OnInit {
   currentRate = 0;
   user: number = 0;
   data: Store[] = [];
+  commentPost: any[] = [];
   commentS: Comment[] = [];
   commentPH: any[] = [];
   comment: Comment[] = [];
@@ -60,10 +61,10 @@ export class CalSpaceComponent implements OnInit {
     // console.log(this.data);
   }
   async Calificar() {
-    if (this.commentS.length > 0) {
+    /*if (this.commentS.length > 0) {
       for (let i in this.commentS) {
-        this.comment.push({
-          idComment: this.commentS[i].idComment,
+        this.commentPost.push({
+          //idComment: this.commentS[i].idComment,
           message: this.commentS[i].message,
           idUser: this.user,
           idBusiness: this.commentS[i].idBusiness,
@@ -71,28 +72,35 @@ export class CalSpaceComponent implements OnInit {
         });
       }
     }
-    this.comment.push({
-      idComment: 6,
+    this.commentPost.push({
+      //idComment: 6,
       message: this.textDescription,
       idUser: this.user,
       idBusiness: this.data[0].idBusiness,
       status: 1,
     });
-
-    // this.comment.push({
-    //   idComment: 6,
-    //   message: this.textDescription,
-    //   idUser: this.user,
-    //   idBusiness: this.data[0].idBusiness,
-    //   status: 1,
-    // });
+*/
+  /* this.commentPost.push({
+      //idComment: 6,
+       "message": this.textDescription,
+       "idUser": this.user,
+       "idBusiness": this.data[0].idBusiness,
+       "status": 1
+     });*/
+     let NewComment: Comment = {
+      "message": this.textDescription,
+      "idUser": this.user,
+      "idBusiness": this.data[0].idBusiness,
+      "status": 1
+     }
+     
     // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-    // console.log(this.comment);
+     console.log(NewComment);
     // const dataBackend = JSON.stringify(this.comment);
     // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
     // console.log(dataBackend);
 
-    await this.commentService.setCommentHttp(this.comment).subscribe();
+    await this.commentService.setCommentHttp(NewComment).subscribe();
 
     // Swal.fire({
     //   title: "Registrado!",
@@ -119,7 +127,7 @@ export class CalSpaceComponent implements OnInit {
     if (this.commentS.length > 0) {
       for (let i in this.commentS) {
         this.comment.push({
-          idComment: this.commentS[i].idComment,
+         // idComment: this.commentS[i].idComment,
           message: this.commentS[i].message,
           idUser: this.user,
           idBusiness: this.commentS[i].idBusiness,
@@ -128,7 +136,7 @@ export class CalSpaceComponent implements OnInit {
       }
     }
     this.comment.push({
-      idComment: this.num,
+     // idComment: this.num,
       message: 'Agregado a favoritos',
       idUser: this.user,
       idBusiness: this.data[0].idBusiness,
@@ -155,7 +163,7 @@ export class CalSpaceComponent implements OnInit {
     if (this.commentS.length > 0) {
       for (let i in this.commentS) {
         this.comment.push({
-          idComment: this.commentS[i].idComment,
+          //idComment: this.commentS[i].idComment,
           message: this.commentS[i].message,
           idUser: this.user,
           idBusiness: this.commentS[i].idBusiness,
@@ -164,7 +172,7 @@ export class CalSpaceComponent implements OnInit {
       }
     }
     this.commentS.push({
-      idComment: this.num,
+     // idComment: this.num,
       message: 'Se le dio un rankin de ' + this.currentRate,
       idUser: this.user,
       idBusiness: this.data[0].idBusiness,
