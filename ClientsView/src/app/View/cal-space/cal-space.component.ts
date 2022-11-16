@@ -94,11 +94,7 @@ export class CalSpaceComponent implements OnInit {
       "status": 1
      }
      
-    // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-     console.log(NewComment);
-    // const dataBackend = JSON.stringify(this.comment);
-    // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2222222");
-    // console.log(dataBackend);
+     
 
     await this.commentService.setCommentHttp(NewComment).subscribe();
 

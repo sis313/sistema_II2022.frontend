@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 })
 export class CommentService {
     comment : Comment[]=[];
+     url: string = 'https://serviceprojectspring.herokuapp.com';
     constructor(private http: HttpClient) {}
     setComment(data: Comment[]) {
         this.comment = data;
@@ -15,21 +16,17 @@ export class CommentService {
     getComment(){
         return this.comment;
     }
+    getCommentStore(idStore: number){
+        let user= Number(localStorage.getItem('token'));
+        return this.http.get<any>(this.url+`/api/comment/?businessId=${idStore}`)
+    }
     setCommentHttp(data: Comment): Observable<any>{
         const httpOptions = new HttpHeaders({'Content-Type': 'application/json'}); 
         const dataBackend = JSON.stringify(data);
         console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         console.log(dataBackend);
-        return this.http.post<Comment>('https://serviceprojectspring.herokuapp.com/api/comment',data, {headers : httpOptions});
-            // ).subscribe({
-            //     next: data =>{
-            //         console.log(data)
-            //     },
-            //     error: error => {
-            //         this.errorMessage = error.message;
-            //         console.error('There was an error!', error);
-            //     }
-        
+        return this.http.post<Comment>(this.url+'/api/comment',data, {headers : httpOptions});
+           
         
         }
 
