@@ -51,55 +51,38 @@
         </table>
     </div>
   </div>
-    <p class="register-card-title" style=" padding: 10px;" >
-        PIE CHART
+    <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
+    GRÁFICO DE BARRAS
     </p>
-	
     <div>
         <div>
-          <div style="display: block" *ngIf="barChartData">
+        <div style="display: block" *ngIf="barChartData">
             <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [plugins]="barChartPlugins"
-              [legend]="barChartLegend"
-              [chartType]="barChartType"
-              [colors]="chartColors">
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            [colors]="chartColors">
             </canvas>
-          </div>
-          
+        </div>
+        
         </div>
     </div>
-    <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
-        PORCENTAJES 
-    </p>
-	
-    <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
-        DATOS TOTALES
-    </p>
-	
-    <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
-        GRÁFICO DE MEDICIÓN - LEYENDA
-    </p>
-	
-    <p class="register-card-title" style=" padding: 10px; margin-top: 20px;" >
-        GRÁFICO DE BARRAS
-    </p>
+    <p class="register-card-title" style=" padding: 10px;" >
+        PIE CHART
+    </p>	
     <div>
-        <div>
-          <div style="display: block" *ngIf="barChartData">
+        <div class="chart" *ngIf="pieChartData">
             <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabelsBar"
-              [options]="barChartOptions"
-              [plugins]="barChartPlugins"
-              [legend]="barChartLegend"
-              [chartType]="barChartTypeBar"
+              [datasets]="pieChartData"
+              [labels]="pieChartLabels"
+              [options]="pieChartOptions"
+              [legend]="pieChartLegend"
+              [chartType]="pieChartType"
               [colors]="chartColors">
             </canvas>
-          </div>
-          
-        </div>
+        </div>       
     </div>
 </div> 
