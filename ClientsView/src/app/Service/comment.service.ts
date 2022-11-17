@@ -28,6 +28,15 @@ export class CommentService {
         return this.http.post<Comment>(this.url+'/api/comment',data, {headers : httpOptions});
            
         
-        }
+    }
+    updateCommentHttp(data:Comment,idComment:number): Observable<any>{
+        return this.http.put<Comment>(this.url+`/api/comment/${idComment}`,data);
+    }
+
+    deleteCommentHttp(idComment:number){
+        console.log("llegamos a antes de eliminar");
+        const httpOptions = new HttpHeaders({'Content-Type': 'application/json'}); 
+        return this.http.delete<void>(this.url+`/api/comment/${idComment}`);
+    }
 
 }
