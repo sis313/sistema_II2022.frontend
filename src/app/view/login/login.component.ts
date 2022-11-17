@@ -6,6 +6,7 @@ import { loginModel } from 'src/app/model/login';
 import { LoginService } from 'src/app/service/login.service';
 import { UsersService } from 'src/app/service/users.service';
 import Swal from 'sweetalert2';
+import {AuthInterceptor} from "../../interceptors/auth.interceptor";
 
 @Component({
   selector: 'app-login',
@@ -45,7 +46,9 @@ export class LoginComponent implements OnInit {
     this.userData.password = this.loginForm.get('password').value;
     this.loginService.login(this.userData).subscribe(
       data => {
-        localStorage.setItem('token', data.accessToken);
+        AuthInterceptor.refreshToken = data.refreshToken
+        AuthInterceptor.accessToken = data.accessToken
+
         this.getUser(this.userData.username)
 
       },
@@ -64,6 +67,7 @@ export class LoginComponent implements OnInit {
     this.userService.getUser(username).subscribe((data) =>{
       console.log(data)
       let user:any = data;
+      localStorage.setItem("user",JSON.stringify(user))
       if(user.status===0){
           this.router.navigate(['verificacion'])
       }

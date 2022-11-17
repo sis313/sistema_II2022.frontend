@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './view/login/login.component';
 import { ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { RegistroComponent } from './view/registro/registro.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { VerificacionComponent } from './view/verificacion/verificacion.component';
 import { VerificacionErrorComponent } from './view/verificacion-error/verificacion-error.component';
 import { VerificacionexitosaComponent } from './view/verificacionexitosa/verificacionexitosa.component';
@@ -18,6 +18,7 @@ import { NavbarComponent } from './view/navbar/navbar.component';
 import { RecuperacionErrorComponent } from './view/recuperacion-error/recuperacion-error.component';
 import { ListaUsuariosComponent } from './view/lista-usuarios/lista-usuarios.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {AuthInterceptor} from "./interceptors/auth.interceptor";
 
 
 @NgModule({
@@ -48,7 +49,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import Swal from "sweetalert2";
+import {LogoutService} from "../../service/logout.service";
+import {AuthInterceptor} from "../../interceptors/auth.interceptor";
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +12,7 @@ import Swal from "sweetalert2";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logoutService : LogoutService, private router :Router) { }
 
   ngOnInit(): void {
   }
@@ -26,10 +28,14 @@ export class NavbarComponent implements OnInit {
       cancelButtonColor: '#A7D676',
     }) .then(resultado => {
       if (resultado.value) {
-        localStorage.setItem('token', '');
-        localStorage.setItem('username', '');
-        window.location.href = "/";
+        const user = JSON.parse( localStorage.getItem("user"))
+        console.log("user : ",user.nickname)
+        this.logoutService.logout(user.nickname)
+        AuthInterceptor.accessToken = ''
+        AuthInterceptor.refreshToken = ''
+        this.router.navigate([''])
       }
     });
+
   }
 }
