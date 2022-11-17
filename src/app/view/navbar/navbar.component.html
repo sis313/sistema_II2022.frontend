@@ -1,46 +1,44 @@
 
 <nav class="navbar navbar-expand-lg" style="background-color: #A8DEE0">
-  <!-- Container wrapper -->
-  <div class="container">
-    <!-- Navbar brand -->
-    <a class="navbar-brand me-2" >
-      <img
-        src="./assets/Logo_BOActive.png"
-        height="100"
-        alt=""
-        loading="lazy"
-        style="margin-top: -1px;"
-      />
-    </a>
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" >
+        <img
+          src="./assets/Logo_BOActive.png"
+          height="100"
+          alt=""
+          loading="lazy"
+          style="margin-top: -1px;"
+        />
+      </a>
 
-    <!-- Toggle button -->
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <!-- Collapsible wrapper -->
+      <div
+        class="collapse navbar-collapse"
+        id="navbarButtonsExample"
+      >
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li>
+            <a class="nav-link" >BO Active</a>
+          </li>
+        </ul>
 
-    <!-- Collapsible wrapper -->
-    <div
-      class="collapse navbar-collapse"
-      id="navbarButtonsExample"
-      mdbCollapse
-
-    >
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          <a class="nav-link" >BO Active</a>
-
-      </ul>
-      <!-- Left links -->
-
-      <div class="d-flex align-items-center">
-
-        <button type="button"   (click)="alertacierre()" class="btn btn-info me-3 " style="background-color: #FBC78D; color: #020202; border: 1px solid #020202 !important;">
-          Cerrar sesion
-        </button>
-
+        <!-- Left links -->
+        <div class="d-flex align-items-center">
+          <button type="button"   (click)="alertacierre()" class="btn btn-info me-3 " style="background-color: #FBC78D; color: #020202; border: 1px solid #020202 !important;">
+            Cerrar sesion
+          </button>
+        </div>
       </div>
+      <!-- Collapsible wrapper -->
     </div>
-    <!-- Collapsible wrapper -->
-  </div>
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
