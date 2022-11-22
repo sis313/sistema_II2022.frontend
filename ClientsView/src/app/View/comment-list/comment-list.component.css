@@ -24,3 +24,19 @@
   color: rgb(127, 127, 127);
   margin-bottom: 20px;
 }
+.btn-group{
+  display: flex;
+  align-items: right;
+  margin-top: 10px;
+}
+
+.btn-eliminar{
+  color: white;
+  background-color: #e26464; 
+}
+
+.btn-editar{
+  margin-right: 10px;
+  color: black;
+  background-color: #ecd781; 
+}

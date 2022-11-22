@@ -3,24 +3,26 @@
     <h4>Aun no hay comentarios :(</h4>
   </div>
   <div *ngIf="exist>0">
-    <div *ngFor="let item of commentView" >
-    <div class="cont" *ngIf="item.status == 1">
-     
-      <img [src]="'https://ui-avatars.com/api/?background=random&size=80&rounded=true&name=U+'+item.idUser" />
-      <div class="content" >
-        <span class="name">Usuario {{item.idUser}}</span><br>
-        <span class="id">
-          business {{item.idBusiness}}
-        </span><br>
-        <span class="comment">{{item.message}}</span>
-        <br>
-        <div *ngIf="item.idUser == user">
-        <button (click)="Editar(item)">Editar</button>
-        <button (click)="Eliminar(item)">Eliminar</button>
-      </div>
+    <div *ngFor="let item of commentView">
+      <div class="cont" *ngIf="item.status == 1">
+
+        <img [src]="'https://ui-avatars.com/api/?background=random&size=80&rounded=true&name=U+'+item.idUser" />
+        <div class="content">
+          <span class="name">Usuario {{item.idUser}}</span><br>
+          <span class="id">
+            business {{item.idBusiness}}
+          </span><br>
+          <span class="comment">{{item.message}}</span>
+          <br>
+          <div *ngIf="item.idUser == user">
+            <div class="btn-group">
+              <button class="btn btn-editar" (click)="Editar(item)">Editar</button>
+              <button class="btn btn-eliminar" (click)="Eliminar(item)">Eliminar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
     <!-- <table class="table">
       <thead class="thead-dark">
         <tr>
