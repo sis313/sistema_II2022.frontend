@@ -46,8 +46,7 @@ import {AuthInterceptor} from "./interceptors/auth.interceptor";
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
-
+    NgxPaginationModule,
   ],
   providers: [
     {

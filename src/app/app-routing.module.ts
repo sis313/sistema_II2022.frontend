@@ -44,7 +44,8 @@ const routes: Routes = [
   {path:'envio-recuperacion',
     component: EnvioRecuperacionComponent
   },
-  {path:'navbar',
+  {
+    path:'navbar',
     component: NavbarComponent
   },
   {path:'lista-usuarios',
