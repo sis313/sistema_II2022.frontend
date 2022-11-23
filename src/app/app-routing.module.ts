@@ -50,12 +50,14 @@ const routes: Routes = [
   {path:'lista-usuarios',
     component: ListaUsuariosComponent
   },
-
-
+  /*{
+    path: 'microfrontend',
+    loadChildren: () => import('project/app.module').then(m=>m.AppModule)
+  }*/
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

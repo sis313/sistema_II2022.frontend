@@ -34,6 +34,7 @@ export class AuthInterceptor implements HttpInterceptor {
               switchMap((res:any)=>{
                 AuthInterceptor.accessToken = res.accessToken;
                 AuthInterceptor.refreshToken = res.refreshToken;
+                console.log(res.accessToken)
                 return next.handle(req.clone({
                   setHeaders: {
                     Authorization: `Bearer ${AuthInterceptor.accessToken}`
