@@ -32,7 +32,7 @@ module.exports = {
         name: "clientsView",
         filename: "remoteEntry.js",
         exposes: {
-            './Component': './/src/app/app.component.ts',
+            './app.module': './/src/app/app.component.ts',
         },        
         
         // For hosts (please adjust)

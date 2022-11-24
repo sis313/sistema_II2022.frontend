@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from '@angular/compiler/src/util';
 import { Store } from 'src/app/Model/store.model';
 import { Router } from '@angular/router';
 import { CalTempService } from 'src/app/Service/calTemp.service';
