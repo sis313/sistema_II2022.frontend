@@ -15,7 +15,7 @@ import {ListaUsuariosComponent} from "./view/lista-usuarios/lista-usuarios.compo
 
 const routes: Routes = [
   {path:'registro',
-  component: RegistroComponent
+    component: RegistroComponent
   },
   {path:'',
     component: LoginComponent, pathMatch:'full'
@@ -44,8 +44,7 @@ const routes: Routes = [
   {path:'envio-recuperacion',
     component: EnvioRecuperacionComponent
   },
-  {
-    path:'navbar',
+  {path:'navbar',
     component: NavbarComponent
   },
   {path:'lista-usuarios',
