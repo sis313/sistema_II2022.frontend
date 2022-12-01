@@ -12,7 +12,6 @@ import {EnvioRecuperacionComponent} from "./view/envio-recuperacion/envio-recupe
 import {NavbarComponent} from "./view/navbar/navbar.component";
 import {RecuperacionErrorComponent} from "./view/recuperacion-error/recuperacion-error.component";
 import {ListaUsuariosComponent} from "./view/lista-usuarios/lista-usuarios.component";
-import {AppComponent} from "./app.component";
 
 const routes: Routes = [
   {path:'registro',

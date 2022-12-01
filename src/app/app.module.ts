@@ -30,12 +30,13 @@ import {AuthInterceptor} from "./interceptors/auth.interceptor";
     VerificacionErrorComponent,
     VerificacionexitosaComponent,
     RecuperacionComponent,
+
     EnvioRecuperacionComponent,
 
     CorreoRecuperacionComponent,
-    NavbarComponent,
-    RecuperacionErrorComponent,
-    ListaUsuariosComponent
+      NavbarComponent,
+      RecuperacionErrorComponent,
+      ListaUsuariosComponent
 
   ],
   imports: [
